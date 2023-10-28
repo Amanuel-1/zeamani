@@ -5,6 +5,9 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "fireup/server/api/trpc";
+import { CreateBlogPostInputSchema } from "fireup/types";
+import { CreateBlogPostOutputSchema } from '../../../types/index';
+import { BlogPost, Prisma, Tag } from "@prisma/client";
 
 export const postRouter = createTRPCRouter({
   hello: publicProcedure
@@ -15,22 +18,50 @@ export const postRouter = createTRPCRouter({
       };
     }),
 
-  create: protectedProcedure
-    .input(z.object({ name: z.string().min(1) }))
+    create: protectedProcedure
+    .input(CreateBlogPostInputSchema)
     .mutation(async ({ ctx, input }) => {
-      // simulate a slow db call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      return ctx.db.post.create({
+      const post = await ctx.db.blogPost.create({
         data: {
-          name: input.name,
-          createdBy: { connect: { id: ctx.session.user.id } },
+          title: input.title,
+          slug: input.slug,
+          description: input.slug,
+          content: input.content,
+          authorId: ctx.session.user.id,
+          coverImage: input.coverImage,
         },
       });
-    }),
 
-  getLatest: protectedProcedure.query(({ ctx }) => {
-    return ctx.db.post.findFirst({
+      const tags = await Promise.all(
+        input.tags.map(async (tagName) => {
+          const tag = await ctx.db.tag.findFirst({ where: { name: tagName } });
+          if (tag) {
+            return {
+              postId: post.id,
+              tagId: tag.id,
+            };
+          } else {
+            // The tag does not exist in the database.
+            return undefined;
+          }
+        })
+      );
+
+      // Declare a new variable to store the filtered tags array.
+      const filteredTags = tags.filter((tag) => tag !== undefined);
+
+      if (filteredTags.length > 0) {
+        await ctx.db.tagsOnPosts.createMany({
+          data: filteredTags as Prisma.TagsOnPostsCreateManyInput[],
+        });
+      }
+
+      return post;
+    }),
+    
+
+  getAll: protectedProcedure.query(({ ctx }) => {
+    return ctx.db.blogPost.findMany({
       orderBy: { createdAt: "desc" },
       where: { createdBy: { id: ctx.session.user.id } },
     });
