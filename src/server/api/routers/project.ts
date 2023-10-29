@@ -5,11 +5,11 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "fireup/server/api/trpc";
-import { CreateBlogPostInputSchema } from "fireup/types";
-import { CreateBlogPostOutputSchema } from '../../../types/index';
 import { BlogPost, Prisma, Tag } from "@prisma/client";
+import { CreateProjectInputSchema } from "fireup/types";
+import { CreateProjectOutputSchema } from '../../../types/index';
 
-export const postRouter = createTRPCRouter({
+export const projectRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
@@ -19,26 +19,32 @@ export const postRouter = createTRPCRouter({
     }),
 
     create: protectedProcedure
-    .input(CreateBlogPostInputSchema)
+    .input(CreateProjectInputSchema)
     .mutation(async ({ ctx, input }) => {
 
       const tags = input.tags.map((tagName) => ({
         where: { name: tagName },
         create: { name: tagName },
       }));
+      const categories = input.categories.map((categoryName:string) => ({
+        where: { name: categoryName },
+        create: { name: categoryName },
+      }));
 
 
-      return await ctx.db.blogPost.create({
+      return await ctx.db.project.create({
         data: {
           title: input.title,
-          slug: input.slug,
-          description: input.slug,
-          content: input.content,
-          authorId: ctx.session.user.id,
+          description: input.description,
+          demoLink: input.demoLink,
+          creatorId: ctx.session.user.id,
           coverImage: input.coverImage,
-
-          tag:{
-            connectOrCreate:tags
+          githubLink:input.githubLink,
+          tags:{
+            connectOrCreate:tags 
+          },
+          categories:{
+              connectOrCreate:categories
           }
 
           // tag: {
@@ -58,10 +64,16 @@ export const postRouter = createTRPCRouter({
     
 
   getAll: protectedProcedure.query(({ ctx }) => {
-    return ctx.db.blogPost.findMany({
+    return ctx.db.project.findMany({
       orderBy: { createdAt: "desc" },
       where: { createdBy: { id: ctx.session.user.id } },
     });
+  }),
+
+  getById:publicProcedure.input(z.object({id:z.string()})).query(async ({ctx,input})=>{
+    const project  = await ctx.db.project.findFirst({where:{id:input.id}})
+
+    return project
   }),
 
   getSecretMessage: protectedProcedure.query(() => {

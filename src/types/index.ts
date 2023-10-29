@@ -5,7 +5,7 @@ export const CreateBlogPostInputSchema = z.object({
     authorId:z.string(),
     slug: z.string(),
     description: z.string(),
-    content: z.string().min(100),
+    content: z.string(),
     coverImage: z.string(),
     tags : z.array(z.string())
   });
@@ -46,3 +46,28 @@ export const CreateBlogPostInputSchema = z.object({
     createdAt: z.date(),
     updatedAt: z.date(),
   });
+
+
+  export const CreateProjectInputSchema = z.object({
+    title:z.string(),
+    authorId:z.string(),
+    coverImage:z.string(),
+    description:z.string(),
+    demoLink:z.string(),
+    githubLink:z.string(),
+    tags : z.array(z.string()),
+    categories:z.array(z.string())
+  })
+  export const CreateProjectOutputSchema = z.object({
+    id:z.string(),
+    title:z.string(),
+    authorId:z.string(),
+    coverImage:z.string(),
+    description:z.string(),
+    demoLink:z.string(),
+    githubLink:z.string().optional(),
+    tags : z.array(z.string()),
+    categories:z.array(z.string()),
+    createdAt:z.date(),
+    updatedAt:z.date()
+  })
