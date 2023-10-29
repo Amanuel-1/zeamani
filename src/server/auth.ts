@@ -38,14 +38,21 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
+    
+    session: ({ session, user }) => {
+      console.log("😎😎😎😎😎 session",session)
+      return {
       ...session,
       user: {
         ...session.user,
         id: user.id,
       },
-    }),
-  },
+
+      
+    }},
+  
+  redirect:()=>("/"),
+},
   adapter: PrismaAdapter(db),
   providers: [
     GitHubProvider({
@@ -62,6 +69,11 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+
+  pages:{
+    signIn:'/auth'
+  }
+  
 };
 
 /**

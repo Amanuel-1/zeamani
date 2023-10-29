@@ -8,6 +8,7 @@ import { Button } from "fireup/app/_components/ui/button"
 import { Input } from "fireup/app/_components/ui/input"
 import { Label } from "fireup/app/_components/ui/label"
 import { HeartFilledIcon } from "@radix-ui/react-icons"
+import { signIn } from "next-auth/react"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -59,7 +60,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button onClick={()=>(signIn("github",{redirect:true}))} variant="outline" type="button" disabled={isLoading}>
         {isLoading ? (
           <LinkedInLogoIcon className="mr-2 h-4 w-4 animate-spin" />
         ) : (
