@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "fireup/trpc/react";
+import Footer from "fireup/app/_components/shared/footer/Footer";
+import Navbar from "fireup/app/_components/shared/navbar/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
-        <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
+        <TRPCReactProvider headers={headers()}>
+          <Navbar/>
+          {children}
+          <Footer/>
+          </TRPCReactProvider>
       </body>
     </html>
   );
