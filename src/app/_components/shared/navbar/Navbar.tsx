@@ -1,7 +1,7 @@
 "use client"
 import React, { HTMLAttributes, createContext, useContext, useState } from 'react';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 
 import clsx from 'clsx';
@@ -63,7 +63,7 @@ const Nav = () => {
                 <small>
                   {
                     session?.user?(
-                      <button className='flex flex-row gap-4 bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-100 hover:bg-stone-600'>{session.user.name}<Image src={session.user.image as string} alt={session.user.name as string} width={40} height={40} className='rounded-full p-2 boder-2 border-stone-800'/> </button>
+                      <button onClick={()=>signOut()} className='flex flex-row gap-2 bg-transparent border  border-stone-800 px-4 py-2 font-semibold text-stone-100 hover:bg-stone-600'>{session.user.name}<Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-full p-2 boder-2 border-stone-800'/> </button>
                     ):(
                       <button onClick={()=>signIn('github',{redirect:true})} className='bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-100 hover:bg-stone-600'>login
                       </button>
