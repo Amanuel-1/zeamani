@@ -5,7 +5,7 @@ import Tilt from 'react-parallax-tilt';
 const ExperimentItem = () => {
   let icon;
   const classes = 'text-bright'
-
+  const date  = new Date().getDate().toString()
  
 
   return (
@@ -21,7 +21,7 @@ const ExperimentItem = () => {
         target="_blank"
       >
         <div className="flex items-center justify-between">
-          <time className="time">{Date().toString()}</time>
+          <time className="time">{date}</time>
           <span>{icon}</span>
         </div>
         <h3 className="mb-2 text-base">{"dummy title"}</h3>

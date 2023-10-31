@@ -12,6 +12,7 @@ import HoverCardDemo from "fireup/app/_components/ui/hovercard";
 import { twMerge } from "tailwind-merge";
 import Tiltable from "fireup/app/_components/shared/user/tiltable";
 import ExperimentItem from "fireup/app/_components/shared/user/tiltable";
+import HeroSection from "fireup/app/_components/landing/hero";
 
 
 export default async function Home() {
@@ -21,7 +22,8 @@ export default async function Home() {
 
   return (
     <main className="">
-      <div className="parent grid grid-cols-4 gap-4 p-10">
+      <HeroSection/>
+      <div className="parent flex flex-wrap-reverse gap-4 p-10">
         {
         [1,2,3,4,5,6,7,8,9,10].map((e,i)=>(
            <ExperimentItem/>

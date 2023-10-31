@@ -90,11 +90,11 @@
         @apply no-underline;
     }
     a {
-        @apply text-primary underline;
+        @apply text-primary ;
     }
     a:hover,
     a:visited:hover {
-        @apply text-white;
+        @apply text-white ;
     }
     a:focus {
         @apply outline-primary no-underline decoration-primary;

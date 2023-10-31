@@ -12,7 +12,7 @@ import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 
 
-const Nav = () => {
+const Navbar = () => {
   const {data:session} =useSession()
   return (
     <header className="py-4 mb-20 relative z-10 mx-auto">
@@ -63,7 +63,7 @@ const Nav = () => {
                 <small>
                   {
                     session?.user?(
-                      <button onClick={()=>signOut()} className='flex flex-row gap-2 bg-transparent border  border-stone-800 px-4 py-2 font-semibold text-stone-100 hover:bg-stone-600'>{session.user.name}<Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-full p-2 boder-2 border-stone-800'/> </button>
+                      <div onClick={()=>signOut()} className='flex flex-row gap-2 bg-transparent items-center min-w-fit px-4 py-2 font-semibold text-stone-100 transition-all duration-500'><small className='hover:font-semibold cursor-pointer min-w-max hover:shadow-lg hover:shadow-yellow-600'>{session.user.name}</small><Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-[30%] p-2 boder-4 border-white hover:border-amber-950 cursor-pointer'/> </div>
                     ):(
                       <button onClick={()=>signIn('github',{redirect:true})} className='bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-100 hover:bg-stone-600'>login
                       </button>
@@ -79,7 +79,7 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;
 
 
 const Hamburger = (props: HTMLAttributes<HTMLElement>) => {
