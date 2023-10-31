@@ -57,10 +57,9 @@ export const postRouter = createTRPCRouter({
     }),
     
 
-  getAll: protectedProcedure.query(({ ctx }) => {
+  getAll: publicProcedure.query(({ ctx }) => {
     return ctx.db.blogPost.findMany({
       orderBy: { createdAt: "desc" },
-      where: { createdBy: { id: ctx.session.user.id } },
       include:{tag:true}
     });
   }),
