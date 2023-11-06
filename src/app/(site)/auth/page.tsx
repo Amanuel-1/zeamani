@@ -21,16 +21,13 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const id = params.id
- 
-  // fetch data
-  const product = await fetch(`https://.../${id}`).then((res) => res.json())
- 
+
+
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || []
  
   return {
-    title: product.title,
+    title: "AmanApps",
     description:Me.bio,
     category:"website",
     keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
@@ -38,7 +35,7 @@ export async function generateMetadata(
       images: ['/some-specific-page-image.jpg', ...previousImages],
     },
     
-  }
+  }     
 }
 
 export default function AuthenticationPage() {
