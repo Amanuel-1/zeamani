@@ -10,7 +10,8 @@ export const Images= {
     light: require('./light.webp'),
     meltingFace:  require('./melting-face.webp'),
     please: require('./please.webp'),
-    test:require('./test.svg')
+    test:require('./test.svg'),
+    og:require('./og.png')
 
     
 }

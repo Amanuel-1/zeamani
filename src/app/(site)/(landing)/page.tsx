@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 
+
 import { CreatePost } from "fireup/app/_components/create-post";
 import { getServerAuthSession } from "fireup/server/auth";
 import { api } from "fireup/trpc/server";
@@ -15,6 +16,8 @@ import ExperimentItem from "fireup/app/_components/shared/user/tiltable";
 import HeroSection from "fireup/app/_components/landing/hero";
 import { Images } from "fireup/app/resources";
 import Image from "next/image";
+import { Me } from "fireup/lib/constants";
+import { Metadata, ResolvingMetadata } from "next";
 
 type Props = {
   params: { id: string }
@@ -38,7 +41,7 @@ export async function generateMetadata(
     category:"website",
     keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
     openGraph: {
-      images: ['/some-specific-page-image.jpg', ...previousImages],
+      images: [Images.og, ...previousImages],
     },
     
   }     
