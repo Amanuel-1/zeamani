@@ -16,6 +16,34 @@ import HeroSection from "fireup/app/_components/landing/hero";
 import { Images } from "fireup/app/resources";
 import Image from "next/image";
 
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+ 
+  return {
+    title: "AmanApps",
+    description:Me.bio,
+    category:"website",
+    keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
+    openGraph: {
+      images: ['/some-specific-page-image.jpg', ...previousImages],
+    },
+    
+  }     
+}
+
 export default async function Home() {
   const hello = await api.post.hello.query({ text: "from tRPC" });
   const posts  = await api.post.getAll.query()
