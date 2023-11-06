@@ -1,6 +1,7 @@
 import { Images } from 'fireup/app/resources'
 import { rubikMarker } from 'fireup/styles/Fonts'
 import {LightningBoltIcon} from '@radix-ui/react-icons'
+import styles from 'fireup/styles/card.module.css'
 import Image from 'next/image'
 import React from 'react'
 
@@ -25,7 +26,8 @@ const HeroSection = () => {
             </div>
        </div>
        <div className="flex flex-wrap gap-4 md:gap-[2rem] justify-start items-center w-[60%] ">
-          <button className='bg-stone-900 w-full md:w-fit px-6 py-3 font-semibold text-lg'>My Resume</button>
+          
+          <button className='relative bg-stone-900 w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700'>My Resume</button>
           <button className='flex gap-2 items-center bg-stone-900 w-full md:w-fit px-6 py-3 font-semibold text-lg '>LinkedIn<Image className='w-[20px] h-[20px]' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
         </div>
         </div>

@@ -16,6 +16,15 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        gradient: "0 8px 26px 0 rgba(0, 0, 0, 0.1)",
+        "gradient-hover": "0 12px 40px 0 rgba(0, 0, 0, 0.25)",
+      },
+      variants: {
+        extend: {
+          boxShadow: ["hover"],
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

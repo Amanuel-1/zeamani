@@ -1,5 +1,5 @@
 
-import { Metadata } from "next"
+import { Metadata, ResolvingMetadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import {signIn,signOut} from "next-auth/react"
@@ -8,12 +8,37 @@ import { cn } from "fireup/lib/utils"
 import { buttonVariants } from "fireup/app/_components/ui/button"
 import { UserAuthForm } from "fireup/app/_components/ui/user-auth-form"
 import SignInButton from "fireup/app/_components/auth/signIn"
+import { Me } from "fireup/lib/constants"
+
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
 
-
-export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const id = params.id
+ 
+  // fetch data
+  const product = await fetch(`https://.../${id}`).then((res) => res.json())
+ 
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+ 
+  return {
+    title: product.title,
+    description:Me.bio,
+    category:"website",
+    keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
+    openGraph: {
+      images: ['/some-specific-page-image.jpg', ...previousImages],
+    },
+    
+  }
 }
 
 export default function AuthenticationPage() {

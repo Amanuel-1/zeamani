@@ -13,7 +13,8 @@ import { twMerge } from "tailwind-merge";
 import Tiltable from "fireup/app/_components/shared/user/tiltable";
 import ExperimentItem from "fireup/app/_components/shared/user/tiltable";
 import HeroSection from "fireup/app/_components/landing/hero";
-
+import { Images } from "fireup/app/resources";
+import Image from "next/image";
 
 export default async function Home() {
   const hello = await api.post.hello.query({ text: "from tRPC" });
@@ -23,6 +24,7 @@ export default async function Home() {
   return (
     <main className="">
       <HeroSection/>
+      {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
       <div className="parent flex flex-wrap-reverse gap-4 p-10">
         {
         [1,2,3,4,5,6,7,8,9,10].map((e,i)=>(
