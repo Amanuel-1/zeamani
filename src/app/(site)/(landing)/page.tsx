@@ -1,7 +1,6 @@
 
 import Link from "next/link";
-
-
+import ogImg from "fireup/app/resources/og.png"
 import { CreatePost } from "fireup/app/_components/create-post";
 import { getServerAuthSession } from "fireup/server/auth";
 import { api } from "fireup/trpc/server";
@@ -41,7 +40,16 @@ export async function generateMetadata(
     category:"website",
     keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
     openGraph: {
-      images: [Images.og, ...previousImages],
+      images: ['https://images4.imagebam.com/b2/83/ae/MEPYX81_o.png', ...previousImages],
+    },
+    
+    twitter: {
+      card: ogImg as any,
+      title: 'AmanApps',
+      description: Me.bio,
+      site:"https://amanapps.vercel.app",
+      creator: '@Amanuel_Garomsa',
+      images: ['https://images4.imagebam.com/b2/83/ae/MEPYX81_o.png'],
     },
     
   }     
