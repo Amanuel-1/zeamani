@@ -1,5 +1,19 @@
 import {z} from "zod"
 
+export const SignGuestBookInputSchema = z.object({
+  content:z.string()
+})
+
+
+export const SignGuestBookOutputSchema = z.object({
+  id:z.string(),
+  createdAt:z.date(),
+  guestId:z.string(),
+  content:z.string()
+})
+
+
+
 export const CreateBlogPostInputSchema = z.object({
     title: z.string(),
     authorId:z.string(),
@@ -70,4 +84,18 @@ export const CreateBlogPostInputSchema = z.object({
     categories:z.array(z.string()),
     createdAt:z.date(),
     updatedAt:z.date()
+  })
+
+  export const CreatCategoryInputSchema = z.object({
+    name:z.string(),
+    description:z.string()
+  })
+  export const CreateCategoryOutputSchema  = z.object({
+    id:z.string(),
+    name:z.string(),
+    description:z.string(),
+    createdAt:z.date(),
+    rate:z.number(),
+    projects : z.array(CreateProjectOutputSchema)
+  
   })
