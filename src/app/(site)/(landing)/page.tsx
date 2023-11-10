@@ -11,12 +11,15 @@ import { AlertDialogDemo } from "../../_components/shared/user/dialog";
 import HoverCardDemo from "fireup/app/_components/ui/hovercard";
 import { twMerge } from "tailwind-merge";
 import Tiltable from "fireup/app/_components/shared/user/tiltable";
-import ExperimentItem from "fireup/app/_components/shared/user/tiltable";
 import HeroSection from "fireup/app/_components/landing/hero";
 import { Images } from "fireup/app/resources";
 import Image from "next/image";
 import { Me } from "fireup/lib/constants";
 import { Metadata, ResolvingMetadata } from "next";
+import { client } from "fireup/lib/client";
+import { groq } from "next-sanity";
+import { Category, SPost } from "fireup/lib/types";
+import { urlForImage } from "fireup/lib/image";
 
 type Props = {
   params: { id: string }
@@ -60,14 +63,38 @@ export default async function Home() {
   const posts  = await api.post.getAll.query()
   const session = await getServerAuthSession();
 
+  const result:SPost[]  =  await client.fetch(groq`*[_type == "post"] {
+          ...,
+          categories[]->
+        }
+        `,
+        {caches:null})
+
+
+  const post1= result[0] as SPost
+  // console.log("this is the image url for the first post",urlForImage(post1.).url())
+
   return (
     <main className="">
       <HeroSection/>
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
       <div className="parent flex flex-wrap-reverse gap-4 p-10">
         {
-        [1,2,3,4,5,6,7,8,9,10].map((e,i)=>(
-           <ExperimentItem/>
+          
+        result.length && result.map((post:SPost,i:number)=>(
+          <Tiltable>
+              <div className="title">{post.title}</div>
+              <div className="author">{post.author.name}</div>
+              <div className="categories w-full p-3 flex flex-wrap gap-4">
+              {
+                post.categories && post.categories.map((category:Category)=>(
+                  <div className="tags px-4 py-2 bg-stone-800 text-stone-50 rounded-[10px]">
+                    {category.title}
+                  </div>
+                ))
+              }
+              </div>
+          </Tiltable>
         ))
 
         }

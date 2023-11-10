@@ -24,12 +24,12 @@ export default async function Home() {
     <main className="">
       <HeroSection/>
       <div className="parent flex flex-wrap-reverse gap-4 p-10">
-        {
+        {/* {
         [1,2,3,4,5,6,7,8,9,10].map((e,i)=>(
            <ExperimentItem/>
         ))
 
-        }
+        } */}
       </div>
 
       <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>

@@ -114,7 +114,7 @@ dependencies:
     specifier: '3'
     version: 3.19.2(@types/node@18.18.7)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.1)
   styled-components:
-    specifier: '6'
+    specifier: ^6.1.1
     version: 6.1.1(react-dom@18.2.0)(react@18.2.0)
   superjson:
     specifier: ^1.13.1

@@ -48,7 +48,7 @@
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "sanity": "3",
-    "styled-components": "6",
+    "styled-components": "^6.1.1",
     "superjson": "^1.13.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",

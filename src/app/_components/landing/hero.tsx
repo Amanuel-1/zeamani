@@ -7,8 +7,8 @@ import React from 'react'
 
 const HeroSection = () => {
   return (
-    <section className='flex flex-col justify-start px-24 gap-4'>
-        <div className="flex flex-col gap-4 text-md">
+    <section className='flex flex-col justify-start px-24 gap-4 min-h-screen'>
+        <div className="flex flex-col gap-4 text-md h-full">
             
             <div className='flex flex-col'>
             <div className="flex flex-row items-start">
