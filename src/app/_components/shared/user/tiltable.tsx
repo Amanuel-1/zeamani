@@ -18,7 +18,7 @@ const Tiltable = ({
     <Tilt
       scale={1}
       transitionSpeed={200}
-      className=" bg-transparent border border-stone-800 text-stone-100 text-xl font-semibold w-full mb-3 p-3 cursor-pointer sm:mx-2 sm:mb-4 sm:basis-[40%] sm:flex-grow sm:flex-shrink lg:basis-[30%] h-[15rem]"
+      className=" bg-transparent border border-stone-800 text-stone-100 text-xl font-semibold w-full mb-3 p-3 cursor-pointer sm:mx-2 sm:mb-4 sm:basis-[40%] sm:flex-grow sm:flex-shrink lg:basis-[30%] "
     >
      {children}
     </Tilt>

@@ -13,7 +13,8 @@ import { twMerge } from "tailwind-merge";
 import Tiltable from "fireup/app/_components/shared/user/tiltable";
 import ExperimentItem from "fireup/app/_components/shared/user/tiltable";
 import HeroSection from "fireup/app/_components/landing/hero";
-
+import { urlForImage } from "fireup/lib/image";
+import Image from "next/image";
 
 export default async function Home() {
   const hello = await api.post.hello.query({ text: "from tRPC" });
@@ -39,6 +40,7 @@ export default async function Home() {
             <div className="flex flex-col gap-4 justify-center items-center  w-full h-[15rem] bg-stone-800 text-stone-400">
               {
                 <div key={ind}><h1 className="text-2xl font-extrabold">{post.title}</h1>
+                   
                 <ul className="flex flex-wrap gap-4">
                   {
                   post.tag && post.tag.map((singleTag,i)=>(

@@ -78,13 +78,19 @@ export default async function Home() {
     <main className="">
       <HeroSection/>
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
-      <div className="parent flex flex-wrap-reverse gap-4 p-10">
+      <div className="parent grid grid-cols-1 md:grid-cols-3  gap-4 p-10 h-full">
         {
           
         result.length && result.map((post:SPost,i:number)=>(
           <Tiltable>
+              <div className="image relative w-full p-2 h-[20rem] md:h-[10rem] overflow-hidden transition-all duration-700 ">
+                      <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
+                      {/* <Image src={urlForImage(post.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
+              </div>
+              
               <div className="title">{post.title}</div>
               <div className="author">{post.author.name}</div>
+
               <div className="categories w-full p-3 flex flex-wrap gap-4">
               {
                 post.categories && post.categories.map((category:Category)=>(
