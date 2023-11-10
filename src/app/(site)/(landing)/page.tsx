@@ -65,6 +65,7 @@ export default async function Home() {
 
   const result:SPost[]  =  await client.fetch(groq`*[_type == "post"] {
           ...,
+          author->,
           categories[]->
         }
         `,
@@ -88,13 +89,14 @@ export default async function Home() {
                       {/* <Image src={urlForImage(post.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
               </div>
               
-              <div className="title">{post.title}</div>
-              <div className="author">{post.author.name}</div>
+              <Link href={`/${post.slug.current}`}><div className="title w-full text-center">{post.title}</div></Link>
+              <div className="author text-xs font-light">{post.author.name}</div>
+              <div className="description text-sm font-light py-2 h-[4rem]">{post.description}</div>
 
-              <div className="categories w-full p-3 flex flex-wrap gap-4">
+              <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
               {
                 post.categories && post.categories.map((category:Category)=>(
-                  <div className="tags px-4 py-2 bg-stone-800 text-stone-50 rounded-[10px]">
+                  <div className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
                     {category.title}
                   </div>
                 ))
