@@ -1,19 +1,21 @@
 'use client'
 import { client } from 'fireup/lib/client'
 import { SPost } from 'fireup/lib/types'
+import { groq } from 'next-sanity'
 import React from 'react'
 
 type LikePostProps  = {
-    post :SPost
+    slug :string
 }
 
 
-const updateLikesCount  = async(post:SPost)=>{
-    const _id  =  post._id
-    const currentLikes  = post.likes as number
+const updateLikesCount  = async(slug:string)=>{
+    
+    const query = groq`*[_type =="post" && slug.current ==$slug]`
 
     try{
-        const result =await client.patch(_id).set({likes:currentLikes+1}).commit()
+        const post:SPost =  await client.fetch(query,{slug:slug})
+        const result =await client.patch(post._id).set({likes:post.likes+1}).commit()
         if(result){
             console.log("yeeey the likes count is updates successfully ",result)
         }
