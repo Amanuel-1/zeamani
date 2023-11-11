@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body  className={"font-extralight"}>
         <TRPCReactProvider headers={headers()}>
-        <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-10`}></div>
+        <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div>
          
          <SessionProvide>
          <Navbar/>
