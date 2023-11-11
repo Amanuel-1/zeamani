@@ -11,7 +11,8 @@ export const Images= {
     meltingFace:  require('./melting-face.webp'),
     please: require('./please.webp'),
     test:require('./test.svg'),
-    og:require('./og.png')
+    og:require('./og.png'),
+    grid:require('./grid.svg'),
 
     
 }

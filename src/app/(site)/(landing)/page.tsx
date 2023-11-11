@@ -59,8 +59,8 @@ export async function generateMetadata(
 }
 
 export default async function Home() {
-  const hello = await api.post.hello.query({ text: "from tRPC" });
-  const posts  = await api.post.getAll.query()
+  // const hello = await api.post.hello.query({ text: "from tRPC" });
+  // const posts  = await api.post.getAll.query()
   const session = await getServerAuthSession();
 
   const result:SPost[]  =  await client.fetch(groq`*[_type == "post"] {
@@ -111,22 +111,22 @@ export default async function Home() {
       <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>
         <div className="grid grid-cols-4 p-10 gap-4 ">
         {
-          posts && posts.map((post,ind)=>(
-            <div className="flex flex-col gap-4 justify-center items-center  w-full h-[15rem] bg-stone-800 text-stone-400">
-              {
-                <div key={ind}><h1 className="text-2xl font-extrabold">{post.title}</h1>
-                <ul className="flex flex-wrap gap-4">
-                  {
-                  post.tag && post.tag.map((singleTag,i)=>(
-                    <li key={i} className="px-2 py-1 bg-stone-700 boder border-stone-600 text-sm font-semibold">{singleTag.name}</li>
-                  ))
-                }
-                </ul>
-                </div>
-              }
+          // posts && posts.map((post,ind)=>(
+          //   <div className="flex flex-col gap-4 justify-center items-center  w-full h-[15rem] bg-stone-800 text-stone-400">
+          //     {
+          //       <div key={ind}><h1 className="text-2xl font-extrabold">{post.title}</h1>
+          //       <ul className="flex flex-wrap gap-4">
+          //         {
+          //         post.tag && post.tag.map((singleTag,i)=>(
+          //           <li key={i} className="px-2 py-1 bg-stone-700 boder border-stone-600 text-sm font-semibold">{singleTag.name}</li>
+          //         ))
+          //       }
+          //       </ul>
+          //       </div>
+          //     }
 
-            </div>
-          ))
+          //   </div>
+          // ))
         }
         </div>
 
