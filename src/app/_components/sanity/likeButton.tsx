@@ -27,7 +27,7 @@ const updateLikesCount  = async(post:SPost)=>{
 
 const LikeButton = ({post}:LikePostProps) => {
   return (
-    <button className='px-6 py-3 m-5 bg-stone-950 text-stone-50' onClick={async()=>await updateLikesCount(post)}>{post.likes} like</button>
+    <button className='z-20 px-6 py-3 m-5 bg-stone-950 text-stone-50' onClick={async()=>await updateLikesCount(post)}>{post.likes} like</button>
   )
 }
 
