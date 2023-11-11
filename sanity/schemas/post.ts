@@ -5,6 +5,22 @@ export default defineType({
   title: 'Post',
   type: 'document',
   fields: [
+    defineField(
+      {
+        name: 'likes',
+        title: 'Likes',
+        type: 'number',
+        initialValue: 0,
+      }
+    ),
+    defineField(
+      {
+        name: 'views',
+        title: 'Views',
+        type: 'number',
+        initialValue: 0,
+      }
+    ),
     defineField({
       name: 'title',
       title: 'Title',

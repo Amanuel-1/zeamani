@@ -2,10 +2,15 @@ import { QueryParams, createClient } from 'next-sanity'
 
 import { apiVersion, dataset, projectId, useCdn } from '../env'
 
+
+var readToken="skmbLOa93n5iZwSjJLnx6dRvMJUrWOhUbcDcT31golhyGtHMLD38rxQAFrPSLScBipuQ1kkqK6Y6TkDmM53lIUo66ov4mWrw28n2kwFvJ5I64mHR8PSXqFpo37Wy7RyYaQnNLvufLXCKAl2rRX4JGRkXzdIQGjZ53T5vmlUurHMxyc1ggWZM"
 export const client = createClient({
   apiVersion,
   dataset,
   projectId,
+  token:readToken,
+  useCdn
+
 })
 
 

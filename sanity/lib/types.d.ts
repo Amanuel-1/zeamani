@@ -16,6 +16,8 @@ interface SPost extends Base{
     slug:Slug;
     title:string;
     description:string;
+    likes:number;
+    views:number;
 
 }
 
