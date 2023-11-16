@@ -1,4 +1,4 @@
-
+'use client'
 import PortableTextEditor from 'fireup/app/_components/sanity/portableText'
 import { client } from 'fireup/lib/client'
 import { urlForImage } from 'fireup/lib/image'
@@ -7,6 +7,7 @@ import { groq } from 'next-sanity'
 import React from 'react'
 import Image from 'next/image'
 import LikeButton from 'fireup/app/_components/sanity/likeButton'
+import MyPortableText from 'fireup/app/_components/sanity/portableText'
 
 
 
@@ -28,7 +29,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
     console.log("yeeeeeeeeyyy this is the current post",post)
 
   return (
-    <section className='flex container px-1 md:px-24 flex-col gap-4  items-center min-h-screen w-full'>
+    <section className='z-20 flex container px-1 md:px-24 flex-col gap-4  items-center min-h-screen w-full'>
             <div className="image container w-full ">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />

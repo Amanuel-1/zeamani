@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import ogImg from "fireup/app/resources/og.png"
-import { CreatePost } from "fireup/app/_components/create-post";
+import { CreateProject } from "fireup/app/_components/create-post";
 import { getServerAuthSession } from "fireup/server/auth";
 import { api } from "fireup/trpc/server";
 import { Tilt } from "react-tilt";
@@ -59,8 +59,8 @@ export async function generateMetadata(
 }
 
 export default async function Home() {
-  const hello = await api.post.hello.query({ text: "from tRPC" });
-  const posts  = await api.post.getAll.query()
+  // const hello = await api.post.hello.query({ text: "from tRPC" });
+  // const posts  = await api.post.getAll.query()
   const session = await getServerAuthSession();
 
   const result:SPost[]  =  await client.fetch(groq`*[_type == "post"] {
@@ -110,7 +110,7 @@ export default async function Home() {
 
       <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>
         <div className="grid grid-cols-4 p-10 gap-4 ">
-        {
+        {/* {
           posts && posts.map((post,ind)=>(
             <div className="flex flex-col gap-4 justify-center items-center  w-full h-[15rem] bg-stone-800 text-stone-400">
               {
@@ -127,7 +127,7 @@ export default async function Home() {
 
             </div>
           ))
-        }
+        } */}
         </div>
 
     </main>

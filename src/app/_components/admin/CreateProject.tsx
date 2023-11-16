@@ -1,3 +1,4 @@
+
 'use client'
 
 
@@ -68,12 +69,12 @@ export function CreateProject() {
   }
 
   return (
-  <>
+  <section className="z-0 container mx-auto">
    <Tilt options={{
             max: 50,// tilt axis
             speed: 1000, // tilt speed
           }}>
-       <div className="my-24 w-full h-[20ren] p-24 bg-gradient-to-tr from-stone-700 via-amber-500 to-zinc-600">
+       <div className="my-24 w-full h-[20rem] py-24 bg-gradient-to-tr from-stone-700 via-amber-500 to-zinc-600">
           
           <div className="w-full">
             <h1>Tilting Card</h1>
@@ -157,7 +158,8 @@ export function CreateProject() {
       </button>
     </form>
 
-  </>
+  </section>
     
   );
 }
+
