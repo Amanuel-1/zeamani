@@ -50,7 +50,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
             <PortableTextEditor body={post.body}/>
            </div>
 
-            <LikeButton post={post}/>
+            {/* <LikeButton post={post}/> */}
         
     </section>
   )
