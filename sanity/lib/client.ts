@@ -9,7 +9,6 @@ export const client = createClient({
   dataset,
   projectId,
   token:readToken,
-  useCdn:false
 
 })
 

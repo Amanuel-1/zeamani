@@ -50,7 +50,11 @@ const PostPage = async ({params:{slug}}:postProps) => {
             <PortableTextEditor body={post.body}/>
            </div>
 
+<<<<<<< HEAD
             {/* <LikeButton post={post}/> */}
+=======
+            <LikeButton slug={post.slug.current}/>
+>>>>>>> parent of a79312c (made the like button work)
         
     </section>
   )
