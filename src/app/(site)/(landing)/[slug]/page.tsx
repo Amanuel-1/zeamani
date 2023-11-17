@@ -1,4 +1,4 @@
-'use client'
+
 import PortableTextEditor from 'fireup/app/_components/sanity/portableText'
 import { client } from 'fireup/lib/client'
 import { urlForImage } from 'fireup/lib/image'
