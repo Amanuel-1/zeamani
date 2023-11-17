@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import ogImg from "fireup/app/resources/og.png"
-import { CreateProject } from "fireup/app/_components/create-post";
+
 import { getServerAuthSession } from "fireup/server/auth";
 import { api } from "fireup/trpc/server";
 import { Tilt } from "react-tilt";
