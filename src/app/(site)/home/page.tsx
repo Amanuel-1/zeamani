@@ -1,7 +1,6 @@
 
 import Link from "next/link";
 
-import { CreatePost } from "fireup/app/_components/create-post";
 import { getServerAuthSession } from "fireup/server/auth";
 import { api } from "fireup/trpc/server";
 import { Tilt } from "react-tilt";

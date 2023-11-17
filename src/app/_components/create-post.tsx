@@ -26,7 +26,7 @@ const initialPost: Post = {
   authorId: "",
 };
 
-export function CreateProject() {
+export default function CreateProject() {
   const [post, setPost] = useState<Post>(initialPost); 
   const [newTag, setNewTag] = useState<string>("");
 
