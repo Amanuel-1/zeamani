@@ -7,39 +7,43 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { api } from "fireup/trpc/react";
 import { Tilt } from "react-tilt";
 
-interface Post {
+interface Project {
   title: string;
   description: string;
   slug: string;
-  content: string;
+  githubLink:string;
+  demoLink:string;
   coverImage: string;
   tags: string[];
-  authorId: string;
+  categories:string[]
 }
 
-const initialPost: Post = {
+const initialproject: Project = {
   title: "",
   description: "",
   slug: "",
-  content: "",
+  githubLink:"",
+  demoLink:"",
   coverImage: "",
   tags: [],
-  authorId: "",
+  categories:[]
+  
+
 };
 
 export function CreateProject() {
-  const [post, setPost] = useState<Post>(initialPost); 
+  const [project, setProject] = useState<Project>(initialproject); 
   const [newTag, setNewTag] = useState<string>("");
 
-  const createPost = api.post.create.useMutation({
+  const createproject = api.project.create.useMutation({
     onSuccess: () => {
-      setPost(initialPost);
+      setProject(initialproject);
     },
   });
 
-  function handlePostChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
+  function handleprojectChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
     const { name, value } = e.target;
-    setPost((prevState) => ({ ...prevState, [name]: value }));
+    setProject((prevState) => ({ ...prevState, [name]: value }));
   }
 
   function handleTagChange(e: ChangeEvent<HTMLInputElement>): void {
@@ -48,7 +52,7 @@ export function CreateProject() {
 
   function handleTagAdd(): void {
     if (newTag.trim() !== "") {
-      setPost((prevState) => ({
+      setProject((prevState) => ({
         ...prevState,
         tags: [...prevState.tags, newTag.trim()],
       }));
@@ -57,7 +61,7 @@ export function CreateProject() {
   }
 
   function handleTagRemove(tag: string): void {
-    setPost((prevState) => ({
+    setProject((prevState) => ({
       ...prevState,
       tags: prevState.tags.filter((t) => t !== tag),
     }));
@@ -65,60 +69,56 @@ export function CreateProject() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
-    createPost.mutate(post);
+    createproject.mutate(project);
   }
 
   return (
-  <section className="z-0 container mx-auto">
-   <Tilt options={{
-            max: 50,// tilt axis
-            speed: 1000, // tilt speed
-          }}>
-       <div className="my-24 w-full h-[20rem] py-24 bg-gradient-to-tr from-stone-700 via-amber-500 to-zinc-600">
-          
-          <div className="w-full">
-            <h1>Tilting Card</h1>
-            <p>With CSS only</p>
-          </div>
-        </div>
-   </Tilt>
+  <section className="z-0 container w-full">
 
-   <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+   <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full md:w-[60%]">
       <input
         type="text"
         placeholder="Title"
         name="title"
-        value={post.title}
-        onChange={handlePostChange}
+        value={project.title}
+        onChange={handleprojectChange}
         className="w-full rounded-full px-4 py-2 text-black"
       />
       <input
         type="text"
         placeholder="Slug"
         name="slug"
-        value={post.slug}
-        onChange={handlePostChange}
+        value={project.slug}
+        onChange={handleprojectChange}
+        className="w-full rounded-full px-4 py-2 text-black"
+      />
+      <input
+        type="text"
+        placeholder="amanapps.vercel.app"
+        name="demoLink"
+        value={project.slug}
+        onChange={handleprojectChange}
         className="w-full rounded-full px-4 py-2 text-black"
       />
       <textarea
         placeholder="Description"
         name="description"
-        value={post.description}
-        onChange={handlePostChange}
+        value={project.description}
+        onChange={handleprojectChange}
         className="w-[20rem] rounded-full px-4 py-2 text-black"
       />
       <input
         type="text"
         placeholder="Cover Image"
         name="coverImage"
-        value={post.coverImage}
-        onChange={handlePostChange}
+        value={project.coverImage}
+        onChange={handleprojectChange}
         className="w-full rounded-full px-4 py-2 text-black"
       />
       <div className="flex gap-2">
         <input
           type="text"
-          placeholder="Add Tag"
+          placeholder="source Link"
           value={newTag}
           onChange={handleTagChange}
           className="w-full rounded-full px-4 py-2 text-black"
@@ -133,7 +133,7 @@ export function CreateProject() {
         </button>
       </div>
       <div>
-        {post.tags.map((tag) => (
+        {project.tags.map((tag) => (
           <span
             key={tag}
             className="inline-block bg-gray-200 text-gray-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
@@ -152,9 +152,9 @@ export function CreateProject() {
       <button
         type="submit"
         className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
-        disabled={createPost.isLoading}
+        disabled={createproject.isLoading}
       >
-        {createPost.isLoading ? "Submitting..." : "Submit"}
+        {createproject.isLoading ? "Submitting..." : "Submit"}
       </button>
     </form>
 

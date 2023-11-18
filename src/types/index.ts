@@ -64,7 +64,6 @@ export const CreateBlogPostInputSchema = z.object({
 
   export const CreateProjectInputSchema = z.object({
     title:z.string(),
-    authorId:z.string(),
     coverImage:z.string(),
     description:z.string(),
     demoLink:z.string(),
