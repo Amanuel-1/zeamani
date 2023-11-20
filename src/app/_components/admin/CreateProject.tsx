@@ -68,7 +68,7 @@ export function CreateProject() {
       setProject((prevState) => ({
         ...prevState,
         tags: [...prevState.tags, newTag.trim()],
-      }));
+      })); 
       setNewTag("");
     }
   }
