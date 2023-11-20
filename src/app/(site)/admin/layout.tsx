@@ -13,6 +13,7 @@ import { SessionProvider } from "next-auth/react";
 import SessionProvide from "fireup/app/_components/auth/sessionProvide";
 import Image from "next/image";
 import { Images } from "fireup/app/resources";
+import { getServerAuthSession } from "fireup/server/auth";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,11 +26,18 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  const session  =  await getServerAuthSession()
+  const user  = session?.user
+  console.log("this is the user from getserversession",session)
+
+
+  console.log("here si the email",user?.email,"sdfasdfAS " ,process.env.ADMIN_EMAIL)
   return (
     <html lang="en">
       <body  className={"font-extralight overflow-x-hidden"}>
@@ -40,7 +48,11 @@ export default function RootLayout({
          <Toaster toastOptions={{position:'top-left'}}/>
          <Navbar/>
          
-          {children}
+          {(user?.email==process.env.ADMIN_EMAIL)?(
+            children
+          ):(
+            <div>an error ocured</div>
+          )}
           <Footer/>
          </SessionProvide>
           
