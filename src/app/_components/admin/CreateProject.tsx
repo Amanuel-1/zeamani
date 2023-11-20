@@ -88,7 +88,7 @@ export function CreateProject() {
       console.log("yes , project added !!")
     }
     else if(createproject.isError){
-      toast.error(`oops! an unable to add the project, ${project.title}`,{icon:'😧',style:{background:'rgba(30,30,30,1)'}})
+      toast.error(`oops! an unable to add the project, ${project.title}`,{icon:'😧',style:{background:'rgba(255,30,10,1)'}})
     }
   }
 
