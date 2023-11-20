@@ -20,6 +20,7 @@ import { client } from "fireup/lib/client";
 import { groq } from "next-sanity";
 import { Category, SPost } from "fireup/lib/types";
 import { urlForImage } from "fireup/lib/image";
+import { shortener } from "fireup/lib/utils";
 
 type Props = {
   params: { id: string }
@@ -79,19 +80,19 @@ export default async function Home() {
     <main className="">
       <HeroSection/>
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
-      <div className="parent grid grid-cols-1 md:grid-cols-3  gap-4 p-10 h-full">
+      <div className="parent grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4  gap-4 p-10 h-full">
         {
           
         result.length && result.map((post:SPost,i:number)=>(
           <Tiltable>
-              <div className="image relative w-full p-2 h-[20rem] md:h-[10rem] overflow-hidden transition-all duration-700 ">
+              <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
                       <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
                       {/* <Image src={urlForImage(post.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
               </div>
               
               <Link href={`/${post.slug.current}`}><div className="title w-full text-center">{post.title}</div></Link>
               <div className="author text-xs font-light">{post.author.name}</div>
-              <div className="description text-sm font-light py-2 line-clamp-2">{post.description}</div>
+              <div className="description text-sm font-light py-2 ">{shortener(post.description,50)}</div>
 
               <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
               {
@@ -109,12 +110,17 @@ export default async function Home() {
       </div>
 
       <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>
-        <div className="grid grid-cols-4 p-10 gap-4 ">
+        <div className="grid grid-cols-3 p-10 gap-4 ">
         {
           posts && posts.map((post,ind)=>(
-            <div className="flex flex-col gap-4 justify-center items-center  w-full h-[15rem] bg-stone-800 text-stone-400">
+            <div className="flex flex-col gap-4 justify-center items-center  w-full bg-stone-800 text-stone-400">
               {
-                <div key={ind}><h1 className="text-2xl font-extrabold">{post.title}</h1>
+                <>
+                              <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
+                      <Image className="hover:scale-105" src={post.coverImage as string} alt={"Image Alt"} objectFit="cover" layout="fill" />
+                      {/* <Image src={urlForImage(post.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
+              </div>
+              <div key={ind}><h1 className="text-2xl font-extrabold">{post.title}</h1>
                 <ul className="flex flex-wrap gap-4">
                   {
                   post.tag && post.tag.map((singleTag,i)=>(
@@ -123,6 +129,8 @@ export default async function Home() {
                 }
                 </ul>
                 </div>
+              </>
+                
               }
 
             </div>

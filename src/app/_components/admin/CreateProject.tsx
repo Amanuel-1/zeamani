@@ -81,9 +81,11 @@ export function CreateProject() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
+    console.log("the data submitted is ", JSON.stringify(project))
     createproject.mutate(project);
     if(createproject.isSuccess){
-      toast.success(`yey!! the project is added ${project.title} successfully !!`,{icon:'🎉',style:{background:'rgba(30,30,30,1)'}})
+      toast.success(`yey!! the project is added ${project.title} successfully !!`,{icon:'🎉',style:{background:'rgba(10,2550,20,1)'}})
+      console.log("yes , project added !!")
     }
     else if(createproject.isError){
       toast.error(`oops! an unable to add the project, ${project.title}`,{icon:'😧',style:{background:'rgba(30,30,30,1)'}})
@@ -118,7 +120,16 @@ export function CreateProject() {
         type="text"
         placeholder="amanapps.vercel.app"
         name="demoLink"
-        value={project.slug}
+        value={project.demoLink}
+        onChange={handleprojectChange}
+        className="w-full  px-4 py-2 text-stone-50"
+      />
+      <label htmlFor="githubLink">Github Link</label>
+      <input
+        type="text"
+        placeholder="github.com/amanuel-1/echoflect"
+        name="githubLink"
+        value={project.githubLink}
         onChange={handleprojectChange}
         className="w-full  px-4 py-2 text-stone-50"
       />

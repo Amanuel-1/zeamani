@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body  className={"font-extralight "}>
+      <body  className={"font-extralight overflow-x-hidden"}>
         <TRPCReactProvider headers={headers()}>
         {/* <div className={`fixed -z-20  w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] `}></div> */}
          

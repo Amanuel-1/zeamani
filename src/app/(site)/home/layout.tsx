@@ -30,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body  className={"font-extralight"}>
+      <body  className={"font-extralight overflow-x-hidden"}>
       <Toaster/>
         <TRPCReactProvider headers={headers()}>
           
