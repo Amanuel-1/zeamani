@@ -1,4 +1,5 @@
 import "fireup/styles/globals.css";
+import { Toaster } from 'react-hot-toast';
 
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
@@ -24,7 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
-        <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
+        <TRPCReactProvider headers={headers()}>
+        <Toaster/>
+        {children}
+        </TRPCReactProvider>
       </body>
     </html>
   );

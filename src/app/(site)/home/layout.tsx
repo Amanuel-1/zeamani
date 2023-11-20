@@ -1,5 +1,6 @@
 
 import "fireup/styles/globals.css";
+import { Toaster } from 'react-hot-toast';
 
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body  className={"font-extralight"}>
+      <Toaster/>
         <TRPCReactProvider headers={headers()}>
           
          <SessionProvide>

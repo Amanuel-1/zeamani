@@ -59,8 +59,8 @@ export async function generateMetadata(
 }
 
 export default async function Home() {
-  // const hello = await api.post.hello.query({ text: "from tRPC" });
-  // const posts  = await api.post.getAll.query()
+  const hello = await api.post.hello.query({ text: "from tRPC" });
+  const posts  = await api.post.getAll.query()
   const session = await getServerAuthSession();
 
   const result:SPost[]  =  await client.fetch(groq`*[_type == "post"] {
@@ -91,7 +91,7 @@ export default async function Home() {
               
               <Link href={`/${post.slug.current}`}><div className="title w-full text-center">{post.title}</div></Link>
               <div className="author text-xs font-light">{post.author.name}</div>
-              <div className="description text-sm font-light py-2 h-[4rem]">{post.description}</div>
+              <div className="description text-sm font-light py-2 line-clamp-2">{post.description}</div>
 
               <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
               {
@@ -110,7 +110,7 @@ export default async function Home() {
 
       <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>
         <div className="grid grid-cols-4 p-10 gap-4 ">
-        {/* {
+        {
           posts && posts.map((post,ind)=>(
             <div className="flex flex-col gap-4 justify-center items-center  w-full h-[15rem] bg-stone-800 text-stone-400">
               {
@@ -127,7 +127,7 @@ export default async function Home() {
 
             </div>
           ))
-        } */}
+        }
         </div>
 
     </main>

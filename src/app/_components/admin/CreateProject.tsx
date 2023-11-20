@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { api } from "fireup/trpc/react";
 import { Tilt } from "react-tilt";
+import toast from "react-hot-toast";
 
 interface Project {
   title: string;
@@ -41,6 +42,7 @@ export function CreateProject() {
     },
   });
 
+
   function handleprojectChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
     const { name, value } = e.target;
     setProject((prevState) => ({ ...prevState, [name]: value }));
@@ -50,18 +52,26 @@ export function CreateProject() {
     setNewTag(e.target.value);
   }
 
-  function handleTagAdd(e): void {
-      if(e.key ===","){
-        if (newTag.trim() !== "") {
-          setProject((prevState) => ({
-            ...prevState,
-            tags: [...prevState.tags, newTag.trim()],
-          }));
-          setNewTag("");
-        }
-      }
+  // function handleTagAdd(e:any): void {
+  //     if(e.key ===" "){
+  //       if (newTag.trim() !== "") {
+  //         setProject((prevState) => ({
+  //           ...prevState,
+  //           tags: [...prevState.tags, newTag.trim()],
+  //         }));
+  //         setNewTag("");
+  //       }
+  //     }
+  // }
+  function handleTagAdd(e: React.KeyboardEvent<HTMLInputElement>): void {
+    if (e.key === " " && newTag.trim() !== "" && newTag.trim() !== ",") {
+      setProject((prevState) => ({
+        ...prevState,
+        tags: [...prevState.tags, newTag.trim()],
+      }));
+      setNewTag("");
+    }
   }
-
   function handleTagRemove(tag: string): void {
     setProject((prevState) => ({
       ...prevState,
@@ -72,6 +82,12 @@ export function CreateProject() {
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     createproject.mutate(project);
+    if(createproject.isSuccess){
+      toast.success(`yey!! the project is added ${project.title} successfully !!`,{icon:'🎉',style:{background:'rgba(30,30,30,1)'}})
+    }
+    else if(createproject.isError){
+      toast.error(`oops! an unable to add the project, ${project.title}`,{icon:'😧',style:{background:'rgba(30,30,30,1)'}})
+    }
   }
 
   return (
@@ -128,17 +144,17 @@ export function CreateProject() {
           type="text"
           placeholder="source Link"
           value={newTag}
+          onKeyDown={handleTagAdd}
           onChange={handleTagChange}
           className="w-full  px-4 py-2 text-stone-50"
         />
         <button
-          type="button"
-          onKeyDown={handleTagAdd}
-          className=" bg-white/10 px-4 py-2 font-semibold transition hover:bg-white/20"
-          disabled={newTag.trim() === ""}
-        >
-          Add
-        </button>
+  type="button"
+  className=" bg-white/10 px-4 py-2 font-semibold transition hover:bg-white/20"
+  disabled={newTag.trim() === ""}
+>
+  Add
+</button>
       </div>
       <div className="">
         {project.tags.map((tag) => (

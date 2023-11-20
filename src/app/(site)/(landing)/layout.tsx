@@ -1,5 +1,6 @@
 
 import "fireup/styles/globals.css";
+import { Toaster } from 'react-hot-toast';
 
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
@@ -36,7 +37,9 @@ export default function RootLayout({
         {/* <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div> */}
          
          <SessionProvide>
+         <Toaster/>
          <Navbar/>
+
           {children}
           <Footer/>
          </SessionProvide>
