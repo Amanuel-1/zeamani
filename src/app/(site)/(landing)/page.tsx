@@ -61,7 +61,7 @@ export async function generateMetadata(
 
 export default async function Home() {
   const hello = await api.post.hello.query({ text: "from tRPC" });
-  const posts  = await api.project.getAll.query()
+  const projects  = await api.project.getAll.query()
   const session = await getServerAuthSession();
 
   const result:SPost[]  =  await client.fetch(groq`*[_type == "post"] {
@@ -112,22 +112,23 @@ export default async function Home() {
       <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>
         <div className="grid grid-cols-3 p-10 gap-4 ">
         {
-          posts && posts.map((post,ind)=>(
+          projects && projects.map((proj,ind)=>(
             <div className="flex flex-col gap-4 justify-center items-center  w-full bg-stone-800 text-stone-400">
               {
                 <>
                               <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
-                      <Image className="hover:scale-105" src={post.coverImage as string} alt={"Image Alt"} objectFit="cover" layout="fill" />
-                      {/* <Image src={urlForImage(post.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
+                      <Image className="hover:scale-105" src={proj.coverImage as string} alt={"Image Alt"} objectFit="cover" layout="fill" />
+                      {/* <Image src={urlForImage(proj.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
               </div>
-              <div key={ind}><h1 className="text-2xl font-extrabold">{post.title}</h1>
-                <ul className="flex flex-wrap gap-4">
+              <div key={ind}><h1 className="text-2xl font-extrabold">{proj.title}</h1>
+                {/* <ul className="flex flex-wrap gap-4">
                   {
-                  post.tag && post.tag.map((singleTag,i)=>(
+                  proj.tag && proj..map((singleTag,i)=>(
                     <li key={i} className="px-2 py-1 bg-stone-700 boder border-stone-600 text-sm font-semibold">{singleTag.name}</li>
                   ))
-                }
+                } 
                 </ul>
+                */}
                 </div>
               </>
                 
