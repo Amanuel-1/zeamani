@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import ogImg from "fireup/app/resources/og.png"
+import moment from 'moment';
 
 import { getServerAuthSession } from "fireup/server/auth";
 import { api } from "fireup/trpc/server";
@@ -109,8 +110,8 @@ export default async function Home() {
         }
       </div>
 
-      <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>
-        <div className="grid grid-cols-3 p-10 gap-4 ">
+      <h1 className="text-4xl font-extrabold px-10">Behold ! the recent <b className="text-amber-700">posts</b></h1>
+        {/* <div className="grid grid-cols-3 p-10 gap-4 ">
         {
           projects && projects.map((proj,ind)=>(
             <div className="flex flex-col gap-4 justify-center items-center  w-full bg-stone-800 text-stone-400">
@@ -118,17 +119,18 @@ export default async function Home() {
                 <>
                               <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
                       <Image className="hover:scale-105" src={proj.coverImage as string} alt={"Image Alt"} objectFit="cover" layout="fill" />
-                      {/* <Image src={urlForImage(proj.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
+                      <Image src={urlForImage(proj.coverImage).url()} alt="" objectFit='cover' layout='fil' />
               </div>
               <div key={ind}><h1 className="text-2xl font-extrabold">{proj.title}</h1>
-                {/* <ul className="flex flex-wrap gap-4">
+                <p className="">{shortener(proj.description,200)}</p>
+                <ul className="flex flex-wrap gap-2 justify-center items-center w-ful">
                   {
-                  proj.tag && proj..map((singleTag,i)=>(
+                  proj.tags && proj.tags.map((singleTag,i)=>(
                     <li key={i} className="px-2 py-1 bg-stone-700 boder border-stone-600 text-sm font-semibold">{singleTag.name}</li>
                   ))
                 } 
                 </ul>
-                */}
+               
                 </div>
               </>
                 
@@ -137,6 +139,23 @@ export default async function Home() {
             </div>
           ))
         }
+        </div> */}
+        <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
+          {
+            result.length && (result.slice(0,5).map((post,i)=>(
+              <div className="relative flex flex-col w-full rounded-[5px] bg-stone-800 p-3 ">
+
+                <h1 className="text-sm md:text-xl font-semibold text-left self-start">{post.title}</h1> 
+                <small className="absolute top-0 left-2 text-xs font-light p-1 ">{moment(post._createdAt).fromNow()}</small>
+                <p className="description">{shortener(post.description,100)}</p>
+                  
+              </div>
+              
+            )
+              
+            
+            ))
+          }
         </div>
 
     </main>

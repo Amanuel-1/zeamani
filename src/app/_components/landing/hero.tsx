@@ -21,7 +21,7 @@ const HeroSection = () => {
             </div>
             <div/>
             <b className=" bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient">Amanuel Garomsa,</b>
-            <div className='text-sm font-light text-center px-1 md:w-[60%]'>
+            <div className='text-sm font-ligh text-center md:text-left px-1 md:w-[60%]'>
               an aspiring Software developer and Computer Science Student at Addis Ababa University College Of Natural And Computational Sciences. I am currently looking for jobs, so if there is a spot please consisder me . pleaase i am begging you 🥺
             </div>
             </div>
