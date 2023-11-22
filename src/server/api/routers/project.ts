@@ -7,6 +7,7 @@ import {
 } from "fireup/server/api/trpc";
 import { BlogPost, Prisma, Tag } from "@prisma/client";
 import { CreateProjectInputSchema } from "fireup/types";
+import { db } from "fireup/server/db";
 
 export const projectRouter = createTRPCRouter({
   hello: publicProcedure
@@ -62,14 +63,12 @@ export const projectRouter = createTRPCRouter({
     }),
     
 
-  getAll: protectedProcedure.query(({ ctx }) => {
-    return ctx.db.project.findMany({
+  getAll: publicProcedure.query(async() => {
+    return await db.project.findMany({
       orderBy: { createdAt: "desc" },
       include:{tags:true},
       
-      where: { createdBy: { id: ctx.session.user.id } 
       
-    },
       
     });
   }),
