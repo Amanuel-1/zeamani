@@ -22,7 +22,7 @@ export  async function GET(req:NextRequest){
                 height:"100%",
                 width:"100%",
                 zIndex:20
-            }} src={image??"https://user-images.githubusercontent.com/71079278/275351091-bf163aa6-a4d0-4022-9ef4-917e0e1bcfb2.png"} tw="rounded-r-full" alt="Post background image" />
+            }} src={image??"https://user-images.githubusercontent.com/71079278/275351091-bf163aa6-a4d0-4022-9ef4-917e0e1bcfb2.png"} tw="rounded-br-full" alt="Post background image" />
             <div tw="flex flex-col w-full justify-center items-center">
                 <div tw="flex flex-col min-h-screen bg-transparent relative flex-wrap justify-center items-center px-4 text-wrap">
                     <span tw="flex flex-wrap text-wrap  text-4xl sm:text-5xl lg:text-6xl font-bold text-stone-100 ">{title}</span>
