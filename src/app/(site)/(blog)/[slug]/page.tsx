@@ -8,6 +8,9 @@ import React from 'react'
 import Image from 'next/image'
 import LikeButton from 'fireup/app/_components/sanity/likeButton'
 import MyPortableText from 'fireup/app/_components/sanity/portableText'
+import { Site } from 'fireup/site.config'
+import { Metadata, ResolvingMetadata } from 'next'
+import { getDomain } from 'fireup/lib/utils'
 
 
 
@@ -16,6 +19,42 @@ type postProps  = {
         slug:string
     }
 }
+export async function generateMetadata(
+    { params }: postProps,
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    // read route params
+    const slug  = params.slug
+    const query  = groq`*[_type=="post" && slug.current == $slug]{
+        ...,
+        author->,
+        categories[]->
+    }[0]`
+
+    const post:SPost  = await client.fetch(query,{slug,caches:null})
+    console.log("yeeeeeeeeyyy this is the current post",post)
+   
+    // fetch data
+    const title =  post.title;
+   
+    const imageData = urlForImage(post.mainImage).url()// Assuming this holds the base64-encoded image data
+    const avatar  = urlForImage(post.author.image).url()
+    const website  = getDomain()
+    // optionally access and extend (rather than replace) parent metadata
+    const previousImages = (await parent).openGraph?.images || []
+   
+    return {
+      title: post.title,
+      description:post.description.slice(0,200),
+      authors:[{name:post.author.name +"",url:`${website}/${post.author.name}`}],
+      creator:"Amauel Garomsa",
+      keywords:["blog","nature","technology","crypto","data mining","art","love","football","lifestyle"],
+      openGraph:{
+        images: [`http://localhost:3000/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`, ...previousImages],
+      },
+    }
+  }
+  
 const PostPage = async ({params:{slug}}:postProps) => {
 
 
