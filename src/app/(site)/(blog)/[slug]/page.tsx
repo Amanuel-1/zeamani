@@ -50,7 +50,7 @@ export async function generateMetadata(
       creator:"Amauel Garomsa",
       keywords:["blog","nature","technology","crypto","data mining","art","love","football","lifestyle"],
       openGraph:{
-        images: [`http://localhost:3000/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`, ...previousImages],
+        images: [`${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`, ...previousImages],
       },
     }
   }
