@@ -84,7 +84,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
                         {post.author.name}
                     </div>
             </div>
-            <div className="body w-full ">{post.description}</div>
+            <div className="body w-full rounded-br-[20px] ">{post.description}</div>
            
             <PortableTextEditor body={post.body}/>
            </div>
