@@ -1,4 +1,4 @@
-import { getDomain } from "fireup/lib/utils";
+import { getDomainName } from "fireup/lib/utils";
 import { NextRequest } from "next/server";
 import { ImageResponse } from "@vercel/og";
 import { urlForImage } from "fireup/lib/image";
@@ -11,7 +11,7 @@ const title = params.get('title');
 const image = params.get('image');
 const avatar = params.get('avatar');
 
-const website = getDomain()
+const website = getDomainName()
 return new ImageResponse(
     <div
     style={{
