@@ -56,31 +56,16 @@ export async function generateMetadata(
       openGraph:{
         images: [`${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`, ...previousImages],
       },
+      
       twitter: {
-        card: 'app',
-        title: post.title,
-        description:post.description,
-        siteId: '1467726470533754880',
-        creator: '@Amanuel_Garomsa',
-        creatorId: '1467726470533754880',
-        images: {
-          url: `${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`,
-          alt: '@Amanapps Posts',
-        },
-        app: {
-          name: 'amanapps',
-          id: {
-            iphone: 'amanapps://iphone',
-            ipad: 'amanapps://ipad',
-            googleplay: 'amanapps://googleplay',
-          },
-          url:{
-            iphone:`${getDomain()}`,
-            ipad:getDomain(),
-          }
-        },
-      },
-    }
+        card: "summary_large_image",
+        title: "Generate Dynamic Open Graph and Twitter Images in Next.js",
+        description:
+          "A guide on how to optimize SEO with static and dynamic metatags using Next.js 13's new Metadata API.",
+        images: [
+          "https://cruip-tutorials-next.vercel.app/api/og?title=Generate Dynamic Open Graph and Twitter Images in Next.js",
+        ],
+      }
   }
   
 const PostPage = async ({params:{slug}}:postProps) => {
