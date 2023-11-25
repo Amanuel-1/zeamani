@@ -11,6 +11,7 @@ import MyPortableText from 'fireup/app/_components/sanity/portableText'
 import { Site } from 'fireup/site.config'
 import { Metadata, ResolvingMetadata } from 'next'
 import { getDomain } from 'fireup/lib/utils'
+import ShareBar from 'fireup/app/_components/sanity/shareBar'
 
 
 
@@ -95,6 +96,15 @@ const PostPage = async ({params:{slug}}:postProps) => {
            
             <PortableTextEditor body={post.body}/>
            </div>
+
+           {/* this is a social media share button  */}
+            
+           <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem]">
+                  <ShareBar post={post}/>
+              </div>
+
+            {/* this is a social media share button  */}
+        
         
     </section>
   )
