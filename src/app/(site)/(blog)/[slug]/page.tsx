@@ -52,6 +52,12 @@ export async function generateMetadata(
       openGraph:{
         images: [`${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`, ...previousImages],
       },
+      twitter:{
+        images:[`${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`, ...previousImages],
+        creator:"Amanuel Garomsa",
+        site:getDomain(),
+        
+      }
     }
   }
   
