@@ -57,9 +57,7 @@ export async function generateMetadata(
         title: "Generate Dynamic Open Graph and Twitter Images in Next.js",
         description:
           "A guide on how to optimize SEO with static and dynamic metatags using Next.js 13's new Metadata API.",
-        images: [
-          "https://cruip-tutorials-next.vercel.app/api/og?title=Generate Dynamic Open Graph and Twitter Images in Next.js",
-        ],
+        images: [ `${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}` ],
       }
     }
   }
