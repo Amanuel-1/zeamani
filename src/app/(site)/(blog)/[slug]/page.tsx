@@ -11,11 +11,7 @@ import MyPortableText from 'fireup/app/_components/sanity/portableText'
 import { Site } from 'fireup/site.config'
 import { Metadata, ResolvingMetadata } from 'next'
 import { getDomain } from 'fireup/lib/utils'
-import { FaFacebookF,FaLinkedin,FaLinkedinIn,FaPinterest,FaTwitter} from "react-icons/fa";
-import {TwitterShareButton} from  'react-share'
-import ShareBar from 'fireup/app/_components/sanity/shareBar'
-import { URL } from 'url'
-import { Me } from 'fireup/lib/constants'
+
 
 
 type postProps  = {
@@ -56,7 +52,6 @@ export async function generateMetadata(
       openGraph:{
         images: [`${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}`, ...previousImages],
       },
-      
       twitter: {
         card: "summary_large_image",
         title: "Generate Dynamic Open Graph and Twitter Images in Next.js",
@@ -66,6 +61,7 @@ export async function generateMetadata(
           "https://cruip-tutorials-next.vercel.app/api/og?title=Generate Dynamic Open Graph and Twitter Images in Next.js",
         ],
       }
+    }
   }
   
 const PostPage = async ({params:{slug}}:postProps) => {
@@ -82,8 +78,6 @@ const PostPage = async ({params:{slug}}:postProps) => {
 
   return (
     <section className='z-20 flex container px-1 md:px-24 flex-col gap-4  items-center min-h-screen w-full'>
-
-            
             <div className="image container w-full ">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
@@ -99,18 +93,10 @@ const PostPage = async ({params:{slug}}:postProps) => {
                         {post.author.name}
                     </div>
             </div>
-            <div className="body w-full rounded-br-[20px] ">{post.description+"\n\n\n"}</div>
+            <div className="body w-full rounded-br-[20px] ">{post.description}</div>
            
             <PortableTextEditor body={post.body}/>
            </div>
-
-            {/* this is a social media share button  */}
-            
-              <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem]">
-                  <ShareBar post={post}/>
-              </div>
-
-            {/* this is a social media share button  */}
         
     </section>
   )
