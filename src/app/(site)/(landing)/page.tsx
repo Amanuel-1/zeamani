@@ -65,14 +65,16 @@ export default async function Home() {
   const projects  = await api.project.getAll.query()
   const session = await getServerAuthSession();
 
-  const result:SPost[]  =  await client.fetch(groq`*[_type == "post"] {
+  const query = groq`*[_type == "post"] {
           ...,
           author->,
           categories[]->
         }
-        `,
-        {caches:null})
-
+        `
+  const result:SPost[]  = await client.fetch(query,{next:{
+    tags:["post"]
+  }})
+  
 
   const post1= result[0] as SPost
   // console.log("this is the image url for the first post",urlForImage(post1.).url())
@@ -84,7 +86,7 @@ export default async function Home() {
       <div className="parent grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4  gap-4 p-10 h-full">
         {
           
-        result.length && result.map((post:SPost,i:number)=>(
+        result.length && result.map((post:SPost,i:number )=>(
           <Tiltable>
               <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
                       <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />

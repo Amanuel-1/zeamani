@@ -32,7 +32,7 @@ export async function generateMetadata(
         categories[]->
     }[0]`
 
-    const post:SPost  = await client.fetch(query,{slug,caches:null})
+    const post:SPost  = await client.fetch(query,{slug},{tag:"post"})
     console.log("yeeeeeeeeyyy this is the current post",post)
    
     // fetch data
@@ -56,8 +56,7 @@ export async function generateMetadata(
       twitter: {
         card: "summary_large_image",
         title: "Generate Dynamic Open Graph and Twitter Images in Next.js",
-        description:
-          "A guide on how to optimize SEO with static and dynamic metatags using Next.js 13's new Metadata API.",
+        description:post.description,
         images: [ `${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}` ],
       }
     }
@@ -72,7 +71,9 @@ const PostPage = async ({params:{slug}}:postProps) => {
         categories[]->
     }[0]`
 
-    const post:SPost  = await client.fetch(query,{slug,caches:null})
+    const post:SPost  = await client.fetch(query,{slug},{next:{
+      tags:["post"]
+    }})
     console.log("yeeeeeeeeyyy this is the current post",post)
 
   return (
@@ -96,7 +97,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
            
             <PortableTextEditor body={post.body}/>
            </div>
-
+            <LikeButton slug={post.slug.current}/>
            {/* this is a social media share button  */}
             
            <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem]">
