@@ -5,11 +5,14 @@ import {parseBody} from 'next-sanity/webhook'
 
 export async function POST(req: NextRequest) {
     console.log("heyyyo this is from the hook . this means it is revalidating ")
+    const id  = req.nextUrl.searchParams.get('_id')
+    
   try {
     const {isValidSignature, body} = await parseBody<{_type:any}>(
       req,
       process.env.SANITY_REVALIDATE_SECRET,
     )
+    
 
     if (!isValidSignature) {
       const message = 'Invalid signature'
