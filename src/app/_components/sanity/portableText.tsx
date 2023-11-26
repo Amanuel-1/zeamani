@@ -7,10 +7,13 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism';
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import {getImageDimensions} from '@sanity/asset-utils'
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useState } from 'react';
 
 interface PortableProps {
   body: any;
 }
+
+
 
 
 // Barebones lazy-loaded image component
@@ -19,6 +22,7 @@ const SampleImageComponent = ({value, isInline}:any) => {
   return (
     <img
       
+      className='z-40 hover:hue-rotate-30 transition-all duration-300'
       src={urlForImage(value)
         .width(isInline ? 100 : 800)
         .fit('max')
@@ -40,21 +44,24 @@ const SampleImageComponent = ({value, isInline}:any) => {
 const PortableTextComponents = {
   types: {
     'image':SampleImageComponent,
-    code: (props:any) => (
+    code: (props:any) => {
+      const [isCopied,setIsCopied] = useState(false)
+      return(
      <div className="relative flex flex-col w-full h-full gap-0">
       {/* <div className="relative w-full h-[3rem] bg-yellow-700"></div> */}
-      <CopyToClipboard text={props.value.code} onCopy={()=>console.log("it is working . now it can copy to clipboard")}>
-      <div className="absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer hover:border hover:border-amber-600 transition-all duration-500 z-40"><FaCopy/></div>
-      </CopyToClipboard>
-       <SyntaxHighlighter
-        language={props.value.language}
-        style={atomDark}
-       
-      >
-        {props.value.code}
-    </SyntaxHighlighter>
-     </div>
-    ),
+          <CopyToClipboard text={props.value.code} onCopy={()=>setIsCopied(true)}>
+          <div className={`absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer ${isCopied?'border border-green-600 bg-[rgba(10,255,10,0.18)] hover:border-green-800':''} hover:border hover:border-amber-600 transition-all duration-500 z-40`}><FaCopy/></div>
+          </CopyToClipboard>
+          <SyntaxHighlighter
+            language={props.value.language}
+            style={atomDark}
+          
+          >
+            {props.value.code}
+        </SyntaxHighlighter>
+        </div>
+        )
+      },
     
   },
   marks: {
