@@ -6,16 +6,19 @@ import { FaCopy } from 'react-icons/fa';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism';
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import {getImageDimensions} from '@sanity/asset-utils'
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 interface PortableProps {
   body: any;
 }
+
 
 // Barebones lazy-loaded image component
 const SampleImageComponent = ({value, isInline}:any) => {
   const {width, height} = getImageDimensions(value)
   return (
     <img
+      
       src={urlForImage(value)
         .width(isInline ? 100 : 800)
         .fit('max')
@@ -29,6 +32,7 @@ const SampleImageComponent = ({value, isInline}:any) => {
 
         // Avoid jumping around with aspect-ratio CSS property
         aspectRatio: width / height,
+        cursor:'pointer'
       }}
     />
   )
@@ -37,8 +41,11 @@ const PortableTextComponents = {
   types: {
     'image':SampleImageComponent,
     code: (props:any) => (
-     <div className="relative w-full h-full">
-      <div className="absolute right-1 top-1 text-white font-extrabold p-8"><FaCopy/></div>
+     <div className="relative flex flex-col w-full h-full gap-0">
+      {/* <div className="relative w-full h-[3rem] bg-yellow-700"></div> */}
+      <CopyToClipboard text={props.value.code} onCopy={()=>console.log("it is working . now it can copy to clipboard")}>
+      <div className="absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer hover:border hover:border-amber-600 transition-all duration-500 z-40"><FaCopy/></div>
+      </CopyToClipboard>
        <SyntaxHighlighter
         language={props.value.language}
         style={atomDark}
@@ -62,7 +69,7 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-stone-600">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d35]">{children}</blockquote>,
   }
 };
 
