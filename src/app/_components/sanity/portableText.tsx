@@ -47,10 +47,10 @@ const PortableTextComponents = {
     code: (props:any) => {
       const [isCopied,setIsCopied] = useState(false)
       return(
-     <div className="relative flex flex-col w-full h-full gap-0">
+     <div className="relative flex flex-col w-full h-full gap-0 z-50">
       {/* <div className="relative w-full h-[3rem] bg-yellow-700"></div> */}
           <CopyToClipboard text={props.value.code} onCopy={()=>setIsCopied(true)}>
-          <div className={`absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer ${isCopied?'border border-green-600 bg-[rgba(10,255,10,0.18)] hover:border-green-800':''} hover:border hover:border-amber-600 transition-all duration-500 z-40`}><FaCopy/></div>
+          <div className={`absolute right-3 top-5 text-stone-400 font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer ${isCopied?'border border-green-600 bg-[rgba(10,255,10,0.18)] text-green-600 hover:border-green-800':''} hover:border hover:border-amber-600 transition-all duration-500 z-40`}><FaCopy/></div>
           </CopyToClipboard>
           <SyntaxHighlighter
             language={props.value.language}
@@ -68,7 +68,7 @@ const PortableTextComponents = {
     link: ({ children, value }: any) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
       return (
-        <a href={value.href} rel={rel}>
+        <a className='text-amber-500 underline hover:text-amber-300 z-50' href={value.href} rel={rel}>
           {children}
         </a>
       );
@@ -76,13 +76,15 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d35]">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d35] z-50">{children}</blockquote>,
+    div:({children}:any)=><div className='z-50'>{children}</div>,
+    p:({children}:any)=><h1>{children}</h1>
   }
 };
 
 const PortableTextEditor = ({ body }: PortableProps) => {
   return (
-    <PortableText value={body} components={PortableTextComponents} />
+    <PortableText  value={body} components={PortableTextComponents} />
   );
 };
 

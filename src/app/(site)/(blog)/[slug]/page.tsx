@@ -72,11 +72,14 @@ const PostPage = async ({params:{slug}}:postProps) => {
     }[0]`
 
     const post:SPost  = await client.fetch(query,{slug},{next:{
-      tags:["post"]
+      tags:["post"],
+      revalidate:180000
     }})
     console.log("yeeeeeeeeyyy this is the current post",post)
 
   return (
+    <>
+
     <section className='z-20 flex container px-1 md:px-24 flex-col gap-4  items-center min-h-screen w-full'>
             <div className="image container w-full ">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
@@ -93,21 +96,23 @@ const PostPage = async ({params:{slug}}:postProps) => {
                         {post.author.name}
                     </div>
             </div>
-            <div className="body w-full rounded-br-[20px] ">{post.description}</div>
+            <div className="body w-full rounded-br-[20px] z-50">{post.description}</div>
            
-            <PortableTextEditor body={post.body}/>
+            <PortableTextEditor  body={post.body}/>
            </div>
             <LikeButton slug={post.slug.current}/>
            {/* this is a social media share button  */}
             
-           <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem]">
-                  <ShareBar post={post}/>
-              </div>
+          
 
             {/* this is a social media share button  */}
         
         
     </section>
+    <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem] z-10">
+                <ShareBar post={post}/>
+    </div>
+    </>
   )
 }
 
