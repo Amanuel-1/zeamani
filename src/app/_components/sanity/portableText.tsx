@@ -40,26 +40,6 @@ const SampleImageComponent = ({value, isInline}:any) => {
 const PortableTextComponents = {
   types: {
     'image':SampleImageComponent,
-<<<<<<< HEAD
-    code: (props:any) => {
-      const [isCopied,setIsCopied] = useState(false)
-      return(
-     <div className="relative flex flex-col w-full h-full gap-0 z-50">
-      {/* <div className="relative w-full h-[3rem] bg-yellow-700"></div> */}
-          <CopyToClipboard text={props.value.code} onCopy={()=>setIsCopied(true)}>
-          <div className={`absolute right-3 top-5 text-stone-400 font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer ${isCopied?'border border-green-600 bg-[rgba(10,255,10,0.18)] text-green-600 hover:border-green-800':''} hover:border hover:border-amber-600 transition-all duration-500 z-40`}><FaCopy/></div>
-          </CopyToClipboard>
-          <SyntaxHighlighter
-            language={props.value.language}
-            style={atomDark}
-          
-          >
-            {props.value.code}
-        </SyntaxHighlighter>
-        </div>
-        )
-      },
-=======
     code: (props:any) => (
      <div className="relative flex flex-col w-full h-full gap-0">
       {/* <div className="relative w-full h-[3rem] bg-yellow-700"></div> */}
@@ -75,7 +55,6 @@ const PortableTextComponents = {
     </SyntaxHighlighter>
      </div>
     ),
->>>>>>> parent of a0ff9ce (styled copy-to-clipboard component)
     
   },
   marks: {
