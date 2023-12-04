@@ -83,7 +83,7 @@ export default function Products() {
     )
   }
   
-  function IconCollaboration(props) {
+  function IconCollaboration(props:any) {
     return (
       <svg
         {...props}
@@ -105,7 +105,7 @@ export default function Products() {
   }
   
   
-  function IconCustomization(props) {
+  function IconCustomization(props:any) {
     return (
       <svg
         {...props}
@@ -126,7 +126,7 @@ export default function Products() {
   }
   
   
-  function IconInbox(props) {
+  function IconInbox(props:any) {
     return (
       <svg
         {...props}
@@ -147,7 +147,7 @@ export default function Products() {
   }
   
   
-  function IconIntegration(props) {
+  function IconIntegration(props:any) {
     return (
       <svg
         {...props}
@@ -169,7 +169,7 @@ export default function Products() {
   }
   
   
-  function IconSearch(props) {
+  function IconSearch(props:any) {
     return (
       <svg
         {...props}
@@ -190,7 +190,7 @@ export default function Products() {
   }
   
   
-  function IconSecurity(props) {
+  function IconSecurity(props:any) {
     return (
       <svg
         {...props}
