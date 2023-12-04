@@ -1,3 +1,4 @@
+import metadataInput from 'fireup/app/_components/sanity/metadataInput'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
@@ -5,6 +6,15 @@ export default defineType({
   title: 'Post',
   type: 'document',
   fields: [
+    defineField({
+      title:'metadata',
+      name:'metadata',
+      type:'string',
+      components:{
+        input:metadataInput
+      }
+
+    }),
     defineField(
       {
         name: 'likes',

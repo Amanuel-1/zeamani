@@ -1,4 +1,3 @@
-'use client'
 
 /**
  * This route is responsible for the built-in authoring environment using Sanity Studio.
@@ -11,7 +10,13 @@
 
 import { NextStudio } from 'next-sanity/studio'
 import config from '../../../../sanity.config'
+import { TRPCReactProvider } from 'fireup/trpc/react'
+import { headers } from 'next/headers'
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return (
+    <TRPCReactProvider headers={headers()}>
+        <NextStudio config={config} />
+      </TRPCReactProvider>
+  )
 }
