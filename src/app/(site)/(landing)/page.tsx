@@ -87,7 +87,7 @@ export default async function Home() {
         {
           
         result.length && result.map((post:SPost,i:number )=>(
-          <Tiltable>
+          <Tiltable key={i}>
               <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
                       <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
                       {/* <Image src={urlForImage(post.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
@@ -100,7 +100,7 @@ export default async function Home() {
               <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
               {
                 post.categories && post.categories.map((category:Category)=>(
-                  <div className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
+                  <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
                     {category.title}
                   </div>
                 ))

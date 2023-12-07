@@ -42,7 +42,7 @@ export async function generateMetadata(
     const avatar  = urlForImage(post.author.image).url()
     const website  = getDomain()
     // optionally access and extend (rather than replace) parent metadata
-    const previousImages = (await parent).openGraph?.images || []
+    const previousImages = (await parent).openGraph?.images ?? []
    
     return {
       title: post.title,
