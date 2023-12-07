@@ -16,7 +16,7 @@ const HeroSection = () => {
                 <Image src={Images.waive} alt='waive' objectFit='cover' layout='fill' />
               </div> 
             <h1 className='text-lg md:text-4xl '>
-              Hello!, I'm
+              Hello!, I am
             </h1>
             </div>
             <div/>

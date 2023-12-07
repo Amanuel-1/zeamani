@@ -37,7 +37,7 @@ export async function generateMetadata(
 
 
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || []
+  const previousImages = (await parent).openGraph?.images ?? []
  
   return {
     title: "AmanApps",
@@ -145,7 +145,7 @@ export default async function Home() {
         <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
           {
             result.length && (result.slice(0,5).map((post,i)=>(
-              <div className="relative flex flex-col w-full rounded-[5px] bg-stone-800 p-3 ">
+              <div key={i} className="relative flex flex-col w-full rounded-[5px] bg-stone-800 p-3 ">
 
                 <h1 className="text-sm md:text-xl font-semibold text-left self-start">{post.title}</h1> 
                 <small className="absolute top-0 left-2 text-xs font-light p-1 ">{moment(post._createdAt).fromNow()}</small>

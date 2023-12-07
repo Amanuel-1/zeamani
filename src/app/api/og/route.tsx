@@ -4,7 +4,7 @@ import { ImageResponse } from "@vercel/og";
 import { urlForImage } from "fireup/lib/image";
 
 
-export async function GET(req: NextRequest) {
+export  function GET(req: NextRequest) {
 const params = req.nextUrl.searchParams;
 const author = params.get('author');
 const title = params.get('title');
