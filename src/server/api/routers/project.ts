@@ -5,7 +5,7 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "fireup/server/api/trpc";
-import { BlogPost, Prisma, Tag } from "@prisma/client";
+import { BlogPost, Prisma} from "@prisma/client";
 import { CreateProjectInputSchema } from "fireup/types";
 import { db } from "fireup/server/db";
 
@@ -40,18 +40,12 @@ export const projectRouter = createTRPCRouter({
           creatorId: ctx.session.user.id,
           coverImage: input.coverImage,
           githubLink:input.githubLink,
-          tags:{
-            connectOrCreate:tags 
-          },
+          
           categories:{
               connectOrCreate:categories
           }
 
-          // tag: {
-          //   create: input.tags.map((tagName)=>{
-          //     return { tag: { connect: { name: tagName } } }
-          //   }),
-          // },
+
           
 
 
@@ -66,7 +60,7 @@ export const projectRouter = createTRPCRouter({
   getAll: publicProcedure.query(async() => {
     return await db.project.findMany({
       orderBy: { createdAt: "desc" },
-      include:{tags:true},
+    
       
       
       
