@@ -15,8 +15,7 @@ import { headers } from 'next/headers'
 
 export default function StudioPage() {
   return (
-    <TRPCReactProvider headers={headers()}>
         <NextStudio config={config} />
-      </TRPCReactProvider>
+
   )
 }

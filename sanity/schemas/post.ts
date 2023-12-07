@@ -6,15 +6,7 @@ export default defineType({
   title: 'Post',
   type: 'document',
   fields: [
-    defineField({
-      title:'metadata',
-      name:'metadata',
-      type:'string',
-      components:{
-        input:metadataInput
-      }
-
-    }),
+  
     defineField(
       {
         name: 'likes',
