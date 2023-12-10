@@ -1,3 +1,4 @@
+/*eslint prefer-const: ["error", {"ignoreReadBeforeAssign": true}]*/
 import {z} from "zod"
 
 export const SignGuestBookInputSchema = z.object({

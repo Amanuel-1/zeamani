@@ -89,8 +89,8 @@ export default async function Home() {
         {
           
         result.length && result.map((post:SPost,i:number )=>(
-            <Link href={`/${post.slug.current}`}  >
-              <Card key={i} >
+            <Link key={i} className="justify-stretch" href={`/${post.slug.current}`}  >
+              <Card  >
                 <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
                         <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
                         {/* <Image src={urlForImage(post.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}

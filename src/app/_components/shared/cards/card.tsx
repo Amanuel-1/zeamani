@@ -3,15 +3,15 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { MouseEvent } from "react";
 
 export default function Card({children}:{children:React.ReactNode}) {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   function handleMouseMove({
     currentTarget,
     clientX,
     clientY,
   }: MouseEvent) {
-    let { left, top } = currentTarget.getBoundingClientRect();
+    const { left, top } = currentTarget.getBoundingClientRect();
 
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
@@ -19,7 +19,7 @@ export default function Card({children}:{children:React.ReactNode}) {
 
   return (
     <div
-      className="group relative max-w-md rounded-xl  border bg-[rgba(27,17,9,0.16)] border-white/10 bg-gray-900 overflow-hidden shadow-2xl p-2 pointer"
+      className="group relative max-w-md rounded-xl  border bg-[rgba(27,17,9,0.16)] border-white/10 bg-gray-900 overflow-hidden shadow-2xl p-2 pointer h-full"
       onMouseMove={handleMouseMove}
     >
       <motion.div
