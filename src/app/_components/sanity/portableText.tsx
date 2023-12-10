@@ -7,13 +7,15 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism';
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import {getImageDimensions} from '@sanity/asset-utils'
 import copy ,{ CopyToClipboard } from "react-copy-to-clipboard";
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { cn } from 'fireup/lib/utils';
 
 interface PortableProps {
   body: any;
 }
-
+interface codeComponentProps{
+  props:any
+}
 
 
 
@@ -44,10 +46,8 @@ const SampleImageComponent = ({value, isInline}:any) => {
     />
   )
 }
-const PortableTextComponents = {
-  types: {
-    'image':SampleImageComponent,
-    code: (props:any) => {
+//a component for the code part
+const CodeComponent : React.FC=(props:any) => {
         const [isCopied,setIsCopied] = useState(false)
         const [copiedText,setCopiedText]= useState("")
 
@@ -69,7 +69,14 @@ const PortableTextComponents = {
     </SyntaxHighlighter>
      </div>
     )
-      },
+    }
+
+
+
+const PortableTextComponents = {
+  types: {
+    'image':SampleImageComponent,
+    code: CodeComponent,
     
   },
   marks: {
