@@ -40,6 +40,7 @@ const SampleImageComponent = ({value, isInline}:any) => {
         aspectRatio: width / height,
         cursor:'pointer'
       }}
+      className='hover:brightness-75 transition-all duration-500'
     />
   )
 }
