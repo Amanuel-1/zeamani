@@ -92,11 +92,12 @@ export default async function Home() {
             <Link key={i} className="justify-stretch" href={`/${post.slug.current}`}  >
               <Card  >
                 <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
-                        <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
+                        <Image className="hover:scale-105 " src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
+                        <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125"></div>
                         {/* <Image src={urlForImage(post.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}
                 </div>
                 
-                <Link href={`/${post.slug.current}`}><div className="title w-full text-center">{post.title}</div></Link>
+                <Link href={`/${post.slug.current}`}><div className="title w-full text-center text-2xl font-bold">{post.title}</div></Link>
                 <div className="author text-xs font-light">{post.author.name}</div>
                 <div className="description text-sm font-light py-2 ">{shortener(post.description,50)}</div>
 

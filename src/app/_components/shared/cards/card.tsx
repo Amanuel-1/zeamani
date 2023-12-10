@@ -19,7 +19,7 @@ export default function Card({children}:{children:React.ReactNode}) {
 
   return (
     <div
-      className="group relative max-w-md rounded-xl  border bg-[rgba(27,17,9,0.16)] border-white/10 bg-gray-900 overflow-hidden shadow-2xl p-2 pointer h-full"
+      className="group relative max-w-md rounded-xl  border bg-[rgba(27,17,9,0.24)] border-white/10  overflow-hidden shadow-2xl p-2 pointer h-full"
       onMouseMove={handleMouseMove}
     >
       <motion.div
