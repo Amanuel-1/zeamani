@@ -87,7 +87,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
                 </div>
             </div>
            <div className="content px-10 flex flex-col gap-4 justify-center w-full">
-           <div className="title w-full text-5xl text-center">{post.title + "  "+ post.likes+ " likes"}</div>
+           <h1 className="title w-full text-5xl text-center">{post.title + "  "+ post.likes+ " likes"}</h1>
             <div className="authorInfo flex flex-row gap-4 justify-start items-center">
                     <div className="authorAvatar relative h-12 w-12 p-3 ">
                         <Image  className="rounded-full border-4 border-neutral-700  cursor-pointer hover:border-stone-900 hover:drop-shadow-xl hover:shadow-amber-500 transition-all" src={urlForImage(post.author.image).url()} alt={post.title} objectFit="cover" layout="fill" />
