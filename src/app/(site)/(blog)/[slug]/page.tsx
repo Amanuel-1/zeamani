@@ -80,7 +80,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
   return (
     <>
 
-    <section className='z-20 flex container px-1 md:px-24 flex-col gap-4  items-center min-h-screen w-full'>
+    <section className='z-20 flex container px-1 md:px-36 flex-col gap-4  items-center min-h-screen w-full '>
             <div className="image container w-full ">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
@@ -109,7 +109,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
         
         
     </section>
-    <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem] z-10">
+    <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem] z-10 pointer-events-none">
                 <ShareBar post={post}/>
     </div>
     </>

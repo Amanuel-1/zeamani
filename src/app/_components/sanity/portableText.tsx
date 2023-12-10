@@ -27,9 +27,11 @@ const SampleImageComponent = ({value, isInline}:any) => {
       alt={value.alt || ' '}
       loading="lazy"
       style={{
+        paddingLeft:"2rem",
+        paddingRight:"2rem",
         // Display alongside text if image appears inside a block text span
         display: isInline ? 'inline-block' : 'block',
-
+          
         // Avoid jumping around with aspect-ratio CSS property
         aspectRatio: width / height,
         cursor:'pointer'
@@ -41,7 +43,7 @@ const PortableTextComponents = {
   types: {
     'image':SampleImageComponent,
     code: (props:any) => (
-     <div className="relative flex flex-col w-full h-full gap-0">
+     <div className="relative flex flex-col w-full md:w-[90%] self-center h-full gap-0">
       {/* <div className="relative w-full h-[3rem] bg-yellow-700"></div> */}
       <CopyToClipboard text={props.value.code} onCopy={()=>console.log("it is working . now it can copy to clipboard")}>
       <div className="absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer hover:border hover:border-amber-600 transition-all duration-500 z-40"><FaCopy/></div>

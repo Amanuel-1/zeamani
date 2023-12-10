@@ -39,6 +39,7 @@
     "clsx": "^2.0.0",
     "copy-to-clipboard": "^3.3.3",
     "daisyui": "^3.9.4",
+    "framer-motion": "^10.16.16",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.9.0",
     "lucide-react": "^0.290.0",

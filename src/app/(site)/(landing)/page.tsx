@@ -22,6 +22,8 @@ import { groq } from "next-sanity";
 import { Category, SPost } from "fireup/lib/types";
 import { urlForImage } from "fireup/lib/image";
 import { shortener } from "fireup/lib/utils";
+import Card from "fireup/app/_components/shared/cards/card";
+import Text from "fireup/app/_components/shared/cards/Text";
 
 type Props = {
   params: { id: string }
@@ -83,30 +85,33 @@ export default async function Home() {
     <main className="">
       <HeroSection/>
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
-      <div className="parent grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4  gap-4 p-10 h-full">
+      <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 p-10 h-full">
         {
           
         result.length && result.map((post:SPost,i:number )=>(
-          <Tiltable key={i}>
-              <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
-                      <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
-                      {/* <Image src={urlForImage(post.coverImage).url()} alt="" objectFit='cover' layout='fil' /> */}
-              </div>
-              
-              <Link href={`/${post.slug.current}`}><div className="title w-full text-center">{post.title}</div></Link>
-              <div className="author text-xs font-light">{post.author.name}</div>
-              <div className="description text-sm font-light py-2 ">{shortener(post.description,50)}</div>
+            <Link href={`/${post.slug.current}`}  >
+              <Card key={i} >
+                <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
+                        <Image className="hover:scale-105" src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
+                        {/* <Image src={urlForImage(post.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}
+                </div>
+                
+                <Link href={`/${post.slug.current}`}><div className="title w-full text-center">{post.title}</div></Link>
+                <div className="author text-xs font-light">{post.author.name}</div>
+                <div className="description text-sm font-light py-2 ">{shortener(post.description,50)}</div>
 
-              <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
-              {
-                post.categories && post.categories.map((category:Category)=>(
-                  <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
-                    {category.title}
-                  </div>
-                ))
-              }
-              </div>
-          </Tiltable>
+                <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
+                {
+                  post.categories && post.categories.map((category:Category)=>(
+                    <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
+                      {category.title}
+                    </div>
+                  ))
+                }
+                </div>
+            </Card>
+            </Link>
+
         ))
 
         }
@@ -150,7 +155,7 @@ export default async function Home() {
                 <h1 className="text-sm md:text-xl font-semibold text-left self-start">{post.title}</h1> 
                 <small className="absolute top-0 left-2 text-xs font-light p-1 ">{moment(post._createdAt).fromNow()}</small>
                 <p className="description">{shortener(post.description,100)}</p>
-                  
+                  <Text/>
               </div>
               
             )
