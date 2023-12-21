@@ -59,9 +59,7 @@ export const projectRouter = createTRPCRouter({
 
   getAll: publicProcedure.query(async() => {
     return await db.project.findMany({
-      orderBy: { createdAt: "desc" },
     
-      
       
       
     });

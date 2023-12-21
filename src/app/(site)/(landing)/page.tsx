@@ -64,7 +64,7 @@ export async function generateMetadata(
 
 export default async function Home() {
   const hello = await api.post.hello.query({ text: "from tRPC" });
-  const projects  = await api.project.getAll.query()
+  // const projects  = await api.project.getAll.query()
   const session = await getServerAuthSession();
 
   const query = groq`*[_type == "post"] {
