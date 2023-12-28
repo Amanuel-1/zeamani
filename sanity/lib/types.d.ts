@@ -19,6 +19,17 @@ interface SPost extends Base {
   likes: number,
   views: number
 }
+interface SProject extends Base {
+  author: Author,
+  body: Block[],
+  categories: Category[],
+  mainImage: Image,
+  slug: Slug,
+  title: string,
+  description: string,
+  likes: number,
+  views: number
+}
 
 interface Author extends Base {
   bio: Block[],

@@ -19,7 +19,7 @@ import { Me } from "fireup/lib/constants";
 import { Metadata, ResolvingMetadata } from "next";
 import { client } from "fireup/lib/client";
 import { groq } from "next-sanity";
-import { Category, SPost } from "fireup/lib/types";
+import { Category, SPost, SProject } from "fireup/lib/types";
 import { urlForImage } from "fireup/lib/image";
 import { shortener } from "fireup/lib/utils";
 import Card from "fireup/app/_components/shared/cards/card";
@@ -67,13 +67,13 @@ export default async function Home() {
   // const projects  = await api.project.getAll.query()
   const session = await getServerAuthSession();
 
-  const query = groq`*[_type == "post"] {
+  const query = groq`*[_type == "project"] {
           ...,
           author->,
           categories[]->
         }
         `
-  const result:SPost[]  = await client.fetch(query,{next:{
+  const result:SProject[]  = await client.fetch(query,{next:{
     tags:["post"]
   }})
   
@@ -90,26 +90,26 @@ export default async function Home() {
           
         result.length && result.map((post:SPost,i:number )=>(
             <Link key={i} className="justify-stretch" href={`/${post.slug.current}`}  >
-              <Card  >
-                <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
-                        <Image className="hover:scale-105 " src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
-                        <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125"></div>
-                        {/* <Image src={urlForImage(post.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}
-                </div>
-                
-                <Link href={`/${post.slug.current}`}><div className="title w-full text-center text-2xl font-bold">{post.title}</div></Link>
-                <div className="author text-xs font-light">{post.author.name}</div>
-                <div className="description text-sm font-light py-2 ">{shortener(post.description,50)}</div>
+              <Card >
+                  <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
+                          <Image className="hover:scale-105 " src={urlForImage(post.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
+                          <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125 group-hover:brightness-100"></div>
+                          {/* <Image src={urlForImage(post.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}
+                  </div>
+                  
+                  <Link href={`/${post.slug.current}`}><div className="title w-full text-center text-2xl font-bold">{post.title}</div></Link>
+                  <div className="author text-xs font-light">{post.author.name}</div>
+                  <div className="description text-sm font-light py-2 ">{shortener(post.description,50)}</div>
 
-                <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
-                {
-                  post.categories && post.categories.map((category:Category)=>(
-                    <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
-                      {category.title}
-                    </div>
-                  ))
-                }
-                </div>
+                  <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
+                  {
+                    post.categories && post.categories.map((category:Category)=>(
+                      <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
+                        {category.title}
+                      </div>
+                    ))
+                  }
+                  </div>
             </Card>
             </Link>
 
@@ -151,7 +151,7 @@ export default async function Home() {
         <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
           {
             result.length && (result.slice(0,5).map((post,i)=>(
-              <div key={i} className="relative flex flex-col w-full rounded-[5px] bg-stone-800 p-3 ">
+              <div key={i} className="relative flex flex-row-reverse w-full rounded-[5px] bg-stone-800 p-3 ">
 
                 <h1 className="text-sm md:text-xl font-semibold text-left self-start">{post.title}</h1> 
                 <small className="absolute top-0 left-2 text-xs font-light p-1 ">{moment(post._createdAt).fromNow()}</small>

@@ -80,14 +80,14 @@ const PostPage = async ({params:{slug}}:postProps) => {
   return (
     <>
 
-    <section className='z-20 flex container px-1 md:px-36 flex-col gap-4  items-center min-h-screen w-full '>
+    <section className='z-20 flex container px-1 md:px-12 lg:px-36 flex-col gap-4  items-center min-h-screen w-full '>
             <div className="image container w-full ">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
                 </div>
             </div>
            <div className="content px-10 flex flex-col gap-4 justify-center w-full">
-           <h1 className="title w-full text-5xl text-center">{post.title + "  "+ post.likes+ " likes"}</h1>
+           <h1 className="title w-full  text-center">{post.title + "  "+ post.likes+ " likes"}</h1>
             <div className="authorInfo flex flex-row gap-4 justify-start items-center">
                     <div className="authorAvatar relative h-12 w-12 p-3 ">
                         <Image  className="rounded-full border-4 border-neutral-700  cursor-pointer hover:border-stone-900 hover:drop-shadow-xl hover:shadow-amber-500 transition-all" src={urlForImage(post.author.image).url()} alt={post.title} objectFit="cover" layout="fill" />
