@@ -110,7 +110,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
         
     </section>
     <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem] z-10 pointer-events-none">
-                <ShareBar post={post}/>
+                <ShareBar content={post}/>
     </div>
     </>
   )
