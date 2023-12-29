@@ -30,7 +30,7 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
   <div className="modal-box w-11/12 max-w-5xl bg-black">
 <>
 
-<section className=' z-20 flex container px-1 md:px-12 lg:px-36 flex-col gap-4  items-center min-h-screen w-full '>
+<section className=' z-20 flex container px-1 md:px-12 lg:px-24 flex-col gap-4  items-center min-h-screen w-full '>
         <div className="image container w-full ">
             <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                 <Image src={urlForImage(project.mainImage).url()} alt={project.title} objectFit="cover" layout="fill" />
