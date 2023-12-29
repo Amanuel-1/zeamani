@@ -25,18 +25,18 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
         }
         }}>
         {children}
-        </div>
-        <dialog id="my_modal_4" className="modal">
-  <div className="modal-box w-11/12 max-w-5xl bg-black">
+        </div> 
+        <dialog id="my_modal_4" className="modal backdrop-blur-sm bg-[rgba(20,15,7,0.5)] pointer-events-none">
+  <div className="modal-box w-11/12 max-w-5xl bg-black rounded-[20px] overflow-y-scroll cursor-auto">
 <>
 
-<section className=' z-20 flex container px-1 md:px-12 lg:px-24 flex-col gap-4  items-center min-h-screen w-full '>
+<section className=' z-20 flex container px-1 md:px-12 lg:px-20 flex-col gap-4  items-center min-h-screen w-full pointer-events-none  cursor-auto'>
         <div className="image container w-full ">
             <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                 <Image src={urlForImage(project.mainImage).url()} alt={project.title} objectFit="cover" layout="fill" />
             </div>
         </div>
-       <div className="content px-10 flex flex-col gap-4 justify-center w-full">
+       <div className="content px-10 flex flex-col gap-4 justify-center w-full pointer-events-auto">
        <h1 className="title w-full  text-center">{project.title + "  "+ project.likes+ " likes"}</h1>
         <div className="authorInfo flex flex-row gap-4 justify-start items-center">
                 <div className="authorAvatar relative h-12 w-12 p-3 ">
@@ -46,7 +46,7 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
                     {project.author.name}
                 </div>
         </div>
-        <div className="body w-full rounded-br-[20px] z-50">{project.description}</div>
+        <div className="body cursor-not-allowed w-full rounded-[20px] z-50">{project.description}</div>
        
         <PortableTextEditor  body={project.body}/>
        </div>
@@ -60,7 +60,7 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
     
 </section>
 <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem] z-10 pointer-events-none">
-            <ShareBar post={project}/>
+            <ShareBar content={project}/>
 </div>
 </>
     <div className="modal-action">
