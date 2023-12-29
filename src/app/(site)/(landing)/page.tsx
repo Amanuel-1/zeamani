@@ -91,8 +91,7 @@ export default async function Home() {
         result.length && result.map((project:SProject,i:number )=>{
           return (
             // <Link key={i} className="justify-stretch" href={`/${project.slug.current}`}>
-              <Card>
-               
+              <Card key={i}>               
                 <ProjectDialog project={project}>
                 <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
                   <Image className="hover:scale-105 " src={urlForImage(project.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
