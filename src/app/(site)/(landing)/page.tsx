@@ -25,6 +25,7 @@ import Card from "fireup/app/_components/shared/cards/card";
 import Text from "fireup/app/_components/shared/cards/Text";
 import projectdialog from "fireup/app/_components/landing/projectdialog";
 import ProjectDialog from "fireup/app/_components/landing/projectdialog";
+import PostCard from "fireup/app/_components/shared/cards/PostCard";
 
 type Props = {
   params: { id: string }
@@ -68,14 +69,24 @@ export default async function Home() {
   // const projects  = await api.project.getAll.query()
   const session = await getServerAuthSession();
 
-  const query = groq`*[_type == "project"] {
+  const projectQuery = groq`*[_type == "project"] {
           ...,
           author->,
           categories[]->
-        }
+        }  
         `
-  const result:SProject[]  = await client.fetch(query,{next:{
+  const postQuery = groq`*[_type == "post"] {
+    ...,
+    author->,
+    categories[]->
+  }  
+  `
+  const result:SProject[]  = await client.fetch(projectQuery,{next:{
     tags:["project"]
+  }})
+
+  const posts:SPost[]  = await client.fetch(postQuery,{next:{
+    tags:["post"]
   }})
   
 
@@ -84,6 +95,7 @@ export default async function Home() {
   return (
     <main className="">
       <HeroSection/>
+
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
       <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 p-10 h-full">
         {
@@ -91,7 +103,7 @@ export default async function Home() {
         result.length && result.map((project:SProject,i:number )=>{
           return (
             // <Link key={i} className="justify-stretch" href={`/${project.slug.current}`}>
-              <Card key={i}>               
+              <Card cover={""} key={i}>               
                 <ProjectDialog project={project}>
                 <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
                   <Image className="hover:scale-105 " src={urlForImage(project.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
@@ -123,35 +135,15 @@ export default async function Home() {
    
 
       <h1 className="text-4xl font-extrabold px-10">Behold ! the recent <b className="text-amber-700">projects</b></h1>
-        {/* <div className="grid grid-cols-3 p-10 gap-4 ">
         {
-          projects && projects.map((proj,ind)=>(
-            <div className="flex flex-col gap-4 justify-center items-center  w-full bg-stone-800 text-stone-400">
-              {
-                <>
-                              <div className="image relative w-full p-2 h-[10rem] lg:h-[12rem] xl:h-[16rem] overflow-hidden transition-all duration-700 ">
-                      <Image className="hover:scale-105" src={proj.coverImage as string} alt={"Image Alt"} objectFit="cover" layout="fill" />
-                      <Image src={urlForImage(proj.coverImage).url()} alt="" objectFit='cover' layout='fil' />
-              </div>
-              <div key={ind}><h1 className="text-2xl font-extrabold">{proj.title}</h1>
-                <p className="">{shortener(proj.description,200)}</p>
-                <ul className="flex flex-wrap gap-2 justify-center items-center w-ful">
-                  {
-                  proj.tags && proj.tags.map((singleTag,i)=>(
-                    <li key={i} className="px-2 py-1 bg-stone-700 boder border-stone-600 text-sm font-semibold">{singleTag.name}</li>
-                  ))
-                } 
-                </ul>
-               
-                </div>
-              </>
-                
-              }
-
-            </div>
+         <div className="grid grid-cols-2 px-24 py-6 gap-4 ">
+        {
+          posts && posts.map((post,ind)=>(
+            <PostCard  key={ind} post={post}/>
           ))
         }
-        </div> */}
+        </div> 
+        }
 
         <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
           {
@@ -170,6 +162,7 @@ export default async function Home() {
             ))
           }
         </div>
+
 
     </main>
   );

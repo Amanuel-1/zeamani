@@ -7,7 +7,7 @@ await import("./src/env.mjs");
 /** @type {import("next").NextConfig} */
 const config = {
     images:{
-        domains:["avatars.githubusercontent.com","cdn.sanity.io","user-images.githubusercontent.com"],
+        domains:["avatars.githubusercontent.com","cdn.sanity.io","user-images.githubusercontent.com","www.google.com","images.unsplash.com"],
     }
 };
 
