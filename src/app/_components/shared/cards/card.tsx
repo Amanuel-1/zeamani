@@ -22,7 +22,7 @@ export default function Card({children,cover}:{children:React.ReactNode,cover:st
     <div className="relative border-none overflow-hidden  rounded-xl">
       {cover.length>4 &&(
       <>
-                          <Image className="brightness-50" src={cover} alt={"post image"} objectFit="cover" layout="fill" />
+      <Image className="brightness-50 group-hover:brightness-100" src={cover} alt={"post image"} objectFit="cover" layout="fill" />
       <div className="absolute inset-0 pointer-events-auto w-full h-full bg-gradient-to-r from-[rgb(17,17,17)] via-[rgba(28,27,21,0.88)] to-transparent"></div>
       </>
       )}

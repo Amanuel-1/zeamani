@@ -36,20 +36,7 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
                 <Image src={urlForImage(project.mainImage).url()} alt={project.title} objectFit="cover" layout="fill" />
             </div>
         </div>
-       <div className="content px-10 flex flex-col gap-4 justify-center w-full pointer-events-auto">
-       <h1 className="title w-full  text-center">{project.title + "  "+ project.likes+ " likes"}</h1>
-        <div className="authorInfo flex flex-row gap-4 justify-start items-center">
-                <div className="authorAvatar relative h-12 w-12 p-3 ">
-                    <Image  className="rounded-full border-4 border-neutral-700  cursor-pointer hover:border-stone-900 hover:drop-shadow-xl hover:shadow-amber-500 transition-all" src={urlForImage(project.author.image).url()} alt={project.title} objectFit="cover" layout="fill" />
-                </div>
-                <div className="authorName font-semibold cursor-pointer text-stone-500 hover:text-stone-50 transition-all ">
-                    {project.author.name}
-                </div>
-        </div>
-        <div className="body cursor-not-allowed w-full rounded-[20px] z-50">{project.description}</div>
-       
-        <PortableTextEditor  body={project.body}/>
-       </div>
+       <div className="w-full pointer-events-auto"></div>
         <LikeButton slug={project.slug.current}/>
        {/* this is a social media share button  */}
         

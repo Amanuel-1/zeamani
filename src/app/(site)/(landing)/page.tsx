@@ -64,6 +64,8 @@ export async function generateMetadata(
   }     
 }
 
+
+
 export default async function Home() {
 
   // const projects  = await api.project.getAll.query()
@@ -75,7 +77,7 @@ export default async function Home() {
           categories[]->
         }  
         `
-  const postQuery = groq`*[_type == "post"] {
+  const postQuery = groq`*[_type == "post"]| order(_createdAt desc, _updatedAt desc)  {
     ...,
     author->,
     categories[]->
@@ -93,10 +95,11 @@ export default async function Home() {
   // console.log("this is the image url for the first post",urlForImage(post1.).url())
 
   return (
-    <main className="">
+    <main className="flex flex-col justify-center items-center">
       <HeroSection/>
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
+      <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">projects</b></h1>
       <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 p-10 h-full">
         {
           
@@ -134,18 +137,19 @@ export default async function Home() {
       </div>
    
 
-      <h1 className="text-4xl font-extrabold px-10">Behold ! the recent <b className="text-amber-700">projects</b></h1>
+      <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
         {
-         <div className="grid grid-cols-2 px-24 py-6 gap-4 ">
+         <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-24 py-6 gap-4 ">
         {
-          posts && posts.map((post,ind)=>(
+          posts && posts.slice(0,4).map((post,ind)=>(
             <PostCard  key={ind} post={post}/>
           ))
         }
+        <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-400 text-xl ">see all</Link>
         </div> 
         }
 
-        <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
+        {/* <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
           {
             result.length && (result.slice(0,5).map((project,i)=>(
               <div key={i} className="relative flex flex-row-reverse w-full rounded-[5px] bg-stone-800 p-3 ">
@@ -157,11 +161,11 @@ export default async function Home() {
               </div>
               
             )
-              
+                         
             
             ))
-          }
-        </div>
+            }
+        </div> */}
 
 
     </main>
