@@ -38,7 +38,7 @@ export default function Card({children,cover}:{children:React.ReactNode,cover:st
           background: useMotionTemplate`
             radial-gradient(
               520px circle at ${mouseX}px ${mouseY}px,
-              rgba(255,149,55,0.13),
+              rgba(255,149,55,0.09),
               transparent 80%
             )
           `,

@@ -95,7 +95,7 @@ export default async function Home() {
   // console.log("this is the image url for the first post",urlForImage(post1.).url())
 
   return (
-    <main className="flex flex-col justify-center items-center">
+    <main className="">
       <HeroSection/>
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
@@ -149,7 +149,7 @@ export default async function Home() {
         </div> 
         }
 
-        {/* <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
+        <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
           {
             result.length && (result.slice(0,5).map((project,i)=>(
               <div key={i} className="relative flex flex-row-reverse w-full rounded-[5px] bg-stone-800 p-3 ">
@@ -165,7 +165,7 @@ export default async function Home() {
             
             ))
             }
-        </div> */}
+        </div>
 
 
     </main>

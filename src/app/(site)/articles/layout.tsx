@@ -21,9 +21,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-export async function generateMetadata(
-  {}: Props,
-  parent: ResolvingMetadata
+export async function generateMetadata(parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
 
