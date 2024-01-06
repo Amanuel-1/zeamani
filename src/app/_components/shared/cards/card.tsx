@@ -1,12 +1,12 @@
 'use client'
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import { MouseEvent } from "react";
+import { motion, useMotionTemplate, useMotionValue, useScroll } from "framer-motion";
+import { MouseEvent, useRef } from "react";
 import Image from "next/image";
 
 export default function Card({children,cover}:{children:React.ReactNode,cover:string}) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
+  const ref  = useRef<HTMLDivElement>(null)
   function handleMouseMove({
     currentTarget,
     clientX,
@@ -17,9 +17,20 @@ export default function Card({children,cover}:{children:React.ReactNode,cover:st
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
+  const {scrollYProgress}= useScroll({
+    target:ref,
+    offset:["0 1","1.33 1"]
+  })
 
   return (
-    <div className="relative border-none overflow-hidden  rounded-xl">
+    <motion.div ref={ref}
+      style={
+        {
+          backgroundPositionX:scrollYProgress,
+          opacity:scrollYProgress
+        }
+      }
+      className="relative border-none overflow-hidden  rounded-xl">
       {cover.length>4 &&(
       <>
       <Image className="brightness-50 group-hover:brightness-100" src={cover} alt={"post image"} objectFit="cover" layout="fill" />
@@ -49,6 +60,6 @@ export default function Card({children,cover}:{children:React.ReactNode,cover:st
         )
       }
     </div>
-    </div>
+    </motion.div>
   );
 }
