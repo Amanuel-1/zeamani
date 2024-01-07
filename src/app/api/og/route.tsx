@@ -55,19 +55,17 @@ return new ImageResponse(
         right: 0,
         width: '190%',
         height: '100%',
-        borderRadius: '50%',
-        borderBottomLeftRadius:"50%",
-        background: 'linear-gradient(to right top, #C45621, rgba(190, 90, 30, 0.5))',
-        transform: 'skewY(-20deg)',
+
+        background: 'linear-gradient(to right top, #170c08, rgba(5, 0, 0, .8))',
         backdropFilter: 'blur(60px)',
-        rotate:"30deg"
+
         }}
     ></div>
 
     <div
         style={{
         position: 'absolute',
-        top: '1rem',
+        top: '8rem',
         left: '1rem',
         display: 'flex',
         flexDirection: 'column',
@@ -108,7 +106,7 @@ return new ImageResponse(
             <div
             style={{
                 position: 'absolute',
-                bottom: '8rem',
+                bottom: '4rem',
                 left: '20%',
                 transform: 'translateX(-50%)',
                 display: 'flex',
