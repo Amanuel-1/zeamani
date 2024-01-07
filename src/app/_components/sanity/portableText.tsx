@@ -9,6 +9,7 @@ import {getImageDimensions} from '@sanity/asset-utils'
 import copy ,{ CopyToClipboard } from "react-copy-to-clipboard";
 import React, { useState } from 'react';
 import { cn } from 'fireup/lib/utils';
+import YouTubePlayer from 'react-player/youtube';
 
 interface PortableProps {
   body: any;
@@ -72,11 +73,24 @@ const CodeComponent : React.FC=(props:any) => {
     }
 
 
+    const YoutubeBlock:React.FC=(props: any)=>{
+      
+      
+
+      return (
+        <div className="w-full flex justify-center">
+          <YouTubePlayer  controls={true} url={props.value.url} />
+        </div>
+      )
+    }
+
 
 const PortableTextComponents = {
   types: {
     'image':SampleImageComponent,
     code: CodeComponent,
+    youtube:YoutubeBlock
+
     
   },
   marks: {

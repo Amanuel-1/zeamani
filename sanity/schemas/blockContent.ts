@@ -76,6 +76,9 @@ export default defineType({
         }
       ]
     }),
+    defineArrayMember({
+      type:"youtube"
+    }),
     {
       type:'code'
     },
