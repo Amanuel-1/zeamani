@@ -22,7 +22,7 @@ const Articles = async() => {
     <section className='min-h-screen  '>
         <div className=" w-full flex justify-center bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient py-10">Amani Writes,</div>
         <div className="px-4 md:px-24">
-          <Featured key={posts[0]?._id} post={posts[0] as SPost}/>
+          <Featured key={posts[0]?._id} post={posts[7] as SPost}/>
         </div>
 
         <div className="flex flex-wrap gap-4 px-0 w-full justify-center py-10">

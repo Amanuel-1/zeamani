@@ -11,7 +11,7 @@
     font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont;
 }
 .bg-body {
-    background-color: var(--background);
+    
 }
 .text-bright {
     color: var(--text-color-bright);
@@ -107,7 +107,7 @@
         @apply text-body-text;
     }
     body {
-        @apply bg-body text-bright;
+        @apply bg-stone-950 text-bright;
     }
     td,
     th {

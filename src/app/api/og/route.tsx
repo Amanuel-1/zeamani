@@ -53,12 +53,14 @@ return new ImageResponse(
         position: 'absolute',
         top: 0,
         right: 0,
-        width: '100%',
+        width: '190%',
         height: '100%',
-        borderTopLeftRadius: '50%',
-        background: 'linear-gradient(to right top, #C05621, rgba(30, 30, 30, 0.5))',
-        transform: 'skewY(25deg)',
-        backdropFilter: 'blur(30px)',
+        borderRadius: '50%',
+        borderBottomLeftRadius:"50%",
+        background: 'linear-gradient(to right top, #C45621, rgba(190, 90, 30, 0.5))',
+        transform: 'skewY(-20deg)',
+        backdropFilter: 'blur(60px)',
+        rotate:"30deg"
         }}
     ></div>
 
@@ -106,8 +108,8 @@ return new ImageResponse(
             <div
             style={{
                 position: 'absolute',
-                bottom: '2rem',
-                left: '60%',
+                bottom: '8rem',
+                left: '20%',
                 transform: 'translateX(-50%)',
                 display: 'flex',
                 alignItems: 'center',
