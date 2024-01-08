@@ -9,4 +9,5 @@ import { youtube } from './schemas/youtube'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [youtube,post, author, category,project, blockContent],
+
 }

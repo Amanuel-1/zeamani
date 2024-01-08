@@ -9,7 +9,7 @@ import moment from 'moment';
 
 const PostCard = ({post,className}:{post:SPost,className?:string}) => {
   return (
-<Link className='' href={`${getDomain()}/${post.slug.current}`}>
+<Link className='' href={`${getDomain()}/articles/${post.slug.current}`}>
 <Card cover={urlForImage(post.mainImage).url()}>
       <div className={cn("flex flex-col gap-4 p-2 justify-stretch items-center  w-full h-[10rem] bg-transparent text-stone-400",className)}>
               {

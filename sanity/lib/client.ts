@@ -51,8 +51,8 @@ export async function sanityFetch<QueryResponse>({
   return client.fetch<QueryResponse>(query, params, {
     cache: 'force-cache',
     next: {
-      //revalidate: 30, // for simple, time-based revalidation
-      tags, // for tag-based revalidation
+      revalidate: 0.5*60, // for simple, time-based revalidation
+      // tags, // for tag-based revalidation
     },
   })
 }
