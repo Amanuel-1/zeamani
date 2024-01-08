@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "fireup/trpc/react";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={`font-sans ${inter.variable} overflow-x-hidden`}>
         <TRPCReactProvider headers={headers()}>
         <Toaster/>
+        <Analytics/>
         {children}
         </TRPCReactProvider>
       </body>

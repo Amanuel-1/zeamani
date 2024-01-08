@@ -14,7 +14,7 @@ import { SessionProvider } from "next-auth/react";
 import SessionProvide from "fireup/app/_components/auth/sessionProvide";
 import Image from "next/image";
 import { Images } from "fireup/app/resources";
-
+import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -34,6 +34,7 @@ export default function RootLayout({
          <SessionProvide>
          <Toaster/>
          <Navbar/>
+         <Analytics/>
 
           {children}
           <Footer/>

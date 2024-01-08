@@ -11,6 +11,7 @@ import Navbar from "fireup/app/_components/shared/navbar/Navbar";
 import { opensans, pacifico, roboto } from "fireup/styles/Fonts";
 import { SessionProvider } from "next-auth/react";
 import SessionProvide from "fireup/app/_components/auth/sessionProvide";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
           
          <SessionProvide>
          <Navbar/>
+         <Analytics/>
           {children}
           <Footer/>
          </SessionProvide>
