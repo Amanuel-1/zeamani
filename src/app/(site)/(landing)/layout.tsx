@@ -2,6 +2,7 @@
 import "fireup/styles/globals.css";
 import { Toaster } from 'react-hot-toast';
 
+
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 
@@ -13,7 +14,9 @@ import { SessionProvider } from "next-auth/react";
 import SessionProvide from "fireup/app/_components/auth/sessionProvide";
 import Image from "next/image";
 import { Images } from "fireup/app/resources";
+//analytics
 import { Analytics } from '@vercel/analytics/react';
+import Loglib from "@loglib/tracker/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,7 +47,11 @@ export default function RootLayout({
           {children}
           <Footer/>
          </SessionProvide>
-          
+         <Loglib
+                config={{
+                    id: "amanapps.dev",
+                }}
+            />
           <Analytics/>
           </TRPCReactProvider>
 

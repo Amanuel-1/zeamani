@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
-import Loglib from '@loglib/tracker'
+import Loglib from '@loglib/tracker/react'
 
 import { TRPCReactProvider } from "fireup/trpc/react";
 import Footer from "fireup/app/_components/shared/footer/Footer";
@@ -34,6 +34,10 @@ export default function RootLayout({
          <SessionProvide>
          <Toaster/>
          <Navbar/>
+         <Loglib
+            config={{
+                id: "amanapps.dev",
+            }}/>
          <Analytics/>
 
           {children}

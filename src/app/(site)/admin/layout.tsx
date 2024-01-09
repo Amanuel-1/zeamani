@@ -14,6 +14,8 @@ import SessionProvide from "fireup/app/_components/auth/sessionProvide";
 import Image from "next/image";
 import { Images } from "fireup/app/resources";
 import { getServerAuthSession } from "fireup/server/auth";
+//analytics
+import Loglib from "@loglib/tracker/react";
 import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({
   subsets: ["latin"],
@@ -47,6 +49,11 @@ export default async function RootLayout({
          <SessionProvide>
          <Toaster toastOptions={{position:'top-left'}}/>
          <Navbar/>
+        <Loglib
+          config={{
+              id: "amanapps.dev",
+          }}/>
+
          <Analytics/>
           {(user?.email==process.env.ADMIN_EMAIL)?(
             children
