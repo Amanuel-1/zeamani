@@ -71,7 +71,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
         categories[]->
     }[0]`
 
-    const post:SPost  = await sanityFetch({query:query,tags:["post","articles"]})
+    const post:SPost  = await sanityFetch({query:query,params:{slug},tags:["post","articles"]})
     console.log("yeeeeeeeeyyy this is the current post",post)
 
   return (
