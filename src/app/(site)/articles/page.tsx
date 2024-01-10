@@ -15,7 +15,7 @@ const Articles = async() => {
       }  
       `
     const posts:SPost[]  = await client.fetch(postQuery,{next:{
-        tags:["post"]
+        tags:["post","article"]
     }})
 
   return (

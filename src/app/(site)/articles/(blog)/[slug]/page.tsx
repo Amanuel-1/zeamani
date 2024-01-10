@@ -72,7 +72,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
     }[0]`
 
     const post:SPost  = await client.fetch(query,{slug},{next:{
-      tags:["post"],
+      tags:["post","articles"],
       revalidate:180000
     }})
     console.log("yeeeeeeeeyyy this is the current post",post)

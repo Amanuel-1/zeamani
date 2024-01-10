@@ -26,14 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body  className={"font-extralight overflow-x-hidden"}>
+
         <TRPCReactProvider headers={headers()}>
         {/* <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div> */}
          
          <SessionProvide>
          <Toaster/>
-         <Navbar/>
+
          <Loglib
             config={{
                 id: "amanapps.dev",
@@ -41,13 +40,12 @@ export default function RootLayout({
          <Analytics/>
 
           {children}
-          <Footer/>
+
          </SessionProvide>
           
           
           </TRPCReactProvider>
         
-      </body>
-    </html>
+
   );
 }

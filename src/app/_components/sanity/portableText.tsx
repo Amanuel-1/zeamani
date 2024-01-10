@@ -8,9 +8,9 @@ import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import {getImageDimensions} from '@sanity/asset-utils'
 import copy ,{ CopyToClipboard } from "react-copy-to-clipboard";
 import React, { useState } from 'react';
-import { cn } from 'fireup/lib/utils';
+import { cn, extractTweetId } from 'fireup/lib/utils';
 import YouTubePlayer from 'react-player/youtube';
-
+import { Tweet } from 'react-tweet'
 interface PortableProps {
   body: any;
 }
@@ -84,12 +84,22 @@ const CodeComponent : React.FC=(props:any) => {
       )
     }
 
+    
+    const TwitterBlock:React.FC=(props:any)=>{
+      return (
+        <div data-theme="dark" className='flex w-full  bg-transparent justify-center'>
+          <Tweet  id={extractTweetId(props.value.url) as string} />
+        </div>
+      )
+    }
+
 
 const PortableTextComponents = {
   types: {
     'image':SampleImageComponent,
     code: CodeComponent,
-    youtube:YoutubeBlock
+    youtube:YoutubeBlock,
+    twitter:TwitterBlock
 
     
   },
