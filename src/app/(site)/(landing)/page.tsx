@@ -89,6 +89,7 @@ export default async function Home() {
 
   const posts:SPost[]  = await client.fetch(postQuery,{next:{
     tags:["post"]
+    
   }})
   
 

@@ -1,6 +1,6 @@
 
 import PortableTextEditor from 'fireup/app/_components/sanity/portableText'
-import { client } from 'fireup/lib/client'
+import { client, sanityFetch } from 'fireup/lib/client'
 import { urlForImage } from 'fireup/lib/image'
 import { SPost, Slug } from 'fireup/lib/types'
 import { groq } from 'next-sanity'
@@ -71,10 +71,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
         categories[]->
     }[0]`
 
-    const post:SPost  = await client.fetch(query,{slug},{next:{
-      tags:["post","articles"],
-      revalidate:180000
-    }})
+    const post:SPost  = await sanityFetch({query:query,tags:["post","articles"]})
     console.log("yeeeeeeeeyyy this is the current post",post)
 
   return (

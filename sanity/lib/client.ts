@@ -49,7 +49,7 @@ export async function sanityFetch<QueryResponse>({
   tags: string[]
 }): Promise<QueryResponse> {
   return client.fetch<QueryResponse>(query, params, {
-    cache: 'force-cache',
+    cache: 'no-store',
     next: {
       revalidate: 0.5*60, // for simple, time-based revalidation
       // tags, // for tag-based revalidation

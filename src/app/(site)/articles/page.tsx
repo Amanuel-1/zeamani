@@ -1,6 +1,6 @@
 import Featured from 'fireup/app/_components/shared/cards/Featured'
 import PostCard from 'fireup/app/_components/shared/cards/PostCard'
-import { client } from 'fireup/lib/client'
+import { client, sanityFetch } from 'fireup/lib/client'
 import { SPost } from 'fireup/lib/types'
 import post from 'fireup/schemas/post'
 import { groq } from 'next-sanity'
@@ -14,9 +14,7 @@ const Articles = async() => {
         categories[]->
       }  
       `
-    const posts:SPost[]  = await client.fetch(postQuery,{next:{
-        tags:["post","article"]
-    }})
+    const posts:SPost[]  = await sanityFetch({query:postQuery,tags:["post","articles"]})
 
   return (
     <section className='min-h-screen  '>
