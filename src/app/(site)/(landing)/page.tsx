@@ -26,6 +26,7 @@ import Text from "fireup/app/_components/shared/cards/Text";
 import projectdialog from "fireup/app/_components/landing/projectdialog";
 import ProjectDialog from "fireup/app/_components/landing/projectdialog";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
+import Timeline from "fireup/app/_components/landing/timeline";
 
 type Props = {
   params: { id: string }
@@ -149,7 +150,7 @@ export default async function Home() {
         <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-400 text-xl ">see all</Link>
         </div> 
         }
-
+        <Timeline/>
         <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
           {
             result.length && (result.slice(0,5).map((project,i)=>(
