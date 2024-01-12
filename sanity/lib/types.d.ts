@@ -17,6 +17,7 @@ interface SPost extends Base {
   title: string,
   description: string,
   likes: number,
+  dislikes:number,
   views: number
 }
 interface SProject extends Base {

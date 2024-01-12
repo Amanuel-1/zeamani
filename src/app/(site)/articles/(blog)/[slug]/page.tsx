@@ -97,12 +97,13 @@ const PostPage = async ({params:{slug}}:postProps) => {
            
             <PortableTextEditor  body={post.body}/>
            </div>
-            <LikeButton slug={post.slug.current}/>
-           {/* this is a social media share button  */}
             
-          
-
-            {/* this is a social media share button  */}
+           {/* this is a like dislike button  */}
+            <div className="flex flex-row gap-1">
+              <LikeButton post={post} type='like'/>
+              <LikeButton post={post} type='dislike'/>
+            </div>              
+            {/* this is a like dislike button  */}
         
         
     </section>
