@@ -27,7 +27,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images ?? []
  
   return {
-    title: "AmanApps",
+    title: "zeamani",
     description:Me.bio,
     category:"website",
     keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
@@ -76,7 +76,7 @@ export default function AuthenticationPage() {
             >
               <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
             </svg>
-            Amanapps.INC
+            zeamani.INC
           </div>
           <div className="absolute top-1/2 z-20 mt-auto px-10 font-sans">
             <blockquote className="space-y-2">

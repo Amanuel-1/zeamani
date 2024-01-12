@@ -35,7 +35,7 @@ export default function RootLayout({
 
          <Loglib
             config={{
-                id: "amanapps.dev",
+                id: "zeamani.dev",
             }}/>
          <Analytics/>
 

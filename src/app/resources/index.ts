@@ -4,7 +4,7 @@ export const Images= {
     bolt: require('./bolt.webp'),
     celebrate:  require('./celebrate.webp'),
     coffee: require('./coffee.webp'),
-    LogoImage:  require('./amanapps.svg'),
+    LogoImage:  require('./zeamani.svg'),
     jellyfish: require('./jellyfish.webp'),
     gradHat:  require('./grad-hat.webp'),
     light: require('./light.webp'),

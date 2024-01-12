@@ -45,7 +45,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images ?? []
  
   return {
-    title: "AmanApps",
+    title: "zeamani",
     description:Me.bio,
     category:"website",
     keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
@@ -55,9 +55,9 @@ export async function generateMetadata(
     
     twitter: {
       card: ogImg as any,
-      title: 'AmanApps',
+      title: 'zeamani',
       description: Me.bio,
-      site:"https://amanapps.vercel.app",
+      site:"https://zeamani.vercel.app",
       creator: '@Amanuel_Garomsa',
       images: ['https://images4.imagebam.com/b2/83/ae/MEPYX81_o.png'],
     },

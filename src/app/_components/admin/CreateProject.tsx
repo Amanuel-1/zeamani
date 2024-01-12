@@ -118,7 +118,7 @@ export function CreateProject() {
       <label htmlFor="demoLink">demo Link</label>
       <input
         type="text"
-        placeholder="amanapps.vercel.app"
+        placeholder="zeamani.vercel.app"
         name="demoLink"
         value={project.demoLink}
         onChange={handleprojectChange}

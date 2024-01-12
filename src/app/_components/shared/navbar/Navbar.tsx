@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="navLeft">
             <Link href="/" className="flex items-center text-body-text hover:text-white no-underline">
               <Logo />
-              <span style={pacifico.style}>{"AmanApps"}</span>
+              <span style={pacifico.style}>{"zeamani"}</span>
             </Link>
           </div>
 
@@ -52,7 +52,7 @@ const Navbar = () => {
 
               <li>
                 <a
-                  href={`${"AmanApps.inc"}/rss.xml`}
+                  href={`${"zeamani.inc"}/rss.xml`}
                   target="_blank"
                   rel="noopener norefferer"
                 >

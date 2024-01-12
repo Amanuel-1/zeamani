@@ -43,7 +43,7 @@ export function extractTweetId(url: string): string | null {
 
 
 // type seoOption ={
-//   title:"AmanApps",
+//   title:"zeamani",
 //   ogImageUrl:"httpsamanapps.vercel.app"
 // }
 
