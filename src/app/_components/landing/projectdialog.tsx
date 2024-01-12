@@ -52,7 +52,7 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
         <PortableTextEditor  body={project.body}/>
        </div>
        </div>
-        <LikeButton slug={project.slug.current}/>
+        <LikeButton type='like' post={project}/>
        {/* this is a social media share button  */}
         
       

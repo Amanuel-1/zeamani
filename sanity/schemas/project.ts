@@ -17,6 +17,14 @@ export default defineType({
     ),
     defineField(
       {
+        name: 'dislikes',
+        title: 'Dislikes',
+        type: 'number',
+        initialValue: 0,
+      }
+    ),
+    defineField(
+      {
         name: 'views',
         title: 'Views',
         type: 'number',

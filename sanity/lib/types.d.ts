@@ -29,6 +29,7 @@ interface SProject extends Base {
   title: string,
   description: string,
   likes: number,
+  dislikes:number
   views: number
 }
 

@@ -1,6 +1,6 @@
 'use client'
 import { client, sanityFetch } from 'fireup/lib/client'
-import { SPost } from 'fireup/lib/types'
+import { SPost, SProject } from 'fireup/lib/types'
 import { groq } from 'next-sanity'
 import { revalidateTag } from 'next/cache'
 import { IoIosHeart } from "react-icons/io";
@@ -8,7 +8,7 @@ import { FaThumbsDown } from "react-icons/fa";
 import React from 'react'
 
 type LikePostProps  = {
-    post :SPost,
+    post :SPost | SProject,
     type:'like'| 'dislike'
 }
 
