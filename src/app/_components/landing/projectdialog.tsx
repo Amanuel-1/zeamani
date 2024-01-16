@@ -14,6 +14,8 @@ type projectDialogProps={
 
 }
 const ProjectDialog = ({project,children}:projectDialogProps) => {
+
+  
   return (
 //     <>
 //         <div className="" onClick={() => {
@@ -81,28 +83,18 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
     (modal as HTMLDialogElement).showModal();
   }
 }}>{children}</div>
-
-<dialog id="my_modal_2" className="modal z-0">
-  <div className="modal-box w-11/12 max-w-5xl bg-zinc-950">
+<dialog id="my_modal_2" className="modal">
+  <div className="modal-box w-11/12 max-w-5xl h-11/12 bg-zinc-950">
     <h3 className="font-bold text-lg">Hello!</h3>
     <p className="py-4">Press ESC key or click outside to close</p>
-    
     <section className=' z-20 flex container px-1 md:px-12 lg:px-20 flex-col gap-4  items-center min-h-screen w-full pointer-events-none  cursor-auto'>
-    <dialog data-modal-target="modal" className="p-0">
- ...
- <h1 className="p-4">Reset your password</h1>
-
- <form className="p-4 space-y-4">
-   ...
- </form>
-</dialog>
         <div className="image container w-full ">
             <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                 <Image src={urlForImage(project.mainImage).url()} alt={project.title} objectFit="cover" layout="fill" />
             </div>
         </div>
        <div className="pointer-events-none">
-       <div className="content px-10 flex flex-col gap-4 justify-center w-full pointer-events-auto hidden">
+       <div className="content px-10 flex flex-col gap-4 justify-center w-full pointer-events-none -z-50">
        <h1 className="title w-full  text-center">{project.title + "  "+ project.likes+ " likes"}</h1>
         <div className="authorInfo flex flex-row gap-4 justify-start items-center">
                 <div className="authorAvatar relative h-12 w-12 p-3 ">
