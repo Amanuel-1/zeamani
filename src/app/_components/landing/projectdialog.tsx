@@ -75,12 +75,12 @@ const ProjectDialog = ({project,children}:projectDialogProps) => {
 //     </>
 <>
 {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn" onClick={() => {
+<div className="" onClick={() => {
   const modal = document.getElementById('my_modal_2');
   if (modal) {
     (modal as HTMLDialogElement).showModal();
   }
-}}>open modal</button>
+}}>{children}</div>
 
 <dialog id="my_modal_2" className="modal z-0">
   <div className="modal-box w-11/12 max-w-5xl bg-zinc-950">

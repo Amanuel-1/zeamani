@@ -27,6 +27,7 @@ import projectdialog from "fireup/app/_components/landing/projectdialog";
 import ProjectDialog from "fireup/app/_components/landing/projectdialog";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
 import Timeline from "fireup/app/_components/landing/timeline";
+import Project from "fireup/schemas/project";
 
 type Props = {
   params: { id: string }
@@ -108,8 +109,8 @@ export default async function Home() {
         result.length && result.map((project:SProject,i:number )=>{
           return (
             // <Link key={i} className="justify-stretch" href={`/${project.slug.current}`}>
-              <Card cover={""} key={i}>               
-                <ProjectDialog project={project}>
+              <ProjectDialog project={project}>
+                <Card cover={""} key={i}>               
                 <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
                   <Image className="hover:scale-105 " src={urlForImage(project.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
                   <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125 group-hover:brightness-100"></div>
@@ -126,10 +127,9 @@ export default async function Home() {
                     </div>
                   ))}
                 </div>
-
-                </ProjectDialog>
                 
               </Card>
+              </ProjectDialog>
             // </Link>
 
           );
