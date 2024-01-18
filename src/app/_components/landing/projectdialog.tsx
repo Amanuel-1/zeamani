@@ -38,7 +38,7 @@ const DialogDemo = ({ project }: { project: SProject }) => (
     </Dialog.Trigger>
     <Dialog.Portal>
       <Dialog.Overlay className="bg-blackA6 data-[state=open]:animate-overlayShow fixed inset-0 h-fit rounded-lg overflow-clip " />
-      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-950 md:bg-[rgba(0,0,0,.6)] backdrop-blur-md  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-[rgba(30,30,30,.1)] p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none ">
+      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-950 md:bg-[rgba(0,0,0,.6)] backdrop-blur-md  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-stone-900 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none ">
         <Dialog.Title className="text-mauve12 m-0  w-full text-center pt-10">
               <h1> {project.title}</h1>
          </Dialog.Title>
