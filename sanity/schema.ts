@@ -10,6 +10,6 @@ import { twitter } from './schemas/twitter'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [youtube,twitter,post, author, category,project, blockContent],
+  types: [youtube,twitter,post, author, category, blockContent],
 
 }
