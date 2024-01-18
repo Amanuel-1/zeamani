@@ -28,6 +28,7 @@ import ProjectDialog from "fireup/app/_components/landing/projectdialog";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
 import Timeline from "fireup/app/_components/landing/timeline";
 import Project from "fireup/schemas/project";
+import DialogDemo from "fireup/app/_components/landing/projectdialog";
 
 type Props = {
   params: { id: string }
@@ -108,28 +109,29 @@ export default async function Home() {
           
         result.length && result.map((project:SProject,i:number )=>{
           return (
+            <DialogDemo key={i} project={project}/>
             // <Link key={i} className="justify-stretch" href={`/${project.slug.current}`}>
-              <ProjectDialog key={project._id} project={project}>
-                <Card cover={""} key={i}>               
-                <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
-                  <Image className="hover:scale-105 " src={urlForImage(project.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
-                  <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125 group-hover:brightness-100"></div>
-                  {/* <Image src={urlForImage(project.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}
-                </div>
+              // <Dialog key={project._id} project={project}>
+              //   <Card cover={""} key={i}>               
+              //   <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
+              //     <Image className="hover:scale-105 " src={urlForImage(project.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
+              //     <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125 group-hover:brightness-100"></div>
+              //     {/* <Image src={urlForImage(project.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}
+              //   </div>
 
-                {/* <Link href={`/${project.slug.current}`}><div className="title w-full text-center text-2xl font-bold">{project.title}</div></Link> */}
-                <div className="author text-xs font-light">{project.author.name}</div>
-                <div className="description text-sm font-light py-2 ">{shortener(project.description, 50)}</div>
-                <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
-                  {project.categories && project.categories.map((category: Category) => (
-                    <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
-                      {category.title}
-                    </div>
-                  ))}
-                </div>
+              //   {/* <Link href={`/${project.slug.current}`}><div className="title w-full text-center text-2xl font-bold">{project.title}</div></Link> */}
+              //   <div className="author text-xs font-light">{project.author.name}</div>
+              //   <div className="description text-sm font-light py-2 ">{shortener(project.description, 50)}</div>
+              //   <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
+              //     {project.categories && project.categories.map((category: Category) => (
+              //       <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
+              //         {category.title}
+              //       </div>
+              //     ))}
+              //   </div>
                 
-              </Card>
-              </ProjectDialog>
+              // </Card>
+              // </ProjectDialog>
             // </Link>
 
           );
