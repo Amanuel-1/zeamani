@@ -12,24 +12,24 @@ import PortableTextEditor from '../sanity/portableText';
 const DialogDemo = ({ project }: { project: SProject }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <div className='relative'>
-        <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
+      <div className='relative cursor-pointer flex flex-col justify-stretch items-stretch align-baseline group'>
+        <div className="image relative w-full p-2 h-[6rem] lg:h-[12rem] xl:h-[8rem] overflow-hidden rounded-[20px] transition-all duration-700 ">
           <Image
-            className="hover:scale-105 rounded-[20px] overflow-hidden bg-inherit"
+            className="hover:scale-105  overflow-hidden bg-inherit"
             src={urlForImage(project.mainImage).url()}
             alt={"Image Alt"}
             objectFit="cover"
             layout="fill"
           />
-          <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125 group-hover:brightness-100"></div>
+          <div className="absolute inset-0 backdrop-brightness-[65%] hover:brightness-100 backdrop-contrast-125 group-hover:brightness-100"></div>
         </div>
 
-        <div className="author text-xs font-light">{project.author.name}</div>
-        <div className="description text-sm font-light py-2 ">{shortener(project.description, 50)}</div>
-        <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
+        <div className="author text-md px-2 pt-1 font-bold group-hover:text-white transition-all duration-700">{project.title}</div>
+        <div className="description text-sm font-light py-2 px-2 group-hover:text-stone-100  transition-all duration-700">{shortener(project.description, 100)}</div>
+        <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs group-hover:text-stone-100  transition-all duration-700">
           {project.categories &&
             project.categories.map((category: Category) => (
-              <small key={category._id} className="tags  bg-stone-900 text-stone-50 px-2 hover:hue-rotate-15">
+              <small key={category._id} className="tags  bg-stone-900 hover:bg-zinc-950 text-stone-50 px-2 hover:hue-rotate-15 rounded-[4px]">
                 {category.title}
               </small>
             ))}
