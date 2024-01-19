@@ -49,7 +49,7 @@ export default function RootLayout({
          </SessionProvide>
          <Loglib
                 config={{
-                    id: "zeamani.dev",
+                    id: "zeamani_vercel",
                 }}
             />
           <Analytics/>

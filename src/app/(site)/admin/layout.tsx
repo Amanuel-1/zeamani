@@ -51,7 +51,7 @@ export default async function RootLayout({
          <Navbar/>
         <Loglib
           config={{
-              id: "zeamani.dev",
+              id: "zeamani_vercel",
           }}/>
 
          <Analytics/>

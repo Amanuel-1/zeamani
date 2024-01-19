@@ -35,7 +35,7 @@ export default function RootLayout({
 
          <Loglib
             config={{
-                id: "zeamani.dev",
+                id: "zeamani_vercel",
             }}/>
          <Analytics/>
 
