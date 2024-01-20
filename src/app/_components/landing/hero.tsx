@@ -7,7 +7,7 @@ import React from 'react'
 
 const HeroSection = () => {
   return (
-    <section className='flex flex-col justify-start px-2 md:px-24 gap-4 min-h-[25rem] md:min-h-screen'>
+    <section className='flex flex-col justify-start px-2 md:px-24 gap-4 min-h-[25rem] md:min-h-[90vh]'>
         <div className="flex flex-col gap-4 text-md w-full h-full text-center md:text-left">
             
             <div className='flex flex-col'>

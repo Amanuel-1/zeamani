@@ -39,9 +39,15 @@ const Navbar = () => {
                   Articles
                 </Link>
               </li>
+
               <li className="mr-2">
-                <Link href="/notes">
-                  Notes
+                <Link href="/gallery">
+                  Gallery
+                </Link>
+              </li>
+              <li className="mr-2">
+                <Link href="/market">
+                  MarketPlace
                 </Link>
               </li>
               <li className="mr-2">

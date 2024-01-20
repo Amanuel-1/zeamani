@@ -9,7 +9,7 @@ import { urlForImage } from 'fireup/lib/image';
 import { shortener } from 'fireup/lib/utils';
 import PortableTextEditor from '../sanity/portableText';
 
-const DialogDemo = ({ project }: { project: SProject }) => (
+const ProjectDialog = ({ project }: { project: SProject }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
       <div className='relative cursor-pointer flex flex-col justify-stretch items-stretch align-baseline group'>
@@ -66,7 +66,7 @@ const DialogDemo = ({ project }: { project: SProject }) => (
   </Dialog.Root>
 );
 
-export default DialogDemo;
+export default ProjectDialog;
 
 // import { urlForImage } from 'fireup/lib/image'
 // import { SProject } from 'fireup/lib/types'

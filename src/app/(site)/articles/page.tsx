@@ -1,5 +1,8 @@
+
 import Featured from 'fireup/app/_components/shared/cards/Featured'
 import PostCard from 'fireup/app/_components/shared/cards/PostCard'
+import SearchBar from 'fireup/app/_components/shared/contents/SearchBar'
+import PostsList from 'fireup/app/_components/shared/contents/postsList'
 import { client, sanityFetch } from 'fireup/lib/client'
 import { SPost } from 'fireup/lib/types'
 import post from 'fireup/schemas/post'
@@ -17,22 +20,23 @@ const Articles = async() => {
       `
     const posts:SPost[]  = await sanityFetch({query:postQuery,tags:["post","articles"]})
 
+
   return (
+    <div>
+
     <section className='min-h-screen  '>
         <h1 style={dancing.style} className="w-full flex justify-center bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient py-10">Amani Writes,</h1>
         <div className="px-4 md:px-24">
           <Featured key={posts[0]?._id} post={posts[0] as SPost}/>
         </div>
+        <section>
+        <PostsList posts={posts} />
+      </section>
 
-        <div className="flex flex-wrap gap-4 px-0 w-full justify-center py-10">
-          {
-            posts && posts.map((post)=>(
-              <PostCard className='h-[15rem] w-[30rem]' key={post._id} post={post} />
-            ))
-          }
-        </div>
+      {/* <PostsList posts={posts}/> */}
 
     </section>
+    </div>
   )
 }
 

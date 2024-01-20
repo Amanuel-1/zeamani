@@ -7,7 +7,6 @@ import { api } from "fireup/trpc/server";
 import { Tilt } from "react-tilt";
 import styles from 'fireup/styles/card.module.css'
 import { Button } from "../../_components/ui/button";
-import { AlertDialogDemo } from "../../_components/shared/user/dialog";
 import HoverCardDemo from "fireup/app/_components/ui/hovercard";
 import { twMerge } from "tailwind-merge";
 import Tiltable from "fireup/app/_components/shared/user/tiltable";
@@ -28,7 +27,7 @@ import ProjectDialog from "fireup/app/_components/landing/projectdialog";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
 import Timeline from "fireup/app/_components/landing/timeline";
 import Project from "fireup/schemas/project";
-import DialogDemo from "fireup/app/_components/landing/projectdialog";
+import LogoScroll from "fireup/app/_components/landing/logoscrolls";
 
 type Props = {
   params: { id: string }
@@ -101,6 +100,9 @@ export default async function Home() {
   return (
     <main className="">
       <HeroSection/>
+      
+      <LogoScroll/>
+      {/* ###########################################/ */}
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
       <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">projects</b></h1>
@@ -109,7 +111,7 @@ export default async function Home() {
           
         result.length && result.map((project:SProject,i:number )=>{
           return (
-            <DialogDemo key={i} project={project}/>
+            <ProjectDialog key={i} project={project}/>
             // <Link key={i} className="justify-stretch" href={`/${project.slug.current}`}>
               // <Dialog key={project._id} project={project}>
               //   <Card cover={""} key={i}>               
