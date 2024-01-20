@@ -13,7 +13,7 @@ export const Images= {
     test:require('./test.svg'),
     og:require('./og.png'),
     grid:require('./grid.svg'),
-    csharp:require('./c.svg'),
+    csharp:require('./csharp.svg'),
     java:require('./java.svg'),
     php:require('./php.svg'),
     postgresql:require('./postgresql.svg'),
