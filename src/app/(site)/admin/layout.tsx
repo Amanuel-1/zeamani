@@ -48,7 +48,7 @@ export default async function RootLayout({
          
          <SessionProvide>
          <Toaster toastOptions={{position:'top-left'}}/>
-         <Navbar/>
+
         <Loglib
           config={{
               id: "zeamani_vercel",
