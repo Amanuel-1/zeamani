@@ -36,7 +36,6 @@ export default function RootLayout({
         <TRPCReactProvider headers={headers()}>
           
          <SessionProvide>
-         <Navbar/>
          <Analytics/>
           {children}
           <Footer/>
