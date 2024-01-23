@@ -15,15 +15,15 @@ const HeroSection = () => {
             <div className="relative w-[1rem] h-[1rem] md:w-[2rem] md:h-[2rem]">
                 <Image src={Images.waive} alt='waive' objectFit='cover' layout='fill' />
               </div> 
-            <h1 className='text-lg md:text-4xl '>
+            <h1 className='text-lg md:text-4xl dark:text-green-400 '>
               Hello!, I am
             </h1>
             </div>
             <div/>
             <b className=" bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient">Amanuel Garomsa,</b>
-            <div className='text-sm font-ligh text-center md:text-left px-1 md:w-[60%]'>
+            <p className='text-sm text-center md:text-left px-1 md:w-[60%]'>
               an aspiring Software developer and Computer Science Student at Addis Ababa University College Of Natural And Computational Sciences. I am currently looking for jobs, so if there is a spot please consisder me . pleaase i am begging you 🥺
-            </div>
+            </p>
             </div>
        <div className="flex flex-wrap gap-4 md:gap-[2rem] justify-start items-center p-2 md:p-0 w-full md:w-[60%] ">
           

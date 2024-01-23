@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .text-body-text {
-    color: var(--text-color);
+     @apply text-stone-900 dark:text-stone-100;
 }
 .font-body {
     font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont;
@@ -23,12 +23,15 @@
     border-color: var(--text-color);
 }
 
+
+
 @layer base {
     :root {
         --text-color: #bbb;
         --text-color: #a3a3a3;
     
         --text-color-white: #fff;
+        --text-color-dark:var(--background-light)
         --text-color-bright: #737373;
         --prim-color: #b94c50;
     
@@ -43,24 +46,27 @@
         @apply m-0 p-0 box-border;
     }
     h1 {
-        @apply text-3xl md:text-4xl xl:text-5xl font-extrabold mb-4 text-white;
+        @apply text-3xl md:text-4xl xl:text-5xl font-extrabold mb-4 text-stone-900 dark:text-white;
     }
     h2 {
         @apply text-2xl;
     }
+    button {
+    
+    }
     a {
-        @apply text-primary
+        @apply text-black dark:text-stone-100
     }
     a:hover,
     a:visited:hover {
-        @apply text-white;
+        @apply text-amber-500 dark:text-white;
     }
     a:focus {
         @apply no-underline outline-primary;
     }
     p,
     table {
-        @apply mb-6 text-body-text;
+        @apply mb-6 text-stone-900 dark:text-white font-body text-justify ;
     }
     main {
         @apply mb-8;
@@ -74,7 +80,7 @@
     h4,
     h5,
     h6 {
-        @apply mb-4 font-extrabold text-white font-body;
+        @apply mb-4 font-extrabold text-stone-900 dark:text-white font-body;
     }
     figcaption {
         @apply mt-2 text-center text-sm italic block;
@@ -94,20 +100,20 @@
     }
     a:hover,
     a:visited:hover {
-        @apply text-white ;
+        @apply text-stone-900 ;
     }
     a:focus {
-        @apply outline-primary no-underline decoration-primary;
+        @apply outline-primary no-underline decoration-primary text-black dark:text-amber-700;
     }
     html {
         @apply text-[16px] text-body-text font-body;
     }
     ul,
     ol {
-        @apply text-body-text;
+        @apply text-stone-900 dark:text-white font-body;
     }
     body {
-        @apply bg-stone-950 text-bright;
+        @apply bg-stone-200 dark:bg-stone-950 text-bright;
     }
     td,
     th {
@@ -188,4 +194,5 @@
     background: white;
     padding: 30px;
     border-radius: 4px;
+    @apply text-stone-900 dark:text-stone-100
   }

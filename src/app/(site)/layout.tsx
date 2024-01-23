@@ -17,6 +17,7 @@ import { Images } from "fireup/app/resources";
 //analytics
 import { Analytics } from '@vercel/analytics/react';
 import Loglib from "@loglib/tracker/react";
+import ClientLayout from "../_components/shared/layout/ClientLayouts";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,11 +42,10 @@ export default function RootLayout({
         {/* <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div> */}
          
          <SessionProvide>
-         <Toaster/>
-         <Navbar/>
-
+        <ClientLayout>
+        <Toaster/>
           {children}
-          <Footer/>
+        </ClientLayout>
          </SessionProvide>
          <Loglib
                 config={{

@@ -10,16 +10,23 @@ import { Container } from './container';
 import { pacifico } from 'fireup/styles/Fonts';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
+import ThemeSelector from '../layout/themeSelector';
+
+type navbarProps  ={
+  darkMode: boolean,
+  setDarkMode: (mode:boolean)=>void,
+  className?:string
+  }
 
 
-const Navbar = () => {
+const Navbar = (props:navbarProps) => {
   const {data:session} =useSession()
   return (
     <header className="py-4 mb-20 relative z-10 mx-auto">
       <Container>
         <nav className="navWrapper flex justify-between items-center">
           <div className="navLeft">
-            <Link href="/" className="flex items-center text-body-text hover:text-white no-underline">
+            <Link href="/" className="flex items-center text-body-text hover:text-stone-700 dark:hover:text-white no-underline">
               <Logo />
               <span style={pacifico.style}>{"zeamani"}</span>
             </Link>
@@ -66,15 +73,16 @@ const Navbar = () => {
                 </a>
               </li>
               <li className='mx-[1rem]'>
-                <small>
+                <small className='flex gap-2 justify-center items-center'>
                   {
                     session?.user?(
-                      <div onClick={()=>signOut()} className='flex flex-row gap-2 bg-transparent items-center min-w-fit px-4 py-2 font-semibold text-stone-100 transition-all duration-500'><small className='hover:font-semibold cursor-pointer min-w-max hover:shadow-lg hover:shadow-yellow-600'>{session.user.name as string}</small><Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-[30%] p-2 boder-4 border-white hover:border-amber-950 cursor-pointer'/> </div>
+                      <div onClick={()=>signOut()} className='flex flex-row gap-2 bg-transparent items-center min-w-fit px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 transition-all duration-500'><small className='hover:font-semibold cursor-pointer min-w-max hover:shadow-lg hover:shadow-yellow-600'>{session.user.name as string}</small><Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-[30%] p-2 boder-4 border-white hover:border-amber-950 cursor-pointer'/> </div>
                     ):(
-                      <button onClick={()=>signIn('github',{redirect:true})} className='bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-100 hover:bg-stone-600'>login
+                      <button onClick={()=>signIn('github',{redirect:true})} className='bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 hover:bg-stone-600 hover:text-stone-100  transition-all duration-700'>login
                       </button>
                     )
                   }
+                  <ThemeSelector darkMode={props.darkMode} setDarkMode={props.setDarkMode}/>
                 </small>
               </li>
             </ul>

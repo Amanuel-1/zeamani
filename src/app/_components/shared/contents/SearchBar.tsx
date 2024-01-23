@@ -5,31 +5,46 @@ import { useEffect, useState } from "react";
 const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch: (filteredPosts: SPost[] | SProject[]) => void  }) => {
   const [selectedCategory, setSelectedCategory] = useState<Category>({} as Category);
   const [searchText, setSearchText] = useState<string>("");
+  const [searchCategory,setSearchCategory] = useState<Category>({} as Category)
+  const category_map= new Map<Category,number>()
+
+  for (const post of posts) {
+    if (post.categories) {
+        for (const categ of [...post.categories]) {
+            category_map.set(categ, category_map.has(categ) ? (category_map.get(categ) as number) + 1 : 1);
+        }
+    }
+}
 
   useEffect(() => {
-    
-    // var filtered = posts.filter((post) => {
-    //   // Filter based on selected category
-    //   if (selectedCategory && Object.keys(selectedCategory).length > 0) {
-    //     return post.categories?.find((category) => category._id === selectedCategory._id);
-    //   }
+    let result :SPost[]|SProject[]  =  posts
+     if(searchCategory.title){
+      const filtered= posts.filter((post) => {
+        // Filter based on selected category
+        if (selectedCategory && Object.keys(selectedCategory).length > 0) {
+          return post.categories?.find((category) => category._id === selectedCategory._id);
+        }
+      });
 
-
-
-    // });
+      result  = filtered
+     }
 
       // Filter based on search text
       if (searchText) {
         const lowerCaseSearchText = searchText.toLowerCase();
-        const filtered = posts.filter((post)=>{
+         const filtered = result.filter((post)=>{
           return post.title.includes(searchText) || post.description.includes(searchText)
         })
         // Perform your filtering logic here based on the search text and post attributes
         // Return true if the post should be included in the filtered list, otherwise false
 
           console.log(filtered.length,filtered)
-          onSearch(filtered);
+          
+          result = filtered
       }
+
+      onSearch(result)
+
 
   }, [selectedCategory, searchText, posts, onSearch]);
 
@@ -58,7 +73,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
                 <input
                   type="name"
                   name="search"
-                  className="h-12 w-full cursor-text rounded-md border-none border-none-gray-100 bg-stone-900 py-4 pr-40 pl-12 shadow-sm outline-none  focus:ring-red-700  focus:ring-opacity-50"
+                  className="h-12 w-full md:min-w-[24rem] cursor-text rounded-md border-none border-none-gray-100 text-stone-900 dark:text-stone-100 bg-stone-100 dark:bg-stone-900 py-4  p-10 shadow-sm outline-none  focus:ring-red-700  focus:ring-opacity-50 pl-12 pr-6 md:rounded-[15px]"
                   placeholder="Search by name, type, manufacturer, etc"
                   value={searchText}
                   onChange={(e) => setSearchText(e.target.value)}
@@ -68,16 +83,25 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
               <div className="flex gap-6 items-center">
                 <div className="flex gap-3 w-[20vw] items-center">
                   <label htmlFor="manufacturer" className="text-sm font-medium text-stone-600">
-                    Manufacturer
+                    categories
                   </label>
 
                   <select
                     id="manufacturer"
-                    className="block w-full rounded-md border-none border-none-gray-100 bg-stone-950 px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 focus:ring focus:ring-zinc-800 focus:ring-opacity-50"
+                    onChange={()=>setSearchCategory(searchCategory)}
+                    className="block w-full rounded-md border-none border-none-gray-100 bg-stone-100 text-stone-900 dark:text-stone-100 dark:bg-stone-950 px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 focus:ring focus:ring-zinc-100 dark:focus:ring-zinc-800 focus:ring-opacity-50 md:px-6 md:rounded-[15px]"
                   >
-                    <option>Cadbury</option>
-                    <option>Starbucks</option>
-                    <option>Hilti</option>
+                    <option onSelect={(e)=>setSearchCategory({} as Category)}>all</option>
+                    {
+                       [...category_map.keys()].map((categ:Category,ind:number)=>(
+                        <option className="" key={ind} onSelect={(e)=>setSearchCategory(categ)}>
+                          <div className="flex flex-row gap-2 w-full px-2 justify-around bg-green-600">
+                            <li>{categ.title}</li>
+                            <li className="p-1 rounded-3xl bg-stone-700">{category_map.get(categ)}</li>
+                          </div>
+                        </option>
+                       ))
+                    }
                   </select>
                 </div>
                 <div className="flex gap-2 w-[20vw] items-center">
@@ -87,7 +111,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
 
                   <select
                     id="status"
-                    className="block w-full cursor-pointer rounded-md border-none border-none-gray-100 bg-stone-950 px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 focus:ring focus:ring-zinc-800 focus:ring-opacity-50"
+                    className="block w-full cursor-pointer rounded-md border-none border-none-gray-100 bg-stone-400 dark:bg-stone-950 px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 text-stone-900 dark:text-stone-100 focus:ring focus:ring-zinc-100 dark:focus:ring-zinc-800 focus:ring-opacity-50 md:px-6 md:rounded-[15px]"
                   >
                     <option>Dispatched Out</option>
                     <option>In Warehouse</option>

@@ -16,7 +16,7 @@ const LogoScroll = () => {
   return (
     <div className="relative logo-scroll-container flex flex-row justify-center py-10 z-0">
        <ul className="relative logo-scroll-list flex flex-row w-[70%] justify-center items-center px-11">
-      <div className="absolute inset-0 w-full bg-gradient-to-r from-stone-950 via-transparent to-stone-950 z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 w-full bg-gradient-to-r from-stone-200 via-transparent to-stone-200  dark:bg-gradient-to-r dark:from-stone-950 dark:via-transparent dark:to-stone-950 z-10 pointer-events-none"></div>
         
      <Marquee pauseOnHover>
         {[...Array(2)].map((_, index) =>
