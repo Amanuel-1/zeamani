@@ -265,11 +265,11 @@ export default async function Home() {
 
 
 const LoadingPost  =({count}:{count:number})=>{
-  let list  =  Array(count)
+  const list  =  Array(count)
   
   return (
     list.map((no,ind)=>(
-      <div className="skeleton w-full h-[10rem]"></div>
+      <div key={ind} className="skeleton w-full h-[10rem]"></div>
     ))
   )
 }

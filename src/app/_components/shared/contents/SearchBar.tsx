@@ -74,7 +74,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
                   type="name"
                   name="search"
                   className="h-12 w-full md:min-w-[24rem] cursor-text rounded-md border-none border-none-gray-100 text-stone-900 dark:text-stone-100 bg-stone-100 dark:bg-stone-900 py-4  p-10 shadow-sm outline-none  focus:ring-red-700  focus:ring-opacity-50 pl-12 pr-6 md:rounded-[15px]"
-                  placeholder="Search by name, type, manufacturer, etc"
+                  placeholder="Search by title,tag, description, etc"
                   value={searchText}
                   onChange={(e) => setSearchText(e.target.value)}
                 />
@@ -82,12 +82,12 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
 
               <div className="flex gap-6 items-center">
                 <div className="flex gap-3 w-[20vw] items-center">
-                  <label htmlFor="manufacturer" className="text-sm font-medium text-stone-600">
+                  <label htmlFor="category" className="text-sm font-medium text-stone-600">
                     categories
                   </label>
 
                   <select
-                    id="manufacturer"
+                    id="category"
                     onChange={()=>setSearchCategory(searchCategory)}
                     className="block w-full rounded-md border-none border-none-gray-100 bg-stone-100 text-stone-900 dark:text-stone-100 dark:bg-stone-950 px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 focus:ring focus:ring-zinc-100 dark:focus:ring-zinc-800 focus:ring-opacity-50 md:px-6 md:rounded-[15px]"
                   >
@@ -105,18 +105,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
                   </select>
                 </div>
                 <div className="flex gap-2 w-[20vw] items-center">
-                  <label htmlFor="status" className="text-sm font-medium text-stone-600">
-                    Status
-                  </label>
 
-                  <select
-                    id="status"
-                    className="block w-full cursor-pointer rounded-md border-none border-none-gray-100 bg-stone-400 dark:bg-stone-950 px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 text-stone-900 dark:text-stone-100 focus:ring focus:ring-zinc-100 dark:focus:ring-zinc-800 focus:ring-opacity-50 md:px-6 md:rounded-[15px]"
-                  >
-                    <option>Dispatched Out</option>
-                    <option>In Warehouse</option>
-                    <option>Being Brought In</option>
-                  </select>
                 </div>
               </div>
             </form>
