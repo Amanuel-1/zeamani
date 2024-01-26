@@ -27,6 +27,7 @@ import PostCard from "fireup/app/_components/shared/cards/PostCard";
 import Timeline from "fireup/app/_components/landing/timeline";
 import Project from "fireup/schemas/project";
 import LogoScroll from "fireup/app/_components/landing/logoscrolls";
+import { Suspense } from "react";
 
 type Props = {
   params: { id: string }
@@ -117,7 +118,7 @@ export default async function Home() {
                     </p>
                 </div>
 
-                <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="relative mx-auto max-w-7xl grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
                    
                     <div className="rounded-md border border-neutral-800 dark:bg-neutral-900/50 p-8 text-center shadow">
                         <div className="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border"
@@ -232,30 +233,6 @@ export default async function Home() {
         result.length && result.map((project:SProject,i:number )=>{
           return (
             <ProjectDialog key={i} project={project}/>
-            // <Link key={i} className="justify-stretch" href={`/${project.slug.current}`}>
-              // <Dialog key={project._id} project={project}>
-              //   <Card cover={""} key={i}>               
-              //   <div className="image relative w-full p-2 h-[1rem] lg:h-[2rem] xl:h-[8rem] overflow-hidden transition-all duration-700 ">
-              //     <Image className="hover:scale-105 " src={urlForImage(project.mainImage).url()} alt={"Image Alt"} objectFit="cover" layout="fill" />
-              //     <div className="absolute inset-0 backdrop-brightness-50 backdrop-contrast-125 group-hover:brightness-100"></div>
-              //     {/* <Image src={urlForImage(project.mainImage).url()} alt="" objectFit='cover' layout='fil' /> */}
-              //   </div>
-
-              //   {/* <Link href={`/${project.slug.current}`}><div className="title w-full text-center text-2xl font-bold">{project.title}</div></Link> */}
-              //   <div className="author text-xs font-light">{project.author.name}</div>
-              //   <div className="description text-sm font-light py-2 ">{shortener(project.description, 50)}</div>
-              //   <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs">
-              //     {project.categories && project.categories.map((category: Category) => (
-              //       <div key={category._id} className="tags px-4 py-2 bg-stone-900 text-stone-50 hover:hue-rotate-15 ">
-              //         {category.title}
-              //       </div>
-              //     ))}
-              //   </div>
-                
-              // </Card>
-              // </ProjectDialog>
-            // </Link>
-
           );
         })
 
@@ -266,34 +243,33 @@ export default async function Home() {
       <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
         {
          <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-24 py-6 gap-4 ">
-        {
-          posts && posts.slice(0,4).map((post,ind)=>(
-            <PostCard  key={ind} post={post}/>
-          ))
-        }
+              <Suspense  fallback={<h1 className="text-9xl font-extrabold text-yellow-500 z-50">loading</h1>} >
+              {
+                  posts.slice(0,4).map((post,ind)=>(
+                    <PostCard  key={ind} post={post}/>
+                  ))
+                  }
+              </Suspense>
         <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-400 text-xl ">see all</Link>
         </div> 
         }
         <Timeline/>
-        <div className="flex flex-col gap-3 w-full px-2 md:px-20 lg-px-24">
-          {
-            result.length && (result.slice(0,5).map((project,i)=>(
-              <div key={i} className="relative flex flex-row-reverse w-full rounded-[5px] bg-stone-800 p-3 ">
-
-                <h1 className="text-sm md:text-xl font-semibold text-left self-start">{project.title}</h1> 
-                <small className="absolute top-0 left-2 text-xs font-light p-1 ">{moment(project._createdAt).fromNow()}</small>
-                <p className="description">{shortener(project.description,100)}</p>
-                  <Text/>
-              </div>
-              
-            )
-                         
-            
-            ))
-            }
-        </div>
 
 
     </main>
   );
+}
+
+
+
+
+
+const LoadingPost  =({count}:{count:number})=>{
+  let list  =  Array(count)
+  
+  return (
+    list.map((no,ind)=>(
+      <div className="skeleton w-full h-[10rem]"></div>
+    ))
+  )
 }
