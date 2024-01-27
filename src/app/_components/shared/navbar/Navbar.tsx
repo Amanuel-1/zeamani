@@ -36,11 +36,7 @@ const Navbar = (props:navbarProps) => {
             <Hamburger />
 
             <ul className="hidden list-none md:flex items-center">
-              <li className="mr-2">
-                <Link href="/works">
-                  Work
-                </Link>
-              </li>
+              
               <li className="mr-2">
                 <Link href="/articles">
                   Articles
@@ -48,8 +44,14 @@ const Navbar = (props:navbarProps) => {
               </li>
 
               <li className="mr-2">
+                <Link href="/works">
+                  Me
+                </Link>
+              </li>
+
+              <li className="mr-2">
                 <Link href="/gallery">
-                  Gallery
+                  GuestBook
                 </Link>
               </li>
               <li className="mr-2">
@@ -59,19 +61,11 @@ const Navbar = (props:navbarProps) => {
               </li>
               <li className="mr-2">
                 <Link href="/about">
-                  About
+                  contact
                 </Link>
               </li>
 
-              <li>
-                <a
-                  href={`${"zeamani.inc"}/rss.xml`}
-                  target="_blank"
-                  rel="noopener norefferer"
-                >
-                  RSS Feed
-                </a>
-              </li>
+             
               <li className='mx-[1rem]'>
                 <small className='flex gap-2 justify-center items-center'>
                   {
