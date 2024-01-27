@@ -93,7 +93,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
                         {post.author.name}
                     </div>
             </div> */}
-            <div className="tags w-full flex flex-wrap">{
+            <div className="tags w-full flex flex-wrap gap-6">{
               post.categories && post.categories.map((categ:Category,ind)=>(
                 <p key={ind} className='text-stone-800 dark:text-stone-300 font-bold text-lg'>#{categ.title}</p>
               ))
