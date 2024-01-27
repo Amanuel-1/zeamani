@@ -95,7 +95,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
             </div> */}
             <div className="tags">{
               post.categories && post.categories.map((categ:Category,ind)=>(
-                <p>{categ.title}</p>
+                <p key={ind} className='text-stone-800 dark:text-stone-300 font-bold text-lg'>#{categ.title}</p>
               ))
             }</div>
             <p className=" w-full z-50">{post.description}</p>
