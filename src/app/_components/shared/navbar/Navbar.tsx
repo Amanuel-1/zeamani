@@ -22,7 +22,7 @@ type navbarProps  ={
 const Navbar = (props:navbarProps) => {
   const {data:session} =useSession()
   return (
-    <header className="py-4 mb-20 relative z-10 mx-auto">
+    <header className="py-4 mb-0 relative z-10 mx-auto">
       <Container>
         <nav className="navWrapper flex justify-between items-center">
           <div className="navLeft">
@@ -50,7 +50,7 @@ const Navbar = (props:navbarProps) => {
               </li>
 
               <li className="mr-2">
-                <Link href="/gallery">
+                <Link href="/guestbook">
                   GuestBook
                 </Link>
               </li>

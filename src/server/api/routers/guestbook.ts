@@ -5,28 +5,32 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "fireup/server/api/trpc";
-import { CreateBlogPostInputSchema, SignGuestBookInputSchema } from "fireup/types";
-import { CreateBlogPostOutputSchema } from '../../../types/index';
-import { BlogPost, Prisma, Tag } from "@prisma/client";
+import { BlogPost, Prisma} from "@prisma/client";
+import { CreateProjectInputSchema, SignGuestBookInputSchema } from "fireup/types";
+import { db } from "fireup/server/db";
 
-export const postRouter = createTRPCRouter({
+export const guestRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
       return {
         greeting: `Hello ${input.text}`,
-      };
+      }; 
     }),
 
-    sign: protectedProcedure
+    create: publicProcedure
     .input(SignGuestBookInputSchema)
-    .mutation(async ({ ctx, input }) => {
+    .mutation(async ({input }) => {
 
-     
+   
 
-      return await ctx.db.guestBook.create({
+
+      return await db.guestBook.create({
         data: {
-            guestId:ctx.session.user.id,
+            guestName:input.guestName,
+            avatar:input.avatar,
+            profileUrl:input.profileUrl,
+            country:input.country,
             content:input.content
         }
       })
@@ -34,10 +38,15 @@ export const postRouter = createTRPCRouter({
     }),
     
 
-  getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.db.guestBook.findMany({
-      orderBy: { createdAt: "desc" }
+  getAll: publicProcedure.query(async() => {
+    return await db.guestBook.findMany({ 
     });
+  }),
+
+  getById:publicProcedure.input(z.object({id:z.string()})).query(async ({ctx,input})=>{
+    const guest  = await ctx.db.guestBook.findFirst({where:{id:input.id}})
+
+    return guest
   }),
 
   getSecretMessage: protectedProcedure.query(() => {

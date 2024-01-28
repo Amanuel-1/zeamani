@@ -2,15 +2,25 @@
 import {z} from "zod"
 
 export const SignGuestBookInputSchema = z.object({
-  content:z.string()
+  content:z.string(),
+  country:z.string(),
+  guestName:z.string(),
+  avatar:z.string(),
+  profileUrl:z.string(),
+
+  
 })
 
 
 export const SignGuestBookOutputSchema = z.object({
   id:z.string(),
   createdAt:z.date(),
-  guestId:z.string(),
-  content:z.string()
+  guestName:z.string(),
+  content:z.string(),
+  country:z.string(),
+  avatar:z.string(),
+  profileUrl:z.string(),
+  
 })
 
 

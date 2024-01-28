@@ -64,7 +64,10 @@ model VerificationToken {
 
 model GuestBook {
     id String @id @default(cuid())
-    guestId String
+    guestName String
+    avatar String
+    profileUrl String
+    country String
     content String @db.Text
     createdAt DateTime @default(now())
 }

@@ -1,6 +1,7 @@
 import { postRouter } from "fireup/server/api/routers/post";
 import { createTRPCRouter } from "fireup/server/api/trpc";
 import { projectRouter } from "./routers/project";
+import { guestRouter } from "./routers/guestbook";
 
 /**
  * This is the primary router for your server.
@@ -9,7 +10,8 @@ import { projectRouter } from "./routers/project";
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
-  project:projectRouter
+  project:projectRouter,
+  guests:guestRouter,
 });
 
 // export type definition of API
