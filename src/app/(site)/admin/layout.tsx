@@ -60,7 +60,7 @@ export default async function RootLayout({
           ):(
             <div>an error ocured</div>
           )}
-          <Footer/>
+         
          </SessionProvide>
           
           
