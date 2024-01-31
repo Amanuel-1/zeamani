@@ -1,3 +1,5 @@
+'use client'
+
 
 import React, { useState } from 'react';
 import { FiSun, FiMoon, FiSettings } from 'react-icons/fi';
