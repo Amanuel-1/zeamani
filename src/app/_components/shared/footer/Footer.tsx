@@ -1,22 +1,54 @@
 import React from 'react'
 import HoverCardDemo from '../../ui/hovercard'
 import Logo from '../navbar/Logo'
+import { pacifico } from 'fireup/styles/Fonts'
+import { FaTelegram ,FaDiscord,FaGithub,FaYoutube,FaLinkedinIn,FaTwitter} from "react-icons/fa";
+import ThemeSelector from '../layout/themeSelector';
 
-const Footer = () => {
+
+type footerProps  ={
+  darkMode: boolean,
+  setDarkMode: (mode:boolean)=>void,
+  className?:string
+  }
+
+
+const Footer = (props:footerProps) => {
   return (
-   <>
-   <section className="my-0 mx-auto py-0 px-[4%] flex justify-center items-center w-full">
+   <footer className='flex flex-col justiy-center items-center'>
+   <div className="w-[90%] h-[2rem] mt-4 border-b border-stone-400 dark:border-stone-900"/>
+   <section className="my-0 mx-auto py-0 px-[4%] flex justify-items-stretch items-center w-full ">
     
-    <ul className="flex m-auto mb-4">
+    <ul className="flex gap-2 w-full my-4 items-center">
+        <li className="flex items-center mr-2">
+           <Logo/> 
+           <small style={pacifico.style} className='font-bold text-lg'>zeamani</small>          
+        </li>
+        <li className="">•</li>
+        <li className='cursor-pointer hover:text-stone-400 transition-all duration-700 hover:scale-105'>
+           <FaDiscord/>
+        </li>
+        <li className='cursor-pointer hover:text-stone-400 transition-all duration-700 hover:scale-105'>
+          <FaGithub/>
+        </li>
+        <li className='cursor-pointer hover:text-stone-400 transition-all duration-700 hover:scale-105'>
+           <FaLinkedinIn/>
+        </li>
+        <li className='cursor-pointer hover:text-stone-400 transition-all duration-700 hover:scale-105'>
+          <FaYoutube/>
+        </li>
+      </ul>
+      
+      <ul className="flex m-auto my-4">
         <li className="block mr-2">
-            <a className="footerLink" href="https://github.com/vickOnRails" target="_blank" rel="noreferrer noopener" aria-label="github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            </a>
+        <ThemeSelector footer={true} darkMode={props.darkMode} setDarkMode={props.setDarkMode}/>            
+        </li>
             
-            </li>
-            <li>
-                <a className="block " href="https://codepen.io/Vick_onrails" target="_blank" rel="noreferrer noopener" aria-label="codepen"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15.5"></line><polyline points="22 8.5 12 15.5 2 8.5"></polyline><polyline points="2 15.5 12 8.5 22 15.5"></polyline><line x1="12" y1="2" x2="12" y2="8.5"></line></svg></a></li><li><a className="block mr-2" href="https://twitter.com/vick_onrails" target="_blank" rel="noreferrer noopener" aria-label="twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></li></ul></section>
-    <Logo/>
-   </>
+      </ul>
+      
+      </section>
+    
+   </footer>
   )
 }
 

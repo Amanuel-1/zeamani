@@ -96,7 +96,7 @@
             <div className="container my-8 rounded-md overflow-hidden">
                 <button
                 onClick={toggleAccordion}
-                className="bg-zinc-900 text-white md:px-4 py-2 rounded-md focus:outline-none w-full"
+                className="bg-stone-500 dark:bg-zinc-900 text-white md:px-4 py-2 rounded-md focus:outline-none w-full"
                 >
                 How about signing my guestbook?
                 </button>
@@ -109,36 +109,36 @@
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden mt-4"
                 >
-                <form  onSubmit={handleSubmit} className="space-y-4 rounded-lg flex flex-col justify-center">
+                <form  onSubmit={handleSubmit} className="space-y-4 rounded-lg flex flex-col justify-center text-stone-900 dark:text-stone-100">
                 {/* Your form fields go here */}
-                  <div className="sign-card w-full h-full bg-[rgba(14,12,11,1)]  p-4 ">
+                  <div className="sign-card w-full h-full border border-stone-700 dark:border-none  dark:bg-[rgba(14,12,11,1)]  p-4 ">
                    <div className="flex  w-full flex-col md:flex-row gap-6">
       
                     <div className="name flex flex-col">
-                      <label className="text-sm" htmlFor="name">name</label>
-                            <input type="text" id='name' name='guestName' className='w-full p-1 md:p-2 rounded-[15px] bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.guestName} />
+                      <label className="text-xs px-1" htmlFor="name">name</label>
+                            <input type="text" id='name' name='guestName' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.guestName} />
                     </div>
                       <div className="profile flex flex-col w-full">
-                        <label className="text-sm" htmlFor="profileUrl">profile url</label>
-                          <input type="text" id='profileUrl' name='profileUrl' className='w-full p-1 md:p-2 rounded-[15px] bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.profileUrl} />
+                        <label className="text-xs px-1" htmlFor="profileUrl">profile url</label>
+                          <input type="text" id='profileUrl' name='profileUrl' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.profileUrl} />
                       </div>
                    </div>
                      <div className="flex gap-6  flex-col md:flex-row">
                         <div className="flex flex-col">
-                            <label className="text-sm" htmlFor="country">country</label>
-                            <input type="text" id='country' name='country' className='w-full p-1 md:p-2 rounded-[15px] bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.country} />
+                            <label className="text-xs px-1" htmlFor="country">country</label>
+                            <input type="text" id='country' name='country' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.country} />
                         </div>
                         <div className="flex flex-col w-full">
-                            <label className="text-sm" htmlFor="avatarUrl">avatar url</label>
-                            <input type="text" id='avatarUrl' name='avatar' className='w-full p-1 md:p-2 rounded-[15px] bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.avatar} />
+                            <label className="text-xs px-1" htmlFor="avatarUrl">avatar url</label>
+                            <input type="text" id='avatarUrl' name='avatar' className='w-full p-1 md:p-2 rounded-[15px] border border-stone-800 bg-transparent dark:bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.avatar} />
                         </div>
                       
                      </div>
-                      <label className="text-sm" htmlFor="content">content</label>
-                      <textarea  id='avatarUrl' name='content' className='w-full p-1 md:p-2 rounded-[15px] focus:border focus:border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.content} />
+                      <label className="text-xs px-1" htmlFor="content">content</label>
+                      <textarea  id='avatarUrl' name='content' className='w-full p-1 md:p-2 rounded-[15px] focus:border focus:border-stone-800 bg-transparent border border-stone-800 dark:bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.content} />
                   </div>
       
-                  <button type='submit' disabled={createguestSignature.isLoading} className='px-6 py-3 bg-stone-950 w-[80%] self-center rounded-md  border border-amber-700'>{createguestSignature.isLoading ? "Signing..." : "Sign"}</button>
+                  <button type='submit' disabled={createguestSignature.isLoading} className='px-6 py-3 bg-stone-600 dark:bg-stone-950 w-[80%] self-center rounded-md  border border-amber-700'>{createguestSignature.isLoading ? "Signing..." : "Sign"}</button>
                
                 {/* Add more form fields as needed */}
                 </form>

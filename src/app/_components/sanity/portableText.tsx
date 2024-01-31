@@ -56,7 +56,8 @@ const CodeComponent : React.FC=(props:any) => {
 
 
       return(      
-     <div className="relative flex flex-col w-full md:w-[90%] self-center h-full gap-0 text-sm">
+     <div className="w-full flex justify-center">
+      <div className="relative flex flex-col w-full md:w-[90%] self-center h-full gap-0 text-sm justify-center justify-self-center place-self-center">
       <div className=" absolute -top-3 left-0 w-fit px-8 rounded-tr-[15px] bg-stone-800">{props.value.language}</div>
       <CopyToClipboard text={props.value.code} onCopy={()=>setIsCopied(true)}>
       <div className={cn("absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer hover:border hover:border-amber-600 transition-all duration-500 z-40 ",isCopied?"border border-green-600 hover:border-green-500 text-green-400 bg-green-950":"text-stone-100 bg-stone-600")} ><FaCopy/></div>
@@ -68,6 +69,7 @@ const CodeComponent : React.FC=(props:any) => {
       >
         {props.value.code}
     </SyntaxHighlighter>
+     </div>
      </div>
     )
     }
@@ -123,7 +125,7 @@ const PortableTextComponents = {
 
 const PortableTextEditor = ({ body }: PortableProps) => {
   return (
-    <article className='flex flex-col justify-center items-center'>
+    <article className='text-justify '>
       <PortableText  value={body} components={PortableTextComponents} />
     </article>
   );

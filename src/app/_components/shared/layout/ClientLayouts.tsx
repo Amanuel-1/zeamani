@@ -46,7 +46,7 @@ export default function ClientLayout({
               <>
               <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
               {children}
-              <Footer/> 
+              <Footer darkMode={darkMode} setDarkMode={setDarkMode}/> 
               </>
 
 

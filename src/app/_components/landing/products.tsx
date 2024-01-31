@@ -1,85 +1,105 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/0W13RkH
- */
+import { GiGrowth, GiSpiderWeb } from "react-icons/gi";
+import { GiStumpRegrowth } from "react-icons/gi";
+import { TbSeo } from "react-icons/tb";
+import { GiSwordBrandish } from "react-icons/gi";
+import { GiStickFrame } from "react-icons/gi";
+import { HiMiniWrenchScrewdriver } from "react-icons/hi2";
+
 export default function Products() {
     return (
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 items-center">
-            <div className="flex flex-col justify-center space-y-8 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-                  Discover Our Unique Features
-                </h1>
-                <p className="max-w-[600px] text-zinc-200 md:text-xl dark:text-zinc-100 mx-auto">
-                  Our features are designed to enhance your productivity and streamline your workflow.
-                </p>
-              </div>
-              <div className="w-full max-w-full space-y-4 mx-auto">
-                <div className="grid grid-cols-3 gap-8">
-                  <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                    <div className="p-2 bg-black bg-opacity-50 rounded-full">
-                      <IconInbox className="text-white h-6 w-6 mb-2 opacity-75" />
-                    </div>
-                    <h2 className="text-xl font-bold text-white">Smart Inbox</h2>
-                    <p className="text-zinc-200 dark:text-zinc-100">
-                      Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails.
+      <div className="bg-gradient-to-b from-transparent via-stone-700 to-transparent dark:bg-gradient-to-b dark:from-transparent dark:via-black dark:to-transparent text-sm font-serif mb-6">
+
+            <section id="features" className="relative block px-6 py-10 md:py-20 md:px-10  border-neutral-900 bg-gradient-to-b from-transparent via-stone-400 to-transparent dark:bg-gradient-to-b dark:from-transparent dark:via-black dark:to-transparent z-50">
+
+                <div className="relative mx-auto max-w-5xl text-center">
+                    <span className="text-gray-900 dark:text-gray-100 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
+                        My Services
+                    </span>
+                    <h2 className="block w-full bg-gradient-to-b from-stone-600 to-black dark:bg-gradient-to-b dark:from-white dark:to-gray-400 bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
+                        Below are some of the services I provide
+                    </h2>
+                    <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
+                        Our templates allow for maximum customization. No technical skills required – our intuitive design tools let you get the job done easily.
                     </p>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                    <div className="p-2 bg-black bg-opacity-50 rounded-full">
-                      <IconIntegration className="text-white h-6 w-6 mb-2 opacity-75" />
-                    </div>
-                    <h2 className="text-xl font-bold text-white">Seamless Integration</h2>
-                    <p className="text-zinc-200 dark:text-zinc-100">
-                      Seamless Integration allows you to connect with your favorite apps and services without leaving your
-                      inbox.
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                    <div className="p-2 bg-black bg-opacity-50 rounded-full">
-                      <IconCustomization className="text-white h-6 w-6 mb-2 opacity-75" />
-                    </div>
-                    <h2 className="text-xl font-bold text-white">Advanced Customization</h2>
-                    <p className="text-zinc-200 dark:text-zinc-100">
-                      With Advanced Customization, you can personalize your email client to suit your preferences and work
-                      style.
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                    <div className="p-2 bg-black bg-opacity-50 rounded-full">
-                      <IconSearch className="text-white h-6 w-6 mb-2 opacity-75" />
-                    </div>
-                    <h2 className="text-xl font-bold text-white">Powerful Search</h2>
-                    <p className="text-zinc-200 dark:text-zinc-100">
-                      Our Powerful Search feature allows you to find any email, contact, or file in seconds.
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                    <div className="p-2 bg-black bg-opacity-50 rounded-full">
-                      <IconSecurity className="text-white h-6 w-6 mb-2 opacity-75" />
-                    </div>
-                    <h2 className="text-xl font-bold text-white">Reliable Security</h2>
-                    <p className="text-zinc-200 dark:text-zinc-100">
-                      With Reliable Security, your data is always safe and protected.
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                    <div className="p-2 bg-black bg-opacity-50 rounded-full">
-                      <IconCollaboration className="text-white h-6 w-6 mb-2 opacity-75" />
-                    </div>
-                    <h2 className="text-xl font-bold text-white">Easy Collaboration</h2>
-                    <p className="text-zinc-200 dark:text-zinc-100">
-                      Easy Collaboration allows you to share and edit documents with your team in real time.
-                    </p>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+                <div className="relative mx-auto max-w-7xl grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+                   
+                    <div className="rounded-md border border-neutral-800 dark:border-[rgb(14,12,11)] p-8 text-center font-bold dark:font-normal  shadow">
+                        <div className="button-text text-stone-900 dark:text-stone-500 text-2xl mx-auto flex h-12 w-12 items-center justify-center rounded-md  border border-stone-500 dark:border-stone-900"
+                            >
+                              <GiSpiderWeb/>
+                        </div>
+                        <h3 className="mt-6 text-gray-900 dark:text-gray-100">Website Developement</h3>
+                        <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
+                        Tailor your landing page&apos;s look and feel, from the color scheme to the font size, to the design of your page. I ensure a seamless and visually appealing website that meets your unique needs.
+                        </p>
+                    </div>
+
+                    <div className="rounded-md border border-neutral-800 dark:border-[rgb(14,12,11)] p-8 text-center font-bold dark:font-normal  shadow">
+                        <div className="button-text text-stone-900 dark:text-stone-500 text-2xl mx-auto flex h-12 w-12 items-center justify-center rounded-md  border border-stone-500 dark:border-stone-900"
+                            >
+                           <GiGrowth/>
+                        </div>
+                        <h3 className="mt-6 text-gray-900 dark:text-gray-100">Mentourship</h3>
+                        <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
+                            Receive personalized mentorship to guide you through the intricacies of your industry. I provide valuable insights, advice, and support to help you navigate challenges and achieve your goals.
+                        </p>
+                    </div>
+
+                    <div className="rounded-md border border-neutral-800 dark:border-[rgb(14,12,11)] p-8 text-center font-bold dark:font-normal  shadow">
+                        <div className="button-text text-stone-900 dark:text-stone-500 text-2xl mx-auto flex h-12 w-12 items-center justify-center rounded-md  border border-stone-500 dark:border-stone-900"
+                            >
+                              <TbSeo/>
+                        </div>
+                        <h3 className="mt-6 text-gray-900 dark:text-gray-100">SEO Optimization</h3>
+                        <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
+                            Enhance your online visibility and reach your target audience with my SEO optimization services. I&apos;ll fine-tune your website to improve its search engine rankings, driving organic traffic and increasing your online presence.
+                        </p>
+                    </div>
+
+                    <div className="rounded-md border border-neutral-800 dark:border-[rgb(14,12,11)] p-8 text-center font-bold dark:font-normal  shadow">
+                        <div className="button-text text-stone-900 dark:text-stone-500 text-2xl mx-auto flex h-12 w-12 items-center justify-center rounded-md  border border-stone-500 dark:border-stone-900">
+                           <GiSwordBrandish/>
+                        </div>
+                        <h3 className="mt-6 text-gray-900 dark:text-gray-100">Branding</h3>
+                        <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
+                            Build a strong and memorable brand identity with my comprehensive branding services. I&apos;ll work with you to define your brand, create compelling visuals, and establish a cohesive brand presence across various channels.
+                        </p>
+                    </div>
+
+                    <div className="rounded-md border border-neutral-800 dark:border-[rgb(14,12,11)] p-8 text-center font-bold dark:font-normal  shadow">
+                        <div className="button-text text-stone-900 dark:text-stone-500 text-2xl  mx-auto flex h-12 w-12 items-center justify-center rounded-md  border border-stone-500 dark:border-stone-900">
+                            <GiStickFrame/>
+                        </div>
+                        <h3 className="mt-6 text-gray-900 dark:text-gray-100">UX/UI</h3>
+                        <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
+                            Elevate the user experience (UX) and user interface (UI) of your digital products. I focus on creating intuitive interfaces and seamless interactions, ensuring a delightful experience for your users.
+                        </p>
+                    </div>
+
+                    <div className="rounded-md border border-neutral-800 dark:border-[rgb(14,12,11)] p-8 text-center font-bold dark:font-normal  shadow">
+                        <div className="button-text text-stone-900 dark:text-stone-500 text-2xl mx-auto flex h-12 w-12 items-center justify-center rounded-md  border border-stone-500 dark:border-stone-900"
+                            >
+                            <HiMiniWrenchScrewdriver/>
+                        </div>
+                        <h3 className="mt-6 text-gray-900 dark:text-gray-100">Auditing and Maintainance</h3>
+                        <p className="my-4 text-sm mb-0 font-normal leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
+                           
+Ensure your digital assets thrive with my auditing and maintenance. I conduct detailed audits, identify improvements, and provide ongoing maintenance for optimal performance.
+                        </p>
+                    </div>
+
+
+
+
+                    {/* Repeat similar conversion for other sections */}
+                </div>
+
+
+
+            </section>
+      </div>
     )
   }
   

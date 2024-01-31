@@ -4,6 +4,7 @@ import { FiSun, FiMoon, FiSettings } from 'react-icons/fi';
 
 type themeSelectorProps = {
   darkMode: boolean;
+  footer?:boolean;
   setDarkMode: (mode:boolean)=>void;
 };
 
@@ -69,7 +70,7 @@ const ThemeSelector = (props: themeSelectorProps) => {
        
       </button>
       {isDropdownOpen && (
-        <div className="absolute z-50 right-0 mt-2 bg-white dark:bg-stone-900 border  border-stone-200 dark:border-stone-800 rounded-md shadow-lg">
+        <div className={`absolute z-50 ${props.footer?'-top-[6rem] right-10':'right-0' }  mt-2 bg-white dark:bg-stone-900 border  border-stone-200 dark:border-stone-800 rounded-md shadow-lg`}>
           <ul>
             <li
               className="block px-4 py-2 text-sm text-stone-500 hover:bg-stone-800 cursor-pointer flex items-center"
