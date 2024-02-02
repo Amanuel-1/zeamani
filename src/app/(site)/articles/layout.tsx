@@ -41,7 +41,7 @@ export async function generateMetadata(
  
   return {
     title: title,
-    description:"Explore insightful articles on www.zeamani.com covering a wide range of topics. From [briefly mention key topics/niches you cover] to [highlight another key aspect], our articles provide valuable information and perspectives. Join us for engaging reads that inform and inspire.",
+    description:"Explore insightful articles on www.zeamani.com covering a wide range of topics. From tech newd to liestyle, my articles provide valuable information and perspectives. Join me for engaging reads that inform and inspire.",
     authors:[{name:"Amanuel Garomsa",url:`https://www.linkedin.com/in/amanuel-garomsa-36ba79213/`}],
     creator:"Amauel Garomsa",
     keywords:["blog","nature","technology","crypto","data mining","art","love","football","lifestyle"],
