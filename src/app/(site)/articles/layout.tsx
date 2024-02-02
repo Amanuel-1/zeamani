@@ -24,9 +24,7 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-type postProps  = {
 
-}
 export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
