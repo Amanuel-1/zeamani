@@ -52,7 +52,7 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: "Generate Dynamic Open Graph and Twitter Images in Next.js",
+      title: title,
       description:"Explore insightful articles on www.zeamani.com covering a wide range of topics. From [briefly mention key topics/niches you cover] to [highlight another key aspect], our articles provide valuable information and perspectives. Join us for engaging reads that inform and inspire.",
       images: [Images.articlesOg],
     }
