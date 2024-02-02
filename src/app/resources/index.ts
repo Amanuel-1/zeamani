@@ -20,6 +20,7 @@ export const Images= {
     tensorflow:require('./tensorflow.svg'),
     react:require('./react.svg'),
     python:require('./python.svg'),
-    dataNotFound:require('./data-not-found.svg')
+    dataNotFound:require('./data-not-found.svg'),
+    articlesOg:require('./articles.png')
     
 }

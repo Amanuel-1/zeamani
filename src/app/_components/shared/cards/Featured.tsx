@@ -45,7 +45,7 @@ export default function Featured({ post }: { post: SPost }) {
               transition={{ duration: 0.3 }}
               className="p-2"
             >
-              <Link className="" href={`${getDomain()}/${post.slug.current}`}>
+              <Link className="" href={`${getDomain()}/articles/${post.slug.current}`}>
                 <div className={cn("flex flex-col gap-4 justify-end items-start  w-full h-[12rem] md:h-[25rem] bg-transparent text-stone-200")}>
                   <>
                     <div className="image relative w-full overflow-hidden transition-all duration-700 "></div>
