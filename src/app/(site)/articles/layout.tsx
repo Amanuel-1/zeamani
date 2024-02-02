@@ -46,13 +46,13 @@ export async function generateMetadata(
     creator:"Amauel Garomsa",
     keywords:["blog","nature","technology","crypto","data mining","art","love","football","lifestyle"],
     openGraph:{
-      images: [Images.articlesOg],
+      images: ["https://www.imagebam.com/view/MERRWNC"],
     },
     twitter: {
       card: "summary_large_image",
       title: title,
       description:"Explore insightful articles on www.zeamani.com covering a wide range of topics. From [briefly mention key topics/niches you cover] to [highlight another key aspect], our articles provide valuable information and perspectives. Join us for engaging reads that inform and inspire.",
-      images: [Images.articlesOg],
+      images: ["https://www.imagebam.com/view/MERRWNC"],
     }
   }
 }
