@@ -4,23 +4,23 @@ import React from 'react'
 const AboutMe = () => {
   return (
     <div>
-        <div className="bio relative">
+        <div className="bio relative mt-4">
 
-            <h1 className="Bio">Bio</h1>
+            <h2 className="Bio">Bio</h2>
             <p className="font-light dark:text-stone-300">{Me.bio}</p>
         </div>
 
         <div className="background">
-          <h1 className="">Education</h1>
+          <h2 className="">Education</h2>
           {/* <!-- Item #1 --> */}
-                <div className="-my-6">
+                <div className="md:ml-4">
 
 
                 {
                    // <!-- Item #1 -->
                   Me.education.map((edu,ind)=>(
                     
-                    <div className="relative pl-8 sm:pl-32 py-6 group">
+                    <div key={ind} className="relative pl-8 sm:pl-32 py-6 group ">
                     {/* <!-- Purple label --> */}
                     <div className="font-caveat font-medium text-2xl text-amber-700 mb-1 sm:mb-0">{edu.school}</div>
                     {/* <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) --> */}
@@ -29,7 +29,7 @@ const AboutMe = () => {
                     <div className="text-xl font-bold text-stone-500">{edu.edu_level}</div>
                     </div>
                     {/* <!-- Content --> */}
-                    <div className="text-slate-500">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
+                    <div className="dark:text-neutral-500 ">{edu.remark}</div>
                     </div>
                   ))
                 }

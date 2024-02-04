@@ -66,7 +66,7 @@
     }
     p,
     table {
-        @apply mb-6 text-stone-900 dark:text-white font-body text-justify ;
+        @apply mb-6 text-stone-900 dark:text-white font-body text-justify  text-sm md:text-neutral;
     }
     main {
         @apply mb-8;

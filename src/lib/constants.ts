@@ -30,46 +30,47 @@ I am eager to bring my expertise to a dynamic team that shares a collective pass
 
 const educationBackground  = [
                                 {
-                                    school:"Catholic",
-                                    edu_level:"kindergarten 😋",
-                                    location:"Assosa, Ethiopia",
-                                    year_from:"1999",
-                                    year_to:"2001",
-                                    remark:"not much to talk about ;)"
+                                    "school": "Catholic",
+                                    "edu_level": "kindergarten 😋",
+                                    "location": "Assosa, Ethiopia",
+                                    "year_from": "1999",
+                                    "year_to": "2001",
+                                    "remark": "My early years at Catholic kindergarten in Assosa, Ethiopia. Fond memories of playful learning and the joy of discovery. 😋"
                                 },
                                 {
-                                    school:"Catholic Primary School",
-                                    edu_level:"First Cycle",
-                                    location:"Assosa, Ethiopia",
-                                    year_from:"2002",
-                                    year_to:"2009",
-                                    remark:"pheeew 11 years in the same school. wonder what it looks like ?"
+                                    "school": "Catholic Primary School",
+                                    "edu_level": "First Cycle",
+                                    "location": "Assosa, Ethiopia",
+                                    "year_from": "2002",
+                                    "year_to": "2009",
+                                    "remark": "Spent a remarkable 11 years at Catholic Primary School in Assosa, Ethiopia. Wondering how much it has changed since then!"
                                 },
                                 {
-                                    school:"Assosa Secondary School",
-                                    edu_level:"Second Cycle",
-                                    location:"Assosa, Ethiopia",
-                                    year_from:"2010",
-                                    year_to:"2011",
-                                    remark:""
+                                    "school": "Assosa Secondary School",
+                                    "edu_level": "Second Cycle",
+                                    "location": "Assosa, Ethiopia",
+                                    "year_from": "2010",
+                                    "year_to": "2011",
+                                    "remark": "Embarked on the journey of the Second Cycle at Assosa Secondary School. A crucial period of academic growth and personal development."
                                 },
                                 {
-                                    school:"Assosa Preparatory School",
-                                    edu_level:"Third Cycle",
-                                    location:"Assosa, Ethiopia",
-                                    year_from:"2012",
-                                    year_to:"2013",
-                                    remark:""
+                                    "school": "Assosa Preparatory School",
+                                    "edu_level": "Third Cycle",
+                                    "location": "Assosa, Ethiopia",
+                                    "year_from": "2012",
+                                    "year_to": "2013",
+                                    "remark": "Transitioned to the Third Cycle at Assosa Preparatory School. Exciting times of preparation for the next academic phase."
                                 },
                                 {
-                                    school:"Addis Ababa University",
-                                    edu_level:"Bsc in Computer Science",
-                                    location:"Addis Ababa, Ethiopia",
-                                    year_from:"2013/14",
-                                    year_to:"present",
-                                    remark:""
-                                },
+                                    "school": "Addis Ababa University",
+                                    "edu_level": "Bsc in Computer Science",
+                                    "location": "Addis Ababa, Ethiopia",
+                                    "year_from": "2013/14",
+                                    "year_to": "present",
+                                    "remark": "Currently pursuing a BSc in Computer Science at Addis Ababa University. A challenging yet rewarding journey into the world of technology and innovation."
+                                }
                             ]
+
 
  const InterpriseInfo= {
     
