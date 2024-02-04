@@ -13,7 +13,6 @@ import { Metadata, ResolvingMetadata } from 'next/types'
 import React from 'react'
 
 export async function generateMetadata(
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
 
@@ -24,7 +23,7 @@ export async function generateMetadata(
 
   const website  = getDomain()
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images ?? []
+
  
   return {
     title: title,
