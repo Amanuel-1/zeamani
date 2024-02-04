@@ -12,7 +12,7 @@ import { groq } from 'next-sanity'
 import { Metadata, ResolvingMetadata } from 'next/types'
 import React from 'react'
 
-export async function generateMetadata(
+export function generateMetadata(
 ): Promise<Metadata> {
   // read route params
 
