@@ -44,7 +44,7 @@ const Navbar = (props:navbarProps) => {
               </li>
 
               <li className="mr-2">
-                <Link href="/works">
+                <Link href="/me">
                   Me
                 </Link>
               </li>

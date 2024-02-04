@@ -15,7 +15,7 @@ const HeroSection = () => {
             <div className="relative w-[1rem] h-[1rem] md:w-[2rem] md:h-[2rem]">
                 <Image src={Images.waive} alt='waive' objectFit='cover' layout='fill' />
               </div> 
-            <h1 className='text-lg md:text-4xl dark:text-green-400 '>
+            <h1 className='text-lg md:text-4xl dark:text-amber-400 '>
               Hello!, I am
             </h1>
             </div>
@@ -25,10 +25,10 @@ const HeroSection = () => {
               an aspiring Software developer and Computer Science Student at Addis Ababa University College Of Natural And Computational Sciences. I am currently looking for jobs, so if there is a spot please consisder me . pleaase i am begging you 🥺
             </p>
             </div>
-       <div className="flex flex-wrap gap-4 md:gap-[2rem] justify-start items-center p-2 md:p-0 w-full md:w-[60%] ">
+       <div className="flex flex-wrap gap-4 md:gap-[2rem] justify-start items-center p-2 md:p-0 w-full md:w-[60%] text-stone-900 dark:text-stone-300 ">
           
-          <button className='relative bg-stone-900 w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700'>My Resume</button>
-          <button className='flex gap-2 items-center bg-stone-900 w-full md:w-fit px-6 py-3 font-semibold text-lg text-center justify-center'>LinkedIn<Image className='w-[20px] h-[20px]' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
+          <button className='relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'>My Resume</button>
+          <button className='flex gap-2 items-center relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'>LinkedIn<Image className='w-[20px] h-[20px] hover:border-black hover:bg-stone-300' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
         </div>
         </div>
     </section>

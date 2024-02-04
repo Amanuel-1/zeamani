@@ -1,7 +1,10 @@
 import { type Config } from "tailwindcss";
+const withMT = require("@material-tailwind/react/utils/withMT");
 import { fontFamily } from "tailwindcss/defaultTheme";
 
-export default {
+
+module.exports =  withMT(
+  {
 
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -48,5 +51,6 @@ export default {
       }
     }
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [require("tailwindcss-animate"),require("daisyui"),require('@tailwindcss/line-clamp')],
+} satisfies Config
+)
