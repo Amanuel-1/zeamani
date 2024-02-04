@@ -24,6 +24,7 @@ const config = {
     "@typescript-eslint/no-unsafe-member-access":'warn',
     "@typescript-eslint/no-unsafe-call":'warn',
     "@typescript-eslint/no-empty-interface":'warn',
+    '@typescript-eslint/no-async-without-await':'warn',
 
     "@typescript-eslint/consistent-type-imports": [
       "warn",
