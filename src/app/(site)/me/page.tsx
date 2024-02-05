@@ -8,6 +8,7 @@ import {
   } from "@material-tailwind/react";
 import HeroSection from "fireup/app/_components/landing/hero";
 import AboutMe from "fireup/app/_components/me/aboutMe";
+import Gallery from "fireup/app/_components/me/gallery";
 import { Images } from "fireup/app/resources";
 import Image from 'next/image'
    
@@ -34,8 +35,7 @@ import Image from 'next/image'
       {
         label: "Gallery",
         value: "gallery",
-        page: `Because it's about motivating the doers. Because I'm here
-        to follow my dreams and inspire other people to follow their dreams, too.`,
+        page: <Gallery/>,
       },
       {
         label: "Tools",
@@ -56,7 +56,7 @@ import Image from 'next/image'
             <div className="flex justify-center">
                 <Tabs value="html" className="w-[90%] md:w-[70%]">
                 <TabsHeader
-                className="bg-transparent"
+                className="bg-transparent -z-10"
                 indicatorProps={{
                 className: "bg-[#4f342d10] border-b-2 border-amber-700 shadow-none !text-gray-900",
                 }}

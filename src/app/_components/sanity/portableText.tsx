@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react';
 import { urlForImage } from 'fireup/lib/image';
 import { FaCopy } from 'react-icons/fa';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism';
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { atomDark ,coldarkCold,coy} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import {getImageDimensions} from '@sanity/asset-utils'
 import copy ,{ CopyToClipboard } from "react-copy-to-clipboard";
 import React, { useState } from 'react';
@@ -51,6 +51,7 @@ const SampleImageComponent = ({value, isInline}:any) => {
 const CodeComponent : React.FC=(props:any) => {
         const [isCopied,setIsCopied] = useState(false)
         const [copiedText,setCopiedText]= useState("")
+        const darkTheme =  localStorage.getItem("darkTheme")
 
 
 

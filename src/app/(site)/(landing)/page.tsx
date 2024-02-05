@@ -120,10 +120,10 @@ export default async function Home() {
         }
       </div>
    
-
-      <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
+        <div className="">
+        <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
         {
-         <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-24 py-6 gap-4 ">
+         <div className="flex  w-full">
               <Suspense  fallback={<h1 className="text-9xl font-extrabold text-yellow-500 z-50">loading</h1>} >
               {
                   posts.slice(0,4).map((post,ind)=>(
@@ -134,6 +134,7 @@ export default async function Home() {
         <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-400 text-xl ">see all</Link>
         </div> 
         }
+        </div>
         <Timeline/>
 
 

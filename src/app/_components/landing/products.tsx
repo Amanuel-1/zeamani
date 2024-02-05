@@ -9,7 +9,7 @@ export default function Products() {
     return (
       <div className="bg-gradient-to-b from-transparent via-stone-700 to-transparent dark:bg-gradient-to-b dark:from-transparent dark:via-black dark:to-transparent text-sm font-serif mb-6">
 
-            <section id="features" className="relative block px-6 py-10 md:py-20 md:px-10  border-neutral-900 bg-gradient-to-b from-transparent via-stone-400 to-transparent dark:bg-gradient-to-b dark:from-transparent dark:via-black dark:to-transparent z-50">
+            <section id="features" className="relative block px-6 py-10 md:py-20 md:px-10  border-neutral-900 bg-gradient-to-b from-transparent via-stone-400 to-transparent dark:bg-gradient-to-b dark:from-transparent dark:via-black dark:to-transparent">
 
                 <div className="relative mx-auto max-w-5xl text-center">
                     <span className="text-gray-900 dark:text-gray-100 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
