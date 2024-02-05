@@ -25,6 +25,7 @@ const config = {
     "@typescript-eslint/no-unsafe-call":'warn',
     "@typescript-eslint/no-empty-interface":'warn',
     '@typescript-eslint/require-await':'warn',
+    '@typescript-eslint/no-floating-promises':'warn',
 
     "@typescript-eslint/consistent-type-imports": [
       "warn",
