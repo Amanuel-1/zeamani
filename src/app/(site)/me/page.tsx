@@ -56,7 +56,7 @@ import Image from 'next/image'
             <div className="flex justify-center">
                 <Tabs value="html" className="w-[90%] md:w-[70%]">
                 <TabsHeader
-                className="bg-transparent -z-10"
+                className="bg-transparent z-0"
                 indicatorProps={{
                 className: "bg-[#4f342d10] border-b-2 border-amber-700 shadow-none !text-gray-900",
                 }}

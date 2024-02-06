@@ -120,21 +120,20 @@ export default async function Home() {
         }
       </div>
    
-        <div className="">
-        <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
+
+      <h1 className="md:text-4xl font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
         {
-         <div className="flex  w-full">
+         <div className="flex flex-wrap max-w-full md:w-full">
               <Suspense  fallback={<h1 className="text-9xl font-extrabold text-yellow-500 z-50">loading</h1>} >
               {
                   posts.slice(0,4).map((post,ind)=>(
-                    <PostCard  key={ind} post={post}/>
+                    <PostCard className="px-4"  key={ind} post={post}/>
                   ))
                   }
               </Suspense>
         <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-400 text-xl ">see all</Link>
-        </div> 
-        }
         </div>
+        }
         <Timeline/>
 
 
