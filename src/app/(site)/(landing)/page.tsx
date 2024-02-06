@@ -123,7 +123,7 @@ export default async function Home() {
 
       <h1 className="md:text-4xl font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
         {
-         <div className="flex flex-wrap max-w-full md:w-full">
+         <div className="flex flex-wrap max-w-full md:px-20">
               <Suspense  fallback={<h1 className="text-9xl font-extrabold text-yellow-500 z-50">loading</h1>} >
               {
                   posts.slice(0,4).map((post,ind)=>(
