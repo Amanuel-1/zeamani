@@ -59,7 +59,7 @@ const CodeComponent : React.FC=(props:any) => {
       return(      
      <div className="w-full flex justify-center">
       <div className="relative flex flex-col w-full md:w-[90%] self-center h-full gap-0 text-sm justify-center justify-self-center place-self-center">
-      <div className=" absolute -top-3 left-0 w-fit px-8 rounded-tr-[15px] bg-stone-800">{props.value.language}</div>
+      <div className=" absolute -top-3 left-0 w-fit px-8 rounded-tr-[15px] bg-stone-800 z-0">{props.value.language}</div>
       <CopyToClipboard text={props.value.code} onCopy={()=>setIsCopied(true)}>
       <div className={cn("absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px] bg-stone-800 cursor-pointer hover:border hover:border-amber-600 transition-all duration-500 z-40 ",isCopied?"border border-green-600 hover:border-green-500 text-green-400 bg-green-950":"text-stone-100 bg-stone-600")} ><FaCopy/></div>
       </CopyToClipboard>
@@ -118,7 +118,7 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 dark:bg-[#4f342d35] z-50 text-xs md:text-sm lg:text-base">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 dark:bg-[#4f342d35] z-0 text-xs md:text-sm lg:text-base">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
     p:({children}:any)=><h1>{children}</h1>
   }

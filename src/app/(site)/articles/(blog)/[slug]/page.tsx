@@ -78,7 +78,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
     <>
 
     <section className='z-20 flex container px-1 md:px-12 lg:px-36 flex-col gap-4  items-center min-h-screen w-full '>
-            <h1 className="title w-full  text-center md:mt-12 mt-6">{post.title + "  "+ post.likes+ " likes"}</h1>
+            <h1 className="title w-full  text-center md:mt-12 mt-6">{post.title}</h1>
             <div className="image container w-full px-2">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
@@ -93,12 +93,12 @@ const PostPage = async ({params:{slug}}:postProps) => {
                         {post.author.name}
                     </div>
             </div> */}
-            <div className="tags w-full flex flex-wrap mb-4 gap-x-6">{
+            <div className="tags w-full flex flex-wrap mb-4 gap-x-2 md:gap-x-6">{
               post.categories && post.categories.map((categ:Category,ind)=>(
-                <p key={ind} className='text-stone-800 dark:text-stone-300 font-bold italic text-base m-0 p-0'>#{categ.title}</p>
+                <p key={ind} className='text-stone-800 text-xs  md:text-base dark:text-stone-300 font-bold italic m-0 p-0'>#{categ.title}</p>
               ))
             }</div>
-            <p className=" w-full z-50">{post.description}</p>
+            <p className=" w-full z-0">{post.description}</p>
            
             <PortableTextEditor  body={post.body}/>
            </div>

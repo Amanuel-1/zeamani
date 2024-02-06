@@ -107,7 +107,7 @@ const Navbar = (props:navbarProps) => {
   return (
     <header className="py-4 mb-0 relative z-10 mx-auto">
       <Container>
-        <nav className="navWrapper flex justify-between items-center">
+        <nav className={`navWrapper fixed w-[90%] flex justify-between items-center ${!isOpen ? 'backdrop-blur-sm':''}`}>
           <div className="navLeft">
             <Link href="/" className="flex items-center text-body-text hover:text-stone-700 dark:hover:text-white no-underline">
               <Logo />
