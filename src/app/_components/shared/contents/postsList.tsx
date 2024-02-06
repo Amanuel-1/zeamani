@@ -14,7 +14,7 @@ const PostsList = ({posts}:{posts:SPost[]}) => {
     <div className="flex flex-wrap gap-4 px-0 w-full justify-center py-10 items-center transition-all duration-500">
     {
       filteredPosts.length>0? (filteredPosts.map((post)=>(
-        <PostCard className='h-[15rem] w-[30rem]' key={post._id} post={post} />
+        <PostCard className='h-[15rem]  md:w-[50%]' key={post._id} post={post} />
       ))):(
         <div className="notfound relative flex flex-col gap-2 text-center justify-center items-center">
             <Image src={Images.dataNotFound} alt='notFound' className='h-[5rem] w-[5rem] brightness-75' />

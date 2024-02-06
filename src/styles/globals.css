@@ -150,7 +150,7 @@
             @apply list-decimal;
         }
         .content pre code {
-            @apply overflow-hidden;
+            @apply overflow-hidden text-xs md:text-neutral;
         }
         .content li {
             @apply mb-2;

@@ -118,7 +118,7 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 dark:bg-[#4f342d35] z-50">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 dark:bg-[#4f342d35] z-50 text-xs md:text-sm lg:text-base">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
     p:({children}:any)=><h1>{children}</h1>
   }
@@ -126,7 +126,7 @@ const PortableTextComponents = {
 
 const PortableTextEditor = ({ body }: PortableProps) => {
   return (
-    <article className='text-justify '>
+    <article className=''>
       <PortableText  value={body} components={PortableTextComponents} />
     </article>
   );

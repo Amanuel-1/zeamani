@@ -63,7 +63,7 @@ const Articles = async() => {
           <Featured key={posts[0]?._id} post={posts[0] as SPost}/>
         </div>
         <section>
-        <PostsList posts={posts} />
+        <PostsList  posts={posts} />
       </section>
 
       {/* <PostsList posts={posts}/> */}
