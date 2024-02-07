@@ -13,7 +13,7 @@ const ProjectDialog = ({ project }: { project: SProject }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
       <div className='relative cursor-pointer flex flex-col justify-stretch items-stretch align-baseline group text-sm text-stone-900'>
-        <div className="image relative w-full p-2 h-[20rem] md:h-[8rem] lg:h-[12rem] xl:h-[8rem] overflow-hidden rounded-[12px]  md:rounded-[20px] transition-all duration-700 ">
+        <div className="image relative w-full p-2 h-[14rem] md:h-[8rem] lg:h-[12rem] xl:h-[8rem] overflow-hidden rounded-[12px]  md:rounded-[20px] transition-all duration-700 ">
           <Image
             className="hover:scale-105  overflow-hidden bg-inherit"
             src={urlForImage(project.mainImage).url()}
@@ -42,13 +42,13 @@ const ProjectDialog = ({ project }: { project: SProject }) => (
         <Dialog.Title className="text-mauve12 m-0  w-full text-center pt-10">
               <h1> {project.title}</h1>
          </Dialog.Title>
-        <div className="w-full h-full flex flex-col px-6 md:px-16">
+        <div className="w-full h-full flex flex-col md:px-16">
           <PortableTextEditor body={project.body} />
         </div>
 
         <div className="mt-[25px] flex justify-end">
           <Dialog.Close asChild>
-            <button className="bg-green4 text-green11 hover:bg-green5 focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+            <button className=" text-stone-800 dark:text-stone-300 border-2 border-stone-500  dark:border-stone-900 hover:bg-stone-500 hover:text-stone-300 dark:hover:bg-stone-900 focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none transition-all duration-700">
               Close
             </button>
           </Dialog.Close>

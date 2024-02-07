@@ -21,7 +21,7 @@ interface codeComponentProps{
 
 
 // Barebones lazy-loaded image component
-const SampleImageComponent = ({value, isInline}:any) => {
+const ImageComponent = ({value, isInline}:any) => {
   const {width, height} = getImageDimensions(value)
   return (
     <img
@@ -34,8 +34,8 @@ const SampleImageComponent = ({value, isInline}:any) => {
       alt={value.alt || ' '}
       loading="lazy"
       style={{
-        paddingLeft:"2rem",
-        paddingRight:"2rem",
+        // paddingLeft:"2rem",
+        // paddingRight:"2rem",
         // Display alongside text if image appears inside a block text span
         display: isInline ? 'inline-block' : 'block',
           
@@ -43,7 +43,7 @@ const SampleImageComponent = ({value, isInline}:any) => {
         aspectRatio: width / height,
         cursor:'pointer'
       }}
-      className='hover:brightness-75 transition-all duration-500'
+      className='hover:brightness-75 transition-all duration-500 px-3 md:px-[2rem]'
     />
   )
 }
@@ -61,7 +61,7 @@ const CodeComponent : React.FC=(props:any) => {
 
 
       return(      
-     <div className="w-full flex justify-center">
+     <div className="w-full flex justify-center my-10">
       <div className="relative flex flex-col w-full md:w-[90%] self-center h-full gap-0 text-sm justify-center justify-self-center place-self-center">
       <div className=" absolute -top-3 left-0 w-fit px-8 rounded-tr-[15px] bg-stone-800 z-0">{props.value.language}</div>
       <CopyToClipboard text={props.value.code} onCopy={()=>setIsCopied(true)}>
@@ -103,7 +103,7 @@ const CodeComponent : React.FC=(props:any) => {
 
 const PortableTextComponents = {
   types: {
-    'image':SampleImageComponent,
+    'image':ImageComponent,
     code: CodeComponent,
     youtube:YoutubeBlock,
     twitter:TwitterBlock
@@ -114,7 +114,7 @@ const PortableTextComponents = {
     link: ({ children, value }: any) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
       return (
-        <a className='text-amber-500 underline hover:text-amber-300 z-50' href={value.href} rel={rel}>
+        <a className='text-amber-500 md:text-amber-600 underline max-w-lg hover:text-amber-300 z-50 text-sm md:text-base' href={value.href} rel={rel}>
           {children}
         </a>
       );

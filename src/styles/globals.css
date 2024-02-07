@@ -131,9 +131,13 @@
     th {
         @apply text-white;
     }
+    em {
+        @apply flex flex-wrap overflow-x-hidden
+    }
     .page-intro {
         @apply text-center w-full mx-auto mb-8 mt-0 max-w-lg;
     }
+
 }
 
 @layer components {
@@ -196,3 +200,29 @@
     border-radius: 4px;
     @apply text-stone-900 dark:text-stone-100
   }
+
+
+
+
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+    @apply w-[6px] h-[6px] md:h-[10px]
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-amber-700 dark:bg-stone-800 rounded-[5px] cursor-pointer
+    
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  

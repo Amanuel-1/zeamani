@@ -9,6 +9,7 @@ import {
 import HeroSection from "fireup/app/_components/landing/hero";
 import AboutMe from "fireup/app/_components/me/aboutMe";
 import Gallery from "fireup/app/_components/me/gallery";
+import Skills from "fireup/app/_components/me/skills";
 import { Images } from "fireup/app/resources";
 import Image from 'next/image'
    
@@ -20,10 +21,9 @@ import Image from 'next/image'
         page: <AboutMe/>,
       },
       {
-        label: "Experiences",
-        value: "experiences",
-        page: `Because it's about motivating the doers. Because I'm here
-        to follow my dreams and inspire other people to follow their dreams, too.`,
+        label: "Skills",
+        value: "skills",
+        page: <Skills/>,
       },
       {
         label: "Interests",

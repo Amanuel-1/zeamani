@@ -158,21 +158,22 @@ const Hamburger = ({isOpen,Open}:{isOpen:boolean,Open:(value:boolean)=>void}) =>
  }
 
   return (
-    <button className='md:hidden z-50' onClick={handleClick}>
-      <svg width="30" height="30" viewBox="0 0 30 30">
+    <button className='md:hidden z-50 flex w-full h-full justify-center items-center' onClick={handleClick}>
+      <svg width="32" height="32" viewBox="0 0 32 32">
         <motion.path
           {...path01Variants.closed}
           animate={path01Controls}
           transition={{ duration: 0.2 }}
-          stroke="#FFFFFF"
-          strokeWidth={2}
+          className="stroke-zinc-950 dark:stroke-stone-100 rounded-[50px]"          
+          strokeWidth={3}
         />
         <motion.path
           {...path02Variants.closed}
           animate={path02Controls}
           transition={{ duration: 0.2 }}
-          stroke="#FFFFFF"
-          strokeWidth={2}
+          
+          strokeWidth={3}
+          className="stroke-zinc-950 dark:stroke-stone-100 rounded-[50px]"
         />
       </svg>
     </button>

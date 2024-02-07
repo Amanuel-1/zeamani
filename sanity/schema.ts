@@ -7,9 +7,10 @@ import author from './schemas/author'
 import project from './schemas/project'
 import { youtube } from './schemas/youtube'
 import { twitter } from './schemas/twitter'
+import gallery from './schemas/gallery'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [youtube,twitter,post, author, category,project, blockContent],
+  types: [youtube,twitter,gallery,post, author, category,project, blockContent],
 
 }

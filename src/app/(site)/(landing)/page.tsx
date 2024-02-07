@@ -107,7 +107,7 @@ export default async function Home() {
       {/* ###########################################/ */}
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
-      <h1 className="text-4xl font-extrabold px-20">Behold ! the recent <b className="text-amber-700">projects</b></h1>
+      <h1 className=" font-extrabold px-4 md:px-20 mt-4">Behold ! the recent <b className="text-amber-700">projects</b></h1>
       <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 p-10 h-full">
         {
           
