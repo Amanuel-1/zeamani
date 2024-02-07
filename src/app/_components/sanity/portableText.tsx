@@ -51,7 +51,11 @@ const SampleImageComponent = ({value, isInline}:any) => {
 const CodeComponent : React.FC=(props:any) => {
         const [isCopied,setIsCopied] = useState(false)
         const [copiedText,setCopiedText]= useState("")
+        // const [codeTheme,setCodeTheme] = useState('dark')
+
         const darkTheme =  localStorage.getItem("darkTheme")
+
+
 
 
 
@@ -118,7 +122,7 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 dark:bg-[#4f342d35] z-0 text-xs md:text-sm lg:text-base">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d1c] dark:bg-[#4f342d35] z-0 text-xs md:text-sm text-stone-900">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
     p:({children}:any)=><h1>{children}</h1>
   }
