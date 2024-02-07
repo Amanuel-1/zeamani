@@ -122,7 +122,7 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d1c] dark:bg-[#4f342d35] z-0 text-xs md:text-sm text-stone-900">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d1c] dark:bg-[#4f342d35] z-0 text-xs md:text-sm text-stone-900 dark:text-stone-300">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
     p:({children}:any)=><h1>{children}</h1>
   }
