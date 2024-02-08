@@ -20,6 +20,13 @@ interface SPost extends Base {
   dislikes:number,
   views: number
 }
+interface SGallery extends Base {
+  mainImage: Image,
+  title: string,
+  description: string,
+  location:string,
+
+}
 interface SProject extends Base {
   author: Author,
   body: Block[],
