@@ -10,7 +10,7 @@ const Gallery = async() => {
 
 }`
 
-let gallery:SGallery[]  = await sanityFetch({query:query,tags:["post","articles"]})
+const gallery:SGallery[]  = await sanityFetch({query:query,tags:["post","articles"]})
  gallery.map((img)=>gallery.push(img))
   return (
   <div className="p-5 sm:p-8">
