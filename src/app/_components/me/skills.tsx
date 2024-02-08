@@ -142,7 +142,7 @@ const skills = [
 const Skills = () => {
   return (
     <div className="">
-        <div className="flex gap-2 text-sm md:gap-16 justify-center items-center relative w-full min-h-[8rem] pt-14 pb-3 px-3 dark:bg-[rgb(14,12,11)] border border-stone-900 rounded-[18px] dark:hover:bg-[rgb(12,11,11)] text-stone-900 dark:text-stone-200 cursor-pointer transition-all duration-700">
+        <div className="flex gap-2 text-sm md:gap-16 justify-center items-center py-8  text-stone-900 dark:text-stone-200 cursor-pointer transition-all duration-700">
         <RadialProgressBar value={80} label='frontend'/>
         <RadialProgressBar value={85} label='backend'/>
         <RadialProgressBar value={70} label='UX/UI'/>
@@ -161,9 +161,9 @@ const Skills = () => {
 
         {
             skills.map((item:any,ind:number)=>(
-                <div key={ind} className="detailed relative col-span-4 md:col-span-2 flex flex-col gap-4 w-full min-h-[8rem] pt-14 pb-3 px-3 dark:bg-[rgb(14,12,11)] border border-stone-900 rounded-[18px] dark:hover:bg-[rgb(12,11,11)] text-stone-900 dark:text-stone-200 cursor-pointer transition-all duration-700 my-4 ">
+                <div key={ind} className="detailed relative col-span-4 md:col-span-2 flex flex-col gap-4 w-full min-h-[8rem] pt-14 pb-3 md:px-3 dark:bg-[rgb(14,12,11)] border border-stone-900 rounded-[18px] dark:hover:bg-[rgb(12,11,11)] text-stone-900 dark:text-stone-200 cursor-pointer transition-all duration-700 my-4 ">
                 <h4 className="absolute top-2 left-6">{item.category}</h4>
-                <div className="skills-list flex flex-wrap md:px-6">
+                <div className="skills-list flex justify-center md:justify-normal flex-wrap md:px-6">
                         {
                             item.skills.map((skill:any,index:number)=>(
                                 <div className='flex' key={index}>

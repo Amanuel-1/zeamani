@@ -5,6 +5,7 @@ import { sanityFetch } from 'fireup/lib/client';
 import { urlForImage } from 'fireup/lib/image';
 import { SGallery } from 'fireup/lib/types';
 import { groq } from 'next-sanity';
+import moment from 'moment';
 
 const Gallery = () => {
   const [gallery, setGallery] = useState<SGallery[]>([]);
@@ -32,11 +33,16 @@ const Gallery = () => {
         {gallery.length > 0 &&
           gallery.map((item: SGallery, index: number) => (
             <div key={index} className="grid gap-4">
+              <div className="relative w-full">
               <img
                 className="h-auto cursor-pointer hover:brightness-75 max-w-full py-2 rounded-lg object-cover object-center transition-all duration-700"
                 src={urlForImage(item.mainImage).url()}
                 alt={'gallery-photo'}
               />
+              <ul className="absolute bottom-[8px] left-0 px-2 bg-[rgba(1,2,3,0.5)] backdrop-blur-sm flex justify-around rounded-tr-[15px]">
+                  <li className=" text-white text-[10px] font-extrabold">{item.location.toUpperCase().substring(0,3)},{moment(item._createdAt).format("h:mm a")}</li>
+              </ul>
+              </div>
             </div>
           ))}
       </div>
