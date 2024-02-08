@@ -1,17 +1,30 @@
+"use client"
 import { sanityFetch } from 'fireup/lib/client'
 import { urlForImage } from 'fireup/lib/image'
 import { SGallery, SPost } from 'fireup/lib/types'
 import { groq } from 'next-sanity'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Gallery = async() => {
+const Gallery = () => {
+
+  const [gallery,setGallery]= useState<SGallery[]>([])
   const query  = groq`*[_type=="gallery"]{
     ...,
 
 }`
+const fetchGallery = async ()=>{
+  const result:SGallery[]  = await sanityFetch({query:query,tags:["post","articles"]})
 
-const gallery:SGallery[]  = await sanityFetch({query:query,tags:["post","articles"]})
- gallery.map((img)=>gallery.push(img))
+  if(result){
+  setGallery(result)
+  }
+  
+}
+
+useEffect(()=>{
+  fetchGallery()
+},[])
+
   return (
   <div className="p-5 sm:p-8">
     <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
