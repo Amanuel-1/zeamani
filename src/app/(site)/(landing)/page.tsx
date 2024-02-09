@@ -52,7 +52,7 @@ export async function generateMetadata(
     category:"website",
     keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
     openGraph: {
-      images: ['https://images4.imagebam.com/b2/83/ae/MEPYX81_o.png', ...previousImages],
+      images: ['https://images4.imagebam.com/4c/97/c3/MERXNNX_o.png', ...previousImages],
     },
     
     twitter: {
@@ -61,7 +61,7 @@ export async function generateMetadata(
       description: Me.bio,
       site:"https://zeamani.vercel.app",
       creator: '@Amanuel_Garomsa',
-      images: ['https://images4.imagebam.com/b2/83/ae/MEPYX81_o.png'],
+      images: ['https://images4.imagebam.com/4c/97/c3/MERXNNX_o.png'],
     },
     
   }     
