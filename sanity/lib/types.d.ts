@@ -25,6 +25,9 @@ interface SGallery extends Base {
   title: string,
   description: string,
   location:string,
+  country:string,
+  publishedAt:string,
+  capturedAt
 
 }
 interface SProject extends Base {

@@ -34,8 +34,18 @@ export default defineType({
             type:'string'
           }),
           defineField({
+            name:'Country',
+            title:"country",
+            type:'string'
+          }),
+          defineField({
             name: 'publishedAt',
             title: 'Published at',
+            type: 'datetime',
+          }),
+          defineField({
+            name: 'capturedAt',
+            title: 'captured at',
             type: 'datetime',
           }),
     ]

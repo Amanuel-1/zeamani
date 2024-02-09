@@ -16,8 +16,7 @@ const contactInfo = {
     POBox:1000,
     email:"amanuelgaromsa@gmail.com",
     phone:"+251935046969",
-    bio:`hellow . this is ${basicInfo.name + basicInfo.fatherName}, i am an aspiring software developer and engineer.
-    Passionate and results-driven software developer with a wealth of experience and a keen focus on website and application software development. I bring a high level of motivation and a strong commitment to contributing to a collaborative team environment that prioritizes innovation, continuous improvement, and unwavering dedication to customer satisfaction.
+    bio:`hellow . this is ${basicInfo.name + basicInfo.fatherName}, i am an aspiring software developer and engineer.Passionate and results-driven software developer with a wealth of experience and a keen focus on website and application software development. I bring a high level of motivation and a strong commitment to contributing to a collaborative team environment that prioritizes innovation, continuous improvement, and unwavering dedication to customer satisfaction.
 
 Throughout my career, I have honed my skills in crafting robust and efficient software solutions, demonstrating a deep understanding of the intricacies of web and application development. My enthusiasm for staying abreast of the latest technologies and industry trends has consistently fueled my ability to deliver cutting-edge solutions.
 

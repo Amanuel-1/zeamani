@@ -9,6 +9,7 @@ import { urlForImage } from 'fireup/lib/image';
 import { shortener } from 'fireup/lib/utils';
 import PortableTextEditor from '../sanity/portableText';
 import moment from 'moment';
+import { FaLocationDot,FaStopwatch } from "react-icons/fa6";
 
 const GalleryDialog = ({ item }: { item: SGallery }) => (
   <Dialog.Root>
@@ -26,19 +27,27 @@ const GalleryDialog = ({ item }: { item: SGallery }) => (
               </div>
             </div>
     </Dialog.Trigger>
-    <Dialog.Portal>
+    <Dialog.Portal >
       <Dialog.Overlay className=" data-[state=open]:animate-overlayShow fixed inset-0 h-fit rounded-lg overflow-clip z-50 " />
-      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-w-[95vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-100 dark:bg-zinc-950 md:bg-[rgba(220,209,204,0.73)] dark:md:bg-[rgba(0,0,0,0.78)] backdrop-blur-md  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-stone-400 dark:border-stone-900 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none ">
+      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-w-[95vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-100 dark:bg-zinc-950 md:bg-[rgba(220,209,204,0.73)] dark:md:bg-[rgba(0,0,0,0.78)] backdrop-blur-md  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-stone-400 dark:border-stone-900 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none z-50">
         
-            <section className='w-full h-full grid grid-cols-1 md:grid-cols-2 z-50'>
+            <section className='w-full h-full grid grid-cols-1 md:grid-cols-2 z-50 justify-center items-center'>
                 <img
                     className="col-span-1 h-auto cursor-pointer hover:brightness-75 max-w-full py-2 rounded-lg object-cover object-center transition-all duration-700"
                     src={urlForImage(item.mainImage).url()}
                     alt={'gallery-photo'}
                 />
-                <article className="w-full h-full col-span-1">{
-                    item.description
-                }</article>
+               <div className="col-span-1 flex flex-col justify-center items-center w-full h-full  text-stone-900 dark:text-stone-300 py-[10%] px-2 md:px-4 text-justify">
+                    <article className="py-4">{
+                          item.description
+                      }</article>
+
+                      <div className="flex flex-col md:flex-row gap-4  border-t border-stone-500 dark:border-stone-800 text-sm font-extralight italic w-full py-10 ">
+                      <div className="flex gap-2 items-center justify-center"><FaStopwatch/>{moment(item.capturedAt).format("MMM/d/yyyy hh:mm a")}</div>
+                      <div className="flex gap-2 items-center justify-center"><FaLocationDot/>{item.location}</div>
+                      </div>
+
+               </div>
             </section>
 
         <div className="mt-[25px] flex justify-end">

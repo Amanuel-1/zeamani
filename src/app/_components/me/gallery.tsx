@@ -8,6 +8,7 @@ import { groq } from 'next-sanity';
 import moment from 'moment';
 import GalleryDialog from './galleryDialog';
 
+
 const Gallery = () => {
   const [gallery, setGallery] = useState<SGallery[]>([]);
 
