@@ -33,7 +33,7 @@ const Gallery = () => {
       <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
         {gallery.length > 0 &&
           gallery.map((item: SGallery, index: number) => (
-               <GalleryDialog item={item}/>
+               <GalleryDialog key={index} item={item}/>
           ))}
       </div>
     </div>
