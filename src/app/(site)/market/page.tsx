@@ -1,9 +1,9 @@
 import React from 'react'
-import UnderConstfuction from '../underConstruciton/page'
+import UnderConstruction from '../underConstruciton/page'
 
 const Market = () => {
   return (
-    <UnderConstfuction/>
+    <UnderConstruction/>
   )
 }
 

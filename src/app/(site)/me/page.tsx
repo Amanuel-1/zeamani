@@ -12,6 +12,7 @@ import Gallery from "fireup/app/_components/me/gallery";
 import Skills from "fireup/app/_components/me/skills";
 import { Images } from "fireup/app/resources";
 import Image from 'next/image'
+import UnderConstruction from "../underConstruciton/page";
    
   const Me=()=>{
     const data = [
@@ -28,9 +29,7 @@ import Image from 'next/image'
       {
         label: "Interests",
         value: "interests",
-        page: `We're not always in the position that we want to be at.
-        We're constantly growing. We're constantly making mistakes. We're
-        constantly trying to express ourselves and actualize our dreams.`,
+        page: <UnderConstruction/>,
       },
       {
         label: "Gallery",
@@ -40,7 +39,7 @@ import Image from 'next/image'
       {
         label: "Tools",
         value: "tools",
-        page: <HeroSection/>,
+        page:  <UnderConstruction/>,
       },
     ];
    

@@ -43,8 +43,8 @@ const GalleryDialog = ({ item }: { item: SGallery }) => (
                       }</article>
 
                       <div className="flex flex-col md:flex-row gap-4  border-t border-stone-500 dark:border-stone-800 text-sm font-extralight italic w-full py-10 ">
-                      <div className="flex gap-2 items-center justify-center"><FaStopwatch/>{moment(item.capturedAt).format("MMM/d/yyyy hh:mm a")}</div>
-                      <div className="flex gap-2 items-center justify-center"><FaLocationDot/>{item.location}</div>
+                      <div className="flex gap-2 items-center justify-center text-[15px]"><FaStopwatch/>{moment(item.capturedAt).format("dddd MMM yyyy hh:mm a")}</div>
+                      <div className="flex gap-2 items-center justify-center text-[15px]"><FaLocationDot/>{item.location}</div>
                       </div>
 
                </div>
