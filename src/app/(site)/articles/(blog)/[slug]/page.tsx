@@ -55,7 +55,7 @@ export async function generateMetadata(
       },
       twitter: {
         card: "summary_large_image",
-        title: "Generate Dynamic Open Graph and Twitter Images in Next.js",
+        title: post.title,
         description:post.description,
         images: [ `${website}/api/og?title=${post.title}&author=${post.author.name}&image=${imageData}&avatar=${avatar}` ],
       }
