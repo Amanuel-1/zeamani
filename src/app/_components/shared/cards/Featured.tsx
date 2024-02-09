@@ -46,13 +46,13 @@ export default function Featured({ post }: { post: SPost }) {
               className="p-2"
             >
               <Link className="" href={`${getDomain()}/articles/${post.slug.current}`}>
-                <div className={cn("flex flex-col gap-4 justify-end items-start  w-full h-[12rem] md:h-[25rem] bg-transparent text-stone-200")}>
+                <div className={cn("flex flex-col gap-4 md:justify-end items-start  w-full h-[12rem] md:h-[25rem] bg-transparent text-stone-200")}>
                   <>
                     <div className="image relative w-full overflow-hidden transition-all duration-700 "></div>
                     <div>
-                      <div className="px-8">
+                      <div className="md:px-8">
                         <motion.h1
-                          className="w-full font-extrabold group-hover:text-white text-stone-200 transition-all duration-700"
+                          className="w-full font-extrabold group-hover:text-white text-stone-200 text-lg md:text-4xl xl:text-5xl transition-all duration-700"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -20 }}
@@ -60,7 +60,7 @@ export default function Featured({ post }: { post: SPost }) {
                           {post.title}
                         </motion.h1>
                         <motion.p
-                          className="text-border text-clip text-stone-300 font-semibold"
+                          className="text-border text-stone-300 md:font-semibold h-[1rem] md:h-fit text-ellipsis"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -20 }}

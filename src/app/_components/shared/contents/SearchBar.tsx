@@ -50,11 +50,11 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
 
   return (
     <div className="flex justify-center w-full my-3">
-    <div className="w-full px-24">
+    <div className="w-full md:px-24">
       <div className="flex flex-col">
         <div className={`rounded-xl p-6 shadow-lg w-ful`}>
-          <form className="flex gap-6 justify-between w-full"> {/* Change justify-center to justify-between */}
-            <div className="relative w-full flex items-center rounded-md">
+          <form className="flex flex-col md:flex-row gap-6 justify-between w-full"> {/* Change justify-center to justify-between */}
+            <div className="relative w-full flex justify-center items-center rounded-md">
               <svg
                 className="absolute left-2 block h-5 w-5 text-gray-400"
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
               />
             </div>
 
-            <div className="flex gap-6 items-center w-full justify-end"> {/* Move justify-self-end to items-center */}
+            <div className="flex gap-6 items-center w-full justify-center md:justify-end"> {/* Move justify-self-end to items-center */}
               <div className="flex gap-3 items-center">
                 <label htmlFor="category" className="text-md font-bold text-stone-600">
                   categories
