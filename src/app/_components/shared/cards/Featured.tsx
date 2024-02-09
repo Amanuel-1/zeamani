@@ -60,7 +60,15 @@ export default function Featured({ post }: { post: SPost }) {
                           {post.title}
                         </motion.h1>
                         <motion.p
-                          className="text-border text-stone-300 md:font-semibold h-[1rem] md:h-fit text-ellipsis"
+                          className="md:hidden text-border text-stone-300 md:font-semibold text-ellipsis"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -20 }}
+                        >
+                          {shortener(post.description, 150)}
+                        </motion.p>
+                        <motion.p
+                          className="hidden md:flex text-border text-stone-300 md:font-semibold text-ellipsis"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -20 }}
