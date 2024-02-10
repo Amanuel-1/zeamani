@@ -23,7 +23,7 @@ const Contact = () => {
             <h1 className="font-thin mt-10 md:mt-1 md:mb-1 text-stone-800 dark:text-stone-300">Contact Me</h1>
             <p className="md:w-[70%] font-Linkght">
                  Feel free to call, email, or fill out the contact form.
-                 Excited to discuss how I can assist you. Looking forward to your message! 😉"
+                 Excited to discuss how I can assist you. Looking forward to your message! 😉
             </p>
             <div className="emails flex flex-col text-sm">
                 <i className="px-1 ">amanuelgaromsa@gmail.com</i>
