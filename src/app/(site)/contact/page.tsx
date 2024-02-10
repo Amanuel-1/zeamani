@@ -8,7 +8,7 @@ import { FaDiscord } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 
-const GuestsBook = () => {
+const Contact = () => {
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     throw new Error("Function not implemented.");
   }
@@ -64,19 +64,20 @@ const GuestsBook = () => {
                             <input type="text" id='profileUrl' name='profileUrl' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} />
                         </div>
                       </div>
-                        <div className="flex gap-3 md:gap-6  flex-col md:flex-row">
-                          <div className="flex flex-col">
-                              <label className="text-[12px] py-1 px-1" htmlFor="country">country</label>
-                              <input type="text" id='country' name='country' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} />
-                          </div>
+                      <div className="flex gap-3 md:gap-6  flex-col md:flex-row">      
                           <div className="flex flex-col w-full">
-                              <label className="text-[12px] py-1 px-1" htmlFor="avatarUrl">avatar url</label>
+                              <label className="text-[12px] py-1 px-1" htmlFor="avatarUrl">email</label>
                               <input type="text" id='avatarUrl' name='avatar' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} />
-                          </div>
-                        
-                        </div>
+                          </div>                        
+                      </div>
+                      <div className="flex gap-3 md:gap-6  flex-col md:flex-row">      
+                          <div className="flex flex-col w-full">
+                              <label className="text-[12px] py-1 px-1" htmlFor="avatarUrl">phone number</label>
+                              <input type="text" id='avatarUrl' name='avatar' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} />
+                          </div>                        
+                      </div>
                         <label className="text-[12px] py-1 px-1" htmlFor="content">content</label>
-                        <textarea  id='avatarUrl' name='content' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' />
+                        <textarea  id='avatarUrl' name='content' placeholder="how can I help?" className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' />
                     </div>
 
                     <button type='submit'  className='px-6 py-3 bg-stone-700 text-stone-300 dark:bg-stone-950 w-[80%] self-center border dark:border-amber-700 hover:bg-stone-800 dark:hover:bg-[rgb(12,11,11)] rounded-[15px] transition-all duration-500'>submit</button>
@@ -91,4 +92,4 @@ const GuestsBook = () => {
   )
 }
 
-export default GuestsBook
+export default Contact
