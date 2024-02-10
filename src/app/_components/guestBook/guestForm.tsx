@@ -115,26 +115,26 @@
                    <div className="flex  w-full flex-col md:flex-row gap-6">
       
                     <div className="name flex flex-col">
-                      <label className="text-xs px-1" htmlFor="name">name</label>
+                      <label className="text-[12px] py-1 px-1" htmlFor="name">name</label>
                             <input type="text" id='name' name='guestName' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.guestName} />
                     </div>
                       <div className="profile flex flex-col w-full">
-                        <label className="text-xs px-1" htmlFor="profileUrl">profile url</label>
+                        <label className="text-[12px] py-1 px-1" htmlFor="profileUrl">profile url</label>
                           <input type="text" id='profileUrl' name='profileUrl' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.profileUrl} />
                       </div>
                    </div>
                      <div className="flex gap-6  flex-col md:flex-row">
                         <div className="flex flex-col">
-                            <label className="text-xs px-1" htmlFor="country">country</label>
+                            <label className="text-[12px] py-1 px-1" htmlFor="country">country</label>
                             <input type="text" id='country' name='country' className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.country} />
                         </div>
                         <div className="flex flex-col w-full">
-                            <label className="text-xs px-1" htmlFor="avatarUrl">avatar url</label>
+                            <label className="text-[12px] py-1 px-1" htmlFor="avatarUrl">avatar url</label>
                             <input type="text" id='avatarUrl' name='avatar' className='w-full p-1 md:p-2 rounded-[15px] border border-stone-800 bg-transparent dark:bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.avatar} />
                         </div>
                       
                      </div>
-                      <label className="text-xs px-1" htmlFor="content">content</label>
+                      <label className="text-[12px] py-1 px-1" htmlFor="content">content</label>
                       <textarea  id='avatarUrl' name='content' className='w-full p-1 md:p-2 rounded-[15px] focus:border focus:border-stone-800 bg-transparent border border-stone-800 dark:bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.content} />
                   </div>
       

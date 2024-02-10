@@ -82,7 +82,7 @@ const Navbar = (props:navbarProps) => {
               </Link>
             </li>
             <li className="mr-2">
-              <Link href="/about">
+              <Link href="/contact">
                 contact
               </Link>
             </li>

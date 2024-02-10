@@ -134,6 +134,9 @@
     em {
         @apply flex flex-wrap overflow-x-hidden
     }
+    i {
+        @apply text-stone-800 dark:text-stone-300 font-semibold
+    }
     .page-intro {
         @apply text-center w-full mx-auto mb-8 mt-0 max-w-lg;
     }
