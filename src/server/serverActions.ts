@@ -4,7 +4,7 @@ import { sanityFetch, client } from "fireup/lib/client"
 import { SPost } from "fireup/lib/types"
 import { groq } from "next-sanity"
 import toast from "react-hot-toast"
-import { Resend } from "resend"
+import nodemailer from "nodemailer"
 
 
 export async function like({slug}:{slug:string}){
@@ -28,21 +28,52 @@ export async function like({slug}:{slug:string}){
 
 export const sendEmail  =  async (form:FormData)=>{
     "use server"
-    const resend = new Resend(process.env.RESEND_API_KEY!);
-    
-    const { data, error } = await resend.emails.send({
-        from: 'Zeamani <amanuelgaromsa@gmail.com>',
-        to: ['amanapps.inc@gmail.com'],
-        subject: 'hi there , how is everything rolling',
-        text:'this is a test',
-      });
-    
-      if (error) {
-        console.log(error)
-        return {error:JSON.stringify(error)};
+    const email = process.env.EMAIL!
+    const password = process.env.EMAIL_PASS!
+    const senderName = `${form.get("firstName")} ${form.get("lastName")}`
+    const senderEmail = form.get("email") as string
+    const content = form.get("content") as string
+    const messageSubject=form.get("subject") as string
+      const transposter  = nodemailer.createTransport({
+
+        host:'mail.zeamani.com',
+        port:465,
+        secure:true,
+        auth:{
+            user:email,
+            pass:password
+        }
+      })
+
+      const mailOptions ={
+        from:`${senderName}<${email}>`,
+        to:email,
+        subject:messageSubject,
+        text:content,
+        html:`
+            <h1 style="background:transparent;">mail from ${senderEmail}</h1>
+            <p>${content}</p>
+
+        
+                `
       }
+
+
+      try{
+        const result =await transposter.sendMail(mailOptions)
+
+        return {success:true}
+      }
+      catch(error){
+        console.log(error)
+        return {error:true}
+      }
+    //   if (error) {
+    //     console.log(error)
+    //     return {error:JSON.stringify(error)};
+    //   }
     
-      return {success:true};
+    //   return {success:true};
   
   }
   
