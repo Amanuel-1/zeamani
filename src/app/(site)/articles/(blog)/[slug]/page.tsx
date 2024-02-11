@@ -104,9 +104,8 @@ const PostPage = async ({params:{slug}}:postProps) => {
            </div>
             
            {/* this is a like dislike button  */}
-            <div className="flex flex-row gap-1">
-              <LikeButton post={post} type='like'/>
-              <LikeButton post={post} type='dislike'/>
+            <div className="flex items-center justify-center">
+              <LikeButton post={post}/>
             </div>              
             {/* this is a like dislike button  */}
         

@@ -11,7 +11,7 @@ const PostsList = ({posts}:{posts:SPost[]}) => {
   return (
     <div className="">
         <SearchBar posts={posts} onSearch={setFilteredPosts}/>
-    <div className="flex flex-wrap px-2 md:px-24">
+    <div className="flex flex-wrap px-2 md:px-24 justify-center">
     {
       filteredPosts.length>0? (filteredPosts.map((post)=>(
         <PostCard className='h-[12rem] px-4' key={post._id} post={post} />

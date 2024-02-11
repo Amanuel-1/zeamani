@@ -4,6 +4,8 @@ import Logo from '../navbar/Logo'
 import { pacifico } from 'fireup/styles/Fonts'
 import { FaTelegram ,FaDiscord,FaGithub,FaYoutube,FaLinkedinIn,FaTwitter} from "react-icons/fa";
 import ThemeSelector from '../layout/themeSelector';
+import Link from 'next/link';
+import { Me } from 'fireup/lib/constants';
 
 
 type footerProps  ={
@@ -20,22 +22,25 @@ const Footer = (props:footerProps) => {
    <section className="my-0 mx-auto py-0 px-[4%] flex justify-items-stretch items-center w-full ">
     
     <ul className="flex gap-2 w-full my-4 items-center text-stone-400">
-        <li className="flex items-center mr-2 text-stone-400">
+        <li className="flex items-center mr-2 text-stone-700 dark:text-stone-500">
            <Logo/> 
            <small style={pacifico.style} className='font-bold text-lg'>zeamani</small>          
         </li>
         <li className=" text-stone-400">•</li>
-        <li className='cursor-pointer hover:text-stone-200 transition-all duration-700 hover:scale-105 text-stone-400'>
-           <FaDiscord/>
+        <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
+           <Link href={Me.socials.discord} ><FaDiscord/></Link>
         </li>
-        <li className='cursor-pointer hover:text-stone-200 transition-all duration-700 hover:scale-105 text-stone-400'>
-          <FaGithub/>
+        <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
+          <Link href={Me.socials.github} ><FaGithub/></Link>
         </li>
-        <li className='cursor-pointer hover:text-stone-200 transition-all duration-700 hover:scale-105 text-stone-400'>
-           <FaLinkedinIn/>
+        <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
+           <Link href={Me.socials.linkedIn} ><FaLinkedinIn/></Link>
         </li>
-        <li className='cursor-pointer hover:text-stone-200 transition-all duration-700 hover:scale-105 text-stone-400'>
-          <FaYoutube/>
+        <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
+          <Link href={Me.socials.youtube} ><FaYoutube/></Link>
+        </li>
+        <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
+          <Link href={Me.socials.telegram} ><FaTelegram/></Link>
         </li>
       </ul>
       

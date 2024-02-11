@@ -1,5 +1,6 @@
 'use client'
 
+import { Me } from "fireup/lib/constants";
 import { sendEmail } from "fireup/server/serverActions";
 import Link from "next/link";
 import { FormEvent, ChangeEvent } from "react";
@@ -44,16 +45,16 @@ const Contact = () => {
             </div>
 
 
-            <div className="division justify-self-center w-[90%] px-2 border-t border-stone-400 dark:stroke-neutral-950" />
+            <div className="division justify-self-center w-[90%] px-2 border-t border-stone-400 dark:border-stone-900" />
             
 
             <ul className="socials flex gap-3 md:gap-6 w-full justify-center md:justify-normal px-2 md:px-4 py-2 md:py-0 text-xl md:text-3xl text-stone-700 dark:text-stone-300 ">
-                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaDiscord/></Link>
-                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaLinkedinIn/></Link>
-                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaTelegramPlane/></Link>
-                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaYoutube/></Link>
-                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaFacebookF/></Link>
-                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaTwitter/></Link>
+                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={Me.socials.discord}><FaDiscord/></Link>
+                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={Me.socials.linkedIn}><FaLinkedinIn/></Link>
+                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={Me.socials.telegram}><FaTelegramPlane/></Link>
+                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={Me.socials.youtube}><FaYoutube/></Link>
+                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={Me.socials.facebook}><FaFacebookF/></Link>
+                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={Me.socials.twitter}><FaTwitter/></Link>
                 
             </ul>
 

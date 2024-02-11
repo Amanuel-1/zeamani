@@ -6,10 +6,13 @@ import { revalidateTag } from 'next/cache'
 import { IoIosHeart } from "react-icons/io";
 import { FaThumbsDown } from "react-icons/fa";
 import React from 'react'
+import { Button, ButtonGroup, IconButton } from '@material-tailwind/react'
+import { RiEmotionHappyLine } from "react-icons/ri";
+import { RiEmotionNormalLine } from "react-icons/ri";
+import { RiEmotionUnhappyLine } from "react-icons/ri";
 
 type LikePostProps  = {
     post :SPost | SProject,
-    type:'like'| 'dislike'
 }
 
 
@@ -38,23 +41,13 @@ const updateLikesCount  = async(slug:string,type:'like'| 'dislike')=>{
 }
 
 
-const LikeButton = ({post,type}:LikePostProps) => {
+const LikeButton = ({post}:LikePostProps) => {
   return (
-    <button onClick={()=>updateLikesCount(post.slug.current,type)} className='z-20 px-3 text-stone-50 font-bold' >{
-        type=='like'?(
-            <div className="flex flex-row gap-2 w-full justify-center items-center text-center text-stone-200 bg-stone-800 rounded-l-full px-3">
-                <p className='h-full'>{post.likes}</p>
-                <IoIosHeart/>
-            </div>
-        ):(
-            (
-                <div className="flex flex-row gap-2 w-full justify-center items-center text-stone-200 bg-stone-800 rounded-r-full px-3">
-                    <p className='h-full'>{post.dislikes}</p>
-                    <FaThumbsDown/>
-                </div>
-            )
-        )
-    }</button>
+        <ButtonGroup className=''>
+            <Button className='rounded-l-[25px] text-xl md:text-3xl  bg-stone-700 dark:bg-[rgb(14,12,11)] dark:border-l dark:border-y dark:border-stone-900 text-amber-500'><RiEmotionHappyLine/></Button>
+            <Button className='text-xl md:text-3xl  bg-stone-700 dark:bg-[rgb(14,12,11)] dark:border-y border-stone-900 text-amber-500'><RiEmotionNormalLine/></Button>
+            <Button className='rounded-r-[25px] text-xl md:text-3xl  bg-stone-700 dark:bg-[rgb(14,12,11)] dark:border-y dark:border-r dark:border-stone-900 text-amber-500'><RiEmotionUnhappyLine/></Button>
+        </ButtonGroup>
   )
 }
 
