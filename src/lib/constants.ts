@@ -70,6 +70,15 @@ const educationBackground  = [
                                 }
                             ]
 
+ const socials ={
+    linkedin:"https://www.linkedin.com/in/amanuel-garomsa-36ba79213/",
+    facebook:"https://www.facebook.com/amanuel.garomsa.1/",
+    youtube:"https://www.youtube.com/@watership01",
+    discord:"",
+    twitter:"https://twitter.com/Amanuel94738528",
+    github:"https://github.com/Amanuel-1",
+    telegram:""
+ }
 
  const InterpriseInfo= {
     

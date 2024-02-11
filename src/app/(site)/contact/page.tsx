@@ -4,7 +4,7 @@ import { sendEmail } from "fireup/server/serverActions";
 import Link from "next/link";
 import { FormEvent, ChangeEvent } from "react";
 import toast from "react-hot-toast";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -37,6 +37,7 @@ const Contact = () => {
                 <i className="px-1">• contact@zeamani.com</i>
                 <i className="px-1 ">• amanuelgaromsa@gmail.com</i>
                 <i className="px-1">• amanapps.inc@gmail.com</i>
+                
             </div>
             <div className="phones text-sm">
                 <i className="px-1">+251 935 046 969</i>
@@ -52,6 +53,7 @@ const Contact = () => {
                 <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaTelegramPlane/></Link>
                 <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaYoutube/></Link>
                 <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaFacebookF/></Link>
+                <Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500" href={""}><FaTwitter/></Link>
                 
             </ul>
 
