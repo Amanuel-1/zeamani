@@ -30,7 +30,7 @@ export const sendEmail  =  async (form:FormData)=>{
     "use server"
     const email = process.env.EMAIL!
     const password = process.env.EMAIL_PASS!
-    const senderName = `${form.get("firstName")} ${form.get("lastName")}`
+    const senderName = `${form.get("firstName") as string} ${form.get("lastName") as string}`
     const senderEmail = form.get("email") as string
     const content = form.get("content") as string
     const messageSubject=form.get("subject") as string
