@@ -149,7 +149,7 @@ export default async function Home() {
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
       <h1 className=" md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">projects</b></h1>
-      <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 p-10 h-full">
+      <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 justify-center items-center p-10 h-full">
         {
           
         result.length && result.map((project:SProject,i:number )=>{
@@ -159,6 +159,8 @@ export default async function Home() {
         })
 
         }
+        <Link href={"https://github.com/Amanuel-1?tab=repositories"} target="_blank" rel="noopener noreferrer" className="col-span-3 w-full flex justify-center items-center font-bold text-stone-600 dark:text-stone-500 text-xl ">see all</Link>
+
       </div>
    
 

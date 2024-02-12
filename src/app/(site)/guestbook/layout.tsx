@@ -42,7 +42,7 @@ export async function generateMetadata(
       creator:"Amauel Garomsa",
       keywords:keywordList,
       openGraph:{
-        images: ["https://images4.imagebam.com/3f/9d/09/MERRWNC_o.png"],
+        images: ["https://images4.imagebam.com/6b/73/ae/MERZDJ1_o.png"],
       },
       twitter: {
         card: "summary_large_image",
