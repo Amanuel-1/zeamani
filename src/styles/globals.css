@@ -209,7 +209,7 @@
 
 /* Scroll bar stylings */
 ::-webkit-scrollbar {
-    @apply w-[6px] h-[6px] md:h-[10px]
+    @apply w-[6px] h-[3px] md:h-[4px]
   }
 
   /* Track */
