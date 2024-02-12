@@ -84,7 +84,7 @@ const experiences = [
         endYear: 2024,
         organization: 'Prodigy InfoTech',
         position: 'Machine Learning Intern at Prodigy InfoTech',
-        description: 'Gaining hands-on experience in machine learning as an intern at Prodigy InfoTech in 2022.'
+        description: 'Gaining hands-on experience in machine learning as an intern at Prodigy InfoTech at present.'
     },
     {
         startYear: 2024,
