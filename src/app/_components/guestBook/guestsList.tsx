@@ -12,7 +12,7 @@ import Link from 'next/link'
 const GuestsList =({guests}:{guests:GuestBook[]}) => {
   
   return (
-    <div className="signlist w-full md:w-[60%] flex flex-col gap-6  px-3 justify-center self-center items-center">
+    <div className="signlist w-[95%] md:w-[60%] flex flex-col gap-6  px-3 justify-center self-center items-center">
     {
       guests && guests.map((signature:GuestBook,ind:number)=>(
         <motion.div 

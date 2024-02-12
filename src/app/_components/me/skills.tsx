@@ -3,136 +3,133 @@ import RadialProgressBar from '../ui/radialProgressBar'
 
 const skills = [
     {
-        category: "languages",
+        category: "Languages",
         skills: [
             "JavaScript (ES6+)",
             "Python",
             "Java",
             "C#",
-            "Ruby",
-            "Go",
-            "Swift",
+            "VB",
+            "c++",
+            "PHP",
             "TypeScript"
         ]
     },
     {
-        category: "webDevelopmentFrameworks",
+        category: "Frontend Frameworks",
         skills: [
             "React.js",
             "Angular.js",
             "Vue.js",
-            "Node.js",
-            "Django",
-            "Flask",
-            "Ruby on Rails",
-            "Spring Boot"
+            "Next.js"
         ]
     },
     {
-        category: "mobileAppDevelopment",
-        skills: [
-            "React Native",
-            "Flutter",
-            "Swift",
-            "Kotlin",
-            "Xamarin"
-        ]
-    },
-    {
-        category: "backendDevelopment",
+        category: "Backend Frameworks",
         skills: [
             "Express.js",
             "Django",
-            "Flask",
-            "Ruby on Rails",
-            "Spring Boot",
+            "Node.js",
             "ASP.NET"
         ]
     },
     {
-        category: "databaseSystems",
+        category: "ORMs and CMSs",
         skills: [
-            "MongoDB",
-            "MySQL",
-            "PostgreSQL",
-            "SQLite",
-            "Redis"
+            "Drizzle",
+            "Prisma",
+            "Sanity",
+            "Contentful"
         ]
     },
     {
-        category: "versionControl",
+        category: "DBMS and Baas",
+        skills: [
+            "MySQL",
+            "PostgreSQL",
+            "SQLite",
+            "NeonDB",
+            "Mongodb",
+            "Supabase",
+            "PlanetScale",
+            
+        ]
+    },
+    {
+        category: "Version Control",
         skills: [
             "Git"
         ]
     },
     {
-        category: "cloudServices",
+        category: "Cloud Services",
         skills: [
-            "Amazon Web Services (AWS)",
+            "Vercel",
             "Microsoft Azure",
             "Google Cloud Platform (GCP)",
             "Heroku"
         ]
     },
     {
-        category: "frontendTools",
+        category: "Frontend Tools",
         skills: [
             "Webpack",
             "Babel",
-            "Sass/LESS",
+            "Sass",
+            "tailwindcss",
             "ESLint",
             "Jest"
         ]
     },
     {
-        category: "uiDesignTools",
+        category: "UI Design Tools",
         skills: [
             "Figma",
             "Sketch",
             "Adobe XD",
-            "InVision",
-            "Zeplin"
+            "Adobe DreamWeaver"
         ]
     },
     {
-        category: "illustrationTools",
+        category: "Illustration Tools",
         skills: [
             "Adobe Illustrator",
+            "Adobe Photoshop",
             "Inkscape",
             "Sketch",
-            "Affinity Designer",
-            "Gravit Designer"
+            "Gravit Designer",
+            "Huion Scetch"
         ]
     },
     {
-        category: "devOpsAndDeployment",
+        category: "DevOps and testing",
         skills: [
             "Docker",
-            "Kubernetes",
-            "Jenkins",
-            "Travis CI",
-            "Ansible"
+            "Jest"
         ]
     },
+   
     {
-        category: "testingFrameworks",
-        skills: [
-            "Jest",
-            "JUnit",
-            "PyTest",
-            "RSpec",
-            "Cucumber"
-        ]
-    },
-    {
-        category: "otherTools",
+        category: "Other Tools",
         skills: [
             "VSCode",
             "Atom",
             "Sublime Text",
             "Postman",
-            "Swagger",
-            "GraphQL"
+            "GraphQL",
+            "Sanity",
+            "Notion",
+            "DBdiagram"
+        ]
+    },
+    {
+        category: "TensorFlow and Machine Learning Libraries",
+        skills: [
+            "TensorFlow",
+            "Pandas",
+            "Scikit-learn",
+            "Matplotlib",
+            "PyTorch"
         ]
     }
 ];

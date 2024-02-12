@@ -89,16 +89,18 @@ const Navbar = (props:navbarProps) => {
 
             
             <li className='mx-[1rem]'>
-              <small className='flex gap-2 justify-center items-center'>
+              <small className='flex gap-2 justify-center items-center md:pl-3'>
+               
+                <ThemeSelector darkMode={props.darkMode} setDarkMode={props.setDarkMode}/>
                 {
                   session?.user?(
-                    <div onClick={()=>signOut()} className='flex flex-row gap-2 bg-transparent items-center min-w-fit px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 transition-all duration-500'><small className='hover:font-semibold cursor-pointer min-w-max hover:shadow-lg hover:shadow-yellow-600'>{session.user.name as string}</small><Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-[30%] p-2 boder-4 border-white hover:border-amber-950 cursor-pointer'/> </div>
+                    <div onClick={()=>signOut()} className='flex flex-row gap-1 bg-transparent items-center min-w-fit px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 transition-all duration-500'><small className='hover:font-semibold cursor-pointer min-w-max hover:shadow-lg hover:shadow-yellow-600'>{session.user.name as string}</small><Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-[30%] p-2 boder-4 border-white hover:border-amber-950 cursor-pointer'/> </div>
                   ):(
                     <button onClick={()=>signIn('github',{redirect:true})} className='bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 hover:bg-stone-600 hover:text-stone-100  transition-all duration-700'>login
                     </button>
                   )
                 }
-                <ThemeSelector darkMode={props.darkMode} setDarkMode={props.setDarkMode}/>
+
               </small>
             </li>
       </motion.ul>

@@ -4,6 +4,7 @@ import {LightningBoltIcon} from '@radix-ui/react-icons'
 import styles from 'fireup/styles/card.module.css'
 import Image from 'next/image'
 import React from 'react'
+import { Me } from 'fireup/lib/constants'
 
 const HeroSection = () => {
   return (
@@ -22,13 +23,16 @@ const HeroSection = () => {
             <div/>
             <b className=" bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient">Amanuel Garomsa,</b>
             <p className='text-sm text-center md:text-left px-1 md:w-[60%]'>
-              an aspiring Software developer and Computer Science Student at Addis Ababa University College Of Natural And Computational Sciences. I am currently looking for jobs, so if there is a spot please consisder me . pleaase i am begging you 🥺
+                  Experienced and motivated software developer specializing 
+                  in website and application software development, dedicated to 
+                  delivering exceptional IT-related services. Committed to innovation, 
+                  continuous improvement, and ensuring customer satisfaction through high-quality software solutions.
             </p>
             </div>
        <div className="flex flex-wrap gap-4 md:gap-[2rem] justify-start items-center p-2 md:p-0 w-full md:w-[60%] text-stone-900 dark:text-stone-300 ">
           
-          <button className='relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'>My Resume</button>
-          <button className='flex gap-2 justify-center items-center relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'>LinkedIn<Image className='w-[20px] h-[20px] hover:border-black hover:bg-stone-300' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
+          <button className='relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'><a href='https://docs.google.com/uc?export=download&id=1Tzv0qv-mV0rOAyatmL_QYWD3qTToDIO3'>My Resume</a></button>
+          <button className='flex gap-2 justify-center items-center relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'><a href={Me.socials.linkedIn} target="_blank" rel="noopener noreferrer" >LinkedIn</a><Image className='w-[20px] h-[20px] hover:border-black hover:bg-stone-300' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
         </div>
         </div>
     </section>

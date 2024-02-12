@@ -53,7 +53,7 @@ import UnderConstruction from "../underConstruciton/page";
                 </div>
         </div>
             <div className="flex justify-center">
-                <Tabs value="html" className="w-[90%] md:w-[70%]">
+                <Tabs value="html" className="w-[95%] md:w-[70%]">
                 <TabsHeader
                 className="bg-transparent z-0"
                 indicatorProps={{

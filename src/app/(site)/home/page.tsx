@@ -32,7 +32,7 @@ export default async function Home() {
         } */}
       </div>
 
-      <h1 className="text-6xl font-extrabold px-10">Behold ! the new <b className="text-amber-700">posts</b></h1>
+      <h1 className="text-6xl font-extrabold px-10 text-stone-700 dark:text-stone-300">Behold ! the new <b className="text-amber-700">posts</b></h1>
         {/* <div className="grid grid-cols-4 p-10 gap-4 ">
         {
           posts && posts.map((post,ind)=>(

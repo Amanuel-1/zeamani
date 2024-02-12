@@ -24,11 +24,11 @@ import Card from "fireup/app/_components/shared/cards/card";
 import Text from "fireup/app/_components/shared/cards/Text";
 import ProjectDialog from "fireup/app/_components/landing/projectdialog";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
-import Timeline from "fireup/app/_components/landing/timeline";
 import Project from "fireup/schemas/project";
 import LogoScroll from "fireup/app/_components/landing/logoscrolls";
 import { Suspense } from "react";
 import Products from "fireup/app/_components/landing/products";
+import Experiences from "fireup/app/_components/landing/experiences";
 
 type Props = {
   params: { id: string }
@@ -50,7 +50,48 @@ export async function generateMetadata(
     title: "zeamani",
     description:Me.bio,
     category:"website",
-    keywords:["blog","nextjs","website","podcast","music","art","technology", "love","crypto","startup"],
+    authors:[{name:"Amanuel Garomsa",url:`https://www.linkedin.com/in/amanuel-garomsa-36ba79213/`}],
+    keywords: [
+      "nextjs",
+      "webdev",
+      "fullstackdev",
+      "frontenddev",
+      "backenddev",
+      "devops",
+      "cloud",
+      "cybersecurity",
+      "blockchain",
+      "fintech",
+      "AI",
+      "ML",
+      "bigdata",
+      "techjobs",
+      "remotejobs",
+      "jobsearch",
+      "careerdevelopment",
+      "techcareers",
+      "startupjobs",
+      "interviewtips",
+      "salarynegotiation",
+      "techpodcast",
+      "startupstories",
+      "technews",
+      "innovation",
+      "disruption",
+      "futureofwork",
+      "techtrends",
+      "softwareupdates",
+      "techconferences",
+      "productowner",
+      "projectmanager",
+      "website",
+      "blog",
+      "technology",
+      "globaltech",
+      "artdesign",
+      "musictech", "web3", "metaverse", "quantumcomputing"
+  
+    ],
     openGraph: {
       images: ['https://images4.imagebam.com/4c/97/c3/MERXNNX_o.png', ...previousImages],
     },
@@ -58,9 +99,9 @@ export async function generateMetadata(
     twitter: {
       card: ogImg as any,
       title: 'zeamani',
+      creator:"Amanuel Garomsa",
       description: Me.bio,
       site:"https://zeamani.vercel.app",
-      creator: '@Amanuel_Garomsa',
       images: ['https://images4.imagebam.com/4c/97/c3/MERXNNX_o.png'],
     },
     
@@ -107,7 +148,7 @@ export default async function Home() {
       {/* ###########################################/ */}
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
-      <h1 className=" font-extrabold px-4 md:px-20 mt-4">Behold ! the recent <b className="text-amber-700">projects</b></h1>
+      <h1 className=" md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">projects</b></h1>
       <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 p-10 h-full">
         {
           
@@ -121,7 +162,7 @@ export default async function Home() {
       </div>
    
 
-      <h1 className="md:text-4xl font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
+      <h1 className="md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
         {
          <div className="flex flex-wrap max-w-full md:px-20">
               <Suspense  fallback={<h1 className="text-9xl font-extrabold text-yellow-500 z-50">loading</h1>} >
@@ -131,10 +172,10 @@ export default async function Home() {
                   ))
                   }
               </Suspense>
-        <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-400 text-xl ">see all</Link>
+        <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-600 dark:text-stone-500 text-xl ">see all</Link>
         </div>
         }
-        <Timeline/>
+        <Experiences/>
 
 
     </main>

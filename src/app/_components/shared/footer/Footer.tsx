@@ -28,19 +28,19 @@ const Footer = (props:footerProps) => {
         </li>
         <li className=" text-stone-400">•</li>
         <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
-           <Link href={Me.socials.discord} ><FaDiscord/></Link>
+           <Link  className="text-stone-600 dark:text-stone-400"  href={Me.socials.discord} ><FaDiscord/></Link>
         </li>
         <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
-          <Link href={Me.socials.github} ><FaGithub/></Link>
+          <Link  className="text-stone-600 dark:text-stone-400"  href={Me.socials.github} ><FaGithub/></Link>
         </li>
         <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
-           <Link href={Me.socials.linkedIn} ><FaLinkedinIn/></Link>
+           <Link  className="text-stone-600 dark:text-stone-400"  href={Me.socials.linkedIn} ><FaLinkedinIn/></Link>
         </li>
         <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
-          <Link href={Me.socials.youtube} ><FaYoutube/></Link>
+          <Link  className="text-stone-600 dark:text-stone-400"  href={Me.socials.youtube} ><FaYoutube/></Link>
         </li>
         <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
-          <Link href={Me.socials.telegram} ><FaTelegram/></Link>
+          <Link  className="text-stone-600 dark:text-stone-400"  href={Me.socials.telegram} ><FaTelegram/></Link>
         </li>
       </ul>
       
