@@ -9,8 +9,8 @@ const Experiences = () => {
 
                 {/* <!-- Item #1 --> */}
                 {
-                    Me.experiences.map((experience)=>(
-                        <div className="relative pl-8 sm:pl-32 py-6 group">
+                    Me.experiences.map((experience,index)=>(
+                        <div key={index} className="relative pl-8 sm:pl-32 py-6 group">
                             {/* <!-- Purple label --> */}
                             <div className="font-caveat font-medium text-xl md:text-2xl px-1 text-amber-600 mb-1 sm:mb-0">{experience.organization}</div>
                             {/* <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) --> */}
