@@ -11,7 +11,6 @@ import React, { useState } from 'react';
 import { cn, extractTweetId } from 'fireup/lib/utils';
 import YouTubePlayer from 'react-player/youtube';
 import { Tweet } from 'react-tweet'
-import Link from 'next/link';
 interface PortableProps {
   body: any;
 }
@@ -115,7 +114,7 @@ const PortableTextComponents = {
     link: ({ children, value }: any) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
       return (
-        <a className='text-amber-500 md:text-amber-600 underline max-w-lg hover:text-amber-300 z-50 text-sm md:text-base' href={value.href} rel={rel}>
+        <a className='text-amber-700 dark:text-amber-600 underline max-w-lg hover:text-amber-800 dark:hover:text-amber-400 z-50 text-sm md:text-base transition-all duration-500' href={value.href} rel={rel}>
           {children}
         </a>
       );
@@ -126,7 +125,7 @@ const PortableTextComponents = {
     blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d1c] dark:bg-[#4f342d35] z-0 text-xs md:text-sm text-stone-900 dark:text-stone-300">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
     p:({children}:any)=><h1>{children}</h1>,
-    a:({value,href}:any)=><Link className='text-amber-600 dark:text-amber-700' href={href} target='_blank' rel="noopener noreferrer">{value}</Link>,
+    // a:({value,href}:any)=><a className='text-amber-700 dark:text-amber-600' href={href} target='_blank' rel="noopener noreferrer">{value}</a>,
   }
 };
 

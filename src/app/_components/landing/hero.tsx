@@ -16,12 +16,15 @@ const HeroSection = () => {
             <div className="relative w-[1rem] h-[1rem] md:w-[2rem] md:h-[2rem]">
                 <Image src={Images.waive} alt='waive' objectFit='cover' layout='fill' />
               </div> 
+
+
+
             <h1 className='text-lg md:text-4xl dark:text-amber-400 '>
               Hello!, I am
             </h1>
             </div>
             <div/>
-            <b className=" bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient">Amanuel Garomsa,</b>
+            <h1 className=" bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient dark:text-transparent">Amanuel Garomsa,</h1>
             <p className='text-sm text-center md:text-left px-1 md:w-[60%]'>
                   Experienced and motivated software developer specializing 
                   in website and application software development, dedicated to 
@@ -40,3 +43,6 @@ const HeroSection = () => {
 }
 
 export default HeroSection
+
+
+

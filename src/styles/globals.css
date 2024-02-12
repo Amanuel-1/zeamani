@@ -229,3 +229,14 @@
   }
 
   
+
+
+  /* for the gradient in the herosection */
+  .gradient-text {
+    background-image: linear-gradient(180deg, #F9A21F 0%, #95651E 0.01%, rgba(191, 108, 32, 0.985464) 9.68%, rgba(131, 50, 33, 0.97) 44.7%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }

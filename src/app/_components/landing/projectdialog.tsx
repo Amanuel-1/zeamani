@@ -29,7 +29,7 @@ const ProjectDialog = ({ project }: { project: SProject }) => (
         <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs group-hover:text-stone-100  transition-all duration-700">
           {project.categories &&
             project.categories.map((category: Category) => (
-              <small key={category._id} className="tags  bg-stone-900 hover:bg-zinc-950 text-stone-50 px-2 hover:hue-rotate-15 rounded-[4px]">
+              <small key={category._id} className="tags bg-stone-400 dark:bg-stone-900 hover:bg-zinc-500 dark:hover:bg-zinc-950 text-stone-900 dark:text-stone-50 px-2 hover:hue-rotate-15 rounded-[4px]">
                 {category.title}
               </small>
             ))}
