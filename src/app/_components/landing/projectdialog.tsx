@@ -12,7 +12,7 @@ import PortableTextEditor from '../sanity/portableText';
 const ProjectDialog = ({ project }: { project: SProject }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <div className='relative cursor-pointer flex flex-col justify-stretch items-stretch align-baseline group text-sm text-stone-900'>
+      <div className='relative cursor-pointer flex flex-col justify-start items-start align-top h-full group text-sm text-stone-900'>
         <div className="image relative w-full p-2 h-[14rem] md:h-[8rem] lg:h-[12rem] xl:h-[8rem] overflow-hidden rounded-[12px]  md:rounded-[20px] transition-all duration-700 ">
           <Image
             className="hover:scale-105  overflow-hidden bg-inherit"
