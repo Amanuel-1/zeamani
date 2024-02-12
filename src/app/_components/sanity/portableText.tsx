@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import { cn, extractTweetId } from 'fireup/lib/utils';
 import YouTubePlayer from 'react-player/youtube';
 import { Tweet } from 'react-tweet'
+import Link from 'next/link';
 interface PortableProps {
   body: any;
 }
@@ -124,7 +125,8 @@ const PortableTextComponents = {
   block:{
     blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d1c] dark:bg-[#4f342d35] z-0 text-xs md:text-sm text-stone-900 dark:text-stone-300">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
-    p:({children}:any)=><h1>{children}</h1>
+    p:({children}:any)=><h1>{children}</h1>,
+    a:({value,href}:any)=><Link className='text-amber-600 dark:text-amber-700' href={href} target='_blank' rel="noopener noreferrer">{value}</Link>,
   }
 };
 

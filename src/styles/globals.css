@@ -72,7 +72,7 @@
         @apply mb-8;
     }
     b, strong {
-        @apply font-bold text-neutral-300;
+        @apply font-bold text-stone-700 dark:text-neutral-300;
     }
     h1,
     h2,
