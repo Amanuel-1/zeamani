@@ -5,26 +5,27 @@ import { api } from 'fireup/trpc/server'
 import type {NextApiHandler, NextApiRequest, NextApiResponse} from 'next'
 import { useMutation } from '@tanstack/react-query'
 import { db } from 'fireup/server/db'
+import { NextRequest, NextResponse } from 'next/server'
 
 
 export async function POST(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: NextRequest,
+  res: NextResponse
 ) {
 
-  const body = req.body
+  const body:any= req.body
 
   try{
     const result = await db.article.create({
         data:{
-            slug:body.slug.current
+            slug:body?.slug.current
         }
     })
 
-    return res.status(200).send('Log processed OK')
+    return NextResponse.json({message:"this is the message"},{status:200})
   }
   catch(e){
-    return res.status(400).send('Log processed NOT OK')
+    return NextResponse.json({message:"it is not working"},{status:400})
   }
 
 
