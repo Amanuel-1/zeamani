@@ -6,7 +6,7 @@ import {
   publicProcedure,
 } from "fireup/server/api/trpc";
 import { BlogPost, Prisma} from "@prisma/client";
-import { CreateProjectInputSchema, SignGuestBookInputSchema } from "fireup/types";
+import { SignGuestBookInputSchema } from "fireup/types";
 import { db } from "fireup/server/db";
 
 export const guestRouter = createTRPCRouter({
