@@ -33,69 +33,69 @@ const initialproject: Project = {
 };
 
 export function CreateProject() {
-  const [project, setProject] = useState<Project>(initialproject); 
-  const [newTag, setNewTag] = useState<string>("");
+  // const [project, setProject] = useState<Project>(initialproject); 
+  // const [newTag, setNewTag] = useState<string>("");
 
-  const createproject = api.project.create.useMutation({
-    onSuccess: () => {
-      setProject(initialproject);
-    },
-  });
+  // const createproject = api.project.create.useMutation({
+  //   onSuccess: () => {
+  //     setProject(initialproject);
+  //   },
+  // });
 
 
-  function handleprojectChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
-    const { name, value } = e.target;
-    setProject((prevState) => ({ ...prevState, [name]: value }));
-  }
-
-  function handleTagChange(e: ChangeEvent<HTMLInputElement>): void {
-    setNewTag(e.target.value);
-  }
-
-  // function handleTagAdd(e:any): void {
-  //     if(e.key ===" "){
-  //       if (newTag.trim() !== "") {
-  //         setProject((prevState) => ({
-  //           ...prevState,
-  //           tags: [...prevState.tags, newTag.trim()],
-  //         }));
-  //         setNewTag("");
-  //       }
-  //     }
+  // function handleprojectChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
+  //   const { name, value } = e.target;
+  //   setProject((prevState) => ({ ...prevState, [name]: value }));
   // }
-  function handleTagAdd(e: React.KeyboardEvent<HTMLInputElement>): void {
-    if (e.key === " " && newTag.trim() !== "" && newTag.trim() !== ",") {
-      setProject((prevState) => ({
-        ...prevState,
-        tags: [...prevState.tags, newTag.trim()],
-      })); 
-      setNewTag("");
-    }
-  }
-  function handleTagRemove(tag: string): void {
-    setProject((prevState) => ({
-      ...prevState,
-      tags: prevState.tags.filter((t) => t !== tag),
-    }));
-  }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>): void {
-    e.preventDefault();
-    console.log("the data submitted is ", JSON.stringify(project))
-    createproject.mutate(project);
-    if(createproject.isSuccess){
-      toast.success(`yey!! the project is added ${project.title} successfully !!`,{icon:'🎉',style:{background:'rgba(10,2550,20,1)'}})
-      console.log("yes , project added !!")
-    }
-    else if(createproject.isError){
-      toast.error(`oops! an unable to add the project, ${project.title}`,{icon:'😧',style:{background:'rgba(255,30,10,1)'}})
-    }
-  }
+  // function handleTagChange(e: ChangeEvent<HTMLInputElement>): void {
+  //   setNewTag(e.target.value);
+  // }
+
+  // // function handleTagAdd(e:any): void {
+  // //     if(e.key ===" "){
+  // //       if (newTag.trim() !== "") {
+  // //         setProject((prevState) => ({
+  // //           ...prevState,
+  // //           tags: [...prevState.tags, newTag.trim()],
+  // //         }));
+  // //         setNewTag("");
+  // //       }
+  // //     }
+  // // }
+  // function handleTagAdd(e: React.KeyboardEvent<HTMLInputElement>): void {
+  //   if (e.key === " " && newTag.trim() !== "" && newTag.trim() !== ",") {
+  //     setProject((prevState) => ({
+  //       ...prevState,
+  //       tags: [...prevState.tags, newTag.trim()],
+  //     })); 
+  //     setNewTag("");
+  //   }
+  // }
+  // function handleTagRemove(tag: string): void {
+  //   setProject((prevState) => ({
+  //     ...prevState,
+  //     tags: prevState.tags.filter((t) => t !== tag),
+  //   }));
+  // }
+
+  // function handleSubmit(e: FormEvent<HTMLFormElement>): void {
+  //   e.preventDefault();
+  //   console.log("the data submitted is ", JSON.stringify(project))
+  //   createproject.mutate(project);
+  //   if(createproject.isSuccess){
+  //     toast.success(`yey!! the project is added ${project.title} successfully !!`,{icon:'🎉',style:{background:'rgba(10,2550,20,1)'}})
+  //     console.log("yes , project added !!")
+  //   }
+  //   else if(createproject.isError){
+  //     toast.error(`oops! an unable to add the project, ${project.title}`,{icon:'😧',style:{background:'rgba(255,30,10,1)'}})
+  //   }
+  // }
 
   return (
   <section className="z-0 container w-full flex justify-center">
 
-   <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full md:w-[60%]">
+   {/* <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full md:w-[60%]">
       <label htmlFor="title">title</label>
       <input
         type="text"
@@ -191,7 +191,7 @@ export function CreateProject() {
       >
         {createproject.isLoading ? "Submitting..." : "Submit"}
       </button>
-    </form>
+    </form> */}
 
   </section>
     
