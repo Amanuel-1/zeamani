@@ -70,7 +70,7 @@ export default function RootLayout({
 
          <Loglib
             config={{
-                id: "zeamani_vercel",
+                id: "zeamani",
             }}/>
          <Analytics/>
 
