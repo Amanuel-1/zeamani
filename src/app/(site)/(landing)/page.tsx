@@ -97,7 +97,7 @@ export async function generateMetadata(
     },
     
     twitter: {
-      card: ogImg as any,
+      card: "summary_large_image",
       title: 'zeamani',
       creator:"Amanuel Garomsa",
       description: Me.bio,
