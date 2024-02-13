@@ -98,7 +98,7 @@
                 onClick={toggleAccordion}
                 className="bg-stone-500 dark:bg-zinc-900 text-white md:px-4 py-2 rounded-md focus:outline-none w-full"
                 >
-                How about signing my guestbook?
+                How about signing my guestbook?, [click here]
                 </button>
                 <AnimatePresence>
                 {isOpen && (
