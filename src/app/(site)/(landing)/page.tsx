@@ -148,7 +148,7 @@ export default async function Home() {
       {/* ###########################################/ */}
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
-      <h1 className=" md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">projects</b></h1>
+      <h1 className=" md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">recent <b className="text-amber-700">projects</b></h1>
       <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 justify-center items-center p-10 h-full">
         {
           
@@ -164,7 +164,7 @@ export default async function Home() {
       </div>
    
 
-      <h1 className="md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">Behold ! the recent <b className="text-amber-700">articles</b></h1>
+      <h1 className="md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">recent <b className="text-amber-700">articles</b></h1>
         {
          <div className="flex flex-wrap max-w-full md:px-20">
               <Suspense  fallback={<h1 className="text-9xl font-extrabold text-yellow-500 z-50">loading</h1>} >
