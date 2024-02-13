@@ -7,10 +7,10 @@ import { useMutation } from '@tanstack/react-query'
 import { db } from 'fireup/server/db'
 
 
-const handler: NextApiHandler = async (
+export async function POST(
   req: NextApiRequest,
   res: NextApiResponse
-) => {
+) {
 
   const body = req.body
 
@@ -31,5 +31,3 @@ const handler: NextApiHandler = async (
   
   
 }
-
-export default handler
