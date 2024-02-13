@@ -25,27 +25,21 @@ export const SignGuestBookOutputSchema = z.object({
 
 
 
-export const CreateBlogPostInputSchema = z.object({
-    title: z.string(),
-    authorId:z.string(),
-    slug: z.string(),
-    description: z.string(),
-    content: z.string(),
-    coverImage: z.string(),
-    tags : z.array(z.string())
+export const CreateArticleInputSchema = z.object({
+      slug: z.string()
   });
   
-  export const CreateBlogPostOutputSchema = z.object({
+  export const CreateArticleOutputSchema = z.object({
     id: z.string(),
-    title: z.string(),
     slug: z.string(),
-    description: z.string(),
-    content: z.string(),
-    coverImage: z.string(),
-    tags :z.array(z.string()),
-    reactions: z.array(z.number()),
+    views:z.number().int().default(0),
+    love:z.number().int().default(0),
+    neutral:z.number().int().default(0),
+    dislike:z.number().int().default(0),
     createdAt: z.date(),
-    updatedAt: z.date(),
+    updatedAt: z.date()
+
+ 
   });
 
 
