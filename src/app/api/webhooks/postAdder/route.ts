@@ -1,37 +1,35 @@
-// Built on Next.js API routes: https://nextjs.org/docs/api-routes/introduction
+import {isValidSignature, SIGNATURE_HEADER_NAME} from '@sanity/webhook'
+import { NextApiRequest, NextApiResponse } from 'next'
 
-// provide your Sanity token from an environment variable
-import { api } from 'fireup/trpc/server'
-import type {NextApiHandler, NextApiRequest, NextApiResponse} from 'next'
-import { useMutation } from '@tanstack/react-query'
-import { db } from 'fireup/server/db'
-import { NextRequest, NextResponse } from 'next/server'
+const secret = "psupabasePostCreateBook"
 
-
-export async function POST(
-  req: NextRequest,
-  res: NextResponse
-) {
-
-  const body:any= req.body
-
-
-  console.log(body.slug,"hhheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeyooooooooooooooooooooooooooooooooooo")
-
-  try{
-    const result = await db.article.create({
-        data:{
-            slug:body?.slug.current
-        }
-    })
-
-    return NextResponse.json({message:"this is the message"},{status:200})
-  }
-  catch(e){
-    return NextResponse.json({message:"it is not working"},{status:400})
+export default async function handler(req:NextApiRequest, res:NextApiResponse) {
+  const signature = req.headers[SIGNATURE_HEADER_NAME]
+  const body = await readBody(req) // Read the body into a string
+  if (!(await isValidSignature(body, signature as any, secret))) {
+    res.status(401).json({success: false, message: 'Invalid signature'})
+    return
   }
 
+  const jsonBody = JSON.parse(body)
+  console.log("so this is the data",jsonBody)
 
-  
-  
+
+
+  res.json({success: true})
+}
+
+// Next.js will by default parse the body, which can lead to invalid signatures
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+}
+
+async function readBody(readable:any) {
+  const chunks = []
+  for await (const chunk of readable) {
+    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)
+  }
+  return Buffer.concat(chunks).toString('utf8')
 }

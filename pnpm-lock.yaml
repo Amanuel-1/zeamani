@@ -56,6 +56,9 @@ dependencies:
   '@sanity/vision':
     specifier: ^3.21.1
     version: 3.21.1(@babel/runtime@7.23.5)(@codemirror/lint@6.4.2)(@codemirror/state@6.3.3)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.1.2)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.1)
+  '@sanity/webhook':
+    specifier: ^4.0.1
+    version: 4.0.1
   '@t3-oss/env-nextjs':
     specifier: ^0.7.1
     version: 0.7.1(typescript@5.3.3)(zod@3.22.4)
@@ -2667,6 +2670,11 @@ packages:
     engines: {node: '>=12.0.0'}
     dependencies:
       base64url: 3.0.1
+    dev: false
+
+  /@sanity/webhook@4.0.1:
+    resolution: {integrity: sha512-hswDXWD6Ru2qz0oMlEOathKspEyoc/jNFgAGvQVWQ4sbQDjVveMkLimQO+4FNWwi1AMYdcEmj+XmCzrPKIuvWA==}
+    engines: {node: '>=20.0.0'}
     dev: false
 
   /@shuding/opentype.js@1.4.0-beta.0:
