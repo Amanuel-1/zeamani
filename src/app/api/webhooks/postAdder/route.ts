@@ -18,18 +18,3 @@ export default async function POST(req:NextApiRequest, res:NextApiResponse) {
 
   res.json({success: true})
 }
-
-// Next.js will by default parse the body, which can lead to invalid signatures
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-}
-
-async function readBody(readable:any) {
-  const chunks = []
-  for await (const chunk of readable) {
-    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)
-  }
-  return Buffer.concat(chunks).toString('utf8')
-}
