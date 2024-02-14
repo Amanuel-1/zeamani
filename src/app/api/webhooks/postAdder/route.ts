@@ -15,6 +15,9 @@ export async function POST(
 
   const body:any= req.body
 
+
+  console.log(body.slug.current,"hhheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeyooooooooooooooooooooooooooooooooooo")
+
   try{
     const result = await db.article.create({
         data:{
