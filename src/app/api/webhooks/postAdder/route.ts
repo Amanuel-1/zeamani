@@ -1,20 +1,21 @@
-import {isValidSignature, SIGNATURE_HEADER_NAME} from '@sanity/webhook'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { SIGNATURE_HEADER_NAME, isValidSignature } from "@sanity/webhook";
 
-const secret = "psupabasePostCreateBook"
-
-export async function GET(req:NextApiRequest, res:NextApiResponse) {
-  const signature = req.headers[SIGNATURE_HEADER_NAME]
-  const body = await req.body()// Read the body into a string
-  if (!(await isValidSignature(body, signature as any, secret))) {
-    res.status(401).json({success: false, message: 'Invalid signature'})
-    return
+const handler = async(req:any, res:any) => {
+  try {
+    const signature = req.headers[SIGNATURE_HEADER_NAME].toString()
+    if(!isValidSignature(
+      JSON.stringify(req.body),
+      signature,
+      "psupabasePostCreateBook"
+    )){
+      return res.status(401).json({msg: 'Invalid request'})
+    }
+    await res.revalidate(`/`)
+    res.status(200).json({msg: 'Revalidation successful'})
+  } catch (error) {
+    res.status(500).json({ error: error, mgs: 'Something went wrong'})
   }
-
-  const jsonBody = JSON.parse(body)
-  console.log("so this is the data",jsonBody)
-
-
-
-  res.json({success: true})
 }
+
+export default handler
+""
