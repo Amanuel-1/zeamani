@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 const secret = "psupabasePostCreateBook"
 
-export default async function handler(req:NextApiRequest, res:NextApiResponse) {
+export default async function POST(req:NextApiRequest, res:NextApiResponse) {
   const signature = req.headers[SIGNATURE_HEADER_NAME]
   const body = await readBody(req) // Read the body into a string
   if (!(await isValidSignature(body, signature as any, secret))) {
