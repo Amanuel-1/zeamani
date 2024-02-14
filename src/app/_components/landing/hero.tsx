@@ -16,7 +16,7 @@ const HeroSection = () => {
             <div className="relative w-[1rem] h-[1rem] md:w-[2rem] md:h-[2rem]">
                 <Image src={Images.waive} alt='waive' objectFit='cover' layout='fill' />
               </div> 
-
+  
 
 
             <h1 className='text-lg md:text-4xl dark:text-amber-400 '>
