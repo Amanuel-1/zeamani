@@ -5,8 +5,7 @@ import {
   protectedProcedure,
   publicProcedure,
 } from "fireup/server/api/trpc";
-import { CreatCategoryInputSchema, CreateBlogPostInputSchema } from "fireup/types";
-import { CreateBlogPostOutputSchema } from '../../../types/index';
+import { CreatCategoryInputSchema } from "fireup/types";
 import { BlogPost, Prisma, Tag } from "@prisma/client";
 
 export const postRouter = createTRPCRouter({
