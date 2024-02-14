@@ -149,12 +149,14 @@ export default async function Home() {
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
       <h1 className=" md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">recent <b className="text-amber-700">projects</b></h1>
-      <div className="parent grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 justify-center items-center p-10 h-full">
+      <div className="parent flex flex-col md:grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 justify-center items-center p-10 h-full w-full">
         {
           
         result.length && result.map((project:SProject,i:number )=>{
           return (
-            <ProjectDialog key={i} project={project}/>
+            <div key={i} className="col-span-1">
+              <ProjectDialog  project={project}/>
+            </div>
           );
         })
 
