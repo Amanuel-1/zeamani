@@ -38,7 +38,7 @@ const ProjectDialog = ({ project }: { project: SProject }) => (
     </Dialog.Trigger>
     <Dialog.Portal>
       <Dialog.Overlay className=" data-[state=open]:animate-overlayShow fixed inset-0 h-fit rounded-lg overflow-clip z-50 " />
-      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-w-[95vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-100 dark:bg-zinc-950 md:bg-[rgba(220,209,204,0.73)] dark:md:bg-[rgba(0,0,0,0.78)] backdrop-blur-md  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-stone-400 dark:border-stone-900 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none ">
+      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-w-[95vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-100 dark:bg-zinc-950 md:bg-[rgba(255,255,255,0.83)] dark:md:bg-[rgba(0,0,0,0.78)] backdrop-blur-md  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-stone-400 dark:border-stone-900 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none ">
         <Dialog.Title className="text-mauve12 m-0  w-full text-center pt-10">
               <h1> {project.title}</h1>
          </Dialog.Title>
