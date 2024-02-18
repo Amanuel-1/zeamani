@@ -19,7 +19,7 @@ export default function Products() {
                         Below are some of the services I provide
                     </h2>
                     <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-900 dark:text-gray-100">
-                        Our templates allow for maximum customization. No technical skills required – our intuitive design tools let you get the job done easily.
+                        If you are in need of one of the services below, don't hesitate to contact me via my social links or the contact page in this site.
                     </p>
                 </div>
 
