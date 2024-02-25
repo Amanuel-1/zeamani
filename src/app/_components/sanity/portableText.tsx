@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import { cn, extractTweetId } from 'fireup/lib/utils';
 import YouTubePlayer from 'react-player/youtube';
 import { Tweet } from 'react-tweet'
+import { EmbedPreview } from './embedPreview';
 interface PortableProps {
   body: any;
 }
@@ -106,7 +107,8 @@ const PortableTextComponents = {
     'image':ImageComponent,
     code: CodeComponent,
     youtube:YoutubeBlock,
-    twitter:TwitterBlock
+    twitter:TwitterBlock,
+    embed:EmbedPreview
 
     
   },

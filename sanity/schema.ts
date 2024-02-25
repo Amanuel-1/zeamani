@@ -8,9 +8,10 @@ import project from './schemas/project'
 import { youtube } from './schemas/youtube'
 import { twitter } from './schemas/twitter'
 import gallery from './schemas/gallery'
+import { embed } from './schemas/embed'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [youtube,twitter,gallery,post, author, category,project, blockContent],
+  types: [embed,youtube,twitter,gallery,post, author, category,project, blockContent],
 
 }

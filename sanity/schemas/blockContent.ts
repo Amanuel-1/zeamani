@@ -83,7 +83,9 @@ export default defineType({
     defineArrayMember({
       type:"twitter"
     }),
-    
+    defineArrayMember({
+      type:"embed"
+    }),    
     {
       type:'code'
     },
