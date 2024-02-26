@@ -12,6 +12,7 @@ import { Site } from 'fireup/site.config'
 import { Metadata, ResolvingMetadata } from 'next'
 import { getDomain } from 'fireup/lib/utils'
 import ShareBar from 'fireup/app/_components/sanity/shareBar'
+import AudioPlayer from 'fireup/app/_components/sanity/TTS'
 
 
 
@@ -98,7 +99,9 @@ const PostPage = async ({params:{slug}}:postProps) => {
                 <p key={ind} className='text-stone-800 text-xs  md:text-base dark:text-stone-300 font-bold italic m-0 p-0'>#{categ.title}</p>
               ))
             }</div>
-            <p className=" w-full z-0">{post.description}</p>
+
+            <AudioPlayer blogBody={post.body}/>
+            
            
             <PortableTextEditor  body={post.body}/>
            </div>

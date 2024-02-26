@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx"
+import { Block } from "fireup/lib/types";
 import { Metadata, ResolvingMetadata } from "next"
 import { twMerge } from "tailwind-merge"
  
@@ -41,6 +42,23 @@ export function extractTweetId(url: string): string | null {
   return null;
 }
 
+
+// convert blockcontent into plain text
+
+const defaults = {nonTextBehavior: 'remove'}
+
+export function blocksToText(blocks:Block[], opts = {}) {
+  const options = Object.assign({}, defaults, opts)
+  return blocks
+    .map(block => {
+      if (block._type !== 'block' || !block.children) {
+        return options.nonTextBehavior === 'remove' ? '' : `[${block._type} block]`
+      }
+
+      return block.children.map(child => child.text).join('')
+    })
+    .join('\n\n')
+}
 
 // type seoOption ={
 //   title:"zeamani",

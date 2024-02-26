@@ -60,29 +60,29 @@ const Navbar = (props:navbarProps) => {
         } list-none flex items-center z-40`}
       >
             <li className="mr-2">
-              <Link href="/articles">
+              <Link href="/articles" className="textshadow drop-shadow-lg shadow-amber-600">
                 Articles
               </Link>
             </li>
 
             <li className="mr-2">
-              <Link href="/me">
+              <Link href="/me" className="textshadow drop-shadow-lg shadow-amber-600">
                 Me
               </Link>
             </li>
 
             <li className="mr-2">
-              <Link href="/guestbook">
+              <Link href="/guestbook" className="textshadow drop-shadow-lg shadow-amber-600">
                 GuestBook
               </Link>
             </li>
             <li className="mr-2">
-              <Link href="/market">
+              <Link href="/market" className="textshadow drop-shadow-lg shadow-amber-600">
                 MarketPlace
               </Link>
             </li>
             <li className="mr-2">
-              <Link href="/contact">
+              <Link href="/contact" className="textshadow drop-shadow-lg shadow-amber-600">
                 contact
               </Link>
             </li>

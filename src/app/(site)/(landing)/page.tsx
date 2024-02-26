@@ -29,6 +29,7 @@ import LogoScroll from "fireup/app/_components/landing/logoscrolls";
 import { Suspense } from "react";
 import Products from "fireup/app/_components/landing/products";
 import Experiences from "fireup/app/_components/landing/experiences";
+import AudioPlayer from "fireup/app/_components/sanity/TTS";
 
 type Props = {
   params: { id: string }
@@ -142,6 +143,7 @@ export default async function Home() {
   return (
     <main className="">
       <HeroSection/>
+      {/* <AudioPlayer/> */}
       
       <LogoScroll/>
       <Products/>
