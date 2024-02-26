@@ -19,7 +19,7 @@ const AudioPlayer = ({blogBody}:{blogBody:Block[]}) => {
   // Define a function to fetch the audio data and set the URL state variable
   const handleAudioFetch = async () => {
     // Call the textToSpeech function to generate the audio data for the text "Hello welcome"
-    const data = await textToSpeech(bodyText.substring(0,2000))
+    const data = await textToSpeech(bodyText.substring(0,1000))
     // Create a new Blob object from the audio data with MIME type 'audio/mpeg'
     const blob = new Blob([data], { type: 'audio/mpeg' });
     // Create a URL for the blob object
