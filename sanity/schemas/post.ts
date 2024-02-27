@@ -87,8 +87,21 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'file',
+      title: 'Podcast media file',
+      description:
+        'Most podcatchers support .mp3, but other audio-formats may work as well',
+      type: 'file'
+    }),
+    defineField({
+      name: 'fileUrl',
+      title: 'External location for podcast media file',
+      description: 'For when you host your podcast media file elsewhere',
+      type: 'url'
+    }),
   ],
-
+    
   preview: {
     select: {
       title: 'title',
