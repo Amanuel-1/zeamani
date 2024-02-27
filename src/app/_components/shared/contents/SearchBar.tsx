@@ -2,7 +2,7 @@
 import { Category, SPost, SProject } from "fireup/lib/types";
 import { useEffect, useState } from "react";
 
-const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch: (filteredPosts: SPost[] | SProject[]) => void  }) => {
+const SearchBar = ({ posts, onSearch }: { posts: SPost[]; onSearch: (filteredPosts: SPost[] ) => void  }) => {
   const [selectedCategory, setSelectedCategory] = useState<Category>({} as Category);
   const [searchText, setSearchText] = useState<string>("");
   const [searchCategory,setSearchCategory] = useState<Category>({} as Category)
@@ -17,7 +17,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[] | SProject[]; onSearch:
 }
 
   useEffect(() => {
-    let result :SPost[]|SProject[]  =  posts
+    let result :SPost[]  =  posts
      if(searchCategory.title){
       const filtered= posts.filter((post) => {
         // Filter based on selected category
