@@ -1,4 +1,4 @@
-import { Image, Reference } from 'sanity'
+import { File, Image, Reference } from 'sanity'
 
 type Base = {
   _id: string,
@@ -18,7 +18,8 @@ interface SPost extends Base {
   description: string,
   likes: number,
   dislikes:number,
-  views: number
+  views: number,
+  audio:File
 }
 interface SGallery extends Base {
   mainImage: Image,

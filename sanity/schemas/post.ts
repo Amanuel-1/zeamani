@@ -88,7 +88,7 @@ export default defineType({
       type: 'blockContent',
     }),
     defineField({
-      name: 'file',
+      name: 'audio',
       title: 'Podcast media file',
       description:
         'Most podcatchers support .mp3, but other audio-formats may work as well',

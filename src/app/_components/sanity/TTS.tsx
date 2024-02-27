@@ -1,7 +1,7 @@
 'use client'
 import textToSpeech from 'fireup/lib/tts';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { Timeline } from 'sanity';
+import { File, Timeline } from 'sanity';
 import { useWavesurfer } from '@wavesurfer/react'
 import { boolean } from 'zod';
 import { Block } from 'fireup/lib/types';
@@ -9,23 +9,24 @@ import { blocksToText } from 'fireup/lib/utils';
 import { PauseIcon, PlayIcon } from '@radix-ui/react-icons';
 import { FaPause, FaPlay } from 'react-icons/fa6';
 
-const AudioPlayer = ({blogBody}:{blogBody:Block[]}) => {
+const AudioPlayer = ({audio}:{audio:any}) => {
   // Define a state variable to hold the audio URL
   const [audioURL, setAudioURL] = useState<string>("");
   const containerRef = useRef(null)
   const [urlIndex, setUrlIndex] = useState(0)
 
-  const bodyText:string  = blocksToText(blogBody)
+  // const bodyText:string  = blocksToText(blogBody)
   // Define a function to fetch the audio data and set the URL state variable
   const handleAudioFetch = async () => {
     // Call the textToSpeech function to generate the audio data for the text "Hello welcome"
-    const data = await textToSpeech(bodyText.substring(0,1000))
-    // Create a new Blob object from the audio data with MIME type 'audio/mpeg'
-    const blob = new Blob([data], { type: 'audio/mpeg' });
-    // Create a URL for the blob object
-    const url = URL.createObjectURL(blob);
-    // Set the audio URL state variable to the newly created URL
-    setAudioURL(url);
+    // const data = await textToSpeech(bodyText.substring(0,1000))
+    // // Create a new Blob object from the audio data with MIME type 'audio/mpeg'
+    // const blob = new Blob([data], { type: 'audio/mpeg' });
+    // // Create a URL for the blob object
+    // const url = URL.createObjectURL(blob);
+    // // Set the audio URL state variable to the newly created URL
+    
+    setAudioURL(audio.asset.url);
   };
 
 

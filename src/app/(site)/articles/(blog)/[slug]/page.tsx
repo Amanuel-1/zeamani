@@ -30,7 +30,13 @@ export async function generateMetadata(
     const query  = groq`*[_type=="post" && slug.current == $slug]{
         ...,
         author->,
-        categories[]->
+        categories[]->,
+        audio{
+          asset->{
+          _id,
+          url
+        }
+      },
     }[0]`
 
     const post:SPost  = await client.fetch(query,{slug},{tag:"post"})
@@ -69,7 +75,8 @@ const PostPage = async ({params:{slug}}:postProps) => {
     const query  = groq`*[_type=="post" && slug.current == $slug]{
         ...,
         author->,
-        categories[]->
+        categories[]->,
+        audio->
     }[0]`
 
     const post:SPost  = await sanityFetch({query:query,params:{slug},tags:["post","articles"]})
@@ -100,7 +107,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
               ))
             }</div>
 
-            <AudioPlayer blogBody={post.body}/>
+            <AudioPlayer audio={post.audio}/>
             
            
             <PortableTextEditor  body={post.body}/>
