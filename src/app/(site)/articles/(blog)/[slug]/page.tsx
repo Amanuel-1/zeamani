@@ -27,20 +27,16 @@ export async function generateMetadata(
   ): Promise<Metadata> {
     // read route params
     const slug  = params.slug
-    const query  = groq`*[_type=="post" && slug.current == $slug]{
-        ...,
-        author->,
-        categories[]->,
-        audio{
-          asset->{
-          _id,
-          url
-        }
-      },
-    }[0]`
+    const query  = groq`*[_type == "post" && slug.current == $slug] {
+      ...,
+      author->,
+      categories[]->,
+      "audioUrl": audio.asset -> url 
+    }
+    [0]`
 
     const post:SPost  = await client.fetch(query,{slug},{tag:"post"})
-    console.log("yeeeeeeeeyyy this is the current post",post)
+    console.log("yeeeeeeeeyyy this is the current post",post.audioUrl)
    
     // fetch data
     const title =  post.title;
@@ -76,7 +72,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
         ...,
         author->,
         categories[]->,
-        audio->
+        "audioUrl": audio.asset -> url 
     }[0]`
 
     const post:SPost  = await sanityFetch({query:query,params:{slug},tags:["post","articles"]})
@@ -87,6 +83,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
 
     <section className='z-20 flex container px-1 md:px-12 lg:px-36 flex-col gap-4  items-center min-h-screen w-full '>
             <h1 className="title w-full  text-center md:mt-12 mt-6">{post.title}</h1>
+            <p className="">url : {post.audioUrl}</p>
             <div className="image container w-full px-2">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
@@ -107,7 +104,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
               ))
             }</div>
 
-            <AudioPlayer audio={post.audio}/>
+            <AudioPlayer audioUrl={post.audioUrl}/>
             
            
             <PortableTextEditor  body={post.body}/>

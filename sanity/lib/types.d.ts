@@ -1,4 +1,5 @@
 import { File, Image, Reference } from 'sanity'
+import { Url } from 'url'
 
 type Base = {
   _id: string,
@@ -19,7 +20,10 @@ interface SPost extends Base {
   likes: number,
   dislikes:number,
   views: number,
-  audio:File
+  audio:File,
+  audioUrl:string
+
+
 }
 interface SGallery extends Base {
   mainImage: Image,
