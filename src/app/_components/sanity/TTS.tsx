@@ -1,6 +1,6 @@
 'use client'
 import textToSpeech from 'fireup/lib/tts';
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef, Suspense } from 'react';
 import { File, Timeline } from 'sanity';
 import { useWavesurfer } from '@wavesurfer/react'
 import { boolean } from 'zod';
@@ -96,7 +96,11 @@ const AudioPlayer = ({audioUrl}:{audioUrl:any}) => {
 
   return (
     <div className='w-full flex flex-row-reverse justify-around items-center px-2 md:px-10 py-2 md:py-4 dark:bg-[rgb(14,12,11)] border border-stone-900 rounded-[18px] dark:hover:bg-[rgb(12,11,11)] text-stone-900 dark:text-stone-200'>
-      {audioUrl?(<div ref={containerRef} className='min-h-fit  w-[90%]'/>):(
+      {audioUrl?(
+        <Suspense fallback={<Loading/>}>
+          <div ref={containerRef} className='min-h-fit  w-[90%]'/>
+        </Suspense>
+      ):(
         <div className="w-full text-start h-full">unabled to load audio_ {audioUrl+"mp3"} </div>
       )}
 
@@ -111,3 +115,10 @@ const AudioPlayer = ({audioUrl}:{audioUrl:any}) => {
 };
 
 export default AudioPlayer;
+
+
+const Loading  = ()=>{
+  return(
+    <h4 className="animate-ping">loading audio...</h4>
+  )
+}

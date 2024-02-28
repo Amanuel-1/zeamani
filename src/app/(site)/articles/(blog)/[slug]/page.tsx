@@ -13,6 +13,7 @@ import { Metadata, ResolvingMetadata } from 'next'
 import { getDomain } from 'fireup/lib/utils'
 import ShareBar from 'fireup/app/_components/sanity/shareBar'
 import AudioPlayer from 'fireup/app/_components/sanity/TTS'
+import Newsletter from 'fireup/app/_components/shared/cards/Newsletter'
 
 
 
@@ -83,7 +84,6 @@ const PostPage = async ({params:{slug}}:postProps) => {
 
     <section className='z-20 flex container px-1 md:px-12 lg:px-36 flex-col gap-4  items-center min-h-screen w-full '>
             <h1 className="title w-full  text-center md:mt-12 mt-6">{post.title}</h1>
-            <p className="">url : {post.audioUrl}</p>
             <div className="image container w-full px-2">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
@@ -121,6 +121,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
     <div className="relative lg:fixed  flex top-0 left-0 justify-center lg:justify-start xl:w-[100%] items-center lg:min-h-screen w-full lg:w-[6rem] z-10 pointer-events-none">
                 <ShareBar content={post}/>
     </div>
+    <Newsletter/>
     </>
   )
 }

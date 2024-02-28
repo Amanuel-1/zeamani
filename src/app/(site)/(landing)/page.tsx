@@ -30,6 +30,7 @@ import { Suspense } from "react";
 import Products from "fireup/app/_components/landing/products";
 import Experiences from "fireup/app/_components/landing/experiences";
 import AudioPlayer from "fireup/app/_components/sanity/TTS";
+import Newsletter from "fireup/app/_components/shared/cards/Newsletter";
 
 type Props = {
   params: { id: string }
@@ -183,6 +184,7 @@ export default async function Home() {
         }
         <Experiences/>
 
+        <Newsletter/>
 
     </main>
   );

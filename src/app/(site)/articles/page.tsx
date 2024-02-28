@@ -1,5 +1,6 @@
 
 import Featured from 'fireup/app/_components/shared/cards/Featured'
+import Newsletter from 'fireup/app/_components/shared/cards/Newsletter'
 import PostCard from 'fireup/app/_components/shared/cards/PostCard'
 import SearchBar from 'fireup/app/_components/shared/contents/SearchBar'
 import PostsList from 'fireup/app/_components/shared/contents/postsList'
@@ -69,6 +70,7 @@ const Articles = async() => {
       {/* <PostsList posts={posts}/> */}
 
     </section>
+    <Newsletter/>
     </div>
   )
 }
