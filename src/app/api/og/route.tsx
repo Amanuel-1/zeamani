@@ -78,7 +78,7 @@ return new ImageResponse(
         alignItems:'center'
         }}
     >
-        <h1  style={{ display:'flex',justifyContent:'center',textAlign:'center',minWidth:'25%',maxWidth:'35%',borderRadius:'50px',fontSize: '2rem' ,paddingLeft:'.8rem',paddingRight:'.8rem',paddingTop:'.6rem',paddingBottom:'.6rem',backgroundColor:'rgba(20,20,20,.8)',borderWidth:'2px',borderColor:'orange'}}>{website}</h1>
+        <h1  style={{ display:'flex',justifyContent:'center',textAlign:'center',minWidth:'25%',maxWidth:'35%',borderRadius:'50px',fontSize: '2rem' ,paddingLeft:'1.2rem',paddingRight:'1.2rem',paddingTop:'.6rem',paddingBottom:'.6rem',backgroundColor:'rgba(20,20,20,.8)',borderWidth:'2px',borderColor:'orange'}}>{website}</h1>
         <h1 tw="font-extrabold" style={{ width: '100%', fontSize: '4rem' ,paddingLeft:'2rem',paddingRight:'2rem',textAlign:'center'}}>{title??"Untitled Post"}</h1>
     </div>
         <div
