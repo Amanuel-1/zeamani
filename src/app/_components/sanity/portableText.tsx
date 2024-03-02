@@ -96,7 +96,7 @@ const CodeComponent : React.FC=(props:any) => {
       
 
       return (
-        <iframe height="300" className='w-full h-[20rem]  md:h-[30rem] md:p-4 border-none bg-transparent' title="Loader Animation - Pure CSS" src={props.value.url} loading="lazy" allowTransparency={true} allowFullScreen={true}>
+        <iframe height="300" className='w-full h-[20rem]  md:h-[30rem] na md:p-4 border-none bg-transparent' title="Loader Animation - Pure CSS" src={props.value.url} loading="lazy" allowTransparency={true} allowFullScreen={true}>
           
       </iframe>
       )

@@ -42,7 +42,7 @@ return new ImageResponse(
         style={{
             height: '100%',
             width: '100%',
-            zIndex: 20,
+            
         }}
         src={image??"https://user-images.githubusercontent.com/71079278/275351091-bf163aa6-a4d0-4022-9ef4-917e0e1bcfb2.png"}
         alt="Post cover image"
@@ -74,10 +74,12 @@ return new ImageResponse(
         height: '100%',
         color: 'white',
         fontWeight: 'bold',
+        // justifyContent:'center',
+        alignItems:'center'
         }}
     >
-        <h1 tw="font-extrabold" style={{ width: '60%', fontSize: '4rem' }}>{title??"Untitled Post"}</h1>
-        <h1  style={{ display:'flex',justifyContent:'center',textAlign:'center',minWidth:'25%',maxWidth:'35%',borderRadius:'50px',fontSize: '2rem' ,paddingLeft:'.8rem',paddingRight:'.8rem',paddingTop:'.6rem',paddingBottom:'.6rem',backgroundColor:'rgba(40,30,30,.8)'}}>{website}</h1>
+        <h1  style={{ display:'flex',justifyContent:'center',textAlign:'center',minWidth:'25%',maxWidth:'35%',borderRadius:'50px',fontSize: '2rem' ,paddingLeft:'.8rem',paddingRight:'.8rem',paddingTop:'.6rem',paddingBottom:'.6rem',backgroundColor:'rgba(20,20,20,.8)',borderWidth:'2px',borderColor:'orange'}}>{website}</h1>
+        <h1 tw="font-extrabold" style={{ width: '100%', fontSize: '4rem' ,paddingLeft:'2rem',paddingRight:'2rem',textAlign:'center'}}>{title??"Untitled Post"}</h1>
     </div>
         <div
             style={{
@@ -106,8 +108,8 @@ return new ImageResponse(
             <div
             style={{
                 position: 'absolute',
-                bottom: '4rem',
-                left: '20%',
+                bottom: '2rem',
+                right:0,
                 transform: 'translateX(-50%)',
                 display: 'flex',
                 alignItems: 'center',
@@ -116,13 +118,8 @@ return new ImageResponse(
                 fontWeight: 'bold',
             }}
             >
-            <span style={{ marginBottom: '.5rem', borderRadius: '50%' }}>
-                <img
-                src={avatar as string ?? 'https://media.licdn.com/dms/image/D4D03AQFhYXOlndUMyA/profile-displayphoto-shrink_200_200/0/1689808459339?e=1706140800&v=beta&t=B8314U4DPcI2tcYX6MHTCqBfbQ3v681G8YP_hNx0Gvg'}
-                style={{ height: '5rem', width: '5rem', borderRadius: '50%', border: '4px solid #F3F4F6' }}
-                />
-            </span>
-            <span style={{ color: '#F3F4F6', fontSize: '1.5rem' }}>{author??"Amanuel Garomsa "}[author]</span>
+           
+            <span style={{ color: '#F3F0F6', fontSize: '1.5rem' }}>by {author??"Amanuel Garomsa "}</span>
             </div>
 
         </div>
