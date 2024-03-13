@@ -55,7 +55,7 @@ const Navbar = (props:navbarProps) => {
         exit={{ opacity: 0, y: '-100%' }}
         className={`${
           mobile
-            ? 'flex-col gap-6 justify-center w-full h-screen bg-[rgba(219,196,164,0.25)] dark:bg-[rgba(20,10,10,0.58)] font-bold'
+            ? 'flex-col gap-0 justify-center w-full h-screen bg-[rgba(219,196,164,0.25)] dark:bg-[rgba(20,10,10,0.58)] font-bold'
             : 'flex-row'
         } list-none flex items-center z-40`}
       >
