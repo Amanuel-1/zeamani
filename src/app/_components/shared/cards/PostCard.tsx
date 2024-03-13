@@ -19,7 +19,7 @@ const PostCard = ({post,className}:{post:SPost,className?:string}) => {
                                
                               </div>
               <div>
-                <h1 className="text-2xl font-extrabold group-hover:text-white text-stone-500 transition-all duration-700">{post.title}</h1>
+                <h1 className="text-2xl font-extrabold group-hover:text-white text-stone-500 transition-all duration-700">{shortener(post.title,50)}</h1>
                 <p className="text-border text-clip text-stone-300 font-normal">{shortener(post.description,120)}</p>
                 <small className='absolute top-0 right-0 px-2 py-1 bg-[rgba(14,14,14,0.62)] backdrop-blur-sm rounded-bl-[15px]'>{moment(post._updatedAt).fromNow()}</small>
                 {/* <ul className="flex flex-wrap gap-2 justify-center items-center w-ful">

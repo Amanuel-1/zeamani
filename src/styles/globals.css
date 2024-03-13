@@ -57,10 +57,7 @@
     a {
         @apply text-black dark:text-stone-100
     }
-    a:hover,
-    a:visited:hover {
-        @apply text-amber-500 dark:text-white;
-    }
+   
     a:focus {
         @apply no-underline outline-primary;
     }
@@ -96,14 +93,14 @@
         @apply no-underline;
     }
     a {
-        @apply text-primary ;
+        @apply text-primary  ;
     }
     a:hover,
     a:visited:hover {
-        @apply text-stone-900 ;
+        @apply text-zinc-600 ;
     }
     a:focus {
-        @apply outline-primary no-underline decoration-primary text-black dark:text-amber-700;
+        @apply outline-primary no-underline decoration-primary  dark:text-amber-700;
     }
     html {
         @apply text-[16px] text-body-text font-body;

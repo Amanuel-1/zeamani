@@ -59,30 +59,30 @@ const Navbar = (props:navbarProps) => {
             : 'flex-row'
         } list-none flex items-center z-40`}
       >
-            <li className="mr-2">
+            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
               <Link href="/articles" className="textshadow drop-shadow-lg shadow-amber-600">
-                Articles
+                Articles 
               </Link>
             </li>
 
-            <li className="mr-2">
+            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
               <Link href="/me" className="textshadow drop-shadow-lg shadow-amber-600">
                 Me
               </Link>
             </li>
 
-            <li className="mr-2">
+            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
               <Link href="/guestbook" className="textshadow drop-shadow-lg shadow-amber-600">
                 GuestBook
               </Link>
             </li>
-            <li className="mr-2">
+            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
               <Link href="/market" className="textshadow drop-shadow-lg shadow-amber-600">
                 MarketPlace
               </Link>
             </li>
-            <li className="mr-2">
-              <Link href="/contact" className="textshadow drop-shadow-lg shadow-amber-600">
+            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
+              <Link href="/contact" className="textshadow drop-shadow-lg shadow-amber-600 hover:text-stone">
                 contact
               </Link>
             </li>

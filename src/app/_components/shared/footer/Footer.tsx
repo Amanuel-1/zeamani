@@ -19,14 +19,12 @@ const Footer = (props:footerProps) => {
   return (
    <footer className='flex flex-col justiy-center items-center'>
    <div className="w-[90%] h-[2rem] mt-4 border-b border-stone-400 dark:border-stone-900"/>
-   <section className="my-0 mx-auto py-0 px-[4%] flex justify-items-stretch items-center w-full ">
-    
-    <ul className="flex gap-2 w-full my-4 items-center text-stone-400">
-        <li className="flex items-center mr-2 text-stone-700 dark:text-stone-500">
-           <Logo/> 
-           <small style={pacifico.style} className='font-bold text-lg'>zeamani</small>          
-        </li>
-        <li className=" text-stone-400">•</li>
+   <section className="my-0 mx-auto py-0 px-[4%] flex justify-evenly items-center w-full ">
+    <Logo/> 
+    <ul className="flex gap-2 w-full my-4 items-center justify-center md:justify-start text-stone-400 dark:text-stone-600 ">
+           
+        
+     
         <li className='cursor-pointer hover:text-stone-500 dark:hover:text-stone-500 transition-all duration-700 hover:scale-105 text-stone-700 dark:stroke-stone-400'>
            <Link  className="text-stone-600 dark:text-stone-400"  href={Me.socials.discord} ><FaDiscord/></Link>
         </li>

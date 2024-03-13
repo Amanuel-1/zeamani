@@ -24,7 +24,7 @@ const ProjectDialog = ({ project }: { project: SProject }) => (
           <div className="absolute inset-0 backdrop-brightness-[65%] hover:brightness-100 backdrop-contrast-125 group-hover:brightness-100 text-stone-950 dark:text-stone-100"></div>
         </div>
 
-        <div className="title text-md px-2 pt-1 font-bold dark:text-stone-200 dark:group-hover:text-white group-hover:text-stone-600 transition-all duration-700">{project.title}</div>
+        <div className="title md:text-md px-2 pt-1 font-bold dark:text-stone-200 dark:group-hover:text-white group-hover:text-stone-600 transition-all duration-700">{project.title}</div>
         <div className="description dark:text-stone-300 py-2 px-2 dark:group-hover:text-white group-hover:text-stone-600 transition-all duration-700">{shortener(project.description, 100)}</div>
         <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs group-hover:text-stone-100  transition-all duration-700">
           {project.categories &&
