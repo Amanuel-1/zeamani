@@ -4,9 +4,7 @@ import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 
 
-import clsx from 'clsx';
 import Logo from './Logo';
-import { Container } from './container';
 import { pacifico } from 'fireup/styles/Fonts';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
@@ -55,28 +53,28 @@ const Navbar = (props:navbarProps) => {
         exit={{ opacity: 0, y: '-100%' }}
         className={`${
           mobile
-            ? 'flex-col gap-0 justify-center w-full h-screen bg-[rgba(219,196,164,0.25)] dark:bg-[rgba(20,10,10,0.58)] font-bold'
-            : 'flex-row'
+            ? 'flex-col gap-4 justify-center w-full h-screen bg-[rgba(219,196,164,0.25)] dark:bg-[rgba(20,10,10,0.58)] font-bold'
+            : 'flex-row gap-4'
         } list-none flex items-center z-40`}
       >
-            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)] ">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500  border-neutral-300 dark:border-[rgb(48,41,38)] ">
               <Link href="/articles" className="textshadow drop-shadow-lg shadow-amber-600">
                 Articles 
               </Link>
             </li>
 
-            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)]">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500  border-neutral-300 dark:border-[rgb(48,41,38)]">
               <Link href="/me" className="textshadow drop-shadow-lg shadow-amber-600">
                 Me
               </Link>
             </li>
 
-            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)]">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500  border-neutral-300 dark:border-[rgb(48,41,38)]">
               <Link href="/guestbook" className="textshadow drop-shadow-lg shadow-amber-600">
                 GuestBook
               </Link>
             </li>
-            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)]">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500  border-neutral-300 dark:border-[rgb(48,41,38)]">
               <Link href="/market" className="textshadow drop-shadow-lg shadow-amber-600">
                 MarketPlace
               </Link>

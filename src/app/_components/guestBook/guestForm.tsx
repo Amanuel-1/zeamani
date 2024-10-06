@@ -96,7 +96,7 @@
             <div className="container my-8 rounded-md overflow-hidden">
                 <button
                 onClick={toggleAccordion}
-                className="bg-stone-500 dark:bg-zinc-900 text-white md:px-4 py-2 rounded-md focus:outline-none w-full"
+                className=" dark:bg-zinc-900 text-white md:px-4 py-2 rounded-md focus:outline-none w-full"
                 >
                 How about signing my guestbook?, [click here]
                 </button>
@@ -138,7 +138,7 @@
                       <textarea  id='avatarUrl' name='content' className='w-full p-1 md:p-2 rounded-[15px] focus:border focus:border-stone-800 bg-transparent border border-stone-800 dark:bg-neutral-950' onChange={handleguestSignatureChange} value={guestSignature.content} />
                   </div>
       
-                  <button type='submit' disabled={createguestSignature.isLoading} className='px-6 py-3 bg-stone-600 dark:bg-stone-950 w-[80%] self-center rounded-md  border border-amber-700'>{createguestSignature.isLoading ? "Signing..." : "Sign"}</button>
+                  <button type='submit' disabled={createguestSignature.isLoading} className='px-6 py-3   w-[80%] self-center rounded-md  border border-amber-700'>{createguestSignature.isLoading ? "Signing..." : "Sign"}</button>
                
                 {/* Add more form fields as needed */}
                 </form>

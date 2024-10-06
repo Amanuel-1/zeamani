@@ -2,7 +2,6 @@
 import "fireup/styles/globals.css";
 import { Toaster } from 'react-hot-toast';
 
-import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "fireup/trpc/react";
@@ -17,10 +16,7 @@ import { getServerAuthSession } from "fireup/server/auth";
 //analytics
 import Loglib from "@loglib/tracker/react";
 import { Analytics } from '@vercel/analytics/react';
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+
 
 export const metadata = {
   title: "zeamani",

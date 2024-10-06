@@ -177,7 +177,7 @@ export function CreateProject() {
             <button
               type="button"
               onClick={() => handleTagRemove(tag)}
-              className="ml-2 px-2 text-red-500 bg-stone-900"
+              className="ml-2 px-2 text-red-500 "
             >
               &times;
             </button>

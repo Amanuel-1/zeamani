@@ -29,7 +29,7 @@ const ProjectDialog = ({ project }: { project: SProject }) => (
         <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs group-hover:text-stone-100  transition-all duration-700">
           {project.categories &&
             project.categories.map((category: Category) => (
-              <small key={category._id} className="tags bg-stone-400 dark:bg-stone-900 hover:bg-zinc-500 dark:hover:bg-zinc-950 text-stone-900 dark:text-stone-50 px-2 hover:hue-rotate-15 rounded-[4px]">
+              <small key={category._id} className="tags   hover:bg-zinc-500 dark:hover:bg-zinc-950 text-stone-900 dark:text-stone-50 px-2 hover:hue-rotate-15 rounded-[4px]">
                 {category.title}
               </small>
             ))}
@@ -48,7 +48,7 @@ const ProjectDialog = ({ project }: { project: SProject }) => (
 
         <div className="mt-[25px] flex justify-end">
           <Dialog.Close asChild>
-            <button className=" text-stone-800 dark:text-stone-300 border-2 border-stone-500  dark:border-stone-900 hover:bg-stone-500 hover:text-stone-300 dark:hover:bg-stone-900 focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none transition-all duration-700">
+            <button className=" text-stone-800 dark:text-stone-300 border-2 border-stone-500  dark:border-stone-900  hover:text-stone-300 dark: focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none transition-all duration-700">
               Close
             </button>
           </Dialog.Close>

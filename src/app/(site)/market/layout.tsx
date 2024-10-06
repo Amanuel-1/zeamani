@@ -14,10 +14,7 @@ import SessionProvide from "fireup/app/_components/auth/sessionProvide";
 import Image from "next/image";
 import { Images } from "fireup/app/resources";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+
 
 export const metadata = {
   title: "zeamani",

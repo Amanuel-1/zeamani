@@ -18,10 +18,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { getDomain } from "fireup/lib/utils";
 import { Metadata } from "next/types";
 import { keywordList } from "fireup/lib/constants";
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+
 export async function generateMetadata(
   ): Promise<Metadata> {
     // read route params

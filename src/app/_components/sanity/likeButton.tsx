@@ -44,9 +44,9 @@ const updateLikesCount  = async(slug:string,type:'like'| 'dislike')=>{
 const LikeButton = ({post}:LikePostProps) => {
   return (
         <ButtonGroup className=''>
-            <Button className='rounded-l-[25px] text-xl md:text-3xl  bg-stone-700 dark:bg-[rgb(14,12,11)] dark:border-l dark:border-y dark:border-stone-900 text-amber-500'><RiEmotionHappyLine/></Button>
-            <Button className='text-xl md:text-3xl  bg-stone-700 dark:bg-[rgb(14,12,11)] dark:border-y border-stone-900 text-amber-500'><RiEmotionNormalLine/></Button>
-            <Button className='rounded-r-[25px] text-xl md:text-3xl  bg-stone-700 dark:bg-[rgb(14,12,11)] dark:border-y dark:border-r dark:border-stone-900 text-amber-500'><RiEmotionUnhappyLine/></Button>
+            <Button className='rounded-l-[25px] text-xl md:text-3xl   dark:bg-[rgb(14,12,11)] dark:border-l dark:border-y dark:border-stone-900 text-amber-500'><RiEmotionHappyLine/></Button>
+            <Button className='text-xl md:text-3xl   dark:bg-[rgb(14,12,11)] dark:border-y border-stone-900 text-amber-500'><RiEmotionNormalLine/></Button>
+            <Button className='rounded-r-[25px] text-xl md:text-3xl   dark:bg-[rgb(14,12,11)] dark:border-y dark:border-r dark:border-stone-900 text-amber-500'><RiEmotionUnhappyLine/></Button>
         </ButtonGroup>
   )
 }

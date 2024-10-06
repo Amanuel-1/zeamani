@@ -34,8 +34,8 @@ const HeroSection = () => {
             </div>
        <div className="flex flex-wrap gap-4 md:gap-[2rem] justify-start items-center p-2 md:p-0 w-full md:w-[60%] text-stone-900 dark:text-stone-300 ">
           
-          <button className='relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'><a href='https://docs.google.com/uc?export=download&id=1Tzv0qv-mV0rOAyatmL_QYWD3qTToDIO3'>My Resume</a></button>
-          <button className='flex gap-2 justify-center items-center relative border border-stone-600 dark:bg-stone-900 dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black hover:bg-stone-300'><a href={Me.socials.linkedIn} target="_blank" rel="noopener noreferrer" >LinkedIn</a><Image className='w-[20px] h-[20px] hover:border-black hover:bg-stone-300' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
+          <button className='relative border border-stone-600  dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black '><a href='https://docs.google.com/uc?export=download&id=1Tzv0qv-mV0rOAyatmL_QYWD3qTToDIO3'>My Resume</a></button>
+          <button className='flex gap-2 justify-center items-center relative border border-stone-600  dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black '><a href={Me.socials.linkedIn} target="_blank" rel="noopener noreferrer" >LinkedIn</a><Image className='w-[20px] h-[20px] hover:border-black ' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
         </div>
         </div>
     </section>

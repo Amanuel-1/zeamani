@@ -73,7 +73,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[]; onSearch: (filteredPos
               <input
                 type="name"
                 name="search"
-                className="h-12 w-full md:min-w-[24rem] max-w-[28rem] md: cursor-text rounded-md border-none border-none-gray-100 text-stone-900 dark:text-stone-100 bg-stone-100 dark:bg-stone-900 py-4 p-10 shadow-sm outline-none focus:ring-red-700 focus:ring-opacity-50 pl-12 pr-6 md:rounded-[15px]"
+                className="h-12 w-full md:min-w-[24rem] max-w-[28rem] md: cursor-text rounded-md border-none border-none-gray-100 text-stone-900 dark:text-stone-100   py-4 p-10 shadow-sm outline-none focus:ring-red-700 focus:ring-opacity-50 pl-12 pr-6 md:rounded-[15px]"
                 placeholder="Search by title, tag, description, etc"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
@@ -89,7 +89,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[]; onSearch: (filteredPos
                 <select
                   id="category"
                   onChange={() => setSearchCategory(searchCategory)}
-                  className="block w-full rounded-md border-none border-none-gray-100 bg-stone-100 text-stone-900 dark:text-stone-100 dark:bg-stone-950 px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 focus:ring focus:ring-zinc-100 dark:focus:ring-zinc-800 focus:ring-opacity-50 md:px-6 md:rounded-[15px]"
+                  className="block w-full rounded-md border-none border-none-gray-100  text-stone-900 dark:text-stone-100  px-2 py-2 shadow-sm outline-none focus:border-none-zinc-500 focus:ring focus:ring-zinc-100 dark:focus:ring-zinc-800 focus:ring-opacity-50 md:px-6 md:rounded-[15px]"
                 >
                   <option onSelect={(e) => setSearchCategory({} as Category)}>all</option>
                   {
@@ -97,7 +97,7 @@ const SearchBar = ({ posts, onSearch }: { posts: SPost[]; onSearch: (filteredPos
                       <option className="" key={ind} onSelect={(e) => setSearchCategory(categ)}>
                         <div className="flex flex-row gap-2 w-full px-2 justify-around bg-green-600">
                           <li>{categ.title}</li>
-                          <li className="p-1 rounded-3xl bg-stone-700">{category_map.get(categ)}</li>
+                          <li className="p-1 rounded-3xl ">{category_map.get(categ)}</li>
                         </div>
                       </option>
                     ))

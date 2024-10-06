@@ -25,7 +25,7 @@ const PostCard = ({post,className}:{post:SPost,className?:string}) => {
                 {/* <ul className="flex flex-wrap gap-2 justify-center items-center w-ful">
                   {
                   post.tags && post.tags.map((singleTag,i)=>(
-                    <li key={i} className="px-2 py-1 bg-stone-700 boder border-stone-600 text-sm font-semibold">{singleTag.name}</li>
+                    <li key={i} className="px-2 py-1  boder border-stone-600 text-sm font-semibold">{singleTag.name}</li>
                   ))
                 } 
                 </ul> */}

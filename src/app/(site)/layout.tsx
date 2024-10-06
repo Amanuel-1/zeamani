@@ -3,7 +3,6 @@ import "fireup/styles/globals.css";
 import { Toaster } from 'react-hot-toast';
 
 
-import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "fireup/trpc/react";
@@ -19,10 +18,7 @@ import { Analytics } from '@vercel/analytics/react';
 import Loglib from "@loglib/tracker/react";
 import ClientLayout from "../_components/shared/layout/ClientLayouts";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+
 
 export const metadata = {
   title: "zeamani",
@@ -37,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body  className={"font-extralight overflow-x-hidden"}>
+      <body className={"font-extralight  overflow-x-hidden"}>
         <TRPCReactProvider headers={headers()}>
         {/* <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div> */}
          

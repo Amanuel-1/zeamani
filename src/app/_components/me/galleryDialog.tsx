@@ -52,7 +52,7 @@ const GalleryDialog = ({ item }: { item: SGallery }) => (
 
         <div className="mt-[25px] flex justify-end">
           <Dialog.Close asChild>
-            <button className=" text-stone-800 dark:text-stone-300 border-2 border-stone-500  dark:border-stone-900 hover:bg-stone-500 hover:text-stone-300 dark:hover:bg-stone-900 focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none transition-all duration-700">
+            <button className=" text-stone-800 dark:text-stone-300 border-2 border-stone-500  dark:border-stone-900  hover:text-stone-300 dark: focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none transition-all duration-700">
               Close
             </button>
           </Dialog.Close>

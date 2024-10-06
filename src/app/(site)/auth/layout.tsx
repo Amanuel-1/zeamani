@@ -7,10 +7,7 @@ import { headers } from "next/headers";
 import { TRPCReactProvider } from "fireup/trpc/react";
 import { Analytics } from '@vercel/analytics/react';
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+
 
 export const metadata = {
   title: "Create T3 App",

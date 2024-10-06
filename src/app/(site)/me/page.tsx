@@ -46,7 +46,7 @@ import UnderConstruction from "../underConstruciton/page";
     return (
       <section className="w-full min-h-screen text-stone-950 dark:text-green-400 font-extralight ">
         <div className="relative w-full px-[10%] mb-[5rem] cover h-[10rem] border-b-4 border-zinc-900 bg-gradient-to-t from-[#120d0bb7] to-transparent">
-                <div className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-20 h-[6rem] w-[6rem] border-8 border-stone-900 rounded-[10px] bg-stone-950">
+                <div className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-20 h-[6rem] w-[6rem] border-8 border-stone-900 rounded-[10px] ">
                     <div className="relative w-full h-full">
                       <Image src={Images.gradHat} layout="fill" objectFit="cover" alt={"avatar"}/>
                     </div>

@@ -19,11 +19,6 @@ import { urlForImage } from "fireup/lib/image";
 import { SPost } from "fireup/lib/types";
 import { getDomain } from "fireup/lib/utils";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
 
 
 

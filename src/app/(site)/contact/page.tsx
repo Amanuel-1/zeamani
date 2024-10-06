@@ -97,7 +97,7 @@ const Contact = () => {
                         <textarea  id='content' name='content' placeholder="how can I help?" className='w-full p-1 md:p-2 rounded-[15px] bg-transparent border border-stone-800 bg-neutral-950' />
                     </div>
 
-                    <button type='submit'  className='px-6 py-3 bg-stone-700 text-stone-300 dark:bg-stone-950 w-[80%] self-center border dark:border-amber-700 hover:bg-stone-800 dark:hover:bg-[rgb(12,11,11)] rounded-[15px] transition-all duration-500'>submit</button>
+                    <button type='submit'  className='px-6 py-3  text-stone-300  w-[80%] self-center border dark:border-amber-700  dark:hover:bg-[rgb(12,11,11)] rounded-[15px] transition-all duration-500'>submit</button>
                   
                   {/* Add more form fields as needed */}
                   </form>
