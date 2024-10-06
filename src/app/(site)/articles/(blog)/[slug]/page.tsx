@@ -82,15 +82,15 @@ const PostPage = async ({params:{slug}}:postProps) => {
   return (
     <>
 
-    <section className='z-20 flex container px-1 md:px-12 lg:px-36 flex-col gap-4  items-center min-h-screen w-full '>
-            <h1 className="title w-full  text-center md:mt-12 mt-6">{post.title}</h1>
+    <section className='z-20 flex container px-1 md:px-12 lg:px-52 flex-col gap-4  items-center min-h-screen w-full '>
             <div className="image container w-full px-2">
                 <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
                 </div>
             </div>
+            <h1 className="title w-full  text-left px-5 ">{post.title}</h1>
            <div className="content px-6 flex flex-col gap-4 justify-center w-full">
-            {/* <div className="authorInfo flex flex-row gap-4 justify-start items-center">
+            {/* <div className="authorInfogroup flex flex-row gap-4 justify-start items-center">
                     <div className="authorAvatar relative h-12 w-12 p-3 ">
                         <Image  className="rounded-full border-4 border-neutral-700  cursor-pointer hover:border-stone-900 hover:drop-shadow-xl hover:shadow-amber-500 transition-all" src={urlForImage(post.author.image).url()} alt={post.title} objectFit="cover" layout="fill" />
                     </div>
@@ -100,7 +100,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
             </div> */}
             <div className="tags w-full flex flex-wrap mb-4 gap-x-2 md:gap-x-6">{
               post.categories && post.categories.map((categ:Category,ind)=>(
-                <p key={ind} className='text-stone-800 text-xs  md:text-base dark:text-stone-300 font-bold italic m-0 p-0'>#{categ.title}</p>
+                <p key={ind} className='text-stone-800 text-xs  md:text-base dark:text-gray-500 font-bold italic m-0 p-0'>#{categ.title}</p>
               ))
             }</div>
 

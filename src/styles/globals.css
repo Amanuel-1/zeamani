@@ -5,21 +5,23 @@
 @tailwind utilities;
 
 :root {
-  --text-color: #d4d4d4;
+  --text-color: #111111;
   --text-color-bright: #f0f0f0;
   --background: #000000;
-  --background-light: #000000;
+  --background-light: #eee7e7;
   --primary-color: #b94c50;
   --accent-color: #d4d4d4; /* Changed from yellowish to light grey */
   --border-color: #505050;
+  --text-link :#7a7a7a;
+  --text-link-bright:#1f1e1e;
 }
 
 .text-body {
-  @apply text-stone-100;
+  color: var(--text-color);
 }
 
 .font-body {
-  font-family: monospace
+font-family: 'Roboto', monospace;
 }
 
 .bg-body {
@@ -44,7 +46,7 @@ html {
 }
 
 body {
-  @apply bg-body text-[#f0f0f0] font-body;
+  @apply bg-[var(--background-light)] dark:bg-[var(--background)] text-[var(--text-color)] dark:text-[var(--text-color-bright)] font-body;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @apply text-4xl md:text-5xl xl:text-6xl font-extrabold mb-4;
+  @apply text-2xl md:text-3xl xl:text-4xl font-extrabold mb-4;
 }
 
 h2 {
@@ -60,11 +62,11 @@ h2 {
 }
 
 p, table {
-  @apply mb-6 text-[#f0f0f0] text-justify text-sm;
+  @apply mb-6 text-justify text-lg;
 }
 
 a {
-  @apply text-[#d4d4d4] no-underline; /* Updated to grey */
+  @apply text-[var(--text-link-bright)] dark:text-[var(--text-link)] no-underline; /* Updated to grey */
 }
 
 a:hover {
@@ -88,7 +90,7 @@ hr {
 }
 
 img {
-  @apply w-full max-w-full block;
+  @apply w-full max-w-full block py-8;
 }
 
 figcaption {

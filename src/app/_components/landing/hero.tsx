@@ -13,18 +13,17 @@ const HeroSection = () => {
             
             <div className='flex flex-col'>
             <div className="flex flex-row align-text-bottom items-start justify-center md:justify-start">
-            <div className="relative w-[1rem] h-[1rem] md:w-[2rem] md:h-[2rem]">
-                <Image src={Images.waive} alt='waive' objectFit='cover' layout='fill' />
-              </div> 
+          
   
 
 
-            <h1 className='text-lg md:text-4xl dark:text-amber-400 '>
-              Hello!, I am
+            <h1 className='text-lg md:text-4xl dark:text-[#4b4949] '>
+              Ayoo! This is Amanuel Garomsa
             </h1>
             </div>
             <div/>
-            <h1 className=" bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-3xl md:text-6xl font-extrabold animate-gradient dark:text-transparent">Amanuel Garomsa,</h1>
+            {/* bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent */}
+            <h1 className=" text-stone-500 text-3xl md:text-6xl font-extrabold animate-gradient dark:text-stone-500">I Make Organic Websites,</h1> 
             <p className='text-sm text-center md:text-left px-1 md:w-[60%]'>
                   Experienced and motivated software developer specializing 
                   in website and application software development, dedicated to 

@@ -59,7 +59,7 @@ const Articles = async() => {
     <div>
 
     <section className='min-h-screen  '>
-        <div style={dancing.style} className="w-full flex justify-center bg-clip-text   bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-4xl md:text-6xl font-extrabold animate-gradient py-10 mt-[1rem]">Amani Writes,</div>
+        <div style={dancing.style} className="w-full flex justify-center bg-clip-text   bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent text-4xl md:text-6xl font-extrabold animate-gradient py-10 mt-[1rem]">Zeamani Blog</div>
         <div className="px-4 md:px-24">
           <Featured key={posts[0]?._id} post={posts[0] as SPost}/>
         </div>

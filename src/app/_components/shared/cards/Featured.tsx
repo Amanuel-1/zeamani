@@ -25,7 +25,7 @@ export default function Featured({ post }: { post: SPost }) {
   return (
     <div className="relative border-none overflow-hidden rounded-xl">
       <Image
-        className="hover:brightness-75 group-hover:brightness-100"
+        className="hover:brightness-75 group-hover:brightness-100 p-0 m-0"
         src={urlForImage(post.mainImage).url()}
         alt={"post image"}
         objectFit="cover"
