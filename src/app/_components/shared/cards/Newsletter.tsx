@@ -17,7 +17,7 @@ const Newsletter = () => {
           tutorials delivered straight to your inbox.
         </p>
         <p className="font-semibold text-base">
-          Don't miss out—subscribe now and elevate your digital journey with us!
+          Do not miss out—subscribe now and elevate your digital journey with us!
         </p>
       </div>
     </div>
