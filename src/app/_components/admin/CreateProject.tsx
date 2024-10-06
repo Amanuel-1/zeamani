@@ -171,7 +171,7 @@ export function CreateProject() {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="inline-block bg-stone-800 text-amber-500  px-3 py-1 text-sm font-semibold mr-2 mb-2"
+            className="inline-block text-amber-500  px-3 py-1 text-sm font-semibold mr-2 mb-2"
           >
             #{tag}
             <button

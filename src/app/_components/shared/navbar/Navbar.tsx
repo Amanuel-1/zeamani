@@ -59,29 +59,29 @@ const Navbar = (props:navbarProps) => {
             : 'flex-row'
         } list-none flex items-center z-40`}
       >
-            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)] ">
               <Link href="/articles" className="textshadow drop-shadow-lg shadow-amber-600">
                 Articles 
               </Link>
             </li>
 
-            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)]">
               <Link href="/me" className="textshadow drop-shadow-lg shadow-amber-600">
                 Me
               </Link>
             </li>
 
-            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)]">
               <Link href="/guestbook" className="textshadow drop-shadow-lg shadow-amber-600">
                 GuestBook
               </Link>
             </li>
-            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 border-r border-neutral-300 dark:border-[rgb(48,41,38)]">
               <Link href="/market" className="textshadow drop-shadow-lg shadow-amber-600">
                 MarketPlace
               </Link>
             </li>
-            <li className="mr-2  hover:bg-stone-300 dark:hover:bg-stone-900 px-2 transition-all duration-500 ">
+            <li className="mr-2  hover:dark:hover:px-2 transition-all duration-500 ">
               <Link href="/contact" className="textshadow drop-shadow-lg shadow-amber-600 hover:text-stone">
                 contact
               </Link>
@@ -96,7 +96,7 @@ const Navbar = (props:navbarProps) => {
                   session?.user?(
                     <div onClick={()=>signOut()} className='flex flex-row gap-1 bg-transparent items-center min-w-fit px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 transition-all duration-500'><small className='hover:font-semibold cursor-pointer min-w-max hover:shadow-lg hover:shadow-yellow-600'>{session.user.name as string}</small><Image src={session.user.image as string} alt={session.user.name as string} width={25} height={25} className='rounded-[30%] p-2 boder-4 border-white hover:border-amber-950 cursor-pointer'/> </div>
                   ):(
-                    <button onClick={()=>signIn('github',{redirect:true})} className='bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 hover:bg-stone-600 hover:text-stone-100  transition-all duration-700'>login
+                    <button onClick={()=>signIn('github',{redirect:true})} className='bg-transparent border border-stone-800 px-4 py-2 font-semibold text-stone-900 dark:text-stone-100 hover:hover:text-stone-100  transition-all duration-700'>login
                     </button>
                   )
                 }
@@ -107,9 +107,9 @@ const Navbar = (props:navbarProps) => {
   )
 
   return (
-    <header className="py-4 mb-0 relative z-10 mx-auto">
-      <Container>
-        <nav className={`navWrapper fixed w-[90%] flex justify-between items-center ${!isOpen ? 'backdrop-blur-sm':''}`}>
+    <header className="py-4 mb-0 relative z-10 mx-auto border-b-2 border-neutral-300 dark:border-[rgb(134,116,108)]  ">
+      {/* <Container className='bg-green'> */}
+        <nav className={`navWrapper fixed top-0 w-full mx-auto px-10 py-2 flex justify-between items-center ${!isOpen ? 'backdrop-blur-md dark:border-b border-neutral-500 dark:border-[rgb(14,12,11)]' : '' }`}>
           <div className="navLeft">
             <Link href="/" className="flex items-center text-body-text hover:text-stone-700 dark:hover:text-white no-underline">
               <Logo />
@@ -133,7 +133,7 @@ const Navbar = (props:navbarProps) => {
 
           </div>
         </nav>
-      </Container>
+      {/* </Container> */}
     </header>
   );
 };
