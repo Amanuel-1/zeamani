@@ -142,8 +142,11 @@ export default async function Home() {
   // console.log("this is the image url for the first post",urlForImage(post1.).url())
 
   return (
-    <main className="">
+    <main className="relative">
       <HeroSection/>
+      {/* <div className="absolute top-0  w-full  text-center cursive-regular text-[20rem] text-whilte mix-blend-multiply ">
+      עמנואל
+      </div> */}
       {/* <AudioPlayer/> */}
       
       <LogoScroll/>
@@ -152,12 +155,12 @@ export default async function Home() {
 
       {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
       <h1 className=" md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">recent <b className="text-amber-700">projects</b></h1>
-      <div className="parent flex flex-col md:grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 lg:px-24  gap-4 justify-center items-center p-10 h-full w-full">
+      <div className="parent  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 px-24 auto-rows-auto">
         {
           
         result.length && result.map((project:SProject,i:number )=>{
           return (
-            <div key={i} className="col-span-1">
+            <div key={i} className="col-span-1 ">
               <ProjectDialog  project={project}/>
             </div>
           );

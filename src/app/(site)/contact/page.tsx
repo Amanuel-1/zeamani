@@ -35,9 +35,10 @@ const Contact = () => {
                  Excited to discuss how I can assist you. Looking forward to your message! 😉
             </p>
             <div className="emails flex flex-col text-sm">
-                <i className="px-1">• contact@zeamani.com</i>
                 <i className="px-1 ">• amanuelgaromsa@gmail.com</i>
                 <i className="px-1">• amanapps.inc@gmail.com</i>
+                <i className="px-1">• zeamani.dev.com</i>
+                <i className="px-1">• contact@zeamani.com</i>
                 
             </div>
             <div className="phones text-sm">

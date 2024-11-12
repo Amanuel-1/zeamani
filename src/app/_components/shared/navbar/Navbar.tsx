@@ -51,7 +51,7 @@ const Navbar = (props:navbarProps) => {
         initial={{ opacity: 0, y: mobile ? '0%' : '-100%' }}
         animate={{ opacity: 1, y: '0%' }}
         exit={{ opacity: 0, y: '-100%' }}
-        className={`${
+        className={`font-normal ${
           mobile
             ? 'flex-col gap-4 justify-center w-full h-screen bg-[rgba(219,196,164,0.25)] dark:bg-[rgba(20,10,10,0.58)] font-bold'
             : 'flex-row gap-4'

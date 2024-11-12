@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import { cn, extractTweetId } from 'fireup/lib/utils';
 import YouTubePlayer from 'react-player/youtube';
 import { Tweet } from 'react-tweet'
+import { FiExternalLink } from 'react-icons/fi';
 interface PortableProps {
   body: any;
 }
@@ -127,8 +128,8 @@ const PortableTextComponents = {
     link: ({ children, value }: any) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
       return (
-        <a className='text-amber-700 dark:text-amber-600 underline max-w-lg hover:text-amber-800 dark:hover:text-amber-400 z-50 text-sm md:text-base transition-all duration-500' href={value.href} rel={rel}>
-          {children}
+        <a className='flex gap-1 items-center text-amber-700 dark:text-amber-600  max-w-lg hover:text-amber-800 dark:hover:text-amber-400 z-50 text-sm md:text-base transition-all duration-500 group' href={value.href} rel={rel}>
+          {children}<span className='group-hover:block hidden'><FiExternalLink/></span>
         </a>
       );
     },

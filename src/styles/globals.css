@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=DM+Sans:wght@400;700");
-
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,23 +9,41 @@
   --text-color-bright: #f0f0f0;
   --background: #000000;
   --background-light: #eee7e7;
-  --primary-color: #b94c50;
+  --primary-color: #0f0e0e;
   --accent-color: #d4d4d4; /* Changed from yellowish to light grey */
   --border-color: #505050;
   --text-link :#7a7a7a;
   --text-link-bright:#1f1e1e;
+  --primary : #0a0a0a;
+  --secondary : #c0c0c0;
+  --secondary-dark : #0a0a0a;
+  
 }
+
+.cursive-regular {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .text-body {
   color: var(--text-color);
 }
 
 .font-body {
-font-family: 'Roboto', monospace;
+font-family: Ubuntu -apple-system BlinkMacSystemFont "Segoe UI" Roboto Oxygen Cantarell "Fira Sans" "Droid Sans" "Helvetica Neue" sans-serif;
 }
 
 .bg-body {
   background-color: var(--background);
+}
+
+.bg-secondary {
+  @apply bg-[var(--secondary)] dark:bg-[var(--secondary-dark)] ;
+}
+.bg-primary {
+  background-color: var(--primary);
 }
 
 .text-bright {
@@ -35,11 +53,13 @@ font-family: 'Roboto', monospace;
 .bg-light {
   background-color: var(--background-light);
 }
-
 .border-body {
   border-color: var(--border-color);
 }
 
+.text-color {
+ @apply text-[var(--text-color)] dark:text-[var(--text-color-bright)]
+}
 /* General styles */
 html {
   @apply text-base font-body text-stone-100;
@@ -50,7 +70,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold text-[#f0f0f0];
+  @apply font-bold text-color;
 }
 
 h1 {
@@ -58,11 +78,11 @@ h1 {
 }
 
 h2 {
-  @apply text-3xl mb-4;
+  @apply text-3xl mb-4 ;
 }
 
 p, table {
-  @apply mb-6 text-justify text-lg;
+  @apply mb-6 text-justify text-lg font-normal;
 }
 
 a {
@@ -70,11 +90,11 @@ a {
 }
 
 a:hover {
-  @apply text-[#b94c50];
+  @apply text-[#635353];
 }
 
 button {
-  @apply bg-[#b94c50] text-[#f0f0f0] rounded px-4 py-2;
+  @apply hover:text-green-600 bg-secondary text-[#f0f0f0] rounded px-4 py-2;
 }
 
 blockquote {
@@ -90,7 +110,7 @@ hr {
 }
 
 img {
-  @apply w-full max-w-full block py-8;
+  @apply w-full max-w-full block py-8 min-h-[4rem]
 }
 
 figcaption {

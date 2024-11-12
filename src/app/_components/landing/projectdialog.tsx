@@ -12,33 +12,35 @@ import PortableTextEditor from '../sanity/portableText';
 const ProjectDialog = ({ project }: { project: SProject }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <div className='relative cursor-pointer flex flex-col justify-start items-start align-top w-full h-full group text-sm text-stone-900'>
-        <div className="image relative w-full p-2 h-[14rem] md:h-[8rem] lg:h-[12rem] xl:h-[8rem] overflow-hidden rounded-[12px]  md:rounded-[20px] transition-all duration-700 ">
+      <div className='relative cursor-pointer flex flex-col justify-start items-start align-top w-full h-full group text-sm text-stone-900 bg-black/10 dark:bg-secondary p-1 rounded-[13px] brightness-105 hover:brightness-100 border border-white/10 dark:hover:bg-stone-950/60 transition-all duration-500'>
+        <div className="relative m-0 overflow-hidden h-[10rem] w-full  rounded-xl border-none p-0  group transition-all duration-500 ease-in-out">
           <Image
-            className="hover:scale-105  overflow-hidden bg-inherit"
+            className=" brightness-[55%] group-hover:brightness-[80%]  p-0 m-0 h-full w-full transition-all duration-500 ease-in-out"
             src={urlForImage(project.mainImage).url()}
             alt={"Image Alt"}
             objectFit="cover"
             layout="fill"
           />
-          <div className="absolute inset-0 backdrop-brightness-[65%] hover:brightness-100 backdrop-contrast-125 group-hover:brightness-100 text-stone-950 dark:text-stone-100"></div>
+          {/* <div className="absolute inset-0 backdrop-brightness-[65%] hover:brightness-100 backdrop-contrast-125 group-hover:brightness-100 text-stone-950 dark:text-stone-100"></div> */}
         </div>
 
-        <div className="title md:text-md px-2 pt-1 font-bold dark:text-stone-200 dark:group-hover:text-white group-hover:text-stone-600 transition-all duration-700">{project.title}</div>
-        <div className="description dark:text-stone-300 py-2 px-2 dark:group-hover:text-white group-hover:text-stone-600 transition-all duration-700">{shortener(project.description, 100)}</div>
-        <div className="categories w-full p-3 flex flex-wrap gap-4 text-xs group-hover:text-stone-100  transition-all duration-700">
+        <div className="p-2">
+        <div className="title md:text-lg px-2 pt-1 font-bold dark:text-stone-200 dark:group-hover:text-white group-hover:text-stone-600 transition-all duration-700">{project.title}</div>
+        <div className="description text-base font-normal dark:text-stone-300 py-2 px-2 dark:group-hover:text-white group-hover:text-stone-600 transition-all duration-700">{shortener(project.description, 100)}</div>
+        <div className="categories text-sm w-full p-3 flex flex-wrap gap-4 group-hover:text-stone-100  transition-all duration-700 ">
           {project.categories &&
             project.categories.map((category: Category) => (
-              <small key={category._id} className="tags   hover:bg-zinc-500 dark:hover:bg-zinc-950 text-stone-900 dark:text-stone-50 px-2 hover:hue-rotate-15 rounded-[4px]">
+              <small key={category._id} className="tags  bg-black/10 text-black/90 dark:text-stone-50 px-2 font-normal hover:hue-rotate-15 rounded-[4px]">
                 {category.title}
               </small>
             ))}
+        </div>
         </div>
       </div>
     </Dialog.Trigger>
     <Dialog.Portal>
       <Dialog.Overlay className=" data-[state=open]:animate-overlayShow fixed inset-0 h-fit rounded-lg overflow-clip z-50 " />
-      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-w-[95vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-100 dark:bg-zinc-950 md:bg-[rgba(255,255,255,0.83)] dark:md:bg-[rgba(0,0,0,0.78)] backdrop-blur-md  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-stone-400 dark:border-stone-900 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none ">
+      <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] min-w-[80vw] max-w-[95vw] max-h-[85vh] overflow-y-scroll w-[95vh] bg-zinc-100 dark:bg-zinc-950 md:bg-[rgba(255,255,255,0.93)] dark:md:bg-[rgba(0,0,0,0.88)] backdrop-blur-lg  translate-x-[-50%] translate-y-[-50%] rounded-[16px]  border-2 border-stone-400 dark:border-stone-900 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none ">
         <Dialog.Title className="text-mauve12 m-0  w-full text-center pt-10">
               <h1> {project.title}</h1>
          </Dialog.Title>

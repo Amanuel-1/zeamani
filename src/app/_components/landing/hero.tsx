@@ -5,6 +5,12 @@ import styles from 'fireup/styles/card.module.css'
 import Image from 'next/image'
 import React from 'react'
 import { Me } from 'fireup/lib/constants'
+import { FaLinkedin } from 'react-icons/fa6'
+import Link from 'next/link'
+import { FaCoffee, FaFile, FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { IoMdDocument } from 'react-icons/io'
+import { TbCoffee } from 'react-icons/tb'
+import { GiCoffeeBeans, GiCoffeeCup } from 'react-icons/gi'
 
 const HeroSection = () => {
   return (
@@ -17,24 +23,24 @@ const HeroSection = () => {
   
 
 
-            <h1 className='text-lg md:text-4xl dark:text-[#4b4949] '>
+            <h1 className='text-lg md:text-4xl dark:text-[#838080] '>
               Ayoo! This is Amanuel Garomsa
             </h1>
             </div>
             <div/>
             {/* bg-clip-text bg-gradient-to-t from-yellow-600 via-amber-700  to-amber-800 text-transparent */}
-            <h1 className=" text-stone-500 text-3xl md:text-6xl font-extrabold animate-gradient dark:text-stone-500">I Make Organic Websites,</h1> 
-            <p className='text-sm text-center md:text-left px-1 md:w-[60%]'>
-                  Experienced and motivated software developer specializing 
-                  in website and application software development, dedicated to 
-                  delivering exceptional IT-related services. Committed to innovation, 
-                  continuous improvement, and ensuring customer satisfaction through high-quality software solutions.
-            </p>
+            <h1 className=" text-stone-500 text-3xl md:text-6xl font-extrabold animate-gradient dark:text-stone-300">ML Engineer + FullStack Developer</h1> 
+            <p className='text-base text-center md:text-left px-1 md:w-[60%]'>
+            Experienced Full-Stack Developer and Machine Learning Engineer dedicated to building impactful web applications and intelligent ML solutions. Driven by innovation, quality, and customer satisfaction, I deliver scalable, user-centered software that meets modern needs.
+             </p>
             </div>
-       <div className="flex flex-wrap gap-4 md:gap-[2rem] justify-start items-center p-2 md:p-0 w-full md:w-[60%] text-stone-900 dark:text-stone-300 ">
+       <div className="flex flex-wrap gap-4 md:gap-[1rem] justify-start items-center p-2 md:p-0 w-full md:w-[60%] text-stone-900 dark:text-stone-300 ">
           
-          <button className='relative border border-stone-600  dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black '><a href='https://docs.google.com/uc?export=download&id=1Tzv0qv-mV0rOAyatmL_QYWD3qTToDIO3'>My Resume</a></button>
-          <button className='flex gap-2 justify-center items-center relative border border-stone-600  dark:border-none w-full md:w-fit px-6 py-3 font-semibold text-lg hover:shadow-sm hover:shadow-amber-600 transition-all duration-700 hover:border-black '><a href={Me.socials.linkedIn} target="_blank" rel="noopener noreferrer" >LinkedIn</a><Image className='w-[20px] h-[20px] hover:border-black ' src={Images.bolt} alt="bolt" height={20} width={20} /> </button>
+          <button className='relative bg-secondary border rounded-full border-stone-600  dark:border-none w-full md:w-fit p-4 font-semibold text-lg transition-all duration-700 hover:border-stone-900 hover:bg-stone-800/50 '><Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500 text-stone-700 dark:text-stone-500" href={Me.documents.resume}><IoMdDocument/></Link></button>
+          <button className='relative bg-secondary border rounded-full border-stone-600  dark:border-none w-full md:w-fit p-4 font-semibold text-lg transition-all duration-700 hover:border-stone-900 hover:bg-stone-800/50 '><Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500 text-stone-700 dark:text-stone-500" href={Me.socials.linkedIn}><FaLinkedinIn/></Link></button>
+          <button className='relative bg-secondary border rounded-full border-stone-600  dark:border-none w-full md:w-fit p-4 font-semibold text-lg transition-all duration-700 hover:border-stone-900 hover:bg-stone-800/50 '><Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500 text-stone-700 dark:text-stone-500" href={Me.socials.github}><FaGithub/></Link></button>
+          <button className='relative bg-secondary border rounded-full border-stone-600  dark:border-none w-full md:w-fit p-4 font-semibold text-lg transition-all duration-700 hover:border-stone-900 hover:bg-stone-800/50 '><Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500 text-stone-700 dark:text-stone-500" href={Me.socials.yebuna}><GiCoffeeBeans/></Link></button>
+          <button className='relative bg-secondary border rounded-full border-stone-600  dark:border-none w-full md:w-fit p-4 font-semibold text-lg transition-all duration-700 hover:border-stone-900 hover:bg-stone-800/50 '><Link className="hover:text-amber-700 cursor-pointer hover:scale-90 transition-all duration-500 text-stone-700 dark:text-stone-500" href={Me.socials.buyMeCoffe}><FaCoffee/></Link></button>
         </div>
         </div>
     </section>

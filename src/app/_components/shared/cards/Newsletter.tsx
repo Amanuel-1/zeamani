@@ -1,14 +1,14 @@
 const Newsletter = () => {
   return (
-    <div className="mt-8 grid w-full grid-cols-8 bg-transparent md:p-14">
+    <div className="mt-8 grid w-full grid-cols-8 md:p-14 bg-black/5">
       <iframe
         src="https://embeds.beehiiv.com/29187b69-c90a-4d17-9a69-35ef0403e14f"
         data-test-id="beehiiv-embed"
-        className="flex items-center col-span-3 m-0 h-[200px] w-full border-[2px] border-[#0c0c0c] bg-transparent md:rounded-l-[15px]"
+        className="flex items-center col-span-3 m-0 h-[200px] w-full border-[2px] border-[#0c0c0c] bg-transparent"
       ></iframe>
-      <div className="col-span-5 ml-4 w-full px-4">
-        <h2 className="mb-2 text-lg font-bold">
-          Join Our Exclusive Newsletter!
+      <div className="col-span-5 ml-4 w-full px-4 py-2">
+        <h2 className="mb-2 text-2xl font-bold">
+          Join My Exclusive Newsletter!
         </h2>
         <p className="text-base">
           Unlock a world of knowledge with our weekly newsletter! Stay ahead in
