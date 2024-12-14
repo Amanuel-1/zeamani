@@ -10,7 +10,6 @@ import LikeButton from 'fireup/app/_components/sanity/likeButton'
 import MyPortableText from 'fireup/app/_components/sanity/portableText'
 import { Site } from 'fireup/site.config'
 import { Metadata, ResolvingMetadata } from 'next'
-import { getDomain } from 'fireup/lib/utils'
 import ShareBar from 'fireup/app/_components/sanity/shareBar'
 import AudioPlayer from 'fireup/app/_components/sanity/TTS'
 import Newsletter from 'fireup/app/_components/shared/cards/Newsletter'
@@ -44,7 +43,7 @@ export async function generateMetadata(
    
     const imageData = urlForImage(post.mainImage).url()// Assuming this holds the base64-encoded image data
     const avatar  = urlForImage(post.author.image).url()
-    const website  = getDomain()
+    const website  = "https://www.zeamani.com"
     // optionally access and extend (rather than replace) parent metadata
     const previousImages = (await parent).openGraph?.images ?? []
    
