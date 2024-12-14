@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectList } from "fireup/app/_components/shared/cards/verticalSlider";
+import { ProjectList } from "fireup/app/_components/shared/cards/projectList";
 import { client } from "fireup/lib/client";
 import { SProject, SPost } from "fireup/lib/types";
 import { groq } from "next-sanity";
@@ -14,6 +14,8 @@ import {
 } from "react-icons/fa";
 import { GiForklift } from "react-icons/gi";
 import { useEffect, useState } from "react";
+import { ExperienceList } from "fireup/app/_components/shared/cards/experienceList";
+import AboutMe from "fireup/app/_components/shared/cards/aboutme";
 
 export default function Home() {
   const [projects, setProjects] = useState<SProject[]>([]);
@@ -65,7 +67,7 @@ export default function Home() {
             I AM
           </p>
           <h1 className="mb-4 text-6xl font-bold tracking-tight text-gray-300 md:text-8xl">
-            AMANUEL
+            AMANU-EL
           </h1>
           <div className="flex justify-end">
             <div className="text-sm font-light leading-relaxed text-gray-500 md:text-lg ">
@@ -96,31 +98,43 @@ export default function Home() {
         </div>
 
         {/* Top Right Links */}
-        <div className="fixed right-4 top-4 flex gap-6 text-sm">
-          <Link href="#projects" className="transition hover:text-gray-400">
-            PROJECTS
-          </Link>
-          <Link href="#contact" className="transition hover:text-gray-400">
-            CONNECT
-          </Link>
+        <div className="bg-green fixed right-4 top-4 z-[100] px-12">
+          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-500">
+            <Link href="#experience" className="transition hover:text-gray-400">
+              EXPERIENCE
+            </Link>
+            <Link href="#projects" className="transition hover:text-gray-400">
+              PROJECTS
+            </Link>
+
+            <Link href="#about" className="transition hover:text-gray-400">
+              ABOUT
+            </Link>
+            <Link href="#contact" className="transition hover:text-gray-400">
+              CONNECT
+            </Link>
+          </div>
         </div>
 
         {/* Logo */}
         <div className="fixed left-4 top-4 text-xs font-bold leading-tight">
-          <p>AMA</p>
-          <p>NUE</p>
-          <p>L</p>
+          <p>AMANU-EL</p>
         </div>
       </section>
+
+      <ExperienceList />
 
       {/* Projects Section */}
       <section
         id="projects"
-        className="relative my-6 mt-[20%] min-h-screen text-white"
+        className="relative my-6 mt-[20%] min-h-screen py-10 text-white"
       >
-        <div className="mb-6 w-full text-center text-xl">my recent projects</div>
+        <div className="mb-6 w-full text-center text-xl">
+          my recent projects
+        </div>
         <ProjectList projects={projects} />
       </section>
+      <AboutMe/>
 
       {/* Contact Section */}
       <section
@@ -187,4 +201,3 @@ export default function Home() {
     </main>
   );
 }
-

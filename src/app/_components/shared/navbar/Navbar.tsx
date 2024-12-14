@@ -22,7 +22,7 @@ const Navbar = (props: NavbarProps) => {
   };
 
   return (
-    <header className="w-full max-h-fit mx-auto">
+    <header className="w-full max-h-fit mx-auto z-50">
       <nav className="flex justify-between items-center w-full px-4 md:px-10 py-4">
         {/* Brand Section */}
         <div className="brand">
@@ -30,7 +30,7 @@ const Navbar = (props: NavbarProps) => {
         </div>
 
         {/* Navigation Links */}
-        <ul className="navItems flex gap-8 ml-auto">
+        <ul className="navItems flex gap-8 ml-auto border">
           <li>
             <Link href="">Projects</Link>
           </li>
