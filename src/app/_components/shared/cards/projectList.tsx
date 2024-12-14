@@ -37,7 +37,7 @@ export function ProjectList({ projects }: { projects: SProject[] }) {
           //     </div>
           //   </div>
           // </div>
-          <Experience data={project} isProject />
+          <Experience key={ind} data={project} isProject />
         ))}
       </div>
     </div>

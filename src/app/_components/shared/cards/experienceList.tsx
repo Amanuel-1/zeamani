@@ -35,7 +35,7 @@ export function ExperienceList() {
           //     </div>
           //   </div>
           // </div>
-          <Experience data={experience} isProject={false} />
+          <Experience key={ind} data={experience} isProject={false} />
         ))}
       </div>
     </section>
