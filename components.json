@@ -6,12 +6,16 @@
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "src/styles/globals.css",
-    "baseColor": "stone",
-    "cssVariables": true
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
   },
   "aliases": {
-    "components": "fireup/app/_components",
-    "utils": "fireup/lib/utils"
-  }
+    "components": "fireup/components",
+    "utils": "fireup/lib/utils",
+    "ui": "fireup/components/ui",
+    "lib": "fireup/lib",
+    "hooks": "fireup/hooks"
+  },
+  "iconLibrary": "lucide"
 }
-

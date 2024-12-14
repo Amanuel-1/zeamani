@@ -1,208 +1,190 @@
-import Link from "next/link";
-import ogImg from "fireup/app/resources/og.png"
-import moment from 'moment';
+"use client";
 
-import { getServerAuthSession } from "fireup/server/auth";
-import { api } from "fireup/trpc/server";
-import { Tilt } from "react-tilt";
-import styles from 'fireup/styles/card.module.css'
-import { Button } from "../../_components/ui/button";
-import HoverCardDemo from "fireup/app/_components/ui/hovercard";
-import { twMerge } from "tailwind-merge";
-import Tiltable from "fireup/app/_components/shared/user/tiltable";
-import HeroSection from "fireup/app/_components/landing/hero";
-import { Images } from "fireup/app/resources";
-import Image from "next/image";
-import { Me } from "fireup/lib/constants";
-import { Metadata, ResolvingMetadata } from "next";
+import { ProjectList } from "fireup/app/_components/shared/cards/verticalSlider";
 import { client } from "fireup/lib/client";
+import { SProject, SPost } from "fireup/lib/types";
 import { groq } from "next-sanity";
-import { Category, SPost, SProject } from "fireup/lib/types";
-import { urlForImage } from "fireup/lib/image";
-import { shortener } from "fireup/lib/utils";
-import Card from "fireup/app/_components/shared/cards/card";
-import Text from "fireup/app/_components/shared/cards/Text";
-import ProjectDialog from "fireup/app/_components/landing/projectdialog";
-import PostCard from "fireup/app/_components/shared/cards/PostCard";
-import Project from "fireup/schemas/project";
-import LogoScroll from "fireup/app/_components/landing/logoscrolls";
-import { Suspense } from "react";
-import Products from "fireup/app/_components/landing/products";
-import Experiences from "fireup/app/_components/landing/experiences";
-import AudioPlayer from "fireup/app/_components/sanity/TTS";
-import Newsletter from "fireup/app/_components/shared/cards/Newsletter";
+import Link from "next/link";
+import {
+  FaFacebookF,
+  FaGithub,
+  FaLink,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+import { GiForklift } from "react-icons/gi";
+import { useEffect, useState } from "react";
 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+export default function Home() {
+  const [projects, setProjects] = useState<SProject[]>([]);
+  const [posts, setPosts] = useState<SPost[]>([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const projectQuery = groq`*[_type == "project"] {
+        ...,
+        author->,
+        categories[]->
+      }`;
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
+      const postQuery = groq`*[_type == "post"]| order(_createdAt desc, _updatedAt desc) {
+        ...,
+        author->,
+        categories[]->
+      }`;
 
+      try {
+        const fetchedProjects: SProject[] = await client.fetch(projectQuery, {
+          next: {
+            tags: ["project"],
+          },
+        });
 
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images ?? []
- 
-  return {
-    title: "zeamani",
-    description:Me.bio,
-    category:"website",
-    authors:[{name:"Amanuel Garomsa",url:`https://www.linkedin.com/in/amanuel-garomsa-36ba79213/`}],
-    keywords: [
-      "nextjs",
-      "webdev",
-      "fullstackdev",
-      "frontenddev",
-      "backenddev",
-      "devops",
-      "cloud",
-      "cybersecurity",
-      "blockchain",
-      "fintech",
-      "AI",
-      "ML",
-      "bigdata",
-      "techjobs",
-      "remotejobs",
-      "jobsearch",
-      "careerdevelopment",
-      "techcareers",
-      "startupjobs",
-      "interviewtips",
-      "salarynegotiation",
-      "techpodcast",
-      "startupstories",
-      "technews",
-      "innovation",
-      "disruption",
-      "futureofwork",
-      "techtrends",
-      "softwareupdates",
-      "techconferences",
-      "productowner",
-      "projectmanager",
-      "website",
-      "blog",
-      "technology",
-      "globaltech",
-      "artdesign",
-      "musictech", "web3", "metaverse", "quantumcomputing"
-  
-    ],
-    openGraph: {
-      images: ['https://images4.imagebam.com/4c/97/c3/MERXNNX_o.png', ...previousImages],
-    },
-    
-    twitter: {
-      card: "summary_large_image",
-      title: 'zeamani',
-      creator:"Amanuel Garomsa",
-      description: Me.bio,
-      site:"https://zeamani.vercel.app",
-      images: ['https://images4.imagebam.com/4c/97/c3/MERXNNX_o.png'],
-    },
-    
-  }     
-}
+        const fetchedPosts: SPost[] = await client.fetch(postQuery, {
+          next: {
+            tags: ["post"],
+          },
+        });
 
+        setProjects(fetchedProjects);
+        setPosts(fetchedPosts);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-
-export default async function Home() {
-
-  // const projects  = await api.project.getAll.query()
-  const session = await getServerAuthSession();
-
-  const projectQuery = groq`*[_type == "project"] {
-          ...,
-          author->,
-          categories[]->
-        }  
-        `
-  const postQuery = groq`*[_type == "post"]| order(_createdAt desc, _updatedAt desc)  {
-    ...,
-    author->,
-    categories[]->
-  }  
-  `
-  const result:SProject[]  = await client.fetch(projectQuery,{next:{
-    tags:["project"]
-  }})
-
-  const posts:SPost[]  = await client.fetch(postQuery,{next:{
-    tags:["post"]
-    
-  }})
-  
-
-  // console.log("this is the image url for the first post",urlForImage(post1.).url())
+    fetchData();
+  }, []);
 
   return (
-    <main className="relative">
-      <HeroSection/>
-      {/* <div className="absolute top-0  w-full  text-center cursive-regular text-[20rem] text-whilte mix-blend-multiply ">
-      עמנואל
-      </div> */}
-      {/* <AudioPlayer/> */}
-      
-      <LogoScroll/>
-      <Products/>
-      {/* ###########################################/ */}
-
-      {/* <Image src={Images.jellyfish} alt="" height={100} width={100}/> */}
-      <h1 className=" md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">recent <b className="text-amber-700">projects</b></h1>
-      <div className="parent  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 px-24 auto-rows-auto">
-        {
-          
-        result.length && result.map((project:SProject,i:number )=>{
-          return (
-            <div key={i} className="col-span-1 ">
-              <ProjectDialog  project={project}/>
+    <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
+      {/* Hero Section */}
+      <section className="box-border flex h-screen items-center justify-center p-6">
+        <div className="flex flex-col gap-0 text-center">
+          <p className="w-full px-4 text-start text-lg font-light tracking-widest text-gray-500">
+            I AM
+          </p>
+          <h1 className="mb-4 text-6xl font-bold tracking-tight text-gray-300 md:text-8xl">
+            AMANUEL
+          </h1>
+          <div className="flex justify-end">
+            <div className="text-sm font-light leading-relaxed text-gray-500 md:text-lg ">
+              <p className="w-full text-start">AI DEVELOPER</p>
+              <p className="w-full text-start">BACKEND DEVELOPER</p>
+              <p className="w-full text-start">FULL STACK ENGINEER</p>
             </div>
-          );
-        })
-
-        }
-        <Link href={"https://github.com/Amanuel-1?tab=repositories"} target="_blank" rel="noopener noreferrer" className="col-span-3 w-full flex justify-center items-center font-bold text-stone-600 dark:text-stone-500 text-xl ">see all</Link>
-
-      </div>
-   
-
-      <h1 className="md:text-4xl text-stone-700 dark:text-stone-300 font-extrabold px-2 md:px-20">recent <b className="text-amber-700">articles</b></h1>
-        {
-         <div className="flex flex-wrap max-w-full md:px-20">
-              <Suspense  fallback={<h1 className="text-9xl font-extrabold text-yellow-500 z-50">loading</h1>} >
-              {
-                  posts.slice(0,4).map((post,ind)=>(
-                    <PostCard className="px-4"  key={ind} post={post}/>
-                  ))
-                  }
-              </Suspense>
-        <Link href={"/articles"} className="col-span-2 w-full flex justify-center items-center font-bold text-stone-600 dark:text-stone-500 text-xl ">see all</Link>
+          </div>
         </div>
-        }
-        <Experiences/>
 
-        <Newsletter/>
+        {/* Social Media Icons */}
+        <div className="fixed bottom-4 left-4 flex flex-col gap-3">
+          <Link href="#" className="transition hover:text-blue-500">
+            <FaFacebookF size={18} />
+          </Link>
+          <Link href="#" className="transition hover:text-blue-400">
+            <FaLinkedinIn size={18} />
+          </Link>
+          <Link href="#" className="transition hover:text-blue-300">
+            <FaTwitter size={18} />
+          </Link>
+        </div>
 
+        {/* Timeline Marker */}
+        <div className="fixed bottom-4 right-12 rotate-90 text-sm tracking-wide">
+          <span>2025 GC</span>
+          <div className="ml-2 h-16 border-l-2 border-gray-600"></div>
+        </div>
+
+        {/* Top Right Links */}
+        <div className="fixed right-4 top-4 flex gap-6 text-sm">
+          <Link href="#projects" className="transition hover:text-gray-400">
+            PROJECTS
+          </Link>
+          <Link href="#contact" className="transition hover:text-gray-400">
+            CONNECT
+          </Link>
+        </div>
+
+        {/* Logo */}
+        <div className="fixed left-4 top-4 text-xs font-bold leading-tight">
+          <p>AMA</p>
+          <p>NUE</p>
+          <p>L</p>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="relative my-6 mt-[20%] min-h-screen text-white"
+      >
+        <div className="mb-6 w-full text-center text-xl">my recent projects</div>
+        <ProjectList projects={projects} />
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="myI-[10%] flex h-screen items-center justify-center p-6"
+      >
+        <div className="box-border grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
+          {/* Contact Details */}
+          <div className="mb-8 flex flex-col justify-center md:mb-0">
+            <h2 className="mb-6 text-4xl font-bold">CONTACT</h2>
+            <p className="mb-6 text-gray-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div className="space-y-4 text-gray-300">
+              <div>
+                <p className="font-semibold">Address</p>
+                <p>Khartoum, Borgoessa ST. 44</p>
+              </div>
+              <div>
+                <p className="font-semibold">Phone</p>
+                <p>+250-901-101-33</p>
+              </div>
+              <div>
+                <p className="font-semibold">E-mail</p>
+                <p>tura@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="rounded-lg border border-gray-800/50 p-6 shadow-lg">
+            <h3 className="mb-4 text-2xl font-semibold">CONTACT FORM</h3>
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your name"
+                className="w-full rounded border border-gray-900/50 bg-gray-950/5 p-3 text-white focus:outline-none focus:ring-2 focus:ring-gray-800/50"
+              />
+              <input
+                type="text"
+                placeholder="Your phone"
+                className="w-full rounded border border-gray-900/50 bg-gray-950/5 p-3 text-white focus:outline-none focus:ring-2 focus:ring-gray-800/50"
+              />
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full rounded border border-gray-900/50 bg-gray-950/5 p-3 text-white focus:outline-none focus:ring-2 focus:ring-gray-800/50"
+              />
+              <textarea
+                placeholder="Message"
+                rows={4}
+                className="w-full rounded border border-gray-900/50 bg-gray-950/5 p-3 text-white focus:outline-none focus:ring-2 focus:ring-gray-800/50"
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full rounded bg-gray-600 px-6 py-3 font-bold text-white hover:bg-gray-700"
+              >
+                SEND MESSAGE
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
 
-
-
-
-
-const LoadingPost  =({count}:{count:number})=>{
-  const list  =  Array(count)
-  
-  return (
-    list.map((no,ind)=>(
-      <div key={ind} className="skeleton w-full h-[10rem]"></div>
-    ))
-  )
-}

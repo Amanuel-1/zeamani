@@ -42,13 +42,13 @@ export default function RootLayout({
       <body className={cn(ubuntu.className,"font-extralight  overflow-x-hidden")}>
         <TRPCReactProvider headers={headers()}>
         {/* <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div> */}
-         
-         <SessionProvide>
-        <ClientLayout>
+         <div className="blob"></div>
+        
         <Toaster/>
+        
           {children}
-        </ClientLayout>
-         </SessionProvide>
+       
+         
          <Loglib
                 config={{
                     id: "zeamani",

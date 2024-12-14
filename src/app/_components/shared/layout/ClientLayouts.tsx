@@ -1,9 +1,7 @@
 "use client"
 import "fireup/styles/globals.css"
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { useEffect, useState } from 'react'
-import {SessionProvider} from 'next-auth/react'
 import Navbar from '../navbar/Navbar'
 import Footer from '../footer/Footer'
 
@@ -42,12 +40,15 @@ export default function ClientLayout({
 
   return (
 
+    <div className="w-[40rem] h-[40rem] bg-green-700">
+      
+    </div>
   
-              <>
-              <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-              {children}
-              <Footer darkMode={darkMode} setDarkMode={setDarkMode}/> 
-              </>
+              // <>
+              // <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+              // {children}
+              // <Footer darkMode={darkMode} setDarkMode={setDarkMode}/> 
+              // </>
 
 
   )
