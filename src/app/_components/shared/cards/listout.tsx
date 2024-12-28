@@ -58,7 +58,7 @@ export const Experience: React.FC<ExperienceProps> = ({ data, isProject = false 
               project.categories.map((category) => (
                 <small
                   key={category._id}
-                  className="tags bg-gray-950/10 dark:text-stone-50 px-2 font-normal hover:hue-rotate-15 rounded-[4px]"
+                  className="tags flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-300 backdrop-blur-sm sm:gap-3"
                 >
                   {category.title}
                 </small>
