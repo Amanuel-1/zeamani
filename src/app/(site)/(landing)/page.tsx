@@ -6,6 +6,7 @@ import { SProject, SPost } from "fireup/lib/types";
 import { groq } from "next-sanity";
 import Link from "next/link";
 import {
+  FaCoffee,
   FaFacebookF,
   FaGithub,
   FaLink,
@@ -17,6 +18,7 @@ import { useEffect, useState } from "react";
 import { ExperienceList } from "fireup/app/_components/shared/cards/experienceList";
 import AboutMe from "fireup/app/_components/shared/cards/aboutme";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
+import { Me } from "fireup/lib/constants";
 
 export default function Home() {
   const [projects, setProjects] = useState<SProject[]>([]);
@@ -65,15 +67,16 @@ export default function Home() {
       <div className="relative z-[100]">
         {/* Social Media Icons */}
         <div className="fixed bottom-4 left-4 flex flex-col gap-3">
-          <Link href="#" className="transition hover:text-blue-500">
-            <FaFacebookF size={18} />
+          <Link href={Me.socials.github} className="transition hover:text-blue-500">
+            <FaGithub size={18} />
           </Link>
-          <Link href="#" className="transition hover:text-blue-400">
+          <Link href={Me.socials.linkedIn} className="transition hover:text-blue-400">
             <FaLinkedinIn size={18} />
           </Link>
-          <Link href="#" className="transition hover:text-blue-300">
+          <Link href={Me.socials.twitter} className="transition hover:text-blue-300">
             <FaTwitter size={18} />
           </Link>
+         
         </div>
 
         {/* Timeline Marker */}
