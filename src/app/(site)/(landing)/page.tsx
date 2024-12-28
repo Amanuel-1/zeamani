@@ -171,27 +171,30 @@ export default function Home() {
           <div className="mb-8 flex flex-col justify-center md:mb-0">
             <h2 className="mb-6 text-4xl font-bold">CONTACT</h2>
             <p className="mb-6 text-gray-300">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              If you have any questions or want to work together, feel free to
+              contact me.
             </p>
             <div className="space-y-4 text-gray-300">
               <div>
                 <p className="font-semibold">Address</p>
-                <p>Khartoum, Borgoessa ST. 44</p>
+                <p>German St, Addis Ababa, Ethiopia </p>
               </div>
               <div>
                 <p className="font-semibold">Phone</p>
-                <p>+250-901-101-33</p>
+                <p>+250-935-046-969</p>
               </div>
               <div>
                 <p className="font-semibold">E-mail</p>
-                <p>tura@gmail.com</p>
+                <p>amanuelgaromsa@gmail.com</p>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="rounded-lg border border-gray-800/50 p-6 shadow-lg">
-            <h3 className="mb-4 text-2xl font-semibold">CONTACT FORM</h3>
+            <h3 className="mb-4 text-2xl font-semibold">
+              Get in touch
+            </h3>
             <form className="space-y-4">
               <input
                 type="text"
