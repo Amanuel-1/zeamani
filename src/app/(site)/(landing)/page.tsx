@@ -16,6 +16,7 @@ import { GiForklift } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import { ExperienceList } from "fireup/app/_components/shared/cards/experienceList";
 import AboutMe from "fireup/app/_components/shared/cards/aboutme";
+import PostCard from "fireup/app/_components/shared/cards/PostCard";
 
 export default function Home() {
   const [projects, setProjects] = useState<SProject[]>([]);
@@ -60,24 +61,8 @@ export default function Home() {
 
   return (
     <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
-      {/* Hero Section */}
-      <section className="box-border flex h-screen items-center justify-center p-6">
-        <div className="flex flex-col gap-0 text-center">
-          <p className="w-full px-4 text-start text-lg font-light tracking-widest text-gray-500">
-            I AM
-          </p>
-          <h1 className="mb-4 text-6xl font-bold tracking-tight text-gray-300 md:text-8xl">
-            AMANU-EL
-          </h1>
-          <div className="flex justify-end">
-            <div className="text-sm font-light leading-relaxed text-gray-500 md:text-lg ">
-              <p className="w-full text-start">AI DEVELOPER</p>
-              <p className="w-full text-start">BACKEND DEVELOPER</p>
-              <p className="w-full text-start">FULL STACK ENGINEER</p>
-            </div>
-          </div>
-        </div>
-
+      {/* fixeds */}
+      <div className="relative z-[100]">
         {/* Social Media Icons */}
         <div className="fixed bottom-4 left-4 flex flex-col gap-3">
           <Link href="#" className="transition hover:text-blue-500">
@@ -98,15 +83,17 @@ export default function Home() {
         </div>
 
         {/* Top Right Links */}
-        <div className="bg-green fixed right-4 top-4 z-[100] px-12">
-          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-500">
+        <div className="fixed right-4 top-4 z-[100] px-12 sm:px-6">
+          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-500 backdrop-blur-sm sm:gap-3">
             <Link href="#experience" className="transition hover:text-gray-400">
               EXPERIENCE
             </Link>
             <Link href="#projects" className="transition hover:text-gray-400">
               PROJECTS
             </Link>
-
+            <Link href="#articles" className="transition hover:text-gray-400">
+              ARTICLES
+            </Link>
             <Link href="#about" className="transition hover:text-gray-400">
               ABOUT
             </Link>
@@ -117,8 +104,27 @@ export default function Home() {
         </div>
 
         {/* Logo */}
-        <div className="fixed left-4 top-4 text-xs font-bold leading-tight">
+        <div className="fixed left-4 top-4 text-xs font-bold leading-tight rounded-[10px] border border-gray-800/50 bg-black/5 px-2  text-gray-100 backdrop-blur-sm sm:gap-3">
           <p>AMANU-EL</p>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="box-border flex h-screen items-center justify-center p-6">
+        <div className="flex flex-col gap-0 text-center">
+          <p className="w-full px-4 text-start text-lg font-light tracking-widest text-gray-500">
+            I AM
+          </p>
+          <h1 className="mb-4 text-6xl font-bold tracking-tight text-gray-300 md:text-8xl">
+            AMANU-EL
+          </h1>
+          <div className="flex justify-end">
+            <div className="text-sm font-light leading-relaxed text-gray-500 md:text-lg ">
+              <p className="w-full text-start">AI DEVELOPER</p>
+              <p className="w-full text-start">BACKEND DEVELOPER</p>
+              <p className="w-full text-start">FULL STACK ENGINEER</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -134,7 +140,23 @@ export default function Home() {
         </div>
         <ProjectList projects={projects} />
       </section>
-      <AboutMe/>
+
+      {/* Articles Section */}
+      <section
+        id="articles"
+        className="relative my-6 flex min-h-screen flex-col gap-3 px-24 py-10 text-white sm:px-6"
+      >
+        <div className="mb-6 w-full px-20 text-center text-xl sm:px-6 sm:text-lg">
+          my recent articles
+        </div>
+        <div className="flex flex-col gap-3 px-6">
+          {posts.slice(0, 3).map((post) => (
+            <PostCard key={post._id} post={post} />
+          ))}
+        </div>
+      </section>
+
+      <AboutMe />
 
       {/* Contact Section */}
       <section
