@@ -29,13 +29,13 @@ export default function RootLayout({
 }) {
   return (
 
-        <div className="">
+        <div className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
           <TRPCReactProvider headers={headers()}>
         {/* <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div> */}
          
          <SessionProvide>
          <Toaster/>
-
+          <Navbar/>
 
           {children}
 

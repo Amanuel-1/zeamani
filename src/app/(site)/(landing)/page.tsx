@@ -19,6 +19,7 @@ import { ExperienceList } from "fireup/app/_components/shared/cards/experienceLi
 import AboutMe from "fireup/app/_components/shared/cards/aboutme";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
 import { Me } from "fireup/lib/constants";
+import Navbar from "fireup/app/_components/shared/navbar/Navbar";
 
 export default function Home() {
   const [projects, setProjects] = useState<SProject[]>([]);
@@ -67,16 +68,24 @@ export default function Home() {
       <div className="relative z-[100]">
         {/* Social Media Icons */}
         <div className="fixed bottom-4 left-4 flex flex-col gap-3">
-          <Link href={Me.socials.github} className="transition hover:text-blue-500">
+          <Link
+            href={Me.socials.github}
+            className="transition hover:text-blue-500"
+          >
             <FaGithub size={18} />
           </Link>
-          <Link href={Me.socials.linkedIn} className="transition hover:text-blue-400">
+          <Link
+            href={Me.socials.linkedIn}
+            className="transition hover:text-blue-400"
+          >
             <FaLinkedinIn size={18} />
           </Link>
-          <Link href={Me.socials.twitter} className="transition hover:text-blue-300">
+          <Link
+            href={Me.socials.twitter}
+            className="transition hover:text-blue-300"
+          >
             <FaTwitter size={18} />
           </Link>
-         
         </div>
 
         {/* Timeline Marker */}
@@ -85,29 +94,10 @@ export default function Home() {
           <div className="ml-2 h-16 border-l-2 border-gray-600"></div>
         </div>
 
-        {/* Top Right Links */}
-        <div className="fixed right-4 top-4 z-[100] px-12 sm:px-6">
-          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-500 backdrop-blur-sm sm:gap-3">
-            <Link href="#experience" className="transition hover:text-gray-400">
-              EXPERIENCE
-            </Link>
-            <Link href="#projects" className="transition hover:text-gray-400">
-              PROJECTS
-            </Link>
-            <Link href="#articles" className="transition hover:text-gray-400">
-              ARTICLES
-            </Link>
-            <Link href="#about" className="transition hover:text-gray-400">
-              ABOUT
-            </Link>
-            <Link href="#contact" className="transition hover:text-gray-400">
-              CONNECT
-            </Link>
-          </div>
-        </div>
+       <Navbar/>
 
         {/* Logo */}
-        <div className="fixed left-4 top-4 text-xs font-bold leading-tight rounded-[10px] border border-gray-800/50 bg-black/5 px-2  text-gray-100 backdrop-blur-sm sm:gap-3">
+        <div className="fixed left-4 top-4 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-xs font-bold leading-tight  text-gray-100 backdrop-blur-sm sm:gap-3">
           <p>AMANU-EL</p>
         </div>
       </div>
@@ -156,6 +146,25 @@ export default function Home() {
           {posts.slice(0, 3).map((post) => (
             <PostCard key={post._id} post={post} />
           ))}
+          <Link
+            href="/articles"
+            className="flex group justify-center items-center space-x-2 text-sm font-medium text-cyan-400 transition-colors duration-300 hover:text-cyan-300 "
+          >
+            <span>Read More Articles</span>
+            <svg
+              className="h-4 w-4 rotate-90 transform transition-transform duration-300 group-hover:translate-y-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </Link>
         </div>
       </section>
 
@@ -192,9 +201,7 @@ export default function Home() {
 
           {/* Contact Form */}
           <div className="rounded-lg border border-gray-800/50 p-6 shadow-lg">
-            <h3 className="mb-4 text-2xl font-semibold">
-              Get in touch
-            </h3>
+            <h3 className="mb-4 text-2xl font-semibold">Get in touch</h3>
             <form className="space-y-4">
               <input
                 type="text"

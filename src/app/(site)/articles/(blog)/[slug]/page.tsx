@@ -81,10 +81,12 @@ const PostPage = async ({params:{slug}}:postProps) => {
   return (
     <>
 
-    <section className='z-20 flex container px-1 md:px-12 lg:px-52 flex-col gap-4  items-center min-h-screen w-full '>
+    <section className='z-20 flex container px-1 md:px-12 lg:px-52 flex-col gap-4  items-center min-h-screen w-full mt-12 '>
             <div className="image container w-full px-2">
-                <div className="imageContainer relative w-full h-[15rem] md:h-[20rem] lg:h-[25rem]">
+                <div className="imageContainer relative w-full min-h-[15rem] md:h-[20rem] lg:h-[25rem]">
+                  
                     <Image src={urlForImage(post.mainImage).url()} alt={post.title} objectFit="cover" layout="fill" />
+                    <div className="absolute w-full h-full bg-gradient-to-b from-gray-900 to-transparent"></div>
                 </div>
             </div>
             <h1 className="title w-full  text-left px-5 ">{post.title}</h1>

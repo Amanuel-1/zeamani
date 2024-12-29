@@ -47,9 +47,9 @@ const AudioPlayer = ({audioUrl}:{audioUrl:any}) => {
     /** Stretch the waveform to the full height */
     // normalize: false,
     /** The color of the waveform */
-    waveColor: '#ff4e00',
+    waveColor: '#3e4257',
     /** The color of the progress mask */
-    progressColor: '#dd5e98',
+    progressColor: '#3e4255',
     /** The color of the playpack cursor */
     cursorColor: '#ddd5e9',
     /** The cursor width */
@@ -95,7 +95,7 @@ const AudioPlayer = ({audioUrl}:{audioUrl:any}) => {
   }, [wavesurfer])
 
   return (
-    <div className='w-full flex flex-row-reverse justify-around items-center px-2 md:px-10 py-2 md:py-4 dark:bg-[rgb(14,12,11)] border border-stone-900 rounded-[18px] dark:hover:bg-[rgb(12,11,11)] text-stone-900 dark:text-stone-200'>
+    <div className='w-full flex flex-row-reverse justify-around items-center px-2 md:px-10 py-1 bg-black/10 dark:bg-[rgba(14,12,11,0.99)] border border-gray-800/50 rounded-[18px] dark:hover:bg-[rgb(12,11,11)] text-stone-900 dark:text-stone-200'>
       {audioUrl?(
         <Suspense fallback={<Loading/>}>
           <div ref={containerRef} className='min-h-fit  w-[90%]'/>

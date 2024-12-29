@@ -3,13 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-type NavbarProps = {
-  darkMode: boolean;
-  setDarkMode: (mode: boolean) => void;
-  className?: string;
-};
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const pathName = usePathname();
 
@@ -23,25 +18,26 @@ const Navbar = (props: NavbarProps) => {
 
   return (
     <header className="w-full max-h-fit mx-auto z-50">
-      <nav className="flex justify-between items-center w-full px-4 md:px-10 py-4">
-        {/* Brand Section */}
-        <div className="brand">
-          {/* You can add your brand logo or name here */}
+       {/* Top Right Links */}
+       <div className="fixed right-4 top-4 z-[100] px-12 sm:px-6">
+          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-500 backdrop-blur-sm sm:gap-3">
+            <Link href="#experience" className="transition hover:text-gray-400">
+              EXPERIENCE
+            </Link>
+            <Link href="#projects" className="transition hover:text-gray-400">
+              PROJECTS
+            </Link>
+            <Link href="#articles" className="transition hover:text-gray-400">
+              ARTICLES
+            </Link>
+            <Link href="#about" className="transition hover:text-gray-400">
+              ABOUT
+            </Link>
+            <Link href="#contact" className="transition hover:text-gray-400">
+              CONNECT
+            </Link>
+          </div>
         </div>
-
-        {/* Navigation Links */}
-        <ul className="navItems flex gap-8 ml-auto border">
-          <li>
-            <Link href="">Projects</Link>
-          </li>
-          <li>
-            <Link href="">Connect</Link>
-          </li>
-        </ul>
-        
-        {/* Hamburger Menu (visible only on mobile) */}
-        <Hamburger isOpen={isOpen} Open={setOpen} />
-      </nav>
     </header>
   );
 };

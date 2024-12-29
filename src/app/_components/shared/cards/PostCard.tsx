@@ -72,8 +72,8 @@ const PostCard = ({ post, className }: { post: SPost; className?: string }) => {
 
         {/* Read More Button */}
         <Link
-          href={`/posts/${post.slug.current}`}
-          className="inline-flex items-center space-x-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group"
+          href={`/articles/${post.slug.current}`}
+          className="inline-flex items-center space-x-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group z-50"
         >
           <span>Read More</span>
           <svg 
@@ -91,6 +91,7 @@ const PostCard = ({ post, className }: { post: SPost; className?: string }) => {
           </svg>
         </Link>
       </div>
+      
     </div>
   );
 };

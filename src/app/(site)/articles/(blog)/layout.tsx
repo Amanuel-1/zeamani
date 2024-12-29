@@ -35,8 +35,10 @@ export default function RootLayout({
                 id: "zeamani",
             }}/>
          <Analytics/>
-
+                  
+          <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
           {children}
+          </main>
 
          </SessionProvide>
           
