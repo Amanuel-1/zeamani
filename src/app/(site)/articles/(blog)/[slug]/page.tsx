@@ -89,7 +89,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
                     <div className="absolute w-full h-full bg-gradient-to-b from-gray-900 to-transparent"></div>
                 </div>
             </div>
-            <h1 className="title w-full  text-left px-5 ">{post.title}</h1>
+            <h1 className="title w-full  text-left px-5  text-xl md:text-3xl font-bold">{post.title}</h1>
            <div className="content px-6 flex flex-col gap-4 justify-center w-full">
             {/* <div className="authorInfogroup flex flex-row gap-4 justify-start items-center">
                     <div className="authorAvatar relative h-12 w-12 p-3 ">
@@ -101,7 +101,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
             </div> */}
             <div className="tags w-full flex flex-wrap mb-4 gap-x-2 md:gap-x-6">{
               post.categories && post.categories.map((categ:Category,ind)=>(
-                <p key={ind} className='text-stone-800 text-xs  md:text-base dark:text-gray-500 font-bold italic m-0 p-0'>#{categ.title}</p>
+                <p key={ind} className='text-gray-500 text-xs  md:text-sm dark:text-gray-500 font-bold italic m-0 p-1 bg-black/20 rounded-md border border-gray-800/50'>#{categ.title}</p>
               ))
             }</div>
 

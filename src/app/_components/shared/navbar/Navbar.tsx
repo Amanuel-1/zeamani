@@ -18,9 +18,13 @@ const Navbar = () => {
 
   return (
     <header className="w-full max-h-fit mx-auto z-50">
+       {/* Logo */}
+       <div className="fixed left-4 top-4 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-xs font-bold leading-tight  text-gray-100 backdrop-blur-sm sm:gap-3 z-[110]">
+          <p>AMANU-EL</p>
+        </div>
        {/* Top Right Links */}
        <div className="fixed right-4 top-4 z-[100] px-12 sm:px-6">
-          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-500 backdrop-blur-sm sm:gap-3">
+          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-400 backdrop-blur-sm sm:gap-3">
             <Link href="#experience" className="transition hover:text-gray-400">
               EXPERIENCE
             </Link>

@@ -96,10 +96,7 @@ export default function Home() {
 
        <Navbar/>
 
-        {/* Logo */}
-        <div className="fixed left-4 top-4 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-xs font-bold leading-tight  text-gray-100 backdrop-blur-sm sm:gap-3">
-          <p>AMANU-EL</p>
-        </div>
+       
       </div>
 
       {/* Hero Section */}
