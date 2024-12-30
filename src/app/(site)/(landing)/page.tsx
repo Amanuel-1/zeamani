@@ -102,17 +102,17 @@ export default function Home() {
       {/* Hero Section */}
       <section className="box-border flex h-screen items-center justify-center p-6">
         <div className="flex flex-col gap-0 text-center">
-          <p className="w-full px-4 text-start text-lg font-light tracking-widest text-gray-500">
+          <p className="w-full px-4 m-0 text-start text-lg font-light tracking-widest text-gray-500">
             I AM
           </p>
-          <h1 className="mb-4 text-6xl font-bold tracking-tight text-gray-300 md:text-8xl">
+          <h1 className="mb-4 mt-0 p-0 text-6xl font-bold tracking-tight text-gray-300 md:text-8xl">
             AMANU-EL
           </h1>
           <div className="flex justify-end">
             <div className="text-sm font-light leading-relaxed text-gray-500 md:text-lg ">
-              <p className="w-full text-start">AI DEVELOPER</p>
-              <p className="w-full text-start">BACKEND DEVELOPER</p>
-              <p className="w-full text-start">FULL STACK ENGINEER</p>
+              <p className="w-full p-0 m-0 text-start">AI DEVELOPER</p>
+              <p className="w-full p-0 m-0 text-start">BACKEND DEVELOPER</p>
+              <p className="w-full p-0 m-0 text-start">FULL STACK ENGINEER</p>
             </div>
           </div>
         </div>
