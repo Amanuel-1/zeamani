@@ -1,10 +1,9 @@
-
 import "fireup/styles/globals.css";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
 import { Inter } from "next/font/google";
 import { headers } from "next/headers";
-import Loglib from '@loglib/tracker/react'
+import Loglib from "@loglib/tracker/react";
 
 import { TRPCReactProvider } from "fireup/trpc/react";
 import Footer from "fireup/app/_components/shared/footer/Footer";
@@ -14,8 +13,7 @@ import { SessionProvider } from "next-auth/react";
 import SessionProvide from "fireup/app/_components/auth/sessionProvide";
 import Image from "next/image";
 import { Images } from "fireup/app/resources";
-import { Analytics } from '@vercel/analytics/react';
-
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -23,28 +21,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <div className="font-sans">
+      <Toaster />
 
-        <TRPCReactProvider headers={headers()}>
-        {/* <div className={`fixed w-full h-full top-0 bg-opacity-20 invert bg-[url(https://d2vwwcvoksz7ty.cloudfront.net/grid.svg)] z-0`}></div> */}
-         
-         <SessionProvide>
-         <Toaster/>
+      <Loglib
+        config={{
+          id: "zeamani",
+        }}
+      />
+      <Analytics />
 
-         <Loglib
-            config={{
-                id: "zeamani",
-            }}/>
-         <Analytics/>
-                  
-          <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
-          {children}
-          </main>
-
-         </SessionProvide>
-          
-          
-          </TRPCReactProvider>
-        
-
+      <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
+        {children}
+      </main>
+    </div>
   );
 }

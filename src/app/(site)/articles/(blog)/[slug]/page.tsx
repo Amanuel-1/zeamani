@@ -89,7 +89,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
                     <div className="absolute w-full h-full bg-gradient-to-b from-gray-900 to-transparent"></div>
                 </div>
             </div>
-            <h1 className="title w-full  text-left px-5  text-xl md:text-3xl font-bold">{post.title}</h1>
+            <h1 className="title w-full  text-left px-5   font-extrabold">{post.title}</h1>
            <div className="content px-6 flex flex-col gap-4 justify-center w-full">
             {/* <div className="authorInfogroup flex flex-row gap-4 justify-start items-center">
                     <div className="authorAvatar relative h-12 w-12 p-3 ">
