@@ -39,10 +39,17 @@ const AboutMe: React.FC = () => {
         <h2 className="text-3xl font-semibold text-white">
           {aboutMeData.name}
         </h2>
-        <p className="text-lg text-gray-400 text-center">{aboutMeData.title}</p>
-
+        <p className="text-center text-lg text-gray-400">{aboutMeData.title}</p>
+        <div className="flex w-full justify-center gap-4">
+          <button className="rounded-[5px] border-2 border-gray-800/50 px-2 py-1 transition-all duration-700 hover:bg-gray-700/50">
+            Resume(ML)
+          </button>
+          <button className="rounded-[5px] border-2 border-gray-800/50 px-2 py-1 transition-all duration-700 hover:bg-gray-700/50">
+            Resume(Fullstack)
+          </button>
+        </div>
         {/* Description */}
-        <p className="mx-auto my-4 max-w-2xl text-gray-300 text-center">
+        <p className="mx-auto my-4 max-w-2xl text-center text-gray-300">
           {aboutMeData.description}
         </p>
 

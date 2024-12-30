@@ -1,4 +1,3 @@
-"use client";
 
 import { ProjectList } from "fireup/app/_components/shared/cards/projectList";
 import { client } from "fireup/lib/client";
@@ -20,47 +19,43 @@ import AboutMe from "fireup/app/_components/shared/cards/aboutme";
 import PostCard from "fireup/app/_components/shared/cards/PostCard";
 import { Me } from "fireup/lib/constants";
 import Navbar from "fireup/app/_components/shared/navbar/Navbar";
+import { ArticleSection } from "fireup/app/_components/sanity/articleSection";
+import { ProjectSection } from "fireup/app/_components/sanity/projectSection";
+
+export const metadata = {
+  title: "Amanuel Garomsa - AI Developer, Backend Developer, Full Stack Engineer",
+  description: "Welcome to the personal portfolio of Amanuel Garomsa, an AI Developer, Backend Developer, and Full Stack Engineer. Explore projects, experiences, and get in touch.",
+  keywords: [
+    "Amanuel Garomsa",
+    "AI Developer",
+    "Backend Developer",
+    "Full Stack Engineer",
+    "Portfolio",
+    "Ethiopia",
+    "Software Engineer",
+    "Tech Projects",
+  ],
+  openGraph: {
+    title: "Amanuel Garomsa - AI Developer & Engineer",
+    description:
+      "Discover the portfolio of Amanuel Garomsa, featuring AI development, backend engineering, and full-stack projects. Get to know my work and expertise.",
+    url: "https://www.zeamani.com", // Replace with your actual portfolio URL
+    images: [
+      {
+        url: "https://ibb.co/gSRD42c", // Replace with the actual URL to your Open Graph image
+        width: 1200,
+        height: 630,
+        alt: "Amanuel Garomsa - Portfolio Open Graph Image",
+      },
+    ],
+    siteName: "Amanuel Garomsa",
+  },
+};
+
 
 export default function Home() {
-  const [projects, setProjects] = useState<SProject[]>([]);
-  const [posts, setPosts] = useState<SPost[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const projectQuery = groq`*[_type == "project"] {
-        ...,
-        author->,
-        categories[]->
-      }`;
-
-      const postQuery = groq`*[_type == "post"]| order(_createdAt desc, _updatedAt desc) {
-        ...,
-        author->,
-        categories[]->
-      }`;
-
-      try {
-        const fetchedProjects: SProject[] = await client.fetch(projectQuery, {
-          next: {
-            tags: ["project"],
-          },
-        });
-
-        const fetchedPosts: SPost[] = await client.fetch(postQuery, {
-          next: {
-            tags: ["post"],
-          },
-        });
-
-        setProjects(fetchedProjects);
-        setPosts(fetchedPosts);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  
 
   return (
     <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
@@ -120,53 +115,11 @@ export default function Home() {
 
       <ExperienceList />
 
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="relative my-6 mt-[20%] min-h-screen py-10 text-white"
-      >
-        
-        <div className="mb-6 w-full text-center text-xl">
-          my recent projects
-        </div>
-        <ProjectList projects={projects} />
-      </section>
+      <ProjectSection/>
+      
+      <ArticleSection/>
 
-      {/* Articles Section */}
-      <section
-        id="articles"
-        className="relative my-6 flex min-h-screen flex-col gap-3 px-24 py-10 text-white sm:px-6"
-      >
-        <div className="mb-6 w-full px-20 text-center text-xl sm:px-6 sm:text-lg">
-          my recent articles
-        </div>
-        <div className="flex flex-col gap-3 px-6">
-          {posts.slice(0, 3).map((post) => (
-            <PostCard key={post._id} post={post} />
-          ))}
-          <Link
-            href="/articles"
-            className="flex group justify-center items-center space-x-2 text-sm font-medium text-cyan-400 transition-colors duration-300 hover:text-cyan-300 "
-          >
-            <span>Read More Articles</span>
-            <svg
-              className="h-4 w-4 rotate-90 transform transition-transform duration-300 group-hover:translate-y-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </Link>
-        </div>
-      </section>
-
-      <AboutMe />
+      <AboutMe/>
 
       {/* Contact Section */}
       <section

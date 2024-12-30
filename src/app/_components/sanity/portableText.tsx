@@ -117,7 +117,7 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border border-gray-800/50 border-l-gray-600/50 bg-black/20  z-0 text-sm md:text-base backdrop-blur-md  text-gray-400 md:p-4">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border border-gray-800/50 border-l-gray-600/50 bg-black/20  z-0 text-sm md:text-base backdrop-blur-md  text-gray-400 md:p-4 my-2">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
     p:({children}:any)=><h1>{children}</h1>,
     
