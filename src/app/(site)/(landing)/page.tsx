@@ -125,6 +125,7 @@ export default function Home() {
         id="projects"
         className="relative my-6 mt-[20%] min-h-screen py-10 text-white"
       >
+        
         <div className="mb-6 w-full text-center text-xl">
           my recent projects
         </div>

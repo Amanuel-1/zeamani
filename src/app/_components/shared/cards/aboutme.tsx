@@ -39,10 +39,10 @@ const AboutMe: React.FC = () => {
         <h2 className="text-3xl font-semibold text-white">
           {aboutMeData.name}
         </h2>
-        <p className="text-lg text-gray-400">{aboutMeData.title}</p>
+        <p className="text-lg text-gray-400 text-center">{aboutMeData.title}</p>
 
         {/* Description */}
-        <p className="mx-auto my-4 max-w-2xl text-gray-300">
+        <p className="mx-auto my-4 max-w-2xl text-gray-300 text-center">
           {aboutMeData.description}
         </p>
 
@@ -59,7 +59,7 @@ const AboutMe: React.FC = () => {
         </div>
 
         {/* Social Links */}
-        <div className="social-links flex justify-center gap-6">
+        <div className="social-links flex justify-center gap-6 font-semibold">
           <a
             href={aboutMeData.socialLinks.github}
             target="_blank"

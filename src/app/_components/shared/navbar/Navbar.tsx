@@ -1,47 +1,69 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const pathName = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     setOpen(false);
   }, [pathName]);
 
-  const onClick = async () => {
-    setOpen(!isOpen);
+  const handleNavigation = (section: string) => {
+    if (pathName === "/") {
+      const targetElement = document.querySelector(section);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push(`/${section}`);
+    }
   };
 
   return (
     <header className="w-full max-h-fit mx-auto z-50">
-       {/* Logo */}
-       <div className="fixed left-4 top-4 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-xs font-bold leading-tight  text-gray-100 backdrop-blur-sm sm:gap-3 z-[110]">
-          <p className='text-sm p-0 m-0 font-extrabold'>AMANU-EL</p>
+      {/* Logo */}
+      <div className="fixed left-4 top-4 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-xs font-bold leading-tight text-gray-100 backdrop-blur-sm sm:gap-3 z-[110]">
+        <p className="text-sm p-0 m-0 font-extrabold">AMANU-EL</p>
+      </div>
+      {/* Top Right Links */}
+      <div className="fixed right-4 top-4 z-[100] px-12 sm:px-6">
+        <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/20 px-2 text-sm text-gray-400 backdrop-blur-sm sm:gap-3">
+          <button
+            onClick={() => handleNavigation("#experience")}
+            className="transition hover:text-gray-400"
+          >
+            EXPERIENCE
+          </button>
+          <button
+            onClick={() => handleNavigation("#projects")}
+            className="transition hover:text-gray-400"
+          >
+            PROJECTS
+          </button>
+          <button
+            onClick={() => handleNavigation("#articles")}
+            className="transition hover:text-gray-400"
+          >
+            ARTICLES
+          </button>
+          <button
+            onClick={() => handleNavigation("#about")}
+            className="transition hover:text-gray-400"
+          >
+            ABOUT
+          </button>
+          <button
+            onClick={() => handleNavigation("#contact")}
+            className="transition hover:text-gray-400"
+          >
+            CONNECT
+          </button>
         </div>
-       {/* Top Right Links */}
-       <div className="fixed right-4 top-4 z-[100] px-12 sm:px-6">
-          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/20 px-2 text-sm text-gray-400 backdrop-blur-sm sm:gap-3">
-            <Link href="#experience" className="transition hover:text-gray-400">
-              EXPERIENCE
-            </Link>
-            <Link href="#projects" className="transition hover:text-gray-400">
-              PROJECTS
-            </Link>
-            <Link href="#articles" className="transition hover:text-gray-400">
-              ARTICLES
-            </Link>
-            <Link href="#about" className="transition hover:text-gray-400">
-              ABOUT
-            </Link>
-            <Link href="#contact" className="transition hover:text-gray-400">
-              CONNECT
-            </Link>
-          </div>
-        </div>
+      </div>
     </header>
   );
 };

@@ -31,7 +31,7 @@ export const Experience: React.FC<ExperienceProps> = ({ data, isProject = false 
             <img
               src={urlForImage(project.mainImage).url()}
               alt={project.title}
-              className="w-14 h-12 mb-4 border-2 border-gray-800/50"
+              className="w-14 h-12 mb-4 border-2 border-gray-800/50 mx-0"
             />
           )}
           <h3 className="flex items-center text-md font-semibold">

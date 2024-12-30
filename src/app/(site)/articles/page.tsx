@@ -52,21 +52,17 @@ const Articles = () => {
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Function to determine which page numbers to show
   const getPageNumbers = () => {
     const pageNumbers = [];
     const maxVisiblePages = windowWidth < 640 ? 3 : 5;
 
     if (totalPages <= maxVisiblePages) {
-      // Show all pages if total pages are less than max visible pages
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
       }
     } else {
-      // Show limited pages with ellipsis
       if (currentPage <= 3) {
         for (let i = 1; i <= maxVisiblePages - 1; i++) {
           pageNumbers.push(i);
@@ -93,7 +89,7 @@ const Articles = () => {
   };
 
   return (
-    <div className="">
+    <div>
       {/* Hero Section */}
       <section className="border-b border-b-gray-900">
         <div className="container flex flex-col gap-3 items-center mx-auto px-4 py-8 mt-24">
@@ -106,7 +102,7 @@ const Articles = () => {
       </section>
 
       {/* Posts Grid */}
-      <section className="">
+      <section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto px-4 py-8">
           {currentPosts.map((post) => (
             <PostCard key={post._id} post={post} />
