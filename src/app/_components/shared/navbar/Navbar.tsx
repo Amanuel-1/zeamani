@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
        {/* Top Right Links */}
        <div className="fixed right-4 top-4 z-[100] px-12 sm:px-6">
-          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/5 px-2 text-sm text-gray-400 backdrop-blur-sm sm:gap-3">
+          <div className="flex gap-6 rounded-[10px] border border-gray-800/50 bg-black/20 px-2 text-sm text-gray-400 backdrop-blur-sm sm:gap-3">
             <Link href="#experience" className="transition hover:text-gray-400">
               EXPERIENCE
             </Link>

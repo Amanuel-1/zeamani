@@ -101,7 +101,7 @@ const PostPage = async ({params:{slug}}:postProps) => {
             </div> */}
             <div className="tags w-full flex flex-wrap mb-4 gap-x-2 md:gap-x-6">{
               post.categories && post.categories.map((categ:Category,ind)=>(
-                <p key={ind} className='text-gray-500 text-xs  md:text-sm dark:text-gray-500 font-bold italic m-0 p-1 bg-black/20 rounded-md border border-gray-800/50'>#{categ.title}</p>
+                <p key={ind} className='text-gray-500 text-xs  md:text-sm dark:text-gray-500 font-bold italic m-0 p-1 bg-black/20 rounded-[10px] border border-gray-800/50 '>#{categ.title}</p>
               ))
             }</div>
 

@@ -76,6 +76,10 @@ p, table {
   @apply mb-6 text-justify text-lg font-normal;
 }
 
+img {
+  @apply mx-auto my-6;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -98,6 +102,8 @@ p, table {
   clip-path: polygon(100% 0, 100% 78%, 35% 93%, 0 88%, 0% 0%);
   transition: clip-path 0.3s ease-in-out;
 }
+
+
 
 @media (max-width: 768px) {
   .heroclip {

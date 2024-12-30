@@ -12,6 +12,7 @@ import { cn, extractTweetId } from 'fireup/lib/utils';
 import YouTubePlayer from 'react-player/youtube';
 import { Tweet } from 'react-tweet'
 import { FiExternalLink } from 'react-icons/fi';
+import ImageDialog from '../me/ImageDialog';
 interface PortableProps {
   body: any;
 }
@@ -25,27 +26,7 @@ interface codeComponentProps{
 const ImageComponent = ({value, isInline}:any) => {
   const {width, height} = getImageDimensions(value)
   return (
-    <img
-      
-      src={urlForImage(value)
-        .width(isInline ? 100 : 800)
-        .fit('max')
-        .auto('format')
-        .url()}
-      alt={value.alt || ' '}
-      loading="lazy"
-      style={{
-        // paddingLeft:"2rem",
-        // paddingRight:"2rem",
-        // Display alongside text if image appears inside a block text span
-        display: isInline ? 'inline-block' : 'block',
-          
-        // Avoid jumping around with aspect-ratio CSS property
-        aspectRatio: width / height,
-        cursor:'pointer'
-      }}
-      className='hover:brightness-75 transition-all duration-500 px-3 md:px-[2rem]'
-    />
+    <ImageDialog value={value} isInline={isInline} />
   )
 }
 //a component for the code part
@@ -136,9 +117,10 @@ const PortableTextComponents = {
     
   },
   block:{
-    blockquote: ({children}:any) => <blockquote className="border-l-8 border-l-amber-600 bg-[#4f342d1c] dark:bg-[#4f342d35] z-0 text-xs md:text-sm text-stone-900 dark:text-stone-300">{children}</blockquote>,
+    blockquote: ({children}:any) => <blockquote className="border-l-8 border border-gray-800/50 border-l-gray-600/50 bg-black/20  z-0 text-sm md:text-base backdrop-blur-md  text-gray-400 md:p-4">{children}</blockquote>,
     div:({children}:any)=><div className='z-50'>{children}</div>,
     p:({children}:any)=><h1>{children}</h1>,
+    
     // a:({value,href}:any)=><a className='text-amber-700 dark:text-amber-600' href={href} target='_blank' rel="noopener noreferrer">{value}</a>,
   }
 };
