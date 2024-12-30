@@ -42,7 +42,7 @@ export const metadata = {
     url: "https://www.zeamani.com", // Replace with your actual portfolio URL
     images: [
       {
-        url: "https://ibb.co/gSRD42c", // Replace with the actual URL to your Open Graph image
+        url: "https://i.ibb.co/fkxCDgT/opengraph.png", // Replace with the actual URL to your Open Graph image
         width: 1200,
         height: 630,
         alt: "Amanuel Garomsa - Portfolio Open Graph Image",
