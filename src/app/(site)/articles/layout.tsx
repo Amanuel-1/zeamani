@@ -20,6 +20,32 @@ import { SPost } from "fireup/lib/types";
 import { getDomain } from "fireup/lib/utils";
 
 
+export const metadata = {
+  title: "Articles - Zeamani",
+  description: "Explore a collection of articles on various topics.",
+  keywords: [
+    "articles",
+    "blog",
+    "posts",
+    "topics",
+    "Zeamani",
+  ],
+  openGraph: {
+    title: "Articles - Zeamani",
+    description:
+      "Discover a collection of articles on various topics at Zeamani.",
+    url: "https://www.zeamani.com/articles",
+    images: [
+      {
+        url: "https://i.ibb.co/fkxCDgT/opengraph.png",
+        width: 1200,
+        height: 630,
+        alt: "Articles - Zeamani",
+      },
+    ],
+    siteName: "zeamani-Amanuel Garomsa",
+  },
+};
 
 
 export default function RootLayout({
