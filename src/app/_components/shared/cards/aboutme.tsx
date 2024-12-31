@@ -33,7 +33,7 @@ const aboutMeData = {
 
 const AboutMe: React.FC = () => {
   return (
-    <section id="about" className="about-me my-12 px-4 sm:px-10">
+    <section id="about" className="about-me my-12 px-4 sm:px-10 h-screen flex items-center">
       <div className="mx-auto max-w-3xl text-center">
         {/* Name and Title */}
         <h2 className="text-3xl font-semibold text-white">

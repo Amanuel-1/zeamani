@@ -47,12 +47,12 @@ export function ArticleSection() {
               {/* Articles Section */}
       <section
         id="articles"
-        className="relative my-6 flex min-h-screen flex-col gap-3 px-24 py-10 text-white sm:px-6"
+        className="relative my-6 flex min-h-screen flex-col gap-3 md:px-24 py-10 text-white px-2 sm:px-6"
       >
         <div className="mb-6 w-full px-20 text-center text-xl sm:px-6 sm:text-lg">
           my recent articles
         </div>
-        <div className="flex flex-col gap-3 px-6">
+        <div className="flex flex-col gap-3 px-3">
           {posts.slice(0, 3).map((post) => (
             <PostCard key={post._id} post={post} />
           ))}

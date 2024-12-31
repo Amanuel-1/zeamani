@@ -1,4 +1,3 @@
-
 import { ProjectList } from "fireup/app/_components/shared/cards/projectList";
 import { client } from "fireup/lib/client";
 import { SProject, SPost } from "fireup/lib/types";
@@ -23,8 +22,10 @@ import { ArticleSection } from "fireup/app/_components/sanity/articleSection";
 import { ProjectSection } from "fireup/app/_components/sanity/projectSection";
 
 export const metadata = {
-  title: "Amanuel Garomsa - AI Developer, Backend Developer, Full Stack Engineer",
-  description: "Welcome to the personal portfolio of Amanuel Garomsa, an AI Developer, Backend Developer, and Full Stack Engineer. Explore projects, experiences, and get in touch.",
+  title:
+    "Amanuel Garomsa - AI Developer, Backend Developer, Full Stack Engineer",
+  description:
+    "Welcome to the personal portfolio of Amanuel Garomsa, an AI Developer, Backend Developer, and Full Stack Engineer. Explore projects, experiences, and get in touch.",
   keywords: [
     "Amanuel Garomsa",
     "AI Developer",
@@ -52,17 +53,13 @@ export const metadata = {
   },
 };
 
-
 export default function Home() {
-
-  
-
   return (
-    <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white">
+    <main className="relative h-screen w-screen overflow-y-auto scroll-smooth bg-gradient-to-br from-gray-900 to-black text-white pb-[10%]">
       {/* fixeds */}
       <div className="relative z-[100]">
         {/* Social Media Icons */}
-        <div className="fixed bottom-4 left-4 flex flex-col gap-3">
+        <div className="fixed bottom-8 md:bottom-4 left-4 flex flex-col gap-3">
           <Link
             href={Me.socials.github}
             className="transition hover:text-blue-500"
@@ -89,15 +86,13 @@ export default function Home() {
           <div className="ml-2 h-16 border-l-2 border-gray-600"></div>
         </div>
 
-       <Navbar/>
-
-       
+        <Navbar />
       </div>
 
       {/* Hero Section */}
       <section className="box-border flex h-screen items-center justify-center p-6">
         <div className="flex flex-col gap-0 text-center">
-          <p className="w-full px-4 m-0 text-start text-lg font-light tracking-widest text-gray-500">
+          <p className="m-0 w-full px-4 text-start text-lg font-light tracking-widest text-gray-500">
             I AM
           </p>
           <h1 className="mb-4 mt-0 p-0 text-6xl font-bold tracking-tight text-gray-300 md:text-8xl">
@@ -105,9 +100,9 @@ export default function Home() {
           </h1>
           <div className="flex justify-end">
             <div className="text-sm font-light leading-relaxed text-gray-500 md:text-lg ">
-              <p className="w-full p-0 m-0 text-start">AI DEVELOPER</p>
-              <p className="w-full p-0 m-0 text-start">BACKEND DEVELOPER</p>
-              <p className="w-full p-0 m-0 text-start">FULL STACK ENGINEER</p>
+              <p className="m-0 w-full p-0 text-start">AI DEVELOPER</p>
+              <p className="m-0 w-full p-0 text-start">BACKEND DEVELOPER</p>
+              <p className="m-0 w-full p-0 text-start">FULL STACK ENGINEER</p>
             </div>
           </div>
         </div>
@@ -115,16 +110,16 @@ export default function Home() {
 
       <ExperienceList />
 
-      <ProjectSection/>
-      
-      <ArticleSection/>
+      <ProjectSection />
 
-      <AboutMe/>
+      <ArticleSection />
+
+      <AboutMe />
 
       {/* Contact Section */}
       <section
         id="contact"
-        className="myI-[10%] flex h-screen items-center justify-center p-6"
+        className="my-[10%] flex h-screen items-center justify-center p-6"
       >
         <div className="box-border grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
           {/* Contact Details */}
