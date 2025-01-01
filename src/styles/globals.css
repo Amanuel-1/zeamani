@@ -134,3 +134,7 @@ img {
     transform: rotate(360deg);
   }
 }
+::selection {
+  background-color: rgba(0, 124, 182, 0.7); /* Cyan-400 with 70% opacity */
+  color: #ffffff; /* Optional: Change selected text color, e.g., to white */
+}
