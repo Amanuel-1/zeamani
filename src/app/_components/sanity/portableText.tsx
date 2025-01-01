@@ -47,7 +47,7 @@ const CodeComponent : React.FC=(props:any) => {
       <div className="relative flex flex-col w-full md:w-[90%] self-center h-full gap-0 text-xs justify-center justify-self-center place-self-center">
       <div className=" absolute -top-3 left-0 w-fit px-8 rounded-tr-[10px]  z-0 bg-black/10 border border-gray-800/50 text-stone-200">{props.value.language}</div>
       <CopyToClipboard text={props.value.code} onCopy={()=>setIsCopied(true)}>
-      <div className={cn("absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px]  cursor-pointer hover:border hover:border-amber-600 transition-all duration-500 z-40 ",isCopied?"border border-green-600 hover:border-green-500 text-green-400 bg-green-950":"text-stone-100 ")} ><FaCopy/></div>
+      <div className={cn("absolute right-3 top-5 text-white font-extrabold p-2 rounded-[5px]  cursor-pointer hover:border hover:border-amber-600 transition-all duration-500 z-40 ",isCopied?"border border-cyan-400 hover:border-cyan-500 text-cyan-600 bg-cyan-950":"text-stone-100 ")} ><FaCopy/></div>
       </CopyToClipboard>
        <SyntaxHighlighter
         language={props.value.language}
